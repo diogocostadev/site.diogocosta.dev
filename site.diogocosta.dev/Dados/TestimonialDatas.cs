@@ -11,50 +11,50 @@ public static class TestimonialsData
             new Testimonial
             {
                 Id = 1,
-                Name = "Dave Sharp",
-                Content = "Brilliant. This course absolutely delivers, hands down. Justin makes it clear and simple how to get the most out of LinkedIn by providing solid value to your audience. Easy to follow and no BS.",
-                ImageUrl = "/images/testimonials/dave-sharp.jpg",
+                Name = "Mateus domingos da Silva lima",
+                Content = "Curso sensacional, vale cada centavo !!!",
+                ImageUrl = "/img/testemunhos/1.jpg",
                 Role = "Business Owner"
             },
             new Testimonial
             {
                 Id = 2,
-                Name = "Colin Murray",
-                Content = "Justin's course is truly outstanding! I took more away from this two hour course than I took away from any marketing course or even my MBA.",
-                ImageUrl = "/images/testimonials/colin-murray.jpg",
+                Name = "Ezequielson Correia da silva",
+                Content = "Gostaria de expressar minha gratidão e admiração pelo curso ministrado pelo professor Diogo . Sem dúvida, foi o melhor curso de programação que já assinei. O professor é extremamente empolgante, consegue explicar os conceitos de forma clara e envolvente, tornando o aprendizado muito mais agradável e eficaz. O curso foi perfeito para o meu nível de conhecimento, e me sinto muito mais confiante nas minhas habilidades. Recomendo fortemente a todos que buscam um ensino de qualidade!",
+                ImageUrl = "/img/testemunhos/2.jpg",
                 Role = "Marketing Professional"
             },
             new Testimonial
             {
                 Id = 3,
-                Name = "Brianne Ramsay",
-                Content = "This course has been life changing for my business. I've seen a 100% increase in website visits and this course only took an afternoon to complete. I love how direct and to the point this online training is.",
-                ImageUrl = "/images/testimonials/brianne-ramsay.jpg",
-                Role = "Entrepreneur"
+                Name = "Luiz Caetano",
+                Content = "O curso é sensacional, a didática do professor é muito boa! Pra galera que tá querendo embarcar no mundo do c sharp, pode investir no curso sem medo. Dá pra ter uma base muito boa. Porém depende muito da gente praticar todos os dias (Domingo a domingo) para que consigamos a nossa tão sonhada vaga na área de programação. Pois nada cai do céu. Aqui é uma porta de entrada, uma boa oportunidade focado naquilo que as empresas pedem. Professor a única coisa que falaria como um pequeno ponto de atenção é que algumas aulas o áudio ficou meio baixo. Mas nada que um fone não resolva. Pois quem quer dá um jeito. E por último mas não menos importante tem um grupo de suporte e complementos no discord. Uma estrutura fodástica que nenhum outro curso que já fiz aqui na plataforma tem. Vamos pra cima!",
+                ImageUrl = "/img/testemunhos/3.webp",
+                Role = "Aluno do curso Desenvol....."
             },
             new Testimonial
             {
                 Id = 4,
-                Name = "Joanne Schonheim",
-                Content = "I hesitated a little while before signing up to Justin's course as I didn't feel I was ready. I'm so glad I finally bit the bullet. I have gained more traction in the 30 days since, then I likely would have if I waited.",
-                ImageUrl = "/images/testimonials/joanne-schonheim.jpg",
-                Role = "Digital Creator"
+                Name = "Lucas Eduardo Klitzke da Silva",
+                Content = "Bem acima das minhas expectativas! O professor ensina de forma divertida e com clareza os conteúdos propostos no curso, um ótimo curso!",
+                ImageUrl = "/img/testemunhos/4.jpg",
+                Role = "Aluno do curso Desenvol....."
             },
             new Testimonial
             {
                 Id = 5,
                 Name = "Manish Gvalani",
-                Content = "I was overwhelmed with the idea of creating content. Justin's course made it very simple in bite size videos on how to make it happen, one step at a time. It was crisp, effective, and empowering. If you are considering buying this course, get over analysis paralysis and take action. It will be your best investment.",
-                ImageUrl = "/images/testimonials/manish-gvalani.jpg",
-                Role = "Business Consultant"
+                Content = "Aulas elaboradas e didática boa.",
+                ImageUrl = "/img/testemunhos/5.webp",
+                Role = "Aluno do curso Desenvol....."
             },
             new Testimonial
             {
                 Id = 6,
-                Name = "Teodor Dimokenchev",
-                Content = "The Content OS is the most straightforward way to learn how to start posting regular, high-quality content on social media.",
-                ImageUrl = "/images/testimonials/teodor-dimokenchev.jpg",
-                Role = "Content Creator"
+                Name = "Ricardo Aguiar dos Santos",
+                Content = "O professor é excelente, conduzindo as aulas com calma e clareza, tornando o aprendizado fácil e acessível. muito, muito bom pra ingressar no mercado de trabalho. Só tenho gratidão pelo incrível trabalho do professor. Recomendo a todos. \ud83d\udc4f\ud83d\udc68\u200d\ud83c\udfeb",
+                ImageUrl = "/img/testemunhos/6.webp",
+                Role = "Aluno do curso Desenvol....."
             }
         };
     }
