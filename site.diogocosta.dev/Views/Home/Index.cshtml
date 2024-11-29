@@ -1,0 +1,183 @@
+﻿@model NewsletterSubscription
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="bg-white min-h-screen">
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-24">
+        <h1 class="text-6xl font-serif text-gray-900 mb-4">Programe sua <span class="text-blue-600">liberdade:</span></h1>
+        <h1 class="text-6xl font-serif text-gray-900">Transforme seu código em oportunidade de <span class="text-blue-600">negócio</span>.</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+            <div>
+                <h2 class="text-3xl font-serif text-gray-900 mb-4">Quer se juntar a nós?</h2>
+                <p class="text-gray-600 mb-8">Junte-se a mais de mil leitores e receba dicas exclusivas, estratégias práticas e recursos indispensáveis para criar, expandir e monetizar seu software.</p>
+            </div>
+            <div>
+                <h2 class="text-3xl font-serif text-gray-900 mb-4">Inicie aqui.</h2>
+                @using (Html.BeginForm("Newsletter", "Home", FormMethod.Post, new { @class = "space-y-4" }))
+                {
+                    <div>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "w-full px-4 py-2 rounded-md border border-gray-300", placeholder = "Seu melhor e-mail" })
+                        <button type="submit" class="mt-2 bg-blue-600 text-white px-6 py-2 rounded-md">Inscreva-se</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Section -->
+    <div class="bg-gray-50 py-8">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center items-center space-x-8">
+                    <img src="/img/1.webp"
+                         alt="Américas"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/6.webp"
+                         alt="Itaú"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/3.webp"
+                         alt="Amil"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/4.webp"
+                         alt="Uol"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/5.webp"
+                         alt="Antigo Poyry"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/7.webp"
+                         alt="Panasonic"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/8.webp"
+                         alt="Volkswagem"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/9.webp"
+                         alt="Mercedez Benz"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/10.webp"
+                         alt="Gol Linhas Aéreas"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/11.webp"
+                         alt="Vivo"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/12.webp"
+                         alt="Microsoft"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/13.webp"
+                         alt="Hospital Albert Einstein"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                    <img src="/img/14.webp"
+                         alt="HP"
+                         class="h-8 md:h-10 object-contain filter brightness-0"
+                         loading="lazy">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Section with Dark Blue Background -->
+    <div class="bg-[#0a1930] text-white py-24">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <!-- Profile Image -->
+            <div class="flex justify-center mb-12">
+                <img src="~/img/IMG_0045.webp" alt="Profile" class="w-32 h-32 rounded-full">
+            </div>
+
+            <h2 class="text-4xl font-serif mb-4">Oi, sou Diogo Costa ajudo programadores a conquistarem sua liberdade no trabalho e na vida.</h2>
+            <p class="text-emerald-400 mb-16">[Uma carta aberta para quem busca liberdade]</p>
+
+            <!-- Story Content -->
+            <div class="space-y-8 text-xl">
+                <p>Ser programador é abraçar tanto sua profissão quanto sua vida.</p>
+
+                <p>Encaramos nosso trabalho com uma mentalidade que prioriza independência, criatividade e propósito, em vez de focar apenas no ganho financeiro.</p>
+
+                <p>Um programador não pergunta apenas: "Qual o emprego mais bem pago que eu posso conseguir?"</p>
+
+                <p>Ele pergunta: "Que tipo de vida eu quero levar?" e então constrói uma carreira ou projeto que sustente esse estilo de vida.</p>
+
+                <p class="text-gray-400">Não se trata de buscar sempre mais. Trata-se de encontrar o suficiente.</p>
+
+                <p class="text-gray-400">Mantemos nossos processos simples e eficientes, priorizando código limpo, projetos significativos e ferramentas que ajudam a simplificar o trabalho.</p>
+
+                <p class="text-gray-400">Às vezes, isso significa trabalhar como freelancer ou desenvolvedor independente. Outras vezes, colaborar com pequenas equipes talentosas ou contribuir para projetos open source.</p>
+
+                <p class="mt-16">No final das contas, o que nos une é um objetivo claro e simples:</p>
+
+                <p class="text-2xl font-serif">Conquistar a liberdade de programar do nosso jeito, criar coisas que realmente importam e viver uma vida que amamos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Freedom Section -->
+    <div class="bg-white py-24">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <div class="space-y-12">
+                <div>
+                    <h2 class="text-4xl font-serif">
+                        <span class="text-blue-600">Liberdade</span> para<br>
+                        viver como você quiser.
+                    </h2>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-serif">
+                        <span class="text-blue-600">Liberdade</span> para<br>
+                        colocar sua família em primeiro lugar.
+                    </h2>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-serif">
+                        <span class="text-blue-600">Liberdade</span> para<br>
+                        criar sua própria história.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="bg-blue-600 py-24">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <h2 class="text-4xl font-serif text-white mb-8">Mude sua história.</h2>
+            <div class="bg-white rounded-lg p-8">
+                <h3 class="text-2xl font-serif mb-4">Inscreva-se para iniciar.</h3>
+                <p class="text-gray-600 mb-6">Junte-se a mais de mil leitores e receba dicas exclusivas, estratégias práticas e recursos indispensáveis para criar, expandir e monetizar seu software.</p>
+                @using (Html.BeginForm("Newsletter", "Home", FormMethod.Post, new { @class = "space-y-4" }))
+                {
+                    <div>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "w-full px-4 py-2 rounded-md border border-gray-300", placeholder = "Seu melhor e-mail" })
+                        <button type="submit" class="mt-2 bg-blue-600 text-white px-6 py-2 rounded-md w-full">Inscreva-se</button>
+                    </div>
+                    <p class="text-sm text-gray-500">Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

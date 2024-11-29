@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diogo Costa - Transformando seu código em </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .font-serif { font-family: 'Newsreader', serif; }
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            z-index: 1000;
+        }
+        .dropdown-form {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            min-width: 320px;
+            margin-top: 0.5rem;
+        }
+        .dropdown-form.active {
+            display: block;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': {
+                            900: '#0a1930'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="icon" type="image/png" href="~/img/D.png">
+    <!-- Para garantir compatibilidade com diferentes dispositivos -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/img/D.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/D.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/img/D.png">
+</head>
+<body class="bg-white">
+
+<!-- Navigation -->
+<nav class="fixed-nav border-b shadow-sm">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-16">
+            <a asp-controller="Home" asp-action="Index" class="text-xl text-gray-900">Diogo Costa</a>
+            <div class="flex items-center space-x-8">
+                <a asp-controller="Sobre" asp-action="Index" class="text-gray-600 hover:text-gray-900">Sobre mim</a>
+                <a asp-controller="Cursos" asp-action="Index" class="text-gray-600 hover:text-gray-900">Nossos cursos</a>
+                <div class="relative">
+                    <button id="joinButton" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
+                        Junte-se a +1000 leitores
+                    </button>
+                    <!-- Dropdown Form -->
+                    <div id="subscribeForm" class="dropdown-form">
+                        <div class="space-y-4">
+                            <input type="email"
+                                   placeholder="Seu melhor Email"
+                                   class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                            <button type="submit"
+                                    class="w-full bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
+                                Inscreva-se
+                            </button>
+                            <p class="text-sm text-gray-500 text-center">
+                                Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Spacer para compensar o menu fixo -->
+<div class="h-16"></div>
+
+<main>
+    @RenderBody()
+</main>
+
+<footer class="border-t py-12">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="/" class="text-xl font-serif">Diogo Costa</a>
+                <p class="text-sm text-gray-500">© 2024 Diogo Costa</p>
+            </div>
+            <div class="flex space-x-6">
+                <a asp-controller="Home" asp-action="Privacy" class="text-sm text-gray-500">Política de privacidade</a>
+                <a asp-controller="Home" asp-action="Termo" class="text-sm text-gray-500">Termo de uso</a>
+                <a asp-controller="Contato" asp-action="Index" class="text-sm text-gray-500">Entre em contato</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+@await RenderSectionAsync("Scripts", required: false)
+<script>
+    window.addEventListener('scroll', function() {
+        var nav = document.querySelector('nav');
+        if (window.scrollY > 40) { // altura do banner do Black Friday
+            nav.classList.add('shadow-md');
+        } else {
+            nav.classList.remove('shadow-md');
+        }
+    });
+</script>
+
+<script>
+    const joinButton = document.getElementById('joinButton');
+    const subscribeForm = document.getElementById('subscribeForm');
+    let isFormOpen = false;
+
+    // Toggle do formulário
+    joinButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isFormOpen = !isFormOpen;
+        subscribeForm.classList.toggle('active');
+    });
+
+    // Fecha o formulário ao clicar fora
+    document.addEventListener('click', (e) => {
+        if (isFormOpen && !subscribeForm.contains(e.target)) {
+            subscribeForm.classList.remove('active');
+            isFormOpen = false;
+        }
+    });
+
+    // Previne o fechamento ao clicar dentro do formulário
+    subscribeForm.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+</script>
+
+</body>
+</html>

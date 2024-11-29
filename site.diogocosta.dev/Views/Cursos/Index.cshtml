@@ -1,0 +1,171 @@
+@model site.diogocosta.dev.ViewModels.TestimonialViewModel
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<!-- Hero Section -->
+<div class="bg-blue-600 text-white py-24">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+        <h1 class="text-5xl font-serif mb-8">Cursos em Vídeo para Programadores e Empreendedores</h1>
+        <p class="text-xl mb-16">
+            Recebo frequentemente perguntas de programadores que desejam transformar suas habilidades em algo maior — seja construir uma aplicação completa ou criar um negócio de sucesso. Como você, também trilhei esse caminho e aprendi muito ao longo do percurso. Por isso, reuni tudo o que sei em 2 cursos exclusivos, já utilizados por mais de 1.000 alunos para impulsionar suas carreiras e conquistar liberdade.        </p>
+
+        <!-- Rating Section -->
+        <div class="flex justify-center items-center space-x-2">
+            <div class="flex -space-x-2">
+                <img src="~/img/v1.jpg" alt="Student" class="w-8 h-8 rounded-full border-2 border-white">
+                <img src="~/img/v2.jpg" alt="Student" class="w-8 h-8 rounded-full border-2 border-white">
+                <img src="~/img/v3.jpg" alt="Student" class="w-8 h-8 rounded-full border-2 border-white">
+                <img src="~/img/v4.webp" alt="Student" class="w-8 h-8 rounded-full border-2 border-white">
+            </div>
+            <div class="flex items-center space-x-1">
+                <span class="text-yellow-400">★★★★★</span>
+                <span>4.97/5</span>
+                <span class="text-gray-200">Por 1.000+ estudantes</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Courses Grid -->
+<div class="container mx-auto px-4 py-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Course Card 1 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+            <div class="bg-navy-900 p-8">
+                <img src="~/img/t1.webp" alt="A Jornada do Desenvolvedor Completo" class="w-full">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="text-yellow-400">★★★★★</div>
+                    <div class="flex -space-x-2">
+                        <!-- Student avatars -->
+                    </div>
+                    <span>4.96/5</span>
+                    <span class="text-gray-500">Por 1.000+ estudantes</span>
+                </div>
+                <h2 class="text-3xl font-serif mb-4">A Jornada do Desenvolvedor Completo</h2>
+                <p class="text-gray-600 mb-6">
+                    “Domine as habilidades essenciais para se tornar um desenvolvedor completo. Aprenda C#, crie aplicações robustas com banco de dados integrado, e implemente DevOps para garantir entregas ágeis e escaláveis. Este curso oferece um caminho completo do código à implantação.”
+                </p>
+            </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+            <div class="bg-navy-900 p-8">
+                <img src="~/img/t2.webp" alt="Transforme suas habilidades em um negócio lucrativo" class="w-full">
+            </div>
+            <div class="p-8">
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="text-yellow-400">★★★★★</div>
+                    <div class="flex -space-x-2">
+                        <!-- Student avatars -->
+                    </div>
+                    <span>4.98/5</span>
+                    <span class="text-gray-500">Por 1,000+ estudantes</span>
+                </div>
+                <h2 class="text-3xl font-serif mb-4">Transforme suas habilidades em um negócio lucrativo</h2>
+                <p class="text-gray-600 mb-6">
+                    “Descubra como transformar suas habilidades técnicas em um negócio rentável e escalável. Com um método prático e estratégico, você aprenderá a criar, validar e lançar suas próprias soluções no mercado, conquistando liberdade financeira e de tempo.”
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Course Selection Section -->
+<div class="bg-navy-900 text-white py-24">
+    <div class="container mx-auto px-4 text-center">
+        <div class="text-emerald-400 mb-4">O QUE ESTÁ NOS CURSOS</div>
+        <h2 class="text-5xl font-serif mb-8">Qual Curso é Ideal para Mim?</h2>
+        <p class="max-w-3xl mx-auto text-lg mb-16">
+            Descubra o caminho certo para atingir seus objetivos profissionais. Cada curso foi projetado para ajudar programadores como você a crescerem, seja construindo uma base sólida em desenvolvimento ou transformando habilidades técnicas em negócios lucrativos. Veja um breve resumo de cada curso:
+        </p>
+
+        <!-- Course Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            <!-- Course 1 Details -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Transforme suas Habilidades em Negócios</h3>
+                <p>
+                    Para programadores que desejam conquistar liberdade financeira e de tempo ao lançar suas próprias soluções no mercado. Ideal para quem quer empreender.
+                </p>
+            </div>
+
+            <!-- Course 2 Details -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Dominando o Desenvolvimento Completo</h3>
+                <p>
+                    Para quem quer aprimorar habilidades técnicas em C#, bancos de dados e DevOps, criando aplicações reais e se destacando no mercado como um desenvolvedor completo.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Testimonials Section -->
+<div class="py-24">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-serif text-center mb-16">
+            O que <span class="text-blue-600">alguns de nossos</span> alunos têm a dizer sobre meus cursos:
+        </h2>
+
+        <!-- Testimonials Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+            @foreach (var testimonial in Model.Testimonials)
+            {
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <!-- Header -->
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="@testimonial.ImageUrl"
+                             alt="@testimonial.Name"
+                             class="w-12 h-12 rounded-full object-cover"/>
+                        <div>
+                            <h3 class="font-medium text-gray-900">@testimonial.Name</h3>
+                            @if (!string.IsNullOrEmpty(testimonial.Role))
+                            {
+                                <p class="text-sm text-gray-500">@testimonial.Role</p>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Quote Symbol -->
+                    <div class="text-blue-600 text-4xl mb-4">"</div>
+
+                    <!-- Content -->
+                    <p class="text-gray-700 mb-6">@testimonial.Content</p>
+
+                    <!-- Rating -->
+                    <div class="text-yellow-400">
+                        @for (int i = 0; i < testimonial.Rating; i++)
+                        {
+                            <span>★</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="bg-[#0a1930] py-32">
+    <div class="container mx-auto px-4 text-center">
+        <!-- Turquoise Arrow Icon -->
+        <svg class="w-8 h-8 mx-auto mb-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+
+        <!-- Title -->
+        <h2 class="text-5xl font-serif text-white mb-16">Grow Your Audience & Business Today</h2>
+
+        <!-- Back to Top Button -->
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="bg-white text-[#0a1930] px-6 py-2 rounded-md hover:bg-gray-50 transition-colors duration-200 text-sm">
+            Back to Top
+        </button>
+    </div>
+</div>
