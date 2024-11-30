@@ -3,7 +3,6 @@
     ViewData["Title"] = Model.Curso.Titulo;
 }
 
-<!-- Seção Hero -->
 <div class="bg-blue-600 text-white py-24">
     <div class="container mx-auto px-4 max-w-4xl text-center">
         <h1 class="text-5xl font-serif mb-8">@Model.Curso.Titulo</h1>
@@ -11,13 +10,12 @@
         <div class="flex justify-center items-center space-x-2 mb-8">
             <div class="text-yellow-400">★★★★★</div>
             <span>@Model.Curso.Avaliacao.ToString("N2")/5</span>
-            <span class="text-gray-200">Por @Model.Curso.TotalAlunos.ToString("N0")+ alunos</span>
+            <span class="text-gray-200">Por @Model.Curso.TotalAlunos.ToString("N0")+ estudantes</span>
         </div>
         <div class="text-3xl font-bold">R$ @Model.Curso.Preco.ToString("N2")</div>
     </div>
 </div>
 
-<!-- Conteúdo do Curso -->
 <div class="bg-[#0A192F] min-h-screen">
     <div class="container mx-auto px-4 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -40,16 +38,23 @@
                 @if (TempData["MensagemSucesso"] != null)
                 {
                     <div class="text-center py-8">
-                        <div class="text-red-500 text-4xl mb-4">✓</div>
+                        <div class="text-emerald-400 text-4xl mb-4">✓</div>
                         <h3 class="text-2xl font-serif mb-4 text-white">Inscrição Confirmada!</h3>
                         <p class="text-gray-300">@TempData["MensagemSucesso"]</p>
                     </div>
                 }
                 else
                 {
+                    @if (!Html.ViewData.ModelState.IsValid)
+                    {
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+                            @Html.ValidationSummary(false, "", new { @class = "text-red-500" })
+                        </div>
+                    }
+
                     <div class="flex items-center justify-between mb-6">
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-bell text-red-500"></i>
+                            <span class="text-red-500 text-xl">🔔</span>
                             <h3 class="text-2xl font-serif text-white">Lista de Espera</h3>
                         </div>
                         <span class="bg-red-500/10 text-red-500 px-3 py-1 rounded-full text-sm">
@@ -58,30 +63,40 @@
                     </div>
 
                     <div class="flex items-center space-x-2 bg-red-500/10 p-4 rounded-lg mb-6">
-                        <i class="fas fa-exclamation-circle text-red-500"></i>
+                        <span class="text-red-500">⚠️</span>
                         <p class="text-sm text-red-200">
                             No momento não temos vagas disponíveis. Garanta sua prioridade na próxima turma.
                         </p>
                     </div>
 
-                    @using (Html.BeginForm("EntrarListaEspera", "Cursos", new { cursoId = Model.Curso.Id }, FormMethod.Post, null, new { @class = "space-y-4" }))
-                    {
+                    <form asp-controller="Cursos" asp-action="EntrarListaEspera" method="post" class="space-y-4">
+                        @Html.HiddenFor(m => m.Curso.Id)
+    
                         <div>
-                            @Html.LabelFor(m => m.ListaEspera.Nome, new { @class = "block text-sm font-medium text-gray-200 mb-1" })
-                            @Html.TextBoxFor(m => m.ListaEspera.Nome, new { @class = "w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500", placeholder = "Seu nome completo" })
-                            @Html.ValidationMessageFor(m => m.ListaEspera.Nome, "", new { @class = "text-red-500 text-sm mt-1" })
+                            <label asp-for="ListaEspera.Nome" class="block text-sm font-medium text-gray-200 mb-1">Nome completo</label>
+                            <input asp-for="ListaEspera.Nome" 
+                                   class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500" 
+                                   placeholder="Seu nome completo" />
+                            <span asp-validation-for="ListaEspera.Nome" class="text-red-500 text-sm mt-1"></span>
                         </div>
 
                         <div>
-                            @Html.LabelFor(m => m.ListaEspera.Email, new { @class = "block text-sm font-medium text-gray-200 mb-1" })
-                            @Html.TextBoxFor(m => m.ListaEspera.Email, new { @class = "w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500", placeholder = "seu@email.com", type = "email" })
-                            @Html.ValidationMessageFor(m => m.ListaEspera.Email, "", new { @class = "text-red-500 text-sm mt-1" })
+                            <label asp-for="ListaEspera.Email" class="block text-sm font-medium text-gray-200 mb-1">E-mail</label>
+                            <input asp-for="ListaEspera.Email" 
+                                   type="email" 
+                                   class="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-400 focus:border-red-500 focus:ring-1 focus:ring-red-500" 
+                                   placeholder="seu@email.com" />
+                            <span asp-validation-for="ListaEspera.Email" class="text-red-500 text-sm mt-1"></span>
                         </div>
 
                         <button type="submit" class="w-full bg-red-500 text-white py-3 rounded-md hover:bg-red-600 transition-colors">
                             Entrar na Lista de Espera
                         </button>
-                    }
+
+                        <p class="text-sm text-gray-400 text-center">
+                            Prometemos não enviar spam. Você pode cancelar a qualquer momento.
+                        </p>
+                    </form>
                 }
             </div>
         </div>
