@@ -1,17 +1,16 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using site.diogocosta.dev.Contratos.Entrada;
 using site.diogocosta.dev.Models;
-using site.diogocosta.dev.Servicos;
+using site.diogocosta.dev.Servicos.Interfaces;
 
 namespace site.diogocosta.dev.Controllers;
 
-
 public class HomeController : Controller
 {
-    private readonly IMauticService _mauticService;
-    public HomeController(IMauticService mauticService)
+    private readonly INewsletterService _newsletterService;
+    public HomeController(INewsletterService newsletterService)
     {
-        _mauticService = mauticService;
+        _newsletterService = newsletterService;
     }
     public IActionResult Index()
     {
@@ -50,23 +49,19 @@ public class HomeController : Controller
 
         try
         {
-            var mauticContact = new MauticContact
+            var usuarioNewsletter = new UsuarioNewsletter
             {
                 Email = model.Email,
-                FirstName = "",
-                LastName = ""
+                Nome = ""
             };
 
-//            var (success, message) =  await _mauticService.AdicionarContatoAsync(mauticContact);
-            var (success, message) =  await _mauticService.AdicionarContatoAsync(mauticContact, 1);
-
-            if (success)
+            if (await _newsletterService.CadastrarUsuarioAsync(usuarioNewsletter))
             {
-                TempData["Success"] = message;
+                TempData["Success"] = "Seu cadastro foi realizado com sucesso!";
             }
             else
             {
-                TempData["Error"] = message;
+                TempData["Error"] = "Houve um erro ao realizar seu cadastrar.";
             }
         }
         catch (Exception)
@@ -76,7 +71,4 @@ public class HomeController : Controller
 
         return RedirectToAction("Index");
     }
-    
-    
-    
 }

@@ -1,31 +1,33 @@
+using site.diogocosta.dev.Extentions;
+using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos;
+using site.diogocosta.dev.Servicos.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.ConfigureSerilog();
 
-builder.Services.AddHttpClient<IMauticService, MauticService>();
+builder.Services.AddHttpClient<INewsletterService, N8nNewsletterService>(client =>
+{
+    client.DefaultRequestHeaders.Add("User-Agent", "NewsletterService");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
 
+builder.Services.Configure<NewsletterSettings>(
+    builder.Configuration.GetSection("NewsletterSettings"));
 
 var app = builder.Build();
 
-
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
-//app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
