@@ -1,10 +1,26 @@
+using Microsoft.AspNetCore.DataProtection;
 using Serilog;
 using site.diogocosta.dev.Extentions;
 using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos;
 using site.diogocosta.dev.Servicos.Interfaces;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var redis = ConnectionMultiplexer.Connect(new ConfigurationOptions
+{
+    EndPoints = { "185.182.186.116:6379" },
+    Password = "Did@40csbr", 
+    DefaultDatabase = 0,
+    AbortOnConnectFail = false,
+    AllowAdmin = true
+});
+
+builder.Services.AddDataProtection()
+    .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys")
+    .SetApplicationName("Site Código Central");
+
 
 builder.Services.AddControllersWithViews();
 builder.ConfigureSerilog();
