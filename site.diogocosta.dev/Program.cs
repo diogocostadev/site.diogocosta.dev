@@ -1,3 +1,4 @@
+using Serilog;
 using site.diogocosta.dev.Extentions;
 using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos;
@@ -31,5 +32,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+Log.Information($"Sistema iniciado em {DateTime.Now}");
 
 app.Run();
