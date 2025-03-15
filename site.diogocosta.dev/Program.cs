@@ -8,18 +8,43 @@ using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var redis = ConnectionMultiplexer.Connect(new ConfigurationOptions
+// Improved Redis connection configuration
+var redisConfigOptions = new ConfigurationOptions
 {
     EndPoints = { "185.182.186.116:6379" },
     Password = "Did@40csbr", 
     DefaultDatabase = 0,
     AbortOnConnectFail = false,
-    AllowAdmin = true
-});
+    ConnectTimeout = 10000,          // Increase timeout to 10 seconds
+    SyncTimeout = 10000,             // Increase sync timeout
+    ConnectRetry = 5,                // Retry connection 5 times
+    ReconnectRetryPolicy = new ExponentialRetry(5000), // Exponential backoff
+    KeepAlive = 60                   // Send keepalive every 60 seconds
+};
 
-builder.Services.AddDataProtection()
-    .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys")
-    .SetApplicationName("Site Código Central");
+// Create Redis connection with error handling
+ConnectionMultiplexer redis;
+try
+{
+    redis = ConnectionMultiplexer.Connect(redisConfigOptions);
+    builder.Services.AddSingleton<IConnectionMultiplexer>(redis);
+    
+    // Configure data protection with Redis
+    builder.Services.AddDataProtection()
+        .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys")
+        .SetApplicationName("Site Diogo Costa Dev");
+        
+    Log.Information("Successfully connected to Redis for data protection");
+}
+catch (Exception ex)
+{
+    Log.Error(ex, "Failed to connect to Redis. Falling back to file system for data protection");
+    
+    // Fallback to file system persistence if Redis connection fails
+    builder.Services.AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(Path.Combine(builder.Environment.ContentRootPath, "DataProtection-Keys")))
+        .SetApplicationName("Site Diogo Costa Dev");
+}
 
 
 builder.Services.AddControllersWithViews();
