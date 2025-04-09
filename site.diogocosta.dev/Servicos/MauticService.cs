@@ -6,9 +6,9 @@ namespace site.diogocosta.dev.Servicos;
 
 public class MauticContact
 {
-    public string Email { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public string Email { get; set; } = default!;
+    public string FirstName { get; set; } = default!;
+    public string LastName { get; set; } = default!;
 }
 
 // Services/IMauticService.cs
