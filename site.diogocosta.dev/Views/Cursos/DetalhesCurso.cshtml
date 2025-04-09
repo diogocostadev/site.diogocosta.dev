@@ -69,8 +69,9 @@
                         </p>
                     </div>
 
-                    <form asp-controller="Cursos" asp-action="EntrarListaEspera" method="post" class="space-y-4">
-                        @Html.HiddenFor(m => m.Curso.Id)
+                    <form asp-controller="Cursos" asp-action="EntrarListaEspera" asp-route-cursoId="@Model.Curso.Id" method="post" class="space-y-4">
+                        <input type="hidden" name="cursoId" value="@Model.Curso.Id" />
+                        @* @Html.HiddenFor(m => m.Curso.Id)  <- Não é mais estritamente necessário, mas pode deixar se quiser *@
     
                         <div>
                             <label asp-for="ListaEspera.Nome" class="block text-sm font-medium text-gray-200 mb-1">Nome completo</label>
