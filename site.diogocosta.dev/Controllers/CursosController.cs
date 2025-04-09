@@ -84,8 +84,9 @@ public class CursosController : Controller
 
 
     [HttpPost]
-    public async Task<IActionResult> EntrarListaEspera(DetalheCursoViewModel viewModel)
+    public async Task<IActionResult> EntrarListaEspera(string cursoId, DetalheCursoViewModel viewModel)
     {
+        // Limpar erros de validação relacionados a Curso
         foreach (var key in ModelState.Keys.ToList())
         {
             if (key.StartsWith("Curso."))
@@ -93,26 +94,21 @@ public class CursosController : Controller
                 ModelState.Remove(key);
             }
         }
+        
+        // Remover validação do curso
+        ModelState.Remove("Curso");
 
-        if (!ModelState.IsValid)
+        var curso = _cursos.FirstOrDefault(c => c.Id == cursoId);
+        if (curso == null)
         {
-            var curso = _cursos.FirstOrDefault(c => c.Id == viewModel.Curso.Id);
-            if (curso != null)
-            {
-                viewModel.Curso = curso;
-            }
-            return View("DetalhesCurso", viewModel);
+            TempData["Error"] = "Curso inválido.";
+            return RedirectToAction("Index");
         }
         
+        viewModel.Curso = curso;
+
         if (!ModelState.IsValid)
         {
-            // Recarrega os dados do curso
-            var curso = _cursos.FirstOrDefault(c => c.Id == viewModel.Curso.Id);
-            if (curso != null)
-            {
-                viewModel.Curso = curso;
-            }
-
             return View("DetalhesCurso", viewModel);
         }
 
@@ -126,23 +122,20 @@ public class CursosController : Controller
 
             if (await _newsletterService.CadastrarUsuarioAsync(usuarioNewsletter))
             {
-                TempData["MensagemSucesso"] = "Seu cadastro foi criado com sucesso!";
-                return RedirectToAction("DetalhesCurso", new { id = viewModel.Curso.Id });
+                TempData["MensagemSucesso"] = "Seu cadastro na lista de espera foi criado com sucesso!";
+                return RedirectToAction("DetalhesCurso", new { id = cursoId });
             }
             else
             {
-                TempData["Error"] = "Houve um erro ao realizar seu cadastrar.";
+                ModelState.AddModelError("", "Houve um erro ao realizar seu cadastro na lista de espera.");
             }
-
-            ModelState.AddModelError("", "Houve um erro ao realizar seu cadastrar.");
-            viewModel.Curso = _cursos.FirstOrDefault(c => c.Id == viewModel.Curso.Id);
-            return View("DetalhesCurso", viewModel);
         }
         catch (Exception ex)
         {
-            ModelState.AddModelError("", "Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente mais tarde.");
-            viewModel.Curso = _cursos.FirstOrDefault(c => c.Id == viewModel.Curso.Id);
-            return View("DetalhesCurso", viewModel);
+            Console.WriteLine($"Erro ao processar lista de espera: {ex.Message}");
+            ModelState.AddModelError("", "Ocorreu um erro interno ao processar sua inscrição. Por favor, tente novamente mais tarde.");
         }
+        
+        return View("DetalhesCurso", viewModel);
     }
 }

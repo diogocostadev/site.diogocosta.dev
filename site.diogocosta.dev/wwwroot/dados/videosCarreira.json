@@ -1,0 +1,30 @@
+[
+  {
+    "Id": 1,
+    "Titulo": "Minha Jornada para Desenvolvedor: Primeiros Passos",
+    "Descricao": "Neste vídeo, compartilho como comecei na programação, os desafios e as primeiras conquistas.",
+    "UrlVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "DataPublicacao": "2023-01-15T00:00:00"
+  },
+  {
+    "Id": 2,
+    "Titulo": "A Importância de Comunidades e Networking",
+    "Descricao": "Como participar de comunidades e fazer networking acelerou minha carreira.",
+    "UrlVideo": "https://www.youtube.com/embed/oHg5SJYRHA0",
+    "DataPublicacao": "2023-05-20T00:00:00"
+  },
+  {
+    "Id": 3,
+    "Titulo": "Opinião: O Futuro do Desenvolvimento Web",
+    "Descricao": "Minhas perspectivas sobre as tecnologias e tendências que moldarão o futuro do desenvolvimento web.",
+    "UrlVideo": "https://www.youtube.com/embed/C0DPdy98e4c",
+    "DataPublicacao": "2024-03-10T00:00:00"
+  },
+  {
+    "Id": 4,
+    "Titulo": "Dicas para Entrevistas Técnicas",
+    "Descricao": "Compartilho dicas e estratégias que me ajudaram a ter sucesso em entrevistas técnicas.",
+    "UrlVideo": "https://www.youtube.com/embed/QH2-TGUlwu4",
+    "DataPublicacao": "2023-11-01T00:00:00"
+  }
+] 

@@ -41,9 +41,20 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> Newsletter(NewsletterSubscription model)
     {
+        bool success = false;
+        string message = "";
+        
         if (!ModelState.IsValid)
         {
-            TempData["Error"] = "Por favor, insira um email válido.";
+            message = "Por favor, insira um email válido.";
+            
+            // Verifica se é uma requisição AJAX
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = false, message = message });
+            }
+            
+            TempData["Error"] = message;
             return RedirectToAction("Index");
         }
 
@@ -57,18 +68,35 @@ public class HomeController : Controller
 
             if (await _newsletterService.CadastrarUsuarioAsync(usuarioNewsletter))
             {
-                TempData["Success"] = "Seu cadastro foi realizado com sucesso!";
+                success = true;
+                message = "Seu cadastro foi realizado com sucesso!";
             }
             else
             {
-                TempData["Error"] = "Houve um erro ao realizar seu cadastrar.";
+                message = "Houve um erro ao realizar seu cadastro.";
             }
         }
         catch (Exception)
         {
-            TempData["Error"] = "Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente mais tarde.";
+            message = "Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente mais tarde.";
         }
-
+        
+        // Define a mensagem no TempData com base no resultado
+        if (success)
+        {
+            TempData["Success"] = message;
+        }
+        else
+        {
+            TempData["Error"] = message;
+        }
+        
+        // Verifica se é uma requisição AJAX
+        if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+        {
+            return Json(new { success = success, message = message });
+        }
+        
         return RedirectToAction("Index");
     }
 }
