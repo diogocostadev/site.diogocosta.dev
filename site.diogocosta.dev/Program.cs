@@ -8,19 +8,20 @@ using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var redis = ConnectionMultiplexer.Connect(new ConfigurationOptions
+//--------------------------------------------
+// Substituir Redis por armazenamento em arquivo
+var keysDirectory = Path.Combine(builder.Environment.ContentRootPath, "DataProtection-Keys");
+
+// Garantir que o diretório existe
+if (!Directory.Exists(keysDirectory))
 {
-    EndPoints = { "185.182.186.116:6379" },
-    Password = "Did@40csbr", 
-    DefaultDatabase = 0,
-    AbortOnConnectFail = false,
-    AllowAdmin = true
-});
+    Directory.CreateDirectory(keysDirectory);
+}
 
 builder.Services.AddDataProtection()
-    .PersistKeysToStackExchangeRedis(redis, "DataProtection-Keys")
-    .SetApplicationName("Site Código Central");
-
+    .PersistKeysToFileSystem(new DirectoryInfo(keysDirectory))
+    .SetApplicationName("Site Diogo Costa Dev");
+//--------------------------------------------
 
 builder.Services.AddControllersWithViews();
 builder.ConfigureSerilog();
