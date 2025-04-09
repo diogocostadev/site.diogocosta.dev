@@ -1,6 +1,6 @@
-@model List<site.diogocosta.dev.Models.VideoCarreira>
+@model (List<site.diogocosta.dev.Models.VideoCarreira> Videos, NewsletterSubscription Newsletter)
 @{
-    ViewData["Title"] = "Carreira e Opiniões";
+    ViewData["Title"] = "Carreira";
     Layout = "~/Views/Shared/_Layout.cshtml";
     
     // Criar modelo para o formulário
@@ -16,7 +16,7 @@
 
 <div class="bg-[#0A192F] py-16">
     <div class="container mx-auto px-4">
-        @if (Model == null || !Model.Any())
+        @if (Model.Videos == null || !Model.Videos.Any())
         {
             <div class="text-center py-16">
                 <p class="text-white text-xl">Nenhum vídeo encontrado.</p>
@@ -25,9 +25,9 @@
         else
         {
             <div class="space-y-16">
-                @for (int i = 0; i < Model.Count; i++)
+                @for (int i = 0; i < Model.Videos.Count; i++)
                 {
-                    var video = Model[i];
+                    var video = Model.Videos[i];
                     var isEven = i % 2 == 0;
                     
                     <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800">
