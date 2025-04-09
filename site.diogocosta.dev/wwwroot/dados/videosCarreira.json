@@ -1,30 +1,30 @@
 [
   {
     "Id": 1,
-    "Titulo": "Minha Jornada para Desenvolvedor: Primeiros Passos",
-    "Descricao": "Neste vídeo, compartilho como comecei na programação, os desafios e as primeiras conquistas.",
-    "UrlVideo": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "DataPublicacao": "2023-01-15T00:00:00"
+    "Titulo": "Como Tudo Começou – Minha Jornada Pessoal",
+    "Descricao": "Neste vídeo, compartilho de onde vim, como minha história se entrelaça com as decisões que tomei na vida e o que me levou a empreender. Uma conversa direta, verdadeira e cheia de aprendizados sobre origem, propósito e escolha. Se você quer entender a essência por trás do que faço, esse é o ponto de partida.",
+    "UrlVideo": "https://www.youtube.com/embed/T_3FNG3Z46A?si=WnDBayyexvNuaICG",
+    "DataPublicacao": "2025-04-06"
   },
   {
     "Id": 2,
-    "Titulo": "A Importância de Comunidades e Networking",
-    "Descricao": "Como participar de comunidades e fazer networking acelerou minha carreira.",
-    "UrlVideo": "https://www.youtube.com/embed/oHg5SJYRHA0",
-    "DataPublicacao": "2023-05-20T00:00:00"
+    "Titulo": "As Dores que me Moldaram – Transformando Crises em Caminhos",
+    "Descricao": "Nem tudo são flores. Aqui eu abro o jogo sobre os desafios que enfrentei, os momentos em que pensei em desistir e como cada queda me empurrou para um novo nível. Esse vídeo é sobre vulnerabilidade, superação e a força invisível que nos move quando tudo parece difícil.",
+    "UrlVideo": "https://www.youtube.com/embed/dl-8f506eWc?si=nrF21g6WhhQWrd0B",
+    "DataPublicacao": "2025-04-07"
   },
   {
     "Id": 3,
-    "Titulo": "Opinião: O Futuro do Desenvolvimento Web",
-    "Descricao": "Minhas perspectivas sobre as tecnologias e tendências que moldarão o futuro do desenvolvimento web.",
-    "UrlVideo": "https://www.youtube.com/embed/C0DPdy98e4c",
-    "DataPublicacao": "2024-03-10T00:00:00"
+    "Titulo": "Criações que Impactam – O que Já Construí e o que Ainda Está por Vir",
+    "Descricao": "Neste episódio, mostro os projetos que nasceram do meu coração e da minha mente. Falo das soluções que criei, dos produtos e serviços que colocaram ideias no mundo – com erros, acertos e aprendizados. Se você quer saber do meu trabalho e daquilo que ofereço, este é o vídeo certo.",
+    "UrlVideo": "https://www.youtube.com/embed/7Br8o4MW-UQ?si=vB6_mlIO5_mbwfHp",
+    "DataPublicacao": "2025-04-08"
   },
   {
     "Id": 4,
-    "Titulo": "Dicas para Entrevistas Técnicas",
-    "Descricao": "Compartilho dicas e estratégias que me ajudaram a ter sucesso em entrevistas técnicas.",
-    "UrlVideo": "https://www.youtube.com/embed/QH2-TGUlwu4",
-    "DataPublicacao": "2023-11-01T00:00:00"
+    "Titulo": " O que me Move Hoje – Visão, Propósito e Futuro",
+    "Descricao": "Fechando essa série com chave de ouro, compartilho a visão que guia cada passo que dou agora. Falo do que acredito, do impacto que desejo gerar e do porquê continuo mesmo diante das incertezas. Este vídeo é um convite para caminhar junto, com clareza e intenção.",
+    "UrlVideo": "https://www.youtube.com/embed/r1-I6_WlpLo?si=WohLDNcZHXd3aZWF",
+    "DataPublicacao": "2025-04-09"
   }
 ] 
