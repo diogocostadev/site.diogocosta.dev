@@ -7,10 +7,15 @@ public static class ConfigLog
 {
     public static void ConfigureSerilog(this WebApplicationBuilder builder)
     {
+        // Define o nível mínimo de log baseado no ambiente
+        var minimumLevel = builder.Environment.IsDevelopment() 
+            ? LogEventLevel.Information 
+            : LogEventLevel.Warning;
+
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Information()
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-            .MinimumLevel.Override("System", LogEventLevel.Information)
+            .MinimumLevel.Is(minimumLevel)
+            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+            .MinimumLevel.Override("System", LogEventLevel.Warning)
             .Enrich.FromLogContext()
             .Enrich.WithMachineName()
             .Enrich.WithThreadId()
