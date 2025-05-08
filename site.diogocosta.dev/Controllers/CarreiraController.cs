@@ -10,6 +10,7 @@ using System.Threading.Tasks; // Para Task<T>
 using site.diogocosta.dev.Contratos.Entrada;
 using site.diogocosta.dev.Servicos.Interfaces;
 using System; // Para Exception
+using Microsoft.Extensions.Logging; // Para ILogger
 
 namespace site.diogocosta.dev.Controllers
 {
@@ -17,29 +18,35 @@ namespace site.diogocosta.dev.Controllers
     {
         private readonly IWebHostEnvironment _hostingEnvironment;
         private readonly INewsletterService _newsletterService;
+        private readonly ILogger<CarreiraController> _logger;
 
-        public CarreiraController(IWebHostEnvironment hostingEnvironment, INewsletterService newsletterService)
+        public CarreiraController(IWebHostEnvironment hostingEnvironment, INewsletterService newsletterService, ILogger<CarreiraController> logger)
         {
             _hostingEnvironment = hostingEnvironment;
             _newsletterService = newsletterService;
+            _logger = logger;
         }
 
         public async Task<IActionResult> Index()
         {
             var videos = await LoadVideosFromJsonAsync();
             var videosOrdenados = videos.OrderByDescending(v => v.DataPublicacao).ToList();
-            return View(videosOrdenados);
+            return View((Videos: videosOrdenados, Newsletter: new NewsletterSubscription()));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Newsletter([FromBody] NewsletterSubscription model)
+        public async Task<IActionResult> Newsletter(NewsletterSubscription model)
         {
+            _logger.LogInformation("Recebendo requisição de newsletter com email: {Email}", model.Email);
+            
             bool success = false;
             string message = "";
             
             if (!ModelState.IsValid)
             {
                 message = "Por favor, insira um email válido.";
+                _logger.LogWarning("Modelo inválido para newsletter: {Errors}", 
+                    string.Join(", ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)));
                 
                 // Verifica se é uma requisição AJAX
                 if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
@@ -63,15 +70,18 @@ namespace site.diogocosta.dev.Controllers
                 {
                     success = true;
                     message = "Seu cadastro foi realizado com sucesso!";
+                    _logger.LogInformation("Usuário cadastrado com sucesso na newsletter: {Email}", model.Email);
                 }
                 else
                 {
                     message = "Houve um erro ao realizar seu cadastro.";
+                    _logger.LogWarning("Falha ao cadastrar usuário na newsletter: {Email}", model.Email);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 message = "Ocorreu um erro ao processar sua inscrição. Por favor, tente novamente mais tarde.";
+                _logger.LogError(ex, "Erro ao processar inscrição na newsletter: {Email}", model.Email);
             }
             
             // Define a mensagem no TempData com base no resultado

@@ -71,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch(endpoint, {
                 method: 'POST',
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: new URLSearchParams(formData)
             })
