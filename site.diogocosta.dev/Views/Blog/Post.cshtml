@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = ViewData["Title"] ?? "Post";
+    var html = ViewData["Content"]?.ToString() ?? "";
+}
+
+<div class="container py-5">
+    <article class="prose max-w-none">
+        @Html.Raw(html)
+    </article>
+</div>
