@@ -131,10 +131,15 @@
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center h-16">
             <a asp-controller="Home" asp-action="Index" class="text-xl text-gray-900">Diogo Costa</a>
-            <div class="flex items-center space-x-8">
-                <a asp-controller="Sobre" asp-action="Index" class="text-gray-600 hover:text-gray-900">Sobre mim</a>
-                <a asp-controller="Cursos" asp-action="Index" class="text-gray-600 hover:text-gray-900">Nossos cursos</a>
-                <a asp-controller="Carreira" asp-action="Index" class="text-gray-600 hover:text-gray-900">Carreira</a>
+            <div class="flex items-center space-x-6">
+                <a asp-controller="Home" asp-action="Index" class="text-gray-600 hover:text-gray-900">Início</a>
+                <a asp-controller="Sobre" asp-action="Index" class="text-gray-600 hover:text-gray-900">Sobre Mim</a>
+                <a asp-controller="Cursos" asp-action="Index" class="text-gray-600 hover:text-gray-900">Cursos e Mentorias</a>
+                <a href="/blog" class="text-gray-600 hover:text-gray-900">Blog / Conteúdo</a>
+                <a href="https://comunidade.diogocosta.dev" class="text-gray-600 hover:text-gray-900">Comunidade</a>
+                <a href="https://weper.vip4.link" class="text-gray-600 hover:text-gray-900">Ferramentas</a>
+                <a href="/resultados" class="text-gray-600 hover:text-gray-900">Resultados</a>
+                <a asp-controller="Contato" asp-action="Index" class="text-gray-600 hover:text-gray-900">Contato</a>
                 <div class="relative">
                     <button id="joinButton" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
                         Junte-se a +1000 leitores
@@ -165,6 +170,7 @@
             <div>
                 <a href="/" class="text-xl font-serif">Diogo Costa</a>
                 <p class="text-sm text-gray-500">© @DateTime.Now.Year Diogo Costa - b.v.0.1.0</p>
+                <p class="text-sm text-gray-500 mt-1">Diogo Costa é MVP Microsoft e criador do método DC360 — uma abordagem prática para transformar código em negócio.</p>
                 
             </div>
             <div class="flex space-x-6">
