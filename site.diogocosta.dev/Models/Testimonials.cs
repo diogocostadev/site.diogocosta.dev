@@ -8,15 +8,15 @@ public class Testimonial
     
     [Required]
     [StringLength(100)]
-    public string Name { get; set; }
+    public string Name { get; set; } = default!;
 
     [Required]
     [StringLength(1000)]
-    public string Content { get; set; }
+    public string Content { get; set; } = default!;
 
     [Required]
     [StringLength(200)]
-    public string ImageUrl { get; set; }
+    public string ImageUrl { get; set; } = default!;
 
     // Opcional - pode ser útil para ordenação/filtro
     public DateTime CreatedAt { get; set; } = DateTime.Now;

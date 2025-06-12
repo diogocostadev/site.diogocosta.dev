@@ -1,7 +1,8 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using site.diogocosta.dev.Contratos.Entrada;
 using site.diogocosta.dev.Dados;
 using site.diogocosta.dev.Models;
+using site.diogocosta.dev.Servicos.Interfaces;
 using site.diogocosta.dev.ViewModels;
 
 namespace site.diogocosta.dev.Controllers;
@@ -9,6 +10,12 @@ namespace site.diogocosta.dev.Controllers;
 
 public class CursosController : Controller
 {
+    private readonly INewsletterService _newsletterService;
+    public CursosController(INewsletterService newsletterService)
+    {
+        _newsletterService = newsletterService;
+    }
+    
     public IActionResult Index()
     {
         var viewModel = new TestimonialViewModel
@@ -75,23 +82,60 @@ public class CursosController : Controller
         return View(viewModel);
     }
 
+
     [HttpPost]
-    public IActionResult EntrarListaEspera(string cursoId, FormularioEsperaModel modelo)
+    public async Task<IActionResult> EntrarListaEspera(string cursoId, DetalheCursoViewModel viewModel)
     {
+        // Limpar erros de validação relacionados a Curso
+        foreach (var key in ModelState.Keys.ToList())
+        {
+            if (key.StartsWith("Curso."))
+            {
+                ModelState.Remove(key);
+            }
+        }
+        
+        // Remover validação do curso
+        ModelState.Remove("Curso");
+
+        var curso = _cursos.FirstOrDefault(c => c.Id == cursoId);
+        if (curso == null)
+        {
+            TempData["Error"] = "Curso inválido.";
+            return RedirectToAction("Index");
+        }
+        
+        viewModel.Curso = curso;
+
         if (!ModelState.IsValid)
         {
-            var curso = _cursos.FirstOrDefault(c => c.Id == cursoId);
-            return View("DetalhesCurso", new DetalheCursoViewModel 
-            { 
-                Curso = curso, 
-                ListaEspera = modelo 
-            });
+            return View("DetalhesCurso", viewModel);
         }
 
-        // Aqui você implementaria a lógica para salvar na lista de espera
-        TempData["MensagemSucesso"] = "Inscrição realizada com sucesso! Você será notificado quando novas vagas forem abertas.";
-        
-        return RedirectToAction("DetalhesCurso", new { id = cursoId });
-    }
+        try
+        {
+            var usuarioNewsletter = new UsuarioNewsletter
+            {
+                Email = viewModel.ListaEspera.Email,
+                Nome = viewModel.ListaEspera.Nome
+            };
 
+            if (await _newsletterService.CadastrarUsuarioAsync(usuarioNewsletter))
+            {
+                TempData["MensagemSucesso"] = "Seu cadastro na lista de espera foi criado com sucesso!";
+                return RedirectToAction("DetalhesCurso", new { id = cursoId });
+            }
+            else
+            {
+                ModelState.AddModelError("", "Houve um erro ao realizar seu cadastro na lista de espera.");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao processar lista de espera: {ex.Message}");
+            ModelState.AddModelError("", "Ocorreu um erro interno ao processar sua inscrição. Por favor, tente novamente mais tarde.");
+        }
+        
+        return View("DetalhesCurso", viewModel);
+    }
 }

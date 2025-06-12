@@ -1,8 +1,30 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YZHXVSL7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-0YZHXVSL7M');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K4FFVLNX');</script>
+    <!-- End Google Tag Manager -->
+    
+    
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Diogo Costa - Transformando seu código em </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,14 +67,64 @@
             }
         }
     </script>
-    
+
     <link rel="icon" type="image/png" href="~/img/D.png">
     <!-- Para garantir compatibilidade com diferentes dispositivos -->
     <link rel="apple-touch-icon" sizes="180x180" href="~/img/D.png">
     <link rel="icon" type="image/png" sizes="32x32" href="~/img/D.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/img/D.png">
+
+    <meta name="title" content="Diogo Costa - Transformando Programadores em Empreendedores">
+
+    <!-- Descrição -->
+    <meta name="description" content="Aprenda a transformar suas habilidades de programação em um negócio lucrativo. Cursos e mentorias para programadores que desejam liberdade financeira e profissional.">
+
+    <!-- Palavras-Chave -->
+    <meta name="keywords" content="programação, empreendedorismo, cursos de programação, C#, DevOps, negócios digitais, monetização, desenvolvimento de software">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Autor -->
+    <meta name="author" content="Diogo Costa">
+
+    <!-- Open Graph (para compartilhamento em redes sociais) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.diogocosta.dev">
+    <meta property="og:title" content="Diogo Costa - Transformando Programadores em Empreendedores">
+    <meta property="og:description" content="Aprenda a transformar suas habilidades de programação em um negócio lucrativo. Cursos e mentorias para programadores que desejam liberdade financeira e profissional.">
+    <meta property="og:image" content="https://www.diogocosta.dev/img/logome.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.diogocosta.dev">
+    <meta name="twitter:title" content="Diogo Costa - Transformando Programadores em Empreendedores">
+    <meta name="twitter:description" content="Aprenda a transformar suas habilidades de programação em um negócio lucrativo. Cursos e mentorias para programadores que desejam liberdade financeira e profissional.">
+    <meta name="twitter:image" content="https://www.diogocosta.dev/img/logome.webp">
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//matomo.codigocentral.com.br/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '7']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+
 </head>
 <body class="bg-white">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4FFVLNX"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- Navigation -->
 <nav class="fixed-nav border-b shadow-sm">
@@ -62,24 +134,17 @@
             <div class="flex items-center space-x-8">
                 <a asp-controller="Sobre" asp-action="Index" class="text-gray-600 hover:text-gray-900">Sobre mim</a>
                 <a asp-controller="Cursos" asp-action="Index" class="text-gray-600 hover:text-gray-900">Nossos cursos</a>
+                <a asp-controller="Carreira" asp-action="Index" class="text-gray-600 hover:text-gray-900">Carreira</a>
                 <div class="relative">
                     <button id="joinButton" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
                         Junte-se a +1000 leitores
                     </button>
                     <!-- Dropdown Form -->
                     <div id="subscribeForm" class="dropdown-form">
-                        <div class="space-y-4">
-                            <input type="email"
-                                   placeholder="Seu melhor Email"
-                                   class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
-                            <button type="submit"
-                                    class="w-full bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
-                                Inscreva-se
-                            </button>
-                            <p class="text-sm text-gray-500 text-center">
-                                Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.
-                            </p>
-                        </div>
+                        @{
+                            ViewBag.FormId = "headerForm";
+                        }
+                        <partial name="_NewsletterForm" />
                     </div>
                 </div>
             </div>
@@ -99,32 +164,83 @@
         <div class="flex justify-between items-center">
             <div>
                 <a href="/" class="text-xl font-serif">Diogo Costa</a>
-                <p class="text-sm text-gray-500">© 2024 Diogo Costa</p>
+                <p class="text-sm text-gray-500">© @DateTime.Now.Year Diogo Costa - b.v.0.1.0</p>
+                
             </div>
             <div class="flex space-x-6">
                 <a asp-controller="Home" asp-action="Privacy" class="text-sm text-gray-500">Política de privacidade</a>
                 <a asp-controller="Home" asp-action="Termo" class="text-sm text-gray-500">Termo de uso</a>
                 <a asp-controller="Contato" asp-action="Index" class="text-sm text-gray-500">Entre em contato</a>
+                
             </div>
             <div class="flex space-x-4">
-                <a href="#" class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">Twitter</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                    </svg>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-gray-500">
+
+                <a href="https://linkedin.com/in/diogotj" target="_blank" class="text-gray-400 hover:text-gray-500">
                     <span class="sr-only">LinkedIn</span>
                     <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
                     </svg>
                 </a>
+
+                <a href="https://x.com/diogocostadev" target="_blank"  class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">X (Twitter)</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+                    </svg>
+                </a>
+
+                <a href="https://youtube.com/diogocostadev" target="_blank"  class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">YouTube</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+
+                <a href="https://instagram.com/diogocostadev" target="_blank" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+
+                <a href="https://twitch.tv/diogocostadev" target="_blank" class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">Twitch</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/>
+                    </svg>
+                </a>
+
+                <a href='https://youtube.com/@@codigodevalor' target="_blank"  class="text-gray-400 hover:text-gray-500">
+                    <span class="sr-only">YouTube</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </a>
+                
             </div>
         </div>
     </div>
 </footer>
 
-@await RenderSectionAsync("Scripts", required: false)
+@RenderSection("Scripts", required: false)
+
+<script>
+    // Script global para lidar com as mensagens de feedback dos formulários
+    document.addEventListener('DOMContentLoaded', function() {
+        // Remove mensagens de feedback após 5 segundos
+        setTimeout(function() {
+            const feedbacks = document.querySelectorAll('.bg-green-100, .bg-red-100');
+            feedbacks.forEach(function(element) {
+                element.style.transition = 'opacity 0.5s ease-out';
+                element.style.opacity = '0';
+                setTimeout(function() {
+                    element.style.display = 'none';
+                }, 500);
+            });
+        }, 5000);
+    });
+</script>
+
 <script>
     window.addEventListener('scroll', function() {
         var nav = document.querySelector('nav');
@@ -136,31 +252,7 @@
     });
 </script>
 
-<script>
-    const joinButton = document.getElementById('joinButton');
-    const subscribeForm = document.getElementById('subscribeForm');
-    let isFormOpen = false;
-
-    // Toggle do formulário
-    joinButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        isFormOpen = !isFormOpen;
-        subscribeForm.classList.toggle('active');
-    });
-
-    // Fecha o formulário ao clicar fora
-    document.addEventListener('click', (e) => {
-        if (isFormOpen && !subscribeForm.contains(e.target)) {
-            subscribeForm.classList.remove('active');
-            isFormOpen = false;
-        }
-    });
-
-    // Previne o fechamento ao clicar dentro do formulário
-    subscribeForm.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-</script>
+<script src="~/js/newsletter.js"></script>
 
 </body>
 </html>

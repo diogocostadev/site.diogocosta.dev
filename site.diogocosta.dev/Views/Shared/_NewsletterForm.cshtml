@@ -1,0 +1,43 @@
+@{
+    var formId = ViewBag.FormId ?? "newsletterForm";
+    var fullWidthButton = ViewBag.FullWidthButton ?? true;
+    var submitButtonClass = fullWidthButton 
+        ? "mt-2 bg-blue-600 text-white px-6 py-2 rounded-md w-full hover:bg-blue-700" 
+        : "mt-2 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700";
+}
+
+<div id="@(formId + "Container")">
+    <form id="@formId" class="space-y-4">
+        <div>
+            <input type="email" 
+                  name="Email" 
+                  class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" 
+                  placeholder="Seu melhor e-mail"
+                  required>
+            <button type="submit" class="@submitButtonClass">
+                Inscreva-se
+            </button>
+        </div>
+        <p class="text-sm text-gray-500 text-center">
+            Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.
+        </p>
+    </form>
+    
+    <div id="@(formId + "Message")" class="mt-4 hidden">
+        <!-- Mensagem de sucesso ou erro será inserida aqui via JavaScript -->
+    </div>
+    
+    @if (TempData["Success"] != null)
+    {
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4" role="alert">
+            <span class="block sm:inline">@TempData["Success"]</span>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
+            <span class="block sm:inline">@TempData["Error"]</span>
+        </div>
+    }
+</div> 

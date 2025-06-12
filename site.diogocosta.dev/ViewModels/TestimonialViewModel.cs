@@ -14,5 +14,5 @@ public class TestimonialViewModel
         public List<string> StudentAvatars { get; set; } = new List<string>();
     }
 
-    public CourseRatingSummary RatingSummary { get; set; }
+    public CourseRatingSummary RatingSummary { get; set; } = default!;
 }
