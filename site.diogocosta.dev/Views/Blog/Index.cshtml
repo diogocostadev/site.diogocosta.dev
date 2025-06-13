@@ -1,0 +1,187 @@
+@model site.diogocosta.dev.Controllers.BlogIndexViewModel
+@{
+    ViewData["Title"] = "Blog - Diogo Costa";
+}
+
+<div class="bg-white min-h-screen">
+    <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <!-- Header -->
+        <div class="mx-auto max-w-4xl text-center mb-16">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-4">Blog</h1>
+            <p class="text-lg leading-8 text-gray-600 mb-2">
+                Conteúdo sobre desenvolvimento, carreira e empreendedorismo.
+            </p>
+            @if (Model.TotalPosts > 0)
+            {
+                <p class="text-sm text-gray-500">
+                    @Model.TotalPosts @(Model.TotalPosts == 1 ? "artigo publicado" : "artigos publicados")
+                </p>
+            }
+        </div>
+
+        @if (Model.Posts.Any())
+        {
+            <!-- Grid de Posts -->
+            <div class="mx-auto max-w-6xl">
+                <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach (var post in Model.Posts)
+                    {
+                        <article class="group relative bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                            <!-- Imagem Placeholder -->
+                            <div class="aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 group-hover:from-blue-100 group-hover:to-indigo-200 transition-colors duration-300">
+                                <div class="flex h-full w-full items-center justify-center">
+                                    <svg class="h-12 w-12 text-blue-400 group-hover:text-blue-500 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                                        <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            
+                            <!-- Conteúdo -->
+                            <div class="p-6">
+                                <!-- Data e Categoria -->
+                                <div class="flex items-center gap-x-3 text-xs mb-3">
+                                    <time datetime="@post.Date.ToString("yyyy-MM-dd")" class="text-gray-500 font-medium">
+                                        @post.DateFormatted
+                                    </time>
+                                    <span class="inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                        Artigo
+                                    </span>
+                                </div>
+                                
+                                <!-- Título -->
+                                <h3 class="text-lg font-semibold leading-6 text-gray-900 group-hover:text-blue-600 transition-colors duration-200 mb-3">
+                                    <a href="/blog/@post.Slug" class="stretched-link">
+                                        @post.Title
+                                    </a>
+                                </h3>
+                                
+                                <!-- Resumo -->
+                                <p class="text-sm leading-6 text-gray-600 mb-4 line-clamp-3">
+                                    @post.Excerpt
+                                </p>
+                                
+                                <!-- Link de Leitura -->
+                                <div class="flex items-center">
+                                    <span class="inline-flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-500">
+                                        Ler mais
+                                        <svg class="ml-1 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    }
+                </div>
+                
+                <!-- Paginação -->
+                @if (Model.TotalPages > 1)
+                {
+                    <nav class="flex items-center justify-center mt-16" aria-label="Pagination">
+                        <div class="flex items-center space-x-2">
+                            <!-- Página Anterior -->
+                            @if (Model.HasPreviousPage)
+                            {
+                                <a href="/blog?page=@(Model.CurrentPage - 1)" 
+                                   class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 transition-colors duration-200">
+                                    <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                    </svg>
+                                    Anterior
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-300 bg-gray-50 border border-gray-200 rounded-md cursor-not-allowed">
+                                    <svg class="h-4 w-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                    </svg>
+                                    Anterior
+                                </span>
+                            }
+                            
+                            <!-- Números das Páginas -->
+                            <div class="hidden sm:flex space-x-1">
+                                @for (int i = Math.Max(1, Model.CurrentPage - 2); i <= Math.Min(Model.TotalPages, Model.CurrentPage + 2); i++)
+                                {
+                                    @if (i == Model.CurrentPage)
+                                    {
+                                        <span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-blue-600 border border-blue-600 rounded-md">
+                                            @i
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <a href="/blog?page=@i" 
+                                           class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 transition-colors duration-200">
+                                            @i
+                                        </a>
+                                    }
+                                }
+                            </div>
+                            
+                            <!-- Página Atual (Mobile) -->
+                            <div class="sm:hidden">
+                                <span class="text-sm text-gray-700">
+                                    Página @Model.CurrentPage de @Model.TotalPages
+                                </span>
+                            </div>
+                            
+                            <!-- Próxima Página -->
+                            @if (Model.HasNextPage)
+                            {
+                                <a href="/blog?page=@(Model.CurrentPage + 1)" 
+                                   class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 transition-colors duration-200">
+                                    Próxima
+                                    <svg class="h-4 w-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-300 bg-gray-50 border border-gray-200 rounded-md cursor-not-allowed">
+                                    Próxima
+                                    <svg class="h-4 w-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </span>
+                            }
+                        </div>
+                    </nav>
+                }
+            </div>
+        }
+        else
+        {
+            <!-- Estado Vazio -->
+            <div class="text-center py-16">
+                <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">Nenhum artigo encontrado</h3>
+                <p class="text-gray-500">Adicione arquivos .md na pasta Blog para começar a publicar conteúdo.</p>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style> 

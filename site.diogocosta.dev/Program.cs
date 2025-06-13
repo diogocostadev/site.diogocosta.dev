@@ -47,6 +47,14 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllerRoute(
+    name: "blog-post",
+    pattern: "blog/{slug}",
+    defaults: new { controller = "Blog", action = "Post" });
+app.MapControllerRoute(
+    name: "blog-index",
+    pattern: "blog",
+    defaults: new { controller = "Blog", action = "Index" });
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
