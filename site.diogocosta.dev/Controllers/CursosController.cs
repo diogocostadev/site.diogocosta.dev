@@ -116,7 +116,7 @@ public class CursosController : Controller
         {
             "saia-do-zero" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/saia-do-zero-3/U51428792E"),
             "dc360-programador" => Redirect("https://go.hotmart.com/H98063764C"),
-            "comunidade-didaticos" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/comunidade-didatica/S45776492D"),
+            "comunidade-didaticos" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/comunidade-didatica/S45776492D?off=8jrigzti&bid=1750538113889"),
             "mentoria-elite-backend" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/mentoria-elite-backend-com-net/O95796577O"),
             _ => NotFound()
         };
