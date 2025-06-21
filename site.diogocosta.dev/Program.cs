@@ -55,6 +55,14 @@ app.MapControllerRoute(
     pattern: "blog",
     defaults: new { controller = "Blog", action = "Index" });
 app.MapControllerRoute(
+    name: "desbloqueio",
+    pattern: "desbloqueio",
+    defaults: new { controller = "Desbloqueio", action = "Index" });
+app.MapControllerRoute(
+    name: "obrigado-desbloqueio",
+    pattern: "obrigado-desbloqueio",
+    defaults: new { controller = "Desbloqueio", action = "Obrigado" });
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

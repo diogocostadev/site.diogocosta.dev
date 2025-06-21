@@ -118,6 +118,24 @@
     </script>
     <!-- End Matomo Code -->
 
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'REPLACE_WITH_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_PIXEL_ID&amp;ev=PageView&amp;noscript=1" />
+    </noscript>
+    <!-- End Meta Pixel -->
+
 </head>
 <body class="bg-white">
 
@@ -135,6 +153,7 @@
                 <a asp-controller="Home" asp-action="Index" class="text-gray-600 hover:text-gray-900">Início</a>
                 <a asp-controller="Sobre" asp-action="Index" class="text-gray-600 hover:text-gray-900">Sobre Mim</a>
                 <a asp-controller="Cursos" asp-action="Index" class="text-gray-600 hover:text-gray-900">Cursos e Mentorias</a>
+                <a asp-controller="Desbloqueio" asp-action="Index" class="text-gray-600 hover:text-gray-900">Desbloqueio Mental</a>
                 <a href="/blog" class="text-gray-600 hover:text-gray-900">Blog / Conteúdo</a>
                 <a href="https://comunidade.didaticos.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Comunidade</a>
                 <a href="https://wepper.vip4.link" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Ferramentas</a>
@@ -176,6 +195,7 @@
                 <a asp-controller="Home" asp-action="Privacy" class="text-sm text-gray-500">Política de privacidade</a>
                 <a asp-controller="Home" asp-action="Termo" class="text-sm text-gray-500">Termo de uso</a>
                 <a asp-controller="Contato" asp-action="Index" class="text-sm text-gray-500">Entre em contato</a>
+                <a href="/desbloqueio" class="text-sm text-gray-500">👉 Baixe agora o Manual da Primeira Virada</a>
                 
             </div>
             <div class="flex space-x-4">
