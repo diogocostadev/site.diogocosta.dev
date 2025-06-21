@@ -1,18 +1,19 @@
 @model site.diogocosta.dev.ViewModels.TestimonialViewModel
 
 @{
-    ViewData["Title"] = "Courses";
+    ViewData["Title"] = "Cursos e Mentorias";
 }
 
 <!-- Hero Section -->
-<div class="bg-blue-600 text-white py-24">
+<div class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-24">
     <div class="container mx-auto px-4 text-center max-w-4xl">
-        <h1 class="text-5xl font-serif mb-8">Cursos em Vídeo para Programadores e Empreendedores</h1>
-        <p class="text-xl mb-16">
-            Recebo frequentemente perguntas de programadores que desejam transformar suas habilidades em algo maior — seja construir uma aplicação completa ou criar um negócio de sucesso. Como você, também trilhei esse caminho e aprendi muito ao longo do percurso. Por isso, reuni tudo o que sei em 2 cursos exclusivos, já utilizados por mais de 1.000 alunos para impulsionar suas carreiras e conquistar liberdade.        </p>
+        <h1 class="text-5xl md:text-6xl font-serif mb-8">Cursos e Mentorias para Programadores</h1>
+        <p class="text-xl mb-12">
+            Do zero ao profissional: cursos práticos, mentoria elite e comunidade ativa para transformar sua carreira em programação.
+        </p>
 
         <!-- Rating Section -->
-        <div class="flex justify-center items-center space-x-2">
+        <div class="flex justify-center items-center space-x-2 mb-8">
             <div class="flex -space-x-2">
                 <img src="~/img/v1.jpg" alt="Student" class="w-8 h-8 rounded-full border-2 border-white">
                 <img src="~/img/v2.jpg" alt="Student" class="w-8 h-8 rounded-full border-2 border-white">
@@ -21,232 +22,449 @@
             </div>
             <div class="flex items-center space-x-1">
                 <span class="text-yellow-400">★★★★★</span>
-                <span>4.97/5</span>
-                <span class="text-gray-200">Por 1.000+ estudantes</span>
+                <span>4.8/5</span>
+                <span class="text-blue-200">Por centenas de estudantes</span>
             </div>
+        </div>
+        
+        <div class="bg-yellow-400 text-black px-6 py-3 rounded-lg inline-block font-bold">
+            💎 MVP Microsoft com 20+ anos de experiência
         </div>
     </div>
 </div>
 
-<div class="bg-gray-50 py-24">
+<!-- Learning Paths Overview -->
+<div class="bg-gray-50 py-20">
     <div class="container mx-auto px-4 max-w-6xl">
-        <h2 class="text-4xl font-serif mb-12 text-center">Estrutura de Cursos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-                <h3 class="text-2xl font-serif mb-4">Trilha 1 — Criação com Código</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>SaaS do Zero com ASP.NET na unha</li>
-                    <li>SQL na Raiz: scripts, versionamento e clareza</li>
-                    <li>Dapper e Keycloak: leve, limpo e sob controle</li>
+        <h2 class="text-4xl font-serif mb-16 text-center">Escolha Sua Trilha de Aprendizado</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Path 1: Iniciante -->
+            <div class="text-center">
+                <div class="bg-green-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-3xl">🚀</span>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Iniciante</h3>
+                <p class="text-gray-600 mb-4">
+                    Comece do zero e construa suas primeiras aplicações
+                </p>
+                <ul class="text-left space-y-2 text-gray-600 text-sm">
+                    <li>• HTML, CSS e hospedagem</li>
+                    <li>• Fundamentos de C# e .NET</li>
+                    <li>• Primeira aplicação completa</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="text-2xl font-serif mb-4">Trilha 2 — Validação e Produto</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Mentalidade de Longo Prazo para Criadores Técnicos</li>
-                    <li>Validação e MVP para Devs</li>
-                    <li>Precificação, planos e recorrência</li>
+            
+            <!-- Path 2: Intermediário -->
+            <div class="text-center">
+                <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-3xl">👥</span>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Comunidade</h3>
+                <p class="text-gray-600 mb-4">
+                    Networking e crescimento em comunidade
+                </p>
+                <ul class="text-left space-y-2 text-gray-600 text-sm">
+                    <li>• Networking com outros devs</li>
+                    <li>• Empreendedorismo tech</li>
+                    <li>• Suporte contínuo</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="text-2xl font-serif mb-4">Trilha 3 — Escalada Técnica</h3>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Infra Dev Solo com Jenkins</li>
-                    <li>Containers e VPS: autonomia com Docker</li>
-                    <li>Keycloak Corporativo para seus projetos</li>
+            
+            <!-- Path 3: Avançado -->
+            <div class="text-center">
+                <div class="bg-purple-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-3xl">🎯</span>
+                </div>
+                <h3 class="text-2xl font-serif mb-4">Elite</h3>
+                <p class="text-gray-600 mb-4">
+                    Mentoria personalizada para sênior
+                </p>
+                <ul class="text-left space-y-2 text-gray-600 text-sm">
+                    <li>• Arquitetura avançada</li>
+                    <li>• Mentoria individual</li>
+                    <li>• Projetos reais</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Courses Grid -->
+<!-- Products Section -->
 <div class="container mx-auto px-4 py-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Course Card 1 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-            <div class="bg-navy-900 p-8">
-                <img  src="~/img/cursos/jornada.webp" alt="A Jornada do Desenvolvedor Completo" class="w-full">
-            </div>
-            <div class="p-8">
-                <div class="flex items-center space-x-2 mb-4">
-                    <div class="text-yellow-400">★★★★★</div>
-                    <div class="flex -space-x-2">
-                        <!-- Student avatars -->
+    <h2 class="text-4xl font-serif mb-16 text-center">Nossos Cursos e Mentorias</h2>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Product 1: Saia do Zero -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
+            <div class="bg-gradient-to-br from-green-500 to-green-700 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold">
+                        INICIANTE
                     </div>
-                    <span>4.96/5</span>
-                    <span class="text-gray-500">Por 1.000+ estudantes</span>
+                    <div class="text-yellow-400">★★★★★ 5.0</div>
                 </div>
-                <h2 class="text-3xl font-serif mb-4">A Jornada do Desenvolvedor Completo</h2>
-                <p class="text-gray-600 mb-6">
-                    “Domine as habilidades essenciais para se tornar um desenvolvedor completo. Aprenda C#, crie aplicações robustas com banco de dados integrado, e implemente DevOps para garantir entregas ágeis e escaláveis. Este curso oferece um caminho completo do código à implantação.”
+                <h2 class="text-2xl font-serif mb-3">Saia do Zero</h2>
+                <p class="text-green-100">
+                    Construa do zero uma página HTML e apresente-a para o mundo
                 </p>
+            </div>
+            
+            <div class="p-6">
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">O que você vai aprender:</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-500 mt-1">✓</span>
+                            <span>Criar uma página HTML completa do zero</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-500 mt-1">✓</span>
+                            <span>Registrar domínio e contratar servidor</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-500 mt-1">✓</span>
+                            <span>Configurar servidor e fazer deploy</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-500 mt-1">✓</span>
+                            <span>Implementar segurança HTTPS</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-green-500 mt-1">✓</span>
+                            <span>Sessão de dúvidas como bônus</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <a href="https://hotmart.com/pt-br/marketplace/produtos/saia-do-zero-3/U51428792E" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg text-center block transition duration-200 text-sm">
+                    Começar do Zero →
+                </a>
             </div>
         </div>
 
-        <!-- Course Card 2 -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
-            <div class="bg-navy-900 p-8">
-                <img  src="~/img/cursos/transforme.webp" alt="Transforme suas habilidades em um negócio lucrativo" class="w-full">
-            </div>
-            <div class="p-8">
-                <div class="flex items-center space-x-2 mb-4">
-                    <div class="text-yellow-400">★★★★★</div>
-                    <div class="flex -space-x-2">
-                        <!-- Student avatars -->
+        <!-- Product 2: DC360 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
+            <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold">
+                        FUNDAMENTOS
                     </div>
-                    <span>4.98/5</span>
-                    <span class="text-gray-500">Por 1,000+ estudantes</span>
+                    <div class="text-yellow-400">★★★★★ Premium</div>
                 </div>
-                <h2 class="text-3xl font-serif mb-4">Transforme suas habilidades em um negócio lucrativo</h2>
-                <p class="text-gray-600 mb-6">
-                    “Descubra como transformar suas habilidades técnicas em um negócio rentável e escalável. Com um método prático e estratégico, você aprenderá a criar, validar e lançar suas próprias soluções no mercado, conquistando liberdade financeira e de tempo.”
+                <h2 class="text-2xl font-serif mb-3">DC360: Torne-se um Programador</h2>
+                <p class="text-blue-100">
+                    Construa sua primeira aplicação com C# em apenas 4 semanas
                 </p>
+            </div>
+            
+            <div class="p-6">
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">Resultados garantidos:</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-blue-500 mt-1">✓</span>
+                            <span>Fundamentos de programação com C#</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-blue-500 mt-1">✓</span>
+                            <span>ASP.NET do zero, sem experiência prévia</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-blue-500 mt-1">✓</span>
+                            <span>Aplicação funcional completa do zero</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-blue-500 mt-1">✓</span>
+                            <span>Preparação para tecnologias avançadas</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-blue-500 mt-1">✓</span>
+                            <span>Conceitos fundamentais de desenvolvimento</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <p class="text-xs text-gray-600 font-semibold">
+                        ⏱️ Em apenas 4 semanas você estará programando!
+                    </p>
+                </div>
+                
+                <a href="https://go.hotmart.com/H98063764C" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg text-center block transition duration-200 text-sm">
+                    Começar DC360 →
+                </a>
+            </div>
+        </div>
+
+        <!-- Product 3: Comunidade #Didáticos -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
+            <div class="bg-gradient-to-br from-orange-500 to-orange-700 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold">
+                        COMUNIDADE
+                    </div>
+                    <div class="text-yellow-400">★★★★☆ 4.0</div>
+                </div>
+                <h2 class="text-2xl font-serif mb-3">Comunidade #Didáticos</h2>
+                <p class="text-orange-100">
+                    Programadores que desejam se tornar empreendedores
+                </p>
+            </div>
+            
+            <div class="p-6">
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">Na comunidade você encontra:</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500 mt-1">✓</span>
+                            <span>Networking com programadores empreendedores</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500 mt-1">✓</span>
+                            <span>Transformação: iniciante → desenvolvedor disputado</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500 mt-1">✓</span>
+                            <span>Suporte para sistemas, apps e sites</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500 mt-1">✓</span>
+                            <span>Recursos e conteúdos exclusivos</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-orange-500 mt-1">✓</span>
+                            <span>Ambiente colaborativo de crescimento</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <a href="https://hotmart.com/pt-br/marketplace/produtos/comunidade-didatica/S45776492D" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg text-center block transition duration-200 text-sm">
+                    Entrar na Comunidade →
+                </a>
+            </div>
+        </div>
+
+        <!-- Product 4: Mentoria Elite Backend .NET -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-xl border border-gray-200">
+            <div class="bg-gradient-to-br from-purple-600 to-purple-800 p-6 text-white">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="bg-yellow-400 text-black px-3 py-1 rounded-full text-sm font-bold">
+                        MENTORIA ELITE
+                    </div>
+                    <div class="text-yellow-400">★★★★★ Premium</div>
+                </div>
+                <h2 class="text-2xl font-serif mb-3">Mentoria Elite: Backend .NET</h2>
+                <p class="text-purple-100">
+                    Acompanhamento personalizado para nível sênior
+                </p>
+            </div>
+            
+            <div class="p-6">
+                <div class="mb-6">
+                    <h3 class="text-lg font-semibold mb-3">Conceitos avançados:</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start space-x-2">
+                            <span class="text-purple-500 mt-1">✓</span>
+                            <span><strong>DDD</strong> - Domain-Driven Design</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-purple-500 mt-1">✓</span>
+                            <span><strong>CQRS</strong> - Command Query Responsibility</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-purple-500 mt-1">✓</span>
+                            <span><strong>Clean Architecture</strong> e padrões</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-purple-500 mt-1">✓</span>
+                            <span><strong>TDD</strong> e segurança em APIs</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-purple-500 mt-1">✓</span>
+                            <span>Encontros exclusivos e projetos reais</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                    <p class="text-xs text-gray-600 font-semibold">
+                        🎯 Mentoria individual personalizada
+                    </p>
+                </div>
+                
+                <a href="https://hotmart.com/pt-br/marketplace/produtos/mentoria-elite-backend-com-net/O95796577O" 
+                   target="_blank" rel="noopener noreferrer"
+                   class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg text-center block transition duration-200 text-sm">
+                    Conhecer Mentoria Elite →
+                </a>
             </div>
         </div>
     </div>
 </div>
 
-<div class="min-h-screen bg-[#0A192F] text-white py-16">
-    <div class="container mx-auto px-4">
-        <div class="text-emerald-400 uppercase tracking-wide text-sm mb-4 text-center">O QUE ESTÁ NOS CURSOS</div>
+<!-- Comparison Guide -->
+<div class="bg-gray-50 py-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-4xl font-serif mb-12 text-center">Qual é o Ideal para Você?</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-3 text-green-600">🚀 Saia do Zero</h3>
+                <p class="text-sm text-gray-600 mb-3">Ideal se você:</p>
+                <ul class="space-y-1 text-xs text-gray-600">
+                    <li>• Nunca programou antes</li>
+                    <li>• Quer ver resultado rápido</li>
+                    <li>• Quer aprender HTML/CSS</li>
+                    <li>• Quer colocar site no ar</li>
+                </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-3 text-blue-600">💻 DC360</h3>
+                <p class="text-sm text-gray-600 mb-3">Ideal se você:</p>
+                <ul class="space-y-1 text-xs text-gray-600">
+                    <li>• Quer aprender C# sério</li>
+                    <li>• Busca carreira sólida</li>
+                    <li>• Tem 4 semanas livres</li>
+                    <li>• Quer aplicação completa</li>
+                </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-3 text-orange-600">👥 Comunidade</h3>
+                <p class="text-sm text-gray-600 mb-3">Ideal se você:</p>
+                <ul class="space-y-1 text-xs text-gray-600">
+                    <li>• Quer networking</li>
+                    <li>• Busca empreender</li>
+                    <li>• Precisa de suporte</li>
+                    <li>• Gosta de aprender em grupo</li>
+                </ul>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg font-semibold mb-3 text-purple-600">🎯 Mentoria Elite</h3>
+                <p class="text-sm text-gray-600 mb-3">Ideal se você:</p>
+                <ul class="space-y-1 text-xs text-gray-600">
+                    <li>• Já programa .NET</li>
+                    <li>• Quer ser sênior</li>
+                    <li>• Busca mentoria 1:1</li>
+                    <li>• Quer arquitetura avançada</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-        <h2 class="text-5xl font-serif mb-8 text-center">Qual Curso é Ideal para Mim?</h2>
-
-        <p class="max-w-3xl mx-auto text-lg mb-16 text-center">
-            Ambos os cursos são excelentes pontos de partida para impulsionar sua carreira, seja desenvolvendo habilidades técnicas ou criando seu próprio negócio. Aqui está um breve resumo de cada curso:
-        </p>
-
-        <!-- Curso 1: A Jornada do Desenvolvedor Completo -->
-        <div class="mb-24">
-            <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
-                <div class="md:w-1/2">
-                    <h3 class="text-4xl font-serif mb-6">A Jornada do Desenvolvedor Completo</h3>
-                    <p class="text-gray-300 mb-6">
-                        Este curso ensina tudo o que você precisa para se tornar um desenvolvedor completo, incluindo C#, integração com bancos de dados e DevOps. É o caminho perfeito para criar aplicações robustas e escaláveis.
-                    </p>
-                    <div class="space-y-4 mb-8">
-                        <p>Este curso é ideal para você se deseja:</p>
-                        <ul class="space-y-3">
-                            <li>• Aprender C# e boas práticas de programação</li>
-                            <li>• Criar aplicações reais com integração de banco de dados</li>
-                            <li>• Entender e implementar pipelines de DevOps</li>
-                            <li>• Desenvolver APIs e aplicar conceitos de arquitetura de software</li>
-                        </ul>
-                    </div>
-                    <a asp-controller="Cursos" asp-action="DetalhesCurso" asp-route-id="001" class="bg-blue-700 text-white px-8 py-3 rounded-full text-lg inline-block hover:bg-blue-800 transition-colors">
-                        Oferta Limitada por R$ 497
-                    </a>
-                </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="w-96 h-auto relative">
-                        <img src="~/img/cursos/jornada.webp" alt="Jornada do Desenvolvedor Completo" class="rounded-lg shadow-2xl" />
-                    </div>
+<!-- About Section -->
+<div class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-shrink-0">
+                <img src="~/img/IMG_0045.webp" alt="Diogo Costa" class="w-40 h-40 rounded-full shadow-lg">
+            </div>
+            <div>
+                <h3 class="text-3xl font-serif mb-4">Diogo Costa</h3>
+                <div class="text-blue-600 font-semibold mb-4">MVP Microsoft | 20+ anos de experiência</div>
+                <p class="text-gray-600 mb-4">
+                    Desenvolvedor há mais de 20 anos, já trabalhou com grandes empresas como <strong>Microsoft, Itaú, Mercedes-Benz, UOL, Panasonic</strong> e muitas outras.
+                </p>
+                <p class="text-gray-600 mb-4">
+                    Criador do método <strong>DC360</strong> que já ajudou centenas de programadores a transformarem suas habilidades técnicas em carreiras de sucesso e negócios lucrativos.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm">C# | .NET</span>
+                    <span class="bg-green-50 text-green-800 px-3 py-1 rounded-full text-sm">Arquitetura de Software</span>
+                    <span class="bg-purple-50 text-purple-800 px-3 py-1 rounded-full text-sm">DevOps</span>
+                    <span class="bg-yellow-50 text-yellow-800 px-3 py-1 rounded-full text-sm">Empreendedorismo</span>
                 </div>
             </div>
         </div>
-
-        <!-- Curso 2: Transforme suas Habilidades em um Negócio Lucrativo -->
-        <div class="mb-24">
-            <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
-                <div class="md:w-1/2 order-2 md:order-1">
-                    <div class="w-96 h-auto relative">
-                        <img  src="~/img/cursos/transforme.webp" alt="Transforme suas Habilidades em um Negócio Lucrativo" class="rounded-lg shadow-2xl" />
-                    </div>
-                </div>
-                <div class="md:w-1/2 order-1 md:order-2">
-                    <h3 class="text-4xl font-serif mb-6">Transforme suas Habilidades em um Negócio Lucrativo</h3>
-                    <p class="text-gray-300 mb-6">
-                        Este curso é o guia completo para programadores que desejam transformar suas habilidades técnicas em um negócio escalável e lucrativo, desde a validação de ideias até a monetização.
-                    </p>
-                    <div class="space-y-4 mb-8">
-                        <p>Este curso cobre como:</p>
-                        <ul class="space-y-3">
-                            <li>• Validar ideias antes de investir tempo e recursos</li>
-                            <li>• Criar protótipos e desenvolver MVPs</li>
-                            <li>• Monetizar produtos digitais de forma eficaz</li>
-                            <li>• Escalar operações enquanto mantém a qualidade</li>
-                        </ul>
-                    </div>
-                    <p class="text-emerald-400 mb-6">
-                        Este é o método que ajudou dezenas de programadores a conquistar liberdade financeira e de tempo.
-                    </p>
-                    <a asp-controller="Cursos" asp-action="DetalhesCurso" asp-route-id="002" class="bg-blue-700 text-white px-8 py-3 rounded-full text-lg inline-block hover:bg-blue-800 transition-colors">
-                        Oferta Limitada por R$ 2.347,99
-                    </a>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 
 <!-- Testimonials Section -->
-<div class="py-24">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-serif text-center mb-16">
-            O que <span class="text-blue-600">alguns de nossos</span> alunos têm a dizer sobre meus cursos:
-        </h2>
+@if (Model.Testimonials != null && Model.Testimonials.Any())
+{
+    <div class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-serif text-center mb-16">
+                O que <span class="text-blue-600">nossos alunos</span> falam sobre os cursos:
+            </h2>
 
-        <!-- Testimonials Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
-            @foreach (var testimonial in Model.Testimonials)
-            {
-                <div class="bg-white rounded-lg p-8 shadow-lg">
-                    <!-- Header -->
-                    <div class="flex items-center space-x-4 mb-6">
-                        <img src="@testimonial.ImageUrl"
-                             alt="@testimonial.Name"
-                             class="w-12 h-12 rounded-full object-cover"/>
-                        <div>
-                            <h3 class="font-medium text-gray-900">@testimonial.Name</h3>
-                            @if (!string.IsNullOrEmpty(testimonial.Role))
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach (var testimonial in Model.Testimonials.Take(6))
+                {
+                    <div class="bg-white rounded-lg p-6 shadow-lg">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="@testimonial.ImageUrl"
+                                 alt="@testimonial.Name"
+                                 class="w-12 h-12 rounded-full object-cover"/>
+                            <div>
+                                <h3 class="font-medium text-gray-900">@testimonial.Name</h3>
+                                @if (!string.IsNullOrEmpty(testimonial.Role))
+                                {
+                                    <p class="text-sm text-gray-500">@testimonial.Role</p>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="text-blue-600 text-3xl mb-3">"</div>
+                        <p class="text-gray-700 mb-4">@testimonial.Content</p>
+
+                        <div class="text-yellow-400">
+                            @for (int i = 0; i < testimonial.Rating; i++)
                             {
-                                <p class="text-sm text-gray-500">@testimonial.Role</p>
+                                <span>★</span>
                             }
                         </div>
                     </div>
-
-                    <!-- Quote Symbol -->
-                    <div class="text-blue-600 text-4xl mb-4">"</div>
-
-                    <!-- Content -->
-                    <p class="text-gray-700 mb-6">@testimonial.Content</p>
-
-                    <!-- Rating -->
-                    <div class="text-yellow-400">
-                        @for (int i = 0; i < testimonial.Rating; i++)
-                        {
-                            <span>★</span>
-                        }
-                    </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
+}
 
-<!-- CTA Section -->
-<div class="bg-[#0a1930] py-32">
-    <div class="container mx-auto px-4 text-center">
-        <!-- Turquoise Arrow Icon -->
-        <svg class="w-8 h-8 mx-auto mb-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-
-        <!-- Title -->
-        <h2 class="text-5xl font-serif text-white mb-6">Transforme Suas Habilidades em Resultados Hoje</h2>
-        <p class="text-lg text-gray-300 mb-12">
-            Dê o próximo passo para transformar sua carreira e conquistar sua liberdade. 
-            Seja você um programador buscando dominar novas habilidades ou alguém pronto para criar um negócio lucrativo, 
-            nossos cursos foram feitos para você.
+<!-- Final CTA -->
+<div class="bg-gradient-to-br from-blue-900 to-purple-700 py-20 text-white text-center">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-4xl font-serif mb-6">Comece Sua Jornada Hoje</h2>
+        <p class="text-xl mb-8 text-blue-100">
+            Do zero ao profissional: escolha o curso ideal para seu momento atual e transforme sua carreira.
         </p>
-
-        <!-- Call-to-Action Buttons -->
-        <div class="space-x-4">
-            <a asp-controller="Contato" asp-action="Index" class="bg-emerald-400 text-[#0a1930] px-6 py-2 rounded-md text-sm font-medium hover:bg-emerald-500 transition-colors duration-200">
-                Entre em Contato
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/saia-do-zero-3/U51428792E" 
+               target="_blank" rel="noopener noreferrer"
+               class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 block text-sm">
+                🚀 Saia do Zero
+            </a>
+            <a href="https://go.hotmart.com/H98063764C" 
+               target="_blank" rel="noopener noreferrer"
+               class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 block text-sm">
+                💻 DC360
+            </a>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/comunidade-didatica/S45776492D" 
+               target="_blank" rel="noopener noreferrer"
+               class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 block text-sm">
+                👥 Comunidade
+            </a>
+            <a href="https://hotmart.com/pt-br/marketplace/produtos/mentoria-elite-backend-com-net/O95796577O" 
+               target="_blank" rel="noopener noreferrer"
+               class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 block text-sm">
+                🎯 Mentoria Elite
             </a>
         </div>
+        
+        <p class="text-sm text-blue-200 mt-6">
+            Tem dúvidas? <a asp-controller="Contato" asp-action="Index" class="underline hover:text-white">Entre em contato</a>
+        </p>
     </div>
 </div>
