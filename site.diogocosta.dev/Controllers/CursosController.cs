@@ -7,7 +7,6 @@ using site.diogocosta.dev.ViewModels;
 
 namespace site.diogocosta.dev.Controllers;
 
-
 public class CursosController : Controller
 {
     private readonly INewsletterService _newsletterService;
@@ -23,8 +22,8 @@ public class CursosController : Controller
             Testimonials = TestimonialsData.GetTestimonials(),
             RatingSummary = new TestimonialViewModel.CourseRatingSummary
             {
-                AverageRating = 4.97M,
-                TotalStudents = 30000,
+                AverageRating = 4.8M,
+                TotalStudents = 800,
                 StudentAvatars = new List<string> { /* urls dos avatars */ }
             }
         };
@@ -36,34 +35,72 @@ public class CursosController : Controller
     {
         new Curso
         {
-            Id = "001",
-            Titulo = "A Jornada do Desenvolvedor Completo",
-            Descricao = "Domine as habilidades essenciais para se tornar um desenvolvedor completo. Aprenda C#, crie aplicações robustas com banco de dados integrado, e implemente DevOps para garantir entregas ágeis e escaláveis.",
-            Preco = 299.00M,
-            Avaliacao = 4.96,
-            TotalAlunos = 1000,
+            Id = "saia-do-zero",
+            Titulo = "Saia do Zero",
+            Descricao = "Construa do zero uma página HTML e apresente-a para o mundo. Aprenda a criar domínio, contratar servidor, configurar segurança HTTPS e muito mais.",
+            Preco = 0M, // Preço será definido no Hotmart
+            Avaliacao = 5.0,
+            TotalAlunos = 100,
             Topicos = new List<string>
             {
-                "C# e boas práticas de programação",
-                "Integração com bancos de dados",
-                "Pipelines de DevOps",
-                "APIs e arquitetura de software"
+                "Criar uma página HTML completa do zero",
+                "Registrar domínio e contratar servidor",
+                "Configurar servidor e fazer deploy",
+                "Implementar segurança HTTPS",
+                "Sessão de dúvidas como bônus"
             }
         },
         new Curso
         {
-            Id = "002",
-            Titulo = "Transforme suas habilidades em um negócio lucrativo",
-            Descricao = "Descubra como transformar suas habilidades técnicas em um negócio rentável e escalável. Com um método prático e estratégico, você aprenderá a criar, validar e lançar suas próprias soluções no mercado.",
-            Preco = 399.00M,
-            Avaliacao = 4.98,
-            TotalAlunos = 1000,
+            Id = "dc360-programador",
+            Titulo = "DC360: Torne-se um Programador",
+            Descricao = "Aprenda os fundamentos de programação com C# e desenvolva sua primeira aplicação ASP.NET do zero, sem experiência prévia, em apenas 4 semanas.",
+            Preco = 0M, // Preço será definido no Hotmart
+            Avaliacao = 5.0,
+            TotalAlunos = 200,
             Topicos = new List<string>
             {
-                "Validação de ideias de negócio",
-                "Criação de protótipos e MVPs",
-                "Monetização de produtos digitais",
-                "Escalabilidade de operações"
+                "Fundamentos de programação com C#",
+                "ASP.NET do zero, sem experiência prévia",
+                "Aplicação funcional completa do zero",
+                "Preparação para tecnologias avançadas",
+                "Conceitos fundamentais de desenvolvimento"
+            }
+        },
+        new Curso
+        {
+            Id = "comunidade-didaticos",
+            Titulo = "Comunidade #Didáticos",
+            Descricao = "A comunidade que apoia programadores que desejam se tornar empreendedores e conquistar clientes. Transforme programadores iniciantes nos desenvolvedores mais disputados no mercado de trabalho.",
+            Preco = 0M, // Preço será definido no Hotmart
+            Avaliacao = 4.0,
+            TotalAlunos = 50,
+            Topicos = new List<string>
+            {
+                "Comunidade ativa de programadores empreendedores",
+                "Networking e troca de experiências",
+                "Suporte para desenvolvedores de sistemas e aplicações",
+                "Recursos e conteúdos exclusivos da comunidade",
+                "Ambiente colaborativo de aprendizado"
+            }
+        },
+        new Curso
+        {
+            Id = "mentoria-elite-backend",
+            Titulo = "Mentoria Elite: Backend com .NET",
+            Descricao = "Experiência personalizada voltada para desenvolvedores que desejam elevar suas habilidades no desenvolvimento backend utilizando o ecossistema .NET. Domine conceitos avançados como DDD, CQRS e Arquitetura Hexagonal.",
+            Preco = 0M, // Preço será definido no Hotmart
+            Avaliacao = 5.0,
+            TotalAlunos = 25,
+            Topicos = new List<string>
+            {
+                "Domain-Driven Design (DDD)",
+                "CQRS - Command Query Responsibility Segregation",
+                "Arquitetura Hexagonal e Clean Architecture",
+                "Test-Driven Development (TDD)",
+                "Segurança em APIs com JWT e OAuth",
+                "DevOps e práticas modernas de deployment",
+                "Encontros online exclusivos e acompanhamento contínuo"
             }
         }
     };
@@ -74,14 +111,16 @@ public class CursosController : Controller
         if (curso == null)
             return NotFound();
 
-        var viewModel = new DetalheCursoViewModel
+        // Redirecionar para os links do Hotmart baseado no ID do curso
+        return id switch
         {
-            Curso = curso,
-            ListaEspera = new FormularioEsperaModel()
+            "saia-do-zero" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/saia-do-zero-3/U51428792E"),
+            "dc360-programador" => Redirect("https://go.hotmart.com/H98063764C"),
+            "comunidade-didaticos" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/comunidade-didatica/S45776492D"),
+            "mentoria-elite-backend" => Redirect("https://hotmart.com/pt-br/marketplace/produtos/mentoria-elite-backend-com-net/O95796577O"),
+            _ => NotFound()
         };
-        return View(viewModel);
     }
-
 
     [HttpPost]
     public async Task<IActionResult> EntrarListaEspera(string cursoId, DetalheCursoViewModel viewModel)

@@ -26,6 +26,7 @@ builder.Services.AddDataProtection()
 builder.Services.AddControllersWithViews();
 builder.ConfigureSerilog();
 
+// Configuração do serviço de newsletter
 builder.Services.AddHttpClient<INewsletterService, N8nNewsletterService>(client =>
 {
     client.DefaultRequestHeaders.Add("User-Agent", "NewsletterService");
@@ -34,6 +35,12 @@ builder.Services.AddHttpClient<INewsletterService, N8nNewsletterService>(client 
 
 builder.Services.Configure<NewsletterSettings>(
     builder.Configuration.GetSection("NewsletterSettings"));
+
+// Configuração do serviço de email
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 
@@ -54,6 +61,14 @@ app.MapControllerRoute(
     name: "blog-index",
     pattern: "blog",
     defaults: new { controller = "Blog", action = "Index" });
+app.MapControllerRoute(
+    name: "desbloqueio",
+    pattern: "desbloqueio",
+    defaults: new { controller = "Desbloqueio", action = "Index" });
+app.MapControllerRoute(
+    name: "obrigado-desbloqueio",
+    pattern: "obrigado-desbloqueio",
+    defaults: new { controller = "Desbloqueio", action = "Obrigado" });
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
