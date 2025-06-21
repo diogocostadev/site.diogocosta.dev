@@ -26,6 +26,7 @@ builder.Services.AddDataProtection()
 builder.Services.AddControllersWithViews();
 builder.ConfigureSerilog();
 
+// Configuração do serviço de newsletter
 builder.Services.AddHttpClient<INewsletterService, N8nNewsletterService>(client =>
 {
     client.DefaultRequestHeaders.Add("User-Agent", "NewsletterService");
@@ -34,6 +35,12 @@ builder.Services.AddHttpClient<INewsletterService, N8nNewsletterService>(client 
 
 builder.Services.Configure<NewsletterSettings>(
     builder.Configuration.GetSection("NewsletterSettings"));
+
+// Configuração do serviço de email
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
+
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 var app = builder.Build();
 
