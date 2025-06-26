@@ -1,0 +1,1080 @@
+@model DesafioModel
+@{
+    Layout = null;
+    var seoTitle = $"{Model.Titulo} | Crie Seu SaaS em 7 Dias - Diogo Costa";
+    var seoDescription = $"{Model.Descricao}. Sistema completo funcionando em 7 dias: {string.Join(", ", Model.Funcionalidades.Take(3))}. MVP Microsoft Diogo Costa.";
+    var seoKeywords = $"criar saas, {Model.Slug}, programação c#, mvp microsoft, diogo costa, sistema web, curso programação, empreendedorismo digital, saas tutorial";
+    var canonicalUrl = $"https://diogocosta.dev/{Model.Slug}";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta Fundamentais -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Title Otimizado -->
+    <title>@seoTitle</title>
+    <meta name="title" content="@seoTitle" />
+    
+    <!-- Meta Description Otimizada -->
+    <meta name="description" content="@seoDescription" />
+    <meta name="keywords" content="@seoKeywords" />
+    
+    <!-- SEO Avançado -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Diogo Costa - MVP Microsoft" />
+    <meta name="language" content="Portuguese" />
+    <meta name="geo.region" content="BR" />
+    <meta name="geo.country" content="Brazil" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@canonicalUrl" />
+    
+    <!-- Favicons Otimizados -->
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/D.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/D.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/D_180.png?v=2" />
+    
+    <!-- Favicon adicional para compatibilidade -->
+    <meta name="msapplication-TileImage" content="/img/D_180.png?v=2" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    
+    <!-- Force favicon refresh -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@canonicalUrl" />
+    <meta property="og:title" content="@seoTitle" />
+    <meta property="og:description" content="@seoDescription" />
+    <meta property="og:image" content="https://diogocosta.dev/img/logome.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Diogo Costa - MVP Microsoft" />
+    <meta property="og:locale" content="pt_BR" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@@DiogoCostaDev" />
+    <meta name="twitter:creator" content="@@DiogoCostaDev" />
+    <meta name="twitter:title" content="@seoTitle" />
+    <meta name="twitter:description" content="@seoDescription" />
+    <meta name="twitter:image" content="https://diogocosta.dev/img/logome.webp" />
+    
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "Course",
+      "name": "@Model.Titulo",
+      "description": "@seoDescription",
+      "provider": {
+        "@@type": "Person",
+        "name": "Diogo Costa",
+        "jobTitle": "MVP Microsoft",
+        "url": "https://diogocosta.dev",
+        "image": "https://diogocosta.dev/img/IMG_0045.webp"
+      },
+      "educationalLevel": "Intermediate",
+      "courseMode": "online",
+      "offers": {
+        "@@type": "Offer",
+        "price": "197",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "150"
+      }
+    }
+    </script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0YZHXVSL7M"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YZHXVSL7M', {
+            page_title: '@seoTitle',
+            page_location: '@canonicalUrl',
+            content_group1: 'Landing Page',
+            content_group2: '@Model.Slug'
+        });
+    </script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+        fbq('track', 'ViewContent', {
+            content_name: '@Model.Titulo',
+            content_category: 'Course',
+            content_ids: ['@Model.Slug'],
+            content_type: 'product',
+            value: 197,
+            currency: 'BRL'
+        });
+    </script>
+    
+    <!-- CSS Brutalista -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            background: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .headline {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.0;
+            margin-bottom: 25px;
+            text-align: center;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .headline::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #ff6b35;
+            margin: 15px auto;
+        }
+
+        .subtitle {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            color: #ff6b35;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        .section {
+            margin: 80px 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ff6b35;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .feature-list li {
+            font-size: 1.3rem;
+            margin: 20px 0;
+            padding-left: 35px;
+            position: relative;
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        .feature-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        .price-section {
+            background: #ff6b35;
+            color: #000000;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 80px 0;
+            border: 3px solid #ff6b35;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            position: relative;
+        }
+
+        .price-section::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: #000000;
+            z-index: -1;
+        }
+
+        .price {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            margin: 20px 0;
+        }
+
+        .price-subtitle {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #000000;
+            color: #ffffff;
+            padding: 25px 50px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-decoration: none;
+            border: 3px solid #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 30px 0;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .microcopy {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #cccccc;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .lead-form {
+            background: #1a1a1a;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 80px 0;
+            border: 3px solid #ff6b35;
+            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.2);
+        }
+
+        .lead-form h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ff6b35;
+            font-weight: 800;
+        }
+
+        .lead-form p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .form-group {
+            margin: 25px 0;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 1.2rem;
+            border: 2px solid #444444;
+            background: #000000;
+            color: #ffffff;
+            border-radius: 0;
+            font-weight: 500;
+        }
+
+        .form-control::placeholder {
+            color: #888888;
+            font-weight: 500;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-submit {
+            background: #ff6b35;
+            color: #000000;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .form-microcopy {
+            font-size: 1rem;
+            color: #888888;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Seção de Autoridade */
+        .authority-section {
+            background: #1a1a1a;
+            border: 2px solid #ff6b35;
+            padding: 60px 50px;
+            margin: 100px auto;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .authority-photo {
+            text-align: center;
+        }
+
+        .authority-photo img {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #ff6b35;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+
+        .authority-content h3 {
+            font-size: 2.2rem;
+            color: #ff6b35;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .authority-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .authority-text {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .authority-highlight {
+            font-size: 1.2rem;
+            color: #ff6b35;
+            font-weight: 700;
+            margin: 25px 0;
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #ff6b35;
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .tech-badge {
+            background: #333333;
+            color: #ffffff;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #666666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .proof-social {
+            background: #ff6b35;
+            color: #000000;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 30px 0;
+        }
+
+        .guarantee-section {
+            background: #2a2a2a;
+            border: 2px solid #ff6b35;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .guarantee-section h4 {
+            color: #ff6b35;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .guarantee-text {
+            font-size: 1.1rem;
+            color: #ffffff;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        /* Seção de Pré-Requisitos */
+        .prerequisites-section {
+            background: #2a2a2a;
+            border: 2px solid #ff4444;
+            padding: 50px 40px;
+            margin: 80px auto;
+            max-width: 1000px;
+        }
+
+        .prerequisites-section h3 {
+            color: #ff4444;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .warning-box {
+            background: #ff4444;
+            color: #000000;
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .prerequisite-text {
+            font-size: 1.1rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+        .prerequisite-list {
+            background: #1a1a1a;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #ff4444;
+        }
+
+        .prerequisite-list h4 {
+            color: #ff6b35;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .prerequisite-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .prerequisite-list li {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin: 10px 0;
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        .philosophy-box {
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid #ff4444;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #cccccc;
+            text-align: center;
+        }
+
+        .for-whom-section {
+            margin: 30px 0;
+        }
+
+        .for-whom-section h4 {
+            color: #ff6b35;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .filter-final {
+            background: #ff4444;
+            color: #000000;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .call-to-action-prereq {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #ff6b35;
+            font-weight: 700;
+            margin: 25px 0;
+        }
+
+        .footer-microcopy {
+            background: #333333;
+            color: #cccccc;
+            padding: 20px;
+            margin: 40px 0;
+            font-size: 1rem;
+            text-align: center;
+            font-style: italic;
+            border: 1px solid #666666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            margin-top: 80px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        @@media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                max-width: 100%;
+            }
+            
+            .price-section, .lead-form, .authority-section {
+                margin: 50px 0;
+                padding: 40px 30px;
+            }
+
+            .authority-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .authority-photo img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .section {
+                margin: 60px 0;
+                padding: 0 10px;
+            }
+
+            .headline {
+                font-size: 2.2rem;
+            }
+        }
+
+        .error-message {
+            background: #ff4444;
+            color: #fff;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        /* Header com Logo */
+        .header-logo {
+            text-align: center;
+            padding: 30px 0 20px 0;
+            border-bottom: 1px solid #333333;
+            margin-bottom: 50px;
+        }
+
+        .header-logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ff6b35;
+            object-fit: cover;
+        }
+
+        .header-logo .brand-name {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .header-logo .mvp-badge {
+            color: #ff6b35;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .trust-signal {
+            background: #1a1a1a;
+            color: #ff6b35;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #ff6b35;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SEO Schema para FAQ */
+        .faq-section {
+            margin: 80px 0;
+            background: #1a1a1a;
+            padding: 40px;
+            border: 1px solid #333333;
+        }
+
+        .faq-item {
+            margin: 30px 0;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        @@media (max-width: 768px) {
+            .trust-signals {
+                gap: 15px;
+            }
+            
+            .trust-signal {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Schema.org para breadcrumb e página -->
+    <script type="application/ld+json">
+    {
+      "@@context": "https://schema.org",
+      "@@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@@type": "ListItem",
+          "position": 1,
+          "name": "Diogo Costa",
+          "item": "https://diogocosta.dev"
+        },
+        {
+          "@@type": "ListItem",
+          "position": 2,
+          "name": "@Model.Titulo",
+          "item": "@canonicalUrl"
+        }
+      ]
+    }
+    </script>
+
+    <div class="container">
+        
+        <!-- Header com Logo e Credibilidade -->
+        <header class="header-logo">
+            <img src="/img/IMG_0045.webp" alt="Diogo Costa - MVP Microsoft" />
+            <div class="brand-name">Diogo Costa</div>
+            <div class="mvp-badge">MVP Microsoft</div>
+            
+            <div class="trust-signals">
+                <div class="trust-signal">+20 Anos Dev</div>
+                <div class="trust-signal">MVP Microsoft</div>
+                <div class="trust-signal">Criador DC360</div>
+                <div class="trust-signal">SaaS em Produção</div>
+            </div>
+        </header>
+        
+        <!-- Headline Principal -->
+        <h1 class="headline">@Model.Titulo</h1>
+        <div class="subtitle">@Model.Subtitulo</div>
+        
+        <!-- Seção de Autoridade -->
+        <div class="authority-section">
+            <div class="authority-photo">
+                <img src="/img/IMG_0045.webp" alt="Diogo Costa" />
+            </div>
+            <div class="authority-content">
+                <h3>👤 Quem é @Model.Autoridade.Nome?</h3>
+                <div class="authority-title">@Model.Autoridade.Titulo</div>
+                
+                <div class="authority-text">@Model.Autoridade.Bio</div>
+                <div class="authority-text">@Model.Autoridade.Missao</div>
+                
+                <div class="authority-highlight">@Model.Autoridade.Filosofia</div>
+                
+                <div class="authority-text"><strong>→ @Model.Autoridade.Promessa</strong></div>
+                
+                <!-- Stacks e Tecnologias -->
+                <div style="margin: 25px 0;">
+                    <strong style="color: #ff6b35; font-size: 1.1rem;">Stacks e Tecnologia:</strong>
+                    <div class="tech-stack">
+                        @foreach (var tech in Model.Autoridade.Tecnologias)
+                        {
+                            <div class="tech-badge">@tech</div>
+                        }
+                    </div>
+                </div>
+                
+                <!-- Prova Social -->
+                <div class="proof-social">@Model.Autoridade.ProvaSocial</div>
+                
+                <div style="font-style: italic; color: #888888; text-align: center; margin-top: 20px;">
+                    "@Model.Autoridade.Microcopy"
+                </div>
+            </div>
+        </div>
+        
+        <!-- Como Funciona -->
+        <div class="section">
+            <h2 class="section-title">📈 Funciona assim:</h2>
+            <ul class="feature-list">
+                <li><strong>1.</strong> Você assiste o passo a passo.</li>
+                <li><strong>2.</strong> Você escreve código.</li>
+                <li><strong>3.</strong> Você faz deploy.</li>
+                <li><strong>4.</strong> Você sai do outro lado → dono de um produto real.</li>
+            </ul>
+        </div>
+
+        <!-- O que você leva -->
+        <div class="section">
+            <h2 class="section-title">💣 O que você leva:</h2>
+            <ul class="feature-list">
+                @foreach (var funcionalidade in Model.Funcionalidades)
+                {
+                    <li>@funcionalidade</li>
+                }
+                <li><strong>Seu @Model.Produto no ar. Seu. Não template, não no-code. Produto real.</strong></li>
+            </ul>
+        </div>
+
+        <!-- Aprendizados -->
+        <div class="section">
+            <h2 class="section-title">💥 Você aprende e constrói:</h2>
+            <ul class="feature-list">
+                @foreach (var aprendizado in Model.Aprendizados)
+                {
+                    <li>@aprendizado</li>
+                }
+            </ul>
+            <div style="margin-top: 30px; font-size: 1.3rem; font-weight: 600; text-align: center;">
+                → Produto real, pronto pra vender.<br>
+                → <strong>Ou pra usar pra você. Ou pra oferecer pra cliente.</strong>
+            </div>
+        </div>
+
+        <!-- Produto real, pronto pra vender -->
+        <div class="section">
+            <div style="font-size: 1.4rem; font-weight: 700; text-align: center; margin-bottom: 20px;">
+                ⚙️ <strong>Produto real. Pronto pra vender.</strong>
+            </div>
+            <div style="font-size: 1.2rem; text-align: center; line-height: 1.8;">
+                → Ou pra usar pra você.<br>
+                → <strong>Ou pra oferecer pra cliente.</strong>
+            </div>
+        </div>
+
+        <!-- Seção de Pré-Requisitos -->
+        <div class="prerequisites-section">
+            <h3>@Model.PreRequisitos.Titulo</h3>
+            
+            <div class="warning-box">@Model.PreRequisitos.Aviso</div>
+            
+            <div class="prerequisite-text">@Model.PreRequisitos.Requisito</div>
+            
+            <div class="prerequisite-list">
+                <h4>✔️ Você precisa ter:</h4>
+                <ul>
+                    @foreach (var necessario in Model.PreRequisitos.Necessario)
+                    {
+                        <li>@necessario</li>
+                    }
+                </ul>
+                <div style="color: #ff6b35; font-weight: 600; margin-top: 15px;">
+                    → @Model.PreRequisitos.Explicacao
+                </div>
+            </div>
+            
+            <div class="philosophy-box">@Model.PreRequisitos.Filosofia</div>
+            
+            <div class="prerequisite-text">
+                <strong>💡 @Model.PreRequisitos.Tranquilidade</strong>
+            </div>
+            
+            <div class="prerequisite-text" style="text-align: center; color: #ff6b35; font-weight: 700;">
+                → @Model.PreRequisitos.ObjetivoFinal
+            </div>
+            
+            <div class="for-whom-section">
+                <h4>🔥 Isso aqui é pra quem quer:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    @foreach (var paraQuem in Model.PreRequisitos.ParaQuem)
+                    {
+                        <li style="color: #ffffff; font-size: 1.1rem; margin: 8px 0; font-weight: 600;">@paraQuem</li>
+                    }
+                </ul>
+            </div>
+            
+            <div class="filter-final">
+                💥 @Model.PreRequisitos.Filtro
+            </div>
+            
+            <div class="call-to-action-prereq">
+                @Model.PreRequisitos.Chamada
+            </div>
+        </div>
+
+        <!-- Preço e CTA Principal -->
+        <div class="price-section">
+            <div class="price">R$ @Model.Valor</div>
+            <div class="price-subtitle">Pagamento Único</div>
+            <div style="font-size: 1.3rem; margin: 25px 0; font-weight: 700;">
+                "Menos que uma pizza e cerveja. E você sai com um SaaS rodando e faturando."
+            </div>
+            <a href="@Model.CheckoutUrl" class="cta-button">
+                🛠️ QUERO MEU SAAS NO AR → R$ @Model.Valor
+            </a>
+            <div class="microcopy">
+                Menos papo. Mais deploy. Aqui é SaaS no ar.
+            </div>
+            
+            <!-- Garantia Brutal -->
+            <div class="guarantee-section">
+                <h4>🚩 Garantia Brutal:</h4>
+                <div class="guarantee-text">@Model.Autoridade.Garantia</div>
+                <div style="font-size: 1rem; color: #cccccc; margin-top: 15px; font-style: italic;">
+                    Aqui não tem risco. Só tem dois caminhos: ou você constrói seu SaaS, ou eu te ajudo até sair do outro lado.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Estruturada para SEO -->
+        <div class="faq-section">
+            <h2 class="section-title">❓ Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo demora para ter meu SaaS funcionando?</div>
+                <div class="faq-answer">7 dias seguindo o passo a passo. Não é teoria, é prática direta: código, deploy, produto no ar.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Preciso saber muito de programação?</div>
+                <div class="faq-answer">Você precisa conhecer o básico de C#. Não é para iniciantes, é para quem quer evoluir de programador para criador de produtos.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Quanto custa para manter o SaaS no ar?</div>
+                <div class="faq-answer">Cerca de R$ 20-50/mês. VPS simples + domínio. Nada de AWS complexo, nada de Kubernetes. Deploy real, funcional, econômico.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">O que eu vou ter no final do curso?</div>
+                <div class="faq-answer">Um SaaS completo e funcional criado durante o curso. É um projeto didático real, com todas as funcionalidades. Se você quiser vender algo, precisará aplicar o conhecimento às suas próprias ideias.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">E se eu não conseguir implementar?</div>
+                <div class="faq-answer">Garantia brutal: se você seguir o passo a passo e não conseguir, eu te ajudo pessoalmente até seu SaaS estar no ar.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Isso é diferente dos outros cursos?</div>
+                <div class="faq-answer">Totalmente. Não é curso teórico. É construção de produto real. Você sai com um SaaS funcionando, não com certificado.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Posso usar esse conhecimento para meus próprios projetos?</div>
+                <div class="faq-answer">Exatamente! O objetivo é te ensinar todo o processo. Depois você aplica nas suas ideias, com seus clientes, do seu jeito. O curso te dá a base técnica completa.</div>
+            </div>
+        </div>
+
+        <!-- Schema.org FAQ para SEO -->
+        <script type="application/ld+json">
+        {
+          "@@context": "https://schema.org",
+          "@@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@@type": "Question",
+              "name": "Quanto tempo demora para ter meu SaaS funcionando?",
+              "acceptedAnswer": {
+                "@@type": "Answer",
+                "text": "7 dias seguindo o passo a passo. Não é teoria, é prática direta: código, deploy, produto no ar."
+              }
+            },
+            {
+              "@@type": "Question",
+              "name": "Preciso saber muito de programação?",
+              "acceptedAnswer": {
+                "@@type": "Answer",
+                "text": "Você precisa conhecer o básico de C#. Não é para iniciantes, é para quem quer evoluir de programador para criador de produtos."
+              }
+            },
+            {
+              "@@type": "Question",
+              "name": "Quanto custa para manter o SaaS no ar?",
+              "acceptedAnswer": {
+                "@@type": "Answer",
+                "text": "Cerca de R$ 20-50/mês. VPS simples + domínio. Nada de AWS complexo, nada de Kubernetes. Deploy real, funcional, econômico."
+              }
+            },
+                         {
+               "@@type": "Question",
+               "name": "O que eu vou ter no final do curso?",
+               "acceptedAnswer": {
+                 "@@type": "Answer",
+                 "text": "Um SaaS completo e funcional criado durante o curso. É um projeto didático real, com todas as funcionalidades. Se você quiser vender algo, precisará aplicar o conhecimento às suas próprias ideias."
+               }
+             },
+            {
+              "@@type": "Question",
+              "name": "E se eu não conseguir implementar?",
+              "acceptedAnswer": {
+                "@@type": "Answer",
+                "text": "Garantia brutal: se você seguir o passo a passo e não conseguir, eu te ajudo pessoalmente até seu SaaS estar no ar."
+              }
+            },
+                         {
+               "@@type": "Question",
+               "name": "Isso é diferente dos outros cursos?",
+               "acceptedAnswer": {
+                 "@@type": "Answer",
+                 "text": "Totalmente. Não é curso teórico. É construção de produto real. Você sai com um SaaS funcionando, não com certificado."
+               }
+             },
+             {
+               "@@type": "Question",
+               "name": "Posso usar esse conhecimento para meus próprios projetos?",
+               "acceptedAnswer": {
+                 "@@type": "Answer",
+                 "text": "Exatamente! O objetivo é te ensinar todo o processo. Depois você aplica nas suas ideias, com seus clientes, do seu jeito. O curso te dá a base técnica completa."
+               }
+             }
+          ]
+        }
+        </script>
+
+        <!-- Formulário de Lead -->
+        <div class="lead-form">
+            <h3>✉️ Ou... não tá pronto pra isso?</h3>
+            <p>
+                → Deixa seu email e eu te mando mais informações.
+            </p>
+            
+            @if (ViewData["ErrorMessage"] != null)
+            {
+                <div class="error-message">@ViewData["ErrorMessage"]</div>
+            }
+            
+            <form asp-action="CapturarLead" method="post">
+                <input type="hidden" name="DesafioSlug" value="@Model.Slug" />
+                
+                <div class="form-group">
+                    <input type="text" name="Nome" class="form-control" placeholder="Seu nome completo" required />
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" name="Email" class="form-control" placeholder="Seu melhor email" required />
+                </div>
+                
+                <button type="submit" class="btn-submit">
+                    QUERO SABER MAIS
+                </button>
+                
+                <div class="form-microcopy">
+                    Sem spam. Sem enrolação. Só código, produto e faturamento.
+                </div>
+            </form>
+        </div>
+
+        <!-- Microcopy de Pré-Requisitos no Rodapé -->
+        <div class="footer-microcopy">
+            @Model.PreRequisitos.MicrocopyRodape
+        </div>
+
+        <!-- Footer Minimal -->
+        <div class="footer">
+            <strong>Diogo Costa</strong> — Produto real. Nada de mágica. Nada de firula. Aqui é código. Aqui é empresa.
+        </div>
+    </div>
+
+    <!-- Google Analytics ou tracking scripts aqui -->
+</body>
+</html> 

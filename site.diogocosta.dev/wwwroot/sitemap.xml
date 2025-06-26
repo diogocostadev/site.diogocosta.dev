@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <!-- Página Principal -->
+    <url>
+        <loc>https://diogocosta.dev/</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Sobre -->
+    <url>
+        <loc>https://diogocosta.dev/sobre</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Cursos -->
+    <url>
+        <loc>https://diogocosta.dev/cursos</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Blog -->
+    <url>
+        <loc>https://diogocosta.dev/blog</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Contato -->
+    <url>
+        <loc>https://diogocosta.dev/contato</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Landing Pages dos Desafios (HIGH PRIORITY) -->
+    <url>
+        <loc>https://diogocosta.dev/desafio-financeiro</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
+            <image:title>Diogo Costa - MVP Microsoft</image:title>
+            <image:caption>Instrutor do Desafio SaaS Financeiro</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/desafio-leads</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
+            <image:title>Diogo Costa - MVP Microsoft</image:title>
+            <image:caption>Instrutor do Desafio SaaS Leads</image:caption>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/desafio-vendas</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
+            <image:title>Diogo Costa - MVP Microsoft</image:title>
+            <image:caption>Instrutor do Desafio SaaS Vendas</image:caption>
+        </image:image>
+    </url>
+
+    <!-- VSL - Video Sales Letter (HIGHEST PRIORITY SALES PAGE) -->
+    <url>
+        <loc>https://diogocosta.dev/vsl-criar-saas</loc>
+        <lastmod>2024-12-25T12:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.95</priority>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
+            <image:title>VSL Criar SaaS - Método Completo - Diogo Costa MVP</image:title>
+            <image:caption>Video Sales Letter - Aprenda a criar seu primeiro SaaS lucrativo em 7 dias</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/logome.webp</image:loc>
+            <image:title>Diogo Costa Dev - Logo</image:title>
+            <image:caption>Diogo Costa - Desenvolvedor MVP Microsoft e Founder</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Posts do Blog -->
+    <url>
+        <loc>https://diogocosta.dev/blog/construcao-de-produtos</loc>
+        <lastmod>2024-06-16T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/blog/estrategias-de-marketing</loc>
+        <lastmod>2024-06-17T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/blog/como-divulgar-seu-produto</loc>
+        <lastmod>2024-06-19T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/blog/bug-mental-antes-do-codigo</loc>
+        <lastmod>2024-06-22T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/blog/o-guia-definitivo-para-testar-suas-ideias-antes-de-investir-tempo-e-dinheiro</loc>
+        <lastmod>2024-10-15T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/blog/como-criar-um-roteiro-estrategico-para-suas-ideias</loc>
+        <lastmod>2024-11-20T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/blog/desenvolva-uma-mentalidade-par-ampliar-seus-horizontes</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Outras páginas importantes -->
+    <url>
+        <loc>https://diogocosta.dev/desbloqueio</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/carreira</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Termos e Políticas -->
+    <url>
+        <loc>https://diogocosta.dev/termo</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://diogocosta.dev/privacy</loc>
+        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset> 
