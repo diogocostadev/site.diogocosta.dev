@@ -233,3 +233,30 @@
 2025-06-26 12:13:22.406 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 5.5721ms
 2025-06-26 12:13:22.410 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
 2025-06-26 12:16:27.501 -03:00 [INF] Application is shutting down...
+2025-06-26 12:16:34.407 -03:00 [INF] Sistema iniciado em 26/06/2025 12:16:34
+2025-06-26 12:16:34.481 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-26 12:16:34.485 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 12:16:34.486 -03:00 [INF] Hosting environment: Development
+2025-06-26 12:16:34.487 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-26 12:17:40.113 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-26 12:17:40.150 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-26 12:17:40.166 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:17:40.264 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:17:40.290 -03:00 [INF] Executed ViewResult - view VSL executed in 28.1222ms.
+2025-06-26 12:17:40.302 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 132.7824ms
+2025-06-26 12:17:40.303 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-26 12:17:40.306 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 195.7326ms
+2025-06-26 12:17:40.324 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:17:40.335 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 11.4508ms
+2025-06-26 12:17:40.341 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:18:05.701 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:18:05.705 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:18:05.708 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:18:05.719 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:18:05.723 -03:00 [INF] Executed ViewResult - view VSL executed in 3.8394ms.
+2025-06-26 12:18:05.724 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 14.0389ms
+2025-06-26 12:18:05.725 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:18:05.726 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 24.9616ms
+2025-06-26 12:18:05.753 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:18:05.758 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 4.9948ms
+2025-06-26 12:18:05.761 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
