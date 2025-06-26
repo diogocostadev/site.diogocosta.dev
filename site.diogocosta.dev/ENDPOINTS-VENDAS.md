@@ -11,13 +11,24 @@
 **Controller:** `DesafiosController.cs`
 **Views:** `Views/Desafios/Index.cshtml`
 
-### 🎬 PÁGINA VSL (VIDEO SALES LETTER) 
+### 🎬 PÁGINAS VSL (VIDEO SALES LETTER) 
 
-**URL da VSL:**
-- `/vsl-criar-saas` - Página VSL com vídeo de vendas
+**URLs das VSLs:**
+- `/vsl-criar-saas` - VSL do Desafio SaaS (7 dias)
+- `/vsl-dc360` - VSL do DC360 (Formação completa)
 
-**Controller:** `DesafiosController.cs` - Action `VSL()`
+**Controller:** `DesafiosController.cs` - Actions `VSL()` e `VSLDC360()`
 **View:** `Views/Desafios/VSL.cshtml`
+
+### 👑 PÁGINAS DC360 (FORMAÇÃO PREMIUM)
+
+**URLs DC360:**
+- `/dc360` - Landing Page DC360 (Formação de Founders)
+- `/vsl-dc360` - VSL DC360 com vídeo premium
+- `/obrigado-dc360` - Thank You Page DC360
+
+**Controller:** `DesafiosController.cs` - Actions `DC360()`, `VSLDC360()`, `ObrigadoDC360()`
+**Views:** `Views/Desafios/DC360.cshtml`, `Views/Desafios/VSL.cshtml`, `Views/Desafios/Obrigado.cshtml`
 
 ### ✅ PÁGINAS DE AGRADECIMENTO (THANK YOU PAGES)
 
@@ -25,7 +36,8 @@
 - `/obrigado-desafio-financeiro` - Thank You Page Desafio Financeiro
 - `/obrigado-desafio-leads` - Thank You Page Desafio Leads
 - `/obrigado-desafio-vendas` - Thank You Page Desafio Vendas
-- `/obrigado-vsl` - Thank You Page da VSL
+- `/obrigado-vsl` - Thank You Page da VSL Desafio SaaS
+- `/obrigado-dc360` - Thank You Page DC360 Premium
 
 **Controller:** `DesafiosController.cs` - Actions `Obrigado()` e `ObrigadoVSL()`
 **View:** `Views/Desafios/Obrigado.cshtml`
@@ -68,18 +80,29 @@ Todas as páginas são responsivas e otimizadas para:
 ### 🎯 CONVERSÃO
 
 **CTAs Principais:**
-- "QUERO PARTICIPAR DO DESAFIO" (Landing Pages)
-- "QUERO MEU SAAS AGORA!" (VSL)
-- "SIM, EU QUERO MEU SAAS!" (VSL Footer)
+- "QUERO PARTICIPAR DO DESAFIO" (Landing Pages Desafios)
+- "QUERO MEU SAAS AGORA!" (VSL Desafio SaaS)
+- "QUERO MEU ACESSO AO DC360 AGORA" (DC360 Landing)
+- "SIM, EU QUERO MEU DC360!" (DC360 VSL)
 
 **Preços:**
-- Desafios: Gratuitos
-- VSL: De R$ 997 por R$ 197
+- Desafios SaaS: Gratuitos (lead magnets)
+- VSL Desafio SaaS: De R$ 997 por R$ 197
+- DC360 Landing: De R$ 1997 por R$ 1497
+- DC360 VSL: De R$ 2997 por R$ 1497
 
 ### 🔗 LINKS EXTERNOS
 
-**Checkout:** Configurado via `CheckoutUrl` no modelo
+**Checkout:** `https://pay.kiwify.com.br/1ToZyFr` (Kiwify)
 **Vídeo VSL:** `https://comunidade.didaticos.com/videos-moodle/comunidade-didaticos-001.m3u8`
+
+### 💳 GATEWAY DE PAGAMENTO
+
+**Plataforma:** Kiwify
+
+**Produtos:**
+- **Desafio SaaS:** [https://pay.kiwify.com.br/1ToZyFr](https://pay.kiwify.com.br/1ToZyFr)
+- **DC360:** [https://pay.kiwify.com.br/BclEImU](https://pay.kiwify.com.br/BclEImU)
 
 ---
 

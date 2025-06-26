@@ -364,3 +364,38 @@
 2025-06-25 22:29:39.696 -03:00 [INF] Application started. Press Ctrl+C to shut down.
 2025-06-25 22:29:39.697 -03:00 [INF] Hosting environment: Development
 2025-06-25 22:29:39.697 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 22:59:27.240 -03:00 [INF] Sistema iniciado em 25/06/2025 22:59:27
+2025-06-25 22:59:27.338 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 22:59:27.342 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 22:59:27.344 -03:00 [INF] Hosting environment: Development
+2025-06-25 22:59:27.346 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 23:01:01.134 -03:00 [INF] Sistema iniciado em 25/06/2025 23:01:01
+2025-06-25 23:01:01.205 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 23:01:01.207 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 23:01:01.208 -03:00 [INF] Hosting environment: Development
+2025-06-25 23:01:01.209 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 23:01:03.585 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-25 23:01:03.616 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 23:01:03.630 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-25 23:01:03.644 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 23:01:03.747 -03:00 [INF] Executed ViewResult - view Index executed in 103.2786ms.
+2025-06-25 23:01:03.757 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 123.812ms
+2025-06-25 23:01:03.759 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 23:01:03.761 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 177.0959ms
+2025-06-25 23:01:11.198 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-25 23:01:11.202 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 23:01:11.205 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 23:01:11.280 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 23:01:11.286 -03:00 [INF] Executed ViewResult - view VSL executed in 6.9154ms.
+2025-06-25 23:01:11.288 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 80.4203ms
+2025-06-25 23:01:11.289 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 23:01:11.291 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 94.006ms
+2025-06-25 23:01:25.669 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-25 23:01:25.673 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-25 23:01:25.677 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 23:01:25.688 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 23:01:25.689 -03:00 [INF] Executed ViewResult - view VSL executed in 1.4502ms.
+2025-06-25 23:01:25.691 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 11.3846ms
+2025-06-25 23:01:25.692 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-25 23:01:25.693 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 24.4048ms
+2025-06-25 23:01:54.604 -03:00 [INF] Application is shutting down...

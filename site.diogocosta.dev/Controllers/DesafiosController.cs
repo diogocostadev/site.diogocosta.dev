@@ -59,7 +59,7 @@ namespace site.diogocosta.dev.Controllers
                         "Segurança e autenticação",
                         "Monitoramento e logs"
                     },
-                    CheckoutUrl = "https://buy.stripe.com/seu-link-aqui",
+                    CheckoutUrl = "https://pay.kiwify.com.br/1ToZyFr",
                     Ativo = true
                 },
                 new DesafioModel
@@ -91,7 +91,7 @@ namespace site.diogocosta.dev.Controllers
                         "Análise de conversão",
                         "Webhooks e integrações"
                     },
-                    CheckoutUrl = "https://buy.stripe.com/seu-link-aqui",
+                    CheckoutUrl = "https://pay.kiwify.com.br/1ToZyFr",
                     Ativo = true
                 },
                 new DesafioModel
@@ -123,7 +123,7 @@ namespace site.diogocosta.dev.Controllers
                         "Integração com ferramentas de vendas",
                         "Relatórios avançados"
                     },
-                    CheckoutUrl = "https://buy.stripe.com/seu-link-aqui",
+                    CheckoutUrl = "https://pay.kiwify.com.br/1ToZyFr",
                     Ativo = true
                 }
             };
@@ -353,7 +353,7 @@ namespace site.diogocosta.dev.Controllers
                     "Métricas e analytics",
                     "Estratégias de monetização"
                 },
-                CheckoutUrl = "https://buy.stripe.com/vsl-curso-completo",
+                CheckoutUrl = "https://pay.kiwify.com.br/1ToZyFr",
                 Ativo = true
             };
 
@@ -370,6 +370,111 @@ namespace site.diogocosta.dev.Controllers
                 Titulo = "Bem-vindo ao Método SaaS!",
                 Subtitulo = "Você está a 7 dias do seu primeiro SaaS lucrativo",
                 EhVSL = true
+            };
+
+            return View("Obrigado", model);
+        }
+
+        [HttpGet("/dc360")]
+        public IActionResult DC360()
+        {
+            var model = new DesafioModel
+            {
+                Nome = "DC360 - A Formação dos Founders Tech",
+                Slug = "dc360",
+                Titulo = "DC360 — A Formação dos Founders Tech",
+                Subtitulo = "De código → produto → empresa → império digital",
+                Produto = "Formação Completa DC360",
+                Descricao = "A formação definitiva para quem não quer mais ser só dev. Transforme seu código em produto, seu produto em empresa, sua empresa em império digital.",
+                PrecoOriginal = 1997,
+                PrecoPromocional = 1497,
+                Funcionalidades = new List<string>
+                {
+                    "Módulo Produto → Transforme código em SaaS lucrativo",
+                    "Módulo Pipeline Comercial → Landing + Checkout automatizado",
+                    "Módulo Deploy & Operação → VPS, SSL, banco, monitoramento",
+                    "Módulo Faturamento → Stripe, cobrança recorrente, métricas",
+                    "Módulo Tráfego → SEO, conteúdo, inbound marketing",
+                    "Módulo Crescimento → Escala, automação, operação blindada",
+                    "Módulo Portfólio → Como operar múltiplos SaaS",
+                    "Módulo Império → Estratégias de expansão e aquisição",
+                    "Templates e Checklists → Operação completa pronta",
+                    "Acesso vitalício + atualizações perpétuas"
+                },
+                Aprendizados = new List<string>
+                {
+                    "Arquitetura de SaaS escalável e lucrativo",
+                    "Pipeline comercial completo (landing → checkout → onboarding)",
+                    "Deploy profissional e operação blindada",
+                    "Estratégias de faturamento recorrente",
+                    "Tráfego orgânico e pago para SaaS",
+                    "Escalabilidade e automação de processos",
+                    "Gestão de portfólio de produtos",
+                    "Mindset de founder e operador de império"
+                },
+                CheckoutUrl = "https://pay.kiwify.com.br/BclEImU",
+                Ativo = true
+            };
+
+            return View(model);
+        }
+
+        [HttpGet("/vsl-dc360")]
+        public IActionResult VSLDC360()
+        {
+            var model = new DesafioModel
+            {
+                Nome = "DC360 VSL - Formação dos Founders Tech",
+                Slug = "vsl-dc360",
+                Titulo = "DC360 — Transforme Seu Código em Império Digital",
+                Subtitulo = "A única formação que ensina programadores a construir, operar e escalar SaaS de forma perpétua",
+                Produto = "Formação Completa DC360",
+                Descricao = "Pare de vender hora. Pare de depender de cliente. Pare de ser apenas dev. Torne-se dono de império digital.",
+                EhVSL = true,
+                VideoUrl = "https://comunidade.didaticos.com/videos-moodle/dc360-formacao-001.m3u8",
+                PrecoOriginal = 2997,
+                PrecoPromocional = 1497,
+                ValidadePromocao = DateTime.Now.AddDays(7),
+                Funcionalidades = new List<string>
+                {
+                    "8 módulos completos → De código a império digital",
+                    "40+ aulas práticas com implementação real",
+                    "Templates prontos → Landing, checkout, operação",
+                    "Checklists operacionais → Deploy, backup, monitoramento",
+                    "Estratégias de faturamento perpétuo",
+                    "Pipeline comercial completo automatizado",
+                    "Metodologia de crescimento escalável",
+                    "Frameworks de gestão de portfólio",
+                    "Comunidade privada de Founders Tech",
+                    "Acesso vitalício + atualizações perpétuas"
+                },
+                Aprendizados = new List<string>
+                {
+                    "Mindset de founder e operador de império",
+                    "Arquitetura SaaS escalável e lucrativa",
+                    "Pipeline comercial automatizado",
+                    "Deploy e operação profissional",
+                    "Estratégias de tráfego e crescimento",
+                    "Faturamento recorrente e métricas",
+                    "Escalabilidade e automação",
+                    "Gestão de múltiplos produtos"
+                },
+                CheckoutUrl = "https://pay.kiwify.com.br/BclEImU",
+                Ativo = true
+            };
+
+            return View("VSL", model);
+        }
+
+        [HttpGet("/obrigado-dc360")]
+        public IActionResult ObrigadoDC360()
+        {
+            var model = new DesafioModel
+            {
+                Nome = "DC360 - Formação dos Founders Tech",
+                Slug = "dc360",
+                Titulo = "Bem-vindo ao DC360!",
+                Subtitulo = "Sua jornada de founder tech começou agora"
             };
 
             return View("Obrigado", model);
