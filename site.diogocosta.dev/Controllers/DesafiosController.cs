@@ -325,7 +325,7 @@ namespace site.diogocosta.dev.Controllers
                 Produto = "Curso Completo Criar SaaS",
                 Descricao = "Sistema passo-a-passo para criar, lançar e monetizar seu primeiro SaaS",
                 EhVSL = true,
-                VideoUrl = "https://comunidade.didaticos.com/videos-moodle/comunidade-didaticos-001.m3u8",
+                VideoUrl = "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
                 PrecoOriginal = 997,
                 PrecoPromocional = 197,
                 ValidadePromocao = DateTime.Now.AddDays(3), // 3 dias de oferta
@@ -431,7 +431,7 @@ namespace site.diogocosta.dev.Controllers
                 Produto = "Formação Completa DC360",
                 Descricao = "Pare de vender hora. Pare de depender de cliente. Pare de ser apenas dev. Torne-se dono de império digital.",
                 EhVSL = true,
-                VideoUrl = "https://comunidade.didaticos.com/videos-moodle/dc360-formacao-001.m3u8",
+                VideoUrl = "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
                 PrecoOriginal = 2997,
                 PrecoPromocional = 1497,
                 ValidadePromocao = DateTime.Now.AddDays(7),

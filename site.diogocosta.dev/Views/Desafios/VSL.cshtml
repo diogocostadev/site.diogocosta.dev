@@ -135,13 +135,15 @@
             box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
         }
 
-        .video-wrapper iframe {
+        .video-wrapper iframe,
+        .video-wrapper video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             border-radius: 10px;
+            background: #000;
         }
 
         .video-cta {
@@ -466,9 +468,10 @@
                     controls 
                     preload="metadata"
                     poster="/img/logome.webp"
+                    crossorigin="anonymous"
                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
-                    <source src="@Model.VideoUrl" type="application/x-mpegURL">
-                    <p>Seu navegador não suporta o elemento de vídeo. <a href="@Model.VideoUrl">Clique aqui para assistir.</a></p>
+                    <!-- HLS.js irá definir a source via JavaScript -->
+                    <p>Seu navegador não suporta streaming de vídeo. <a href="@Model.VideoUrl" target="_blank">Clique aqui para assistir.</a></p>
                 </video>
             </div>
             
@@ -673,8 +676,6 @@
             }
         }
 
-
-
         // Track Purchase Intent
         function trackPurchaseIntent() {
             // Google Analytics
@@ -705,13 +706,53 @@
         // Inicialização do Player HLS
         function initializeVideo() {
             const video = document.getElementById('video');
-            const videoSrc = "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8";
+            const videoSrc = '@Model.VideoUrl'; // Usar a URL do modelo, não hardcoded
+
+            console.log('Tentando carregar vídeo:', videoSrc); // Debug
 
             if (Hls.isSupported()) {
-                const hls = new Hls();
+                console.log('HLS.js é suportado');
+                const hls = new Hls({
+                    debug: true, // Ativar debug temporariamente
+                    enableWorker: true,
+                    lowLatencyMode: true,
+                });
+                
                 hls.loadSource(videoSrc);
                 hls.attachMedia(video);
+                
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    console.log('Manifest carregado com sucesso');
+                    video.play().catch(e => console.log('Autoplay bloqueado:', e));
+                });
+                
+                hls.on(Hls.Events.ERROR, function (event, data) {
+                    console.error('Erro HLS:', data);
+                    if (data.fatal) {
+                        switch(data.type) {
+                            case Hls.ErrorTypes.NETWORK_ERROR:
+                                console.log('Erro de rede, tentando recuperar...');
+                                hls.startLoad();
+                                break;
+                            case Hls.ErrorTypes.MEDIA_ERROR:
+                                console.log('Erro de mídia, tentando recuperar...');
+                                hls.recoverMediaError();
+                                break;
+                            default:
+                                console.log('Erro fatal, destruindo HLS');
+                                hls.destroy();
+                                // Fallback para vídeo normal
+                                video.src = videoSrc;
+                                break;
+                        }
+                    }
+                });
+                
             } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                console.log('Safari HLS nativo suportado');
+                video.src = videoSrc;
+            } else {
+                console.log('HLS não suportado, usando src direta');
                 video.src = videoSrc;
             }
         }
