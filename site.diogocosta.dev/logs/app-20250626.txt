@@ -260,3 +260,88 @@
 2025-06-26 12:18:05.753 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
 2025-06-26 12:18:05.758 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 4.9948ms
 2025-06-26 12:18:05.761 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:24:28.020 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:24:28.022 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:24:28.023 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:24:28.029 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:24:28.032 -03:00 [INF] Executed ViewResult - view VSL executed in 2.7845ms.
+2025-06-26 12:24:28.033 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 8.352ms
+2025-06-26 12:24:28.034 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:24:28.035 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 15.1602ms
+2025-06-26 12:24:38.743 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:24:38.747 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:24:38.748 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:24:38.751 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:24:38.753 -03:00 [INF] Executed ViewResult - view VSL executed in 1.8407ms.
+2025-06-26 12:24:38.755 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 4.5851ms
+2025-06-26 12:24:38.758 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:24:38.762 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 19.4958ms
+2025-06-26 12:24:38.769 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 12:24:38.784 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 12:24:38.786 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 16.7409ms
+2025-06-26 12:24:39.165 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-26 12:24:39.168 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 12:24:39.170 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 4.6324ms
+2025-06-26 12:49:41.220 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/ - null null
+2025-06-26 12:49:41.223 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-26 12:49:41.226 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-26 12:49:41.230 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-26 12:49:41.320 -03:00 [INF] Executed ViewResult - view Index executed in 91.2685ms.
+2025-06-26 12:49:41.322 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 93.6221ms
+2025-06-26 12:49:41.323 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-26 12:49:41.325 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/ - 200 null text/html; charset=utf-8 104.4347ms
+2025-06-26 12:49:41.337 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/IMG_0045.webp - null null
+2025-06-26 12:49:41.337 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/js/newsletter.js - null null
+2025-06-26 12:49:41.341 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-26 12:49:41.343 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-06-26 12:49:41.344 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/IMG_0045.webp - 200 43926 image/webp 7.2935ms
+2025-06-26 12:49:41.345 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/js/newsletter.js - 200 5883 text/javascript 8.6911ms
+2025-06-26 12:49:41.632 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/6.webp - null null
+2025-06-26 12:49:41.632 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/1.webp - null null
+2025-06-26 12:49:41.634 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/3.webp - null null
+2025-06-26 12:49:41.634 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/4.webp - null null
+2025-06-26 12:49:41.635 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/5.webp - null null
+2025-06-26 12:49:41.635 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/7.webp - null null
+2025-06-26 12:49:41.636 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-06-26 12:49:41.638 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-06-26 12:49:41.641 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-06-26 12:49:41.643 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-06-26 12:49:41.646 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-06-26 12:49:41.648 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-06-26 12:49:41.649 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/6.webp - 200 7306 image/webp 16.3482ms
+2025-06-26 12:49:41.650 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/1.webp - 200 6562 image/webp 17.5139ms
+2025-06-26 12:49:41.651 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/3.webp - 200 4492 image/webp 16.8981ms
+2025-06-26 12:49:41.652 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/4.webp - 200 8996 image/webp 17.5776ms
+2025-06-26 12:49:41.653 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/5.webp - 200 8740 image/webp 18.7343ms
+2025-06-26 12:49:41.654 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/7.webp - 200 4522 image/webp 19.8548ms
+2025-06-26 12:49:41.658 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/8.webp - null null
+2025-06-26 12:49:41.662 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/9.webp - null null
+2025-06-26 12:49:41.664 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/10.webp - null null
+2025-06-26 12:49:41.667 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/11.webp - null null
+2025-06-26 12:49:41.669 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/12.webp - null null
+2025-06-26 12:49:41.671 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/13.webp - null null
+2025-06-26 12:49:41.674 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-06-26 12:49:41.677 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-06-26 12:49:41.680 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-06-26 12:49:41.682 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-06-26 12:49:41.684 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-06-26 12:49:41.686 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-06-26 12:49:41.687 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/8.webp - 200 11264 image/webp 28.8393ms
+2025-06-26 12:49:41.688 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/9.webp - 200 13526 image/webp 26.5943ms
+2025-06-26 12:49:41.689 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/10.webp - 200 7788 image/webp 24.968ms
+2025-06-26 12:49:41.691 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/11.webp - 200 5346 image/webp 23.7208ms
+2025-06-26 12:49:41.692 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/12.webp - 200 4880 image/webp 22.3954ms
+2025-06-26 12:49:41.693 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/13.webp - 200 9486 image/webp 21.6639ms
+2025-06-26 12:49:41.695 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/14.webp - null null
+2025-06-26 12:49:41.710 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-06-26 12:49:41.712 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/14.webp - 200 7290 image/webp 16.3961ms
+2025-06-26 12:49:42.478 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/manifest.json?v=3 - null null
+2025-06-26 12:49:42.478 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/favicon.ico?v=3 - null null
+2025-06-26 12:49:42.482 -03:00 [INF] Sending file. Request path: '/manifest.json'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\manifest.json'
+2025-06-26 12:49:42.483 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 12:49:42.484 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/manifest.json?v=3 - 200 783 application/json 5.634ms
+2025-06-26 12:49:42.484 -03:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/img/D_180.png - null null
+2025-06-26 12:49:42.485 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/favicon.ico?v=3 - 200 5430 image/x-icon 6.7486ms
+2025-06-26 12:49:42.491 -03:00 [INF] Sending file. Request path: '/img/D_180.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D_180.png'
+2025-06-26 12:49:42.495 -03:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/img/D_180.png - 200 3792 image/png 10.961ms
+2025-06-26 12:49:54.367 -03:00 [INF] Application is shutting down...

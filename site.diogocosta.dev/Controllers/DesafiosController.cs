@@ -325,7 +325,7 @@ namespace site.diogocosta.dev.Controllers
                 Produto = "Curso Completo Criar SaaS",
                 Descricao = "Sistema passo-a-passo para criar, lançar e monetizar seu primeiro SaaS",
                 EhVSL = true,
-                VideoUrl = "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
+                VideoUrl = "https://videos.diogocosta.dev/hls/2025-06-08_15-58-24/stream.m3u8",
                 PrecoOriginal = 997,
                 PrecoPromocional = 197,
                 ValidadePromocao = DateTime.Now.AddDays(3), // 3 dias de oferta
