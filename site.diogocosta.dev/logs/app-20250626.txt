@@ -232,3 +232,4 @@
 2025-06-26 12:13:22.400 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
 2025-06-26 12:13:22.406 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 5.5721ms
 2025-06-26 12:13:22.410 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:16:27.501 -03:00 [INF] Application is shutting down...
