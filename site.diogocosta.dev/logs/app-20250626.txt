@@ -1,0 +1,234 @@
+2025-06-26 11:49:13.700 -03:00 [INF] Sistema iniciado em 26/06/2025 11:49:13
+2025-06-26 11:49:13.794 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-26 11:49:13.797 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 11:49:13.798 -03:00 [INF] Hosting environment: Development
+2025-06-26 11:49:13.799 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-26 11:49:16.727 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-26 11:49:16.762 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-26 11:49:16.778 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-26 11:49:16.794 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-26 11:49:16.928 -03:00 [INF] Executed ViewResult - view Index executed in 135.8449ms.
+2025-06-26 11:49:16.939 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 159.2693ms
+2025-06-26 11:49:16.941 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-26 11:49:16.945 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 219.0547ms
+2025-06-26 11:49:17.471 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=3 - null null
+2025-06-26 11:49:17.471 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/manifest.json?v=3 - null null
+2025-06-26 11:49:17.482 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 11:49:17.482 -03:00 [INF] Sending file. Request path: '/manifest.json'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\manifest.json'
+2025-06-26 11:49:17.484 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=3 - 200 5430 image/x-icon 13.3469ms
+2025-06-26 11:49:17.485 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/manifest.json?v=3 - 200 783 application/json 14.4756ms
+2025-06-26 11:49:17.489 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D_180.png - null null
+2025-06-26 11:49:17.495 -03:00 [INF] Sending file. Request path: '/img/D_180.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D_180.png'
+2025-06-26 11:49:17.497 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D_180.png - 200 3792 image/png 7.6131ms
+2025-06-26 11:49:27.212 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:49:27.215 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:49:27.218 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:49:27.522 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:49:27.528 -03:00 [INF] Executed ViewResult - view VSL executed in 5.784ms.
+2025-06-26 11:49:27.529 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 309.22ms
+2025-06-26 11:49:27.530 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:49:27.533 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 321.2213ms
+2025-06-26 11:50:18.372 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 11:50:18.378 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 5.7427ms
+2025-06-26 11:50:18.380 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 11:51:29.861 -03:00 [INF] Application is shutting down...
+2025-06-26 11:51:34.998 -03:00 [INF] Sistema iniciado em 26/06/2025 11:51:34
+2025-06-26 11:51:35.077 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-26 11:51:35.080 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 11:51:35.080 -03:00 [INF] Hosting environment: Development
+2025-06-26 11:51:35.082 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-26 11:52:46.356 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:52:46.400 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:52:46.426 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:52:46.533 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:52:46.562 -03:00 [INF] Executed ViewResult - view VSL executed in 32.4486ms.
+2025-06-26 11:52:46.576 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 147.5257ms
+2025-06-26 11:52:46.578 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:52:46.583 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 227.9705ms
+2025-06-26 11:52:46.596 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 11:52:46.606 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 10.3333ms
+2025-06-26 11:52:46.613 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 11:53:10.273 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:53:10.275 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:53:10.276 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:53:10.284 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:53:10.287 -03:00 [INF] Executed ViewResult - view VSL executed in 3.3385ms.
+2025-06-26 11:53:10.288 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 11.0556ms
+2025-06-26 11:53:10.290 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:53:10.291 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 17.7165ms
+2025-06-26 11:53:10.312 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 11:53:10.313 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 11:53:10.317 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 4.8239ms
+2025-06-26 11:53:10.320 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 11:53:10.328 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 11:53:10.331 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 18.154ms
+2025-06-26 11:53:10.641 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-26 11:53:10.645 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 11:53:10.646 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 4.5676ms
+2025-06-26 11:53:14.474 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:53:14.476 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:53:14.477 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:53:14.483 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:53:14.485 -03:00 [INF] Executed ViewResult - view VSL executed in 2.5467ms.
+2025-06-26 11:53:14.486 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 8.3258ms
+2025-06-26 11:53:14.488 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:53:14.489 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 14.8197ms
+2025-06-26 11:53:14.503 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 11:53:14.505 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 2.3543ms
+2025-06-26 11:53:14.508 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 11:53:14.510 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 11:53:14.514 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 11:53:14.516 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 5.6329ms
+2025-06-26 11:53:14.758 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-26 11:53:14.761 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 11:53:14.762 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 3.9326ms
+2025-06-26 11:55:28.040 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:55:28.043 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:55:28.044 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:55:28.047 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:55:28.049 -03:00 [INF] Executed ViewResult - view VSL executed in 2.0483ms.
+2025-06-26 11:55:28.050 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 4.4788ms
+2025-06-26 11:55:28.051 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:55:28.053 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 12.1128ms
+2025-06-26 11:55:28.084 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 11:55:28.088 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.7141ms
+2025-06-26 11:55:28.091 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 11:55:31.559 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:55:31.561 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:55:31.561 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:55:31.563 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:55:31.565 -03:00 [INF] Executed ViewResult - view VSL executed in 1.6864ms.
+2025-06-26 11:55:31.566 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 3.3035ms
+2025-06-26 11:55:31.567 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:55:31.568 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 9.4934ms
+2025-06-26 11:55:31.591 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 11:55:31.595 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 3.7289ms
+2025-06-26 11:55:31.596 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 11:55:31.598 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 11:55:31.601 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 11:55:31.604 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 7.6565ms
+2025-06-26 11:55:31.929 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-26 11:55:31.932 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 11:55:31.934 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 5.1209ms
+2025-06-26 11:55:36.514 -03:00 [INF] Application is shutting down...
+2025-06-26 11:55:50.920 -03:00 [INF] Sistema iniciado em 26/06/2025 11:55:50
+2025-06-26 11:55:50.988 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-26 11:55:50.992 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 11:55:50.993 -03:00 [INF] Hosting environment: Development
+2025-06-26 11:55:50.994 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-26 11:55:52.444 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:55:52.485 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:55:52.502 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:55:52.594 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:55:52.619 -03:00 [INF] Executed ViewResult - view VSL executed in 25.5698ms.
+2025-06-26 11:55:52.632 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 127.379ms
+2025-06-26 11:55:52.634 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:55:52.638 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 194.9795ms
+2025-06-26 11:55:52.653 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 11:55:52.671 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 11:55:52.674 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 21.1199ms
+2025-06-26 11:55:53.481 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D_180.png?v=2 - null null
+2025-06-26 11:55:53.483 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png?v=2 - null null
+2025-06-26 11:55:53.489 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-06-26 11:55:53.489 -03:00 [INF] Sending file. Request path: '/img/D_180.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D_180.png'
+2025-06-26 11:55:53.492 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png?v=2 - 200 8803 image/png 8.6009ms
+2025-06-26 11:55:53.492 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D_180.png?v=2 - 200 3792 image/png 11.4375ms
+2025-06-26 11:56:30.122 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 11:56:30.127 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:56:30.129 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 11:56:30.160 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 11:56:30.168 -03:00 [INF] Executed ViewResult - view VSL executed in 7.2298ms.
+2025-06-26 11:56:30.171 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 21.467ms
+2025-06-26 11:56:30.175 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 11:56:30.183 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 61.5034ms
+2025-06-26 11:58:12.503 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/test-hls.html - null null
+2025-06-26 11:58:12.505 -03:00 [INF] Sending file. Request path: '/test-hls.html'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\test-hls.html'
+2025-06-26 11:58:12.507 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/test-hls.html - 200 8437 text/html 4.5597ms
+2025-06-26 12:00:17.439 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:00:17.442 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:00:17.443 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:00:17.448 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:00:17.450 -03:00 [INF] Executed ViewResult - view VSL executed in 2.1596ms.
+2025-06-26 12:00:17.452 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 7.3223ms
+2025-06-26 12:00:17.453 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:00:17.454 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 14.7149ms
+2025-06-26 12:00:17.482 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:00:17.487 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 5.543ms
+2025-06-26 12:00:17.491 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:00:24.469 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:00:24.472 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:00:24.472 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:00:24.474 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:00:24.476 -03:00 [INF] Executed ViewResult - view VSL executed in 1.4611ms.
+2025-06-26 12:00:24.477 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 3.0747ms
+2025-06-26 12:00:24.478 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:00:24.479 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 9.6941ms
+2025-06-26 12:00:24.502 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:00:24.505 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 2.7698ms
+2025-06-26 12:00:24.508 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:00:24.511 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 12:00:24.514 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 12:00:24.516 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 4.8501ms
+2025-06-26 12:00:24.879 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-26 12:00:24.882 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 12:00:24.884 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 4.5047ms
+2025-06-26 12:03:28.383 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-26 12:03:28.386 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 12:03:28.388 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 4.6545ms
+2025-06-26 12:07:31.419 -03:00 [INF] Application is shutting down...
+2025-06-26 12:09:39.223 -03:00 [INF] Sistema iniciado em 26/06/2025 12:09:39
+2025-06-26 12:09:39.302 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-26 12:09:39.306 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 12:09:39.307 -03:00 [INF] Hosting environment: Development
+2025-06-26 12:09:39.307 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-26 12:09:39.750 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/test-hls.html - null null
+2025-06-26 12:09:39.759 -03:00 [INF] The file /test-hls.html was not modified
+2025-06-26 12:09:39.762 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/test-hls.html - 304 null text/html 12.6326ms
+2025-06-26 12:09:42.776 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:09:42.803 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:09:42.817 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:09:42.899 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:09:42.920 -03:00 [INF] Executed ViewResult - view VSL executed in 22.8321ms.
+2025-06-26 12:09:42.922 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 102.8244ms
+2025-06-26 12:09:42.924 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:09:42.926 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 150.9558ms
+2025-06-26 12:09:42.958 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-26 12:09:42.958 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:09:42.967 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 8.8623ms
+2025-06-26 12:09:42.970 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-26 12:09:42.972 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:09:42.973 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 15.1288ms
+2025-06-26 12:09:43.294 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-26 12:09:43.301 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-26 12:09:43.303 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 8.1636ms
+2025-06-26 12:09:47.282 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D_180.png?v=2 - null null
+2025-06-26 12:09:47.285 -03:00 [INF] Sending file. Request path: '/img/D_180.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D_180.png'
+2025-06-26 12:09:47.286 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D_180.png?v=2 - 200 3792 image/png 4.0292ms
+2025-06-26 12:11:56.674 -03:00 [INF] Application is shutting down...
+2025-06-26 12:12:57.676 -03:00 [INF] Sistema iniciado em 26/06/2025 12:12:57
+2025-06-26 12:12:57.753 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-26 12:12:57.756 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-26 12:12:57.757 -03:00 [INF] Hosting environment: Development
+2025-06-26 12:12:57.757 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-26 12:13:06.608 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-26 12:13:06.642 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:13:06.658 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:13:06.743 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:13:06.766 -03:00 [INF] Executed ViewResult - view VSL executed in 23.6046ms.
+2025-06-26 12:13:06.777 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 117.0912ms
+2025-06-26 12:13:06.779 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-26 12:13:06.784 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 176.6014ms
+2025-06-26 12:13:06.809 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:13:06.816 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 8.1832ms
+2025-06-26 12:13:06.821 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-06-26 12:13:22.342 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-26 12:13:22.346 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-26 12:13:22.350 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-26 12:13:22.360 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-26 12:13:22.368 -03:00 [INF] Executed ViewResult - view VSL executed in 7.8031ms.
+2025-06-26 12:13:22.369 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 16.4257ms
+2025-06-26 12:13:22.371 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-26 12:13:22.372 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 30.1444ms
+2025-06-26 12:13:22.400 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-06-26 12:13:22.406 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 5.5721ms
+2025-06-26 12:13:22.410 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
