@@ -1,0 +1,77 @@
+User-agent: *
+Allow: /
+
+# Permitir indexação das landing pages importantes
+Allow: /desafio-financeiro
+Allow: /desafio-leads
+Allow: /desafio-vendas
+Allow: /blog/
+Allow: /cursos
+Allow: /sobre
+Allow: /contato
+Allow: /carreira
+Allow: /desbloqueio
+
+# Bloquear áreas administrativas e scripts
+Disallow: /DataProtection-Keys/
+Disallow: /bin/
+Disallow: /obj/
+Disallow: /scripts/
+Disallow: /Servicos/
+Disallow: /Data/
+Disallow: /Controllers/
+Disallow: /Models/
+Disallow: /Views/
+Disallow: /Contratos/
+Disallow: /Dados/
+Disallow: /Extentions/
+
+# Bloquear páginas de agradecimento (evitar indexação de thank you pages)
+Disallow: /obrigado-*
+
+# Bloquear possíveis rotas de desenvolvimento
+Disallow: /*?*
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_
+
+# Permitir recursos estáticos importantes para SEO
+Allow: /css/
+Allow: /js/
+Allow: /img/
+Allow: /pdfs/
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# Sitemap
+Sitemap: https://diogocosta.dev/sitemap.xml
+
+# Crawl-delay para ser gentil com os servidores
+Crawl-delay: 1
+
+# Diretivas específicas para bots importantes
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: FacebookExternalHit
+Allow: /
+Crawl-delay: 0
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+# Bloquear bots mal-intencionados
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: / 

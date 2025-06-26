@@ -1,0 +1,401 @@
+2025-06-25 20:47:41.607 -03:00 [INF] Sistema iniciado em 25/06/2025 20:47:41
+2025-06-25 20:47:41.675 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 20:47:41.679 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 20:47:41.679 -03:00 [INF] Hosting environment: Development
+2025-06-25 20:47:41.680 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 20:47:46.265 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-leads - null null
+2025-06-25 20:47:46.291 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:46.317 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 20:47:46.430 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 20:47:46.478 -03:00 [INF] Executed ViewResult - view Index executed in 48.7102ms.
+2025-06-25 20:47:46.492 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 172.9012ms
+2025-06-25 20:47:46.494 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:46.500 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-leads - 200 null text/html; charset=utf-8 236.0192ms
+2025-06-25 20:47:46.505 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 20:47:46.519 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 20:47:46.522 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 17.1184ms
+2025-06-25 20:47:46.852 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 20:47:46.856 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 20:47:46.858 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 6.4433ms
+2025-06-25 20:47:51.697 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 20:47:51.701 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:51.702 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 20:47:51.713 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 20:47:51.720 -03:00 [INF] Executed ViewResult - view Index executed in 6.5105ms.
+2025-06-25 20:47:51.722 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 16.945ms
+2025-06-25 20:47:51.723 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:51.724 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 27.5628ms
+2025-06-25 20:47:53.773 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 20:47:53.780 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:53.784 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 20:47:53.795 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 20:47:53.801 -03:00 [INF] Executed ViewResult - view Index executed in 5.3206ms.
+2025-06-25 20:47:53.805 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 17.5573ms
+2025-06-25 20:47:53.808 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:53.811 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 36.4409ms
+2025-06-25 20:47:58.769 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 20:47:58.772 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:58.773 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 20:47:58.774 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 20:47:58.776 -03:00 [INF] Executed ViewResult - view Index executed in 1.4066ms.
+2025-06-25 20:47:58.777 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 3.1338ms
+2025-06-25 20:47:58.778 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:47:58.779 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 10.1574ms
+2025-06-25 20:47:58.798 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 20:47:58.803 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 20:47:58.805 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 7.4429ms
+2025-06-25 20:47:59.053 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 20:47:59.056 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 20:47:59.057 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 4.2559ms
+2025-06-25 20:48:00.768 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-vendas - null null
+2025-06-25 20:48:00.770 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:48:00.771 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 20:48:00.773 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 20:48:00.774 -03:00 [INF] Executed ViewResult - view Index executed in 1.4511ms.
+2025-06-25 20:48:00.776 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 3.189ms
+2025-06-25 20:48:00.777 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:48:00.779 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-vendas - 200 null text/html; charset=utf-8 10.034ms
+2025-06-25 20:48:00.794 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 20:48:00.797 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 20:48:00.799 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 4.8291ms
+2025-06-25 20:48:01.140 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 20:48:01.143 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 20:48:01.144 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 4.5337ms
+2025-06-25 20:48:36.182 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-leads - null null
+2025-06-25 20:48:36.186 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:48:36.187 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 20:48:36.191 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 20:48:36.193 -03:00 [INF] Executed ViewResult - view Index executed in 2.4415ms.
+2025-06-25 20:48:36.195 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 4.9853ms
+2025-06-25 20:48:36.196 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 20:48:36.198 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-leads - 200 null text/html; charset=utf-8 15.5351ms
+2025-06-25 21:04:03.903 -03:00 [INF] Sistema iniciado em 25/06/2025 21:04:03
+2025-06-25 21:04:03.970 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 21:04:03.973 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 21:04:03.973 -03:00 [INF] Hosting environment: Development
+2025-06-25 21:04:03.974 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 21:04:06.817 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-25 21:04:06.840 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:06.859 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-25 21:04:06.872 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:04:06.964 -03:00 [INF] Executed ViewResult - view Index executed in 93.5107ms.
+2025-06-25 21:04:06.976 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 115.1754ms
+2025-06-25 21:04:06.978 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:06.982 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 166.0834ms
+2025-06-25 21:04:12.106 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-vendas - null null
+2025-06-25 21:04:12.110 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:12.116 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:04:12.195 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:04:12.216 -03:00 [INF] Executed ViewResult - view Index executed in 21.7493ms.
+2025-06-25 21:04:12.218 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 98.4819ms
+2025-06-25 21:04:12.219 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:12.221 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-vendas - 200 null text/html; charset=utf-8 115.1418ms
+2025-06-25 21:04:16.806 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 21:04:16.810 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:16.811 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:04:16.821 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:04:16.823 -03:00 [INF] Executed ViewResult - view Index executed in 2.4744ms.
+2025-06-25 21:04:16.825 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 11.2433ms
+2025-06-25 21:04:16.826 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:16.827 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 20.7397ms
+2025-06-25 21:04:16.854 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:04:16.868 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:04:16.870 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 16.1833ms
+2025-06-25 21:04:17.122 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 21:04:17.126 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 21:04:17.127 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 4.9463ms
+2025-06-25 21:04:20.190 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 21:04:20.192 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:20.193 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:04:20.199 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:04:20.201 -03:00 [INF] Executed ViewResult - view Index executed in 2.3052ms.
+2025-06-25 21:04:20.202 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 7.5392ms
+2025-06-25 21:04:20.203 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:04:20.204 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 14.409ms
+2025-06-25 21:04:20.227 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:04:20.231 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:04:20.233 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 6.3585ms
+2025-06-25 21:04:20.467 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 21:04:20.471 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 21:04:20.473 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 5.0588ms
+2025-06-25 21:22:27.091 -03:00 [INF] Sistema iniciado em 25/06/2025 21:22:27
+2025-06-25 21:22:27.167 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 21:22:27.171 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 21:22:27.172 -03:00 [INF] Hosting environment: Development
+2025-06-25 21:22:27.173 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 21:23:12.327 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-25 21:23:12.362 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:12.383 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-25 21:23:12.398 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:23:12.506 -03:00 [INF] Executed ViewResult - view Index executed in 109.6676ms.
+2025-06-25 21:23:12.517 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 130.8041ms
+2025-06-25 21:23:12.518 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:12.521 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 195.2924ms
+2025-06-25 21:23:16.336 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-vendas - null null
+2025-06-25 21:23:16.339 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:16.345 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:23:16.425 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:23:16.440 -03:00 [INF] Executed ViewResult - view Index executed in 15.8737ms.
+2025-06-25 21:23:16.441 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 94.1826ms
+2025-06-25 21:23:16.443 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:16.445 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-vendas - 200 null text/html; charset=utf-8 109.1839ms
+2025-06-25 21:23:17.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 21:23:17.721 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:17.722 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:23:17.732 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:23:17.734 -03:00 [INF] Executed ViewResult - view Index executed in 2.4945ms.
+2025-06-25 21:23:17.736 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 11.7246ms
+2025-06-25 21:23:17.737 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:17.739 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 21.9563ms
+2025-06-25 21:23:20.417 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 21:23:20.419 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:20.420 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:23:20.425 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:23:20.427 -03:00 [INF] Executed ViewResult - view Index executed in 2.0052ms.
+2025-06-25 21:23:20.428 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 6.3557ms
+2025-06-25 21:23:20.429 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:20.430 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 13.1042ms
+2025-06-25 21:23:20.454 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:23:20.465 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:23:20.466 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 12.2859ms
+2025-06-25 21:23:20.687 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 21:23:20.690 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 21:23:20.691 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 4.271ms
+2025-06-25 21:23:30.473 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 21:23:30.476 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:30.477 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:23:30.480 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:23:30.484 -03:00 [INF] Executed ViewResult - view Index executed in 4.0353ms.
+2025-06-25 21:23:30.486 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 6.3462ms
+2025-06-25 21:23:30.488 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:30.489 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 16.3005ms
+2025-06-25 21:23:30.515 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:23:30.518 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:23:30.519 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 4.7196ms
+2025-06-25 21:23:30.866 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 21:23:30.869 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 21:23:30.870 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 8.214ms
+2025-06-25 21:23:35.808 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-financeiro - null null
+2025-06-25 21:23:35.810 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:35.811 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:23:35.813 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:23:35.815 -03:00 [INF] Executed ViewResult - view Index executed in 1.5533ms.
+2025-06-25 21:23:35.816 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 3.2591ms
+2025-06-25 21:23:35.817 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:23:35.818 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-financeiro - 200 null text/html; charset=utf-8 10.497ms
+2025-06-25 21:23:35.834 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:23:35.836 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:23:35.837 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 3.6512ms
+2025-06-25 21:31:22.589 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-25 21:31:22.592 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 21:31:22.594 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-25 21:31:22.597 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:31:22.601 -03:00 [INF] Executed ViewResult - view Index executed in 4.3414ms.
+2025-06-25 21:31:22.602 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 6.9821ms
+2025-06-25 21:31:22.604 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 21:31:22.605 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 15.7817ms
+2025-06-25 21:31:22.626 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:31:22.626 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-06-25 21:31:22.630 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:31:22.632 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-06-25 21:31:22.633 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 6.5643ms
+2025-06-25 21:31:22.634 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 5883 text/javascript 7.7984ms
+2025-06-25 21:31:22.884 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-06-25 21:31:22.886 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-06-25 21:31:22.887 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-06-25 21:31:22.887 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-06-25 21:31:22.887 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-06-25 21:31:22.887 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-06-25 21:31:22.888 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-06-25 21:31:22.891 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-06-25 21:31:22.894 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-06-25 21:31:22.897 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-06-25 21:31:22.899 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-06-25 21:31:22.902 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-06-25 21:31:22.903 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 18.5262ms
+2025-06-25 21:31:22.904 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 18.6736ms
+2025-06-25 21:31:22.906 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 18.8126ms
+2025-06-25 21:31:22.907 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 19.8958ms
+2025-06-25 21:31:22.908 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 20.9074ms
+2025-06-25 21:31:22.910 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 22.2218ms
+2025-06-25 21:31:22.912 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-06-25 21:31:22.915 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-06-25 21:31:22.917 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-06-25 21:31:22.919 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-06-25 21:31:22.922 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-06-25 21:31:22.924 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-06-25 21:31:22.927 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-06-25 21:31:22.930 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-06-25 21:31:22.932 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-06-25 21:31:22.934 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-06-25 21:31:22.936 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-06-25 21:31:22.939 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-06-25 21:31:22.940 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 27.2882ms
+2025-06-25 21:31:22.941 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 26.1441ms
+2025-06-25 21:31:22.942 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 25.4725ms
+2025-06-25 21:31:22.944 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 24.5182ms
+2025-06-25 21:31:22.945 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 23.6087ms
+2025-06-25 21:31:22.946 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 21.8023ms
+2025-06-25 21:31:22.949 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-06-25 21:31:22.965 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-06-25 21:31:22.967 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 18.2013ms
+2025-06-25 21:31:23.756 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png - null null
+2025-06-25 21:31:23.760 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-06-25 21:31:23.762 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png - 200 8803 image/png 5.5277ms
+2025-06-25 21:31:26.605 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desafio-vendas - null null
+2025-06-25 21:31:26.607 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:31:26.608 -03:00 [INF] Route matched with {action = "Index", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(System.String) on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 21:31:26.610 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 21:31:26.612 -03:00 [INF] Executed ViewResult - view Index executed in 1.8919ms.
+2025-06-25 21:31:26.613 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev) in 3.7319ms
+2025-06-25 21:31:26.614 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.Index (site.diogocosta.dev)'
+2025-06-25 21:31:26.615 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desafio-vendas - 200 null text/html; charset=utf-8 10.6656ms
+2025-06-25 21:31:26.639 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 21:31:26.642 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 21:31:26.644 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 5.074ms
+2025-06-25 21:31:26.900 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-06-25 21:31:26.904 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 21:31:26.905 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 5.1398ms
+2025-06-25 22:11:03.176 -03:00 [INF] Sistema iniciado em 25/06/2025 22:11:03
+2025-06-25 22:11:03.248 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 22:11:03.251 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 22:11:03.252 -03:00 [INF] Hosting environment: Development
+2025-06-25 22:11:03.253 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 22:13:24.857 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-25 22:13:24.906 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 22:13:24.924 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-25 22:13:24.941 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 22:13:25.110 -03:00 [INF] Executed ViewResult - view Index executed in 163.0064ms.
+2025-06-25 22:13:25.146 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-06-25 22:13:25.146 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-06-25 22:13:25.153 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 225.9005ms
+2025-06-25 22:13:25.164 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 22:13:25.175 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-06-25 22:13:25.175 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-06-25 22:13:25.176 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 321.1378ms
+2025-06-25 22:13:25.178 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 5883 text/javascript 32.2013ms
+2025-06-25 22:13:25.179 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 33.8179ms
+2025-06-25 22:13:25.993 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-06-25 22:13:25.993 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-06-25 22:13:25.993 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-06-25 22:13:25.994 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-06-25 22:13:25.994 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-06-25 22:13:25.994 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-06-25 22:13:25.996 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-06-25 22:13:25.998 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-06-25 22:13:26.001 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-06-25 22:13:26.004 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-06-25 22:13:26.007 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-06-25 22:13:26.010 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-06-25 22:13:26.011 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 18.359ms
+2025-06-25 22:13:26.012 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 19.6227ms
+2025-06-25 22:13:26.013 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 20.4465ms
+2025-06-25 22:13:26.014 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 20.3186ms
+2025-06-25 22:13:26.015 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 21.1001ms
+2025-06-25 22:13:26.017 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 22.3539ms
+2025-06-25 22:13:26.021 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-06-25 22:13:26.025 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-06-25 22:13:26.028 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-06-25 22:13:26.031 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-06-25 22:13:26.033 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-06-25 22:13:26.036 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-06-25 22:13:26.040 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-06-25 22:13:26.042 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-06-25 22:13:26.045 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-06-25 22:13:26.048 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-06-25 22:13:26.050 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-06-25 22:13:26.053 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-06-25 22:13:26.053 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 32.3129ms
+2025-06-25 22:13:26.055 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 29.8018ms
+2025-06-25 22:13:26.058 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 29.5117ms
+2025-06-25 22:13:26.060 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 28.8903ms
+2025-06-25 22:13:26.061 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 28.3814ms
+2025-06-25 22:13:26.062 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 25.7534ms
+2025-06-25 22:13:26.064 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-06-25 22:13:26.080 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-06-25 22:13:26.082 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 17.4568ms
+2025-06-25 22:13:48.603 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-25 22:13:48.606 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:13:48.610 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 22:13:48.697 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 22:13:48.703 -03:00 [INF] Executed ViewResult - view VSL executed in 6.9622ms.
+2025-06-25 22:13:48.705 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 92.8091ms
+2025-06-25 22:13:48.707 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:13:48.709 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 105.6424ms
+2025-06-25 22:13:48.739 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-06-25 22:13:48.744 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-06-25 22:13:48.745 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 5.7754ms
+2025-06-25 22:13:48.979 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - null null
+2025-06-25 22:13:48.982 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-06-25 22:13:48.983 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico?v=2 - 200 5430 image/x-icon 4.4207ms
+2025-06-25 22:17:04.662 -03:00 [INF] Application is shutting down...
+2025-06-25 22:21:49.217 -03:00 [INF] Sistema iniciado em 25/06/2025 22:21:49
+2025-06-25 22:21:49.293 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 22:21:49.297 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 22:21:49.298 -03:00 [INF] Hosting environment: Development
+2025-06-25 22:21:49.299 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 22:24:06.060 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-25 22:24:06.092 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:24:06.108 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 22:24:06.194 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 22:24:06.223 -03:00 [INF] Executed ViewResult - view VSL executed in 29.5389ms.
+2025-06-25 22:24:06.234 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 124.8169ms
+2025-06-25 22:24:06.237 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:24:06.241 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 181.844ms
+2025-06-25 22:24:08.377 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-25 22:24:08.380 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:24:08.381 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 22:24:08.389 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 22:24:08.393 -03:00 [INF] Executed ViewResult - view VSL executed in 3.2458ms.
+2025-06-25 22:24:08.394 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 11.0384ms
+2025-06-25 22:24:08.395 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:24:08.396 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 19.6794ms
+2025-06-25 22:28:43.230 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-25 22:28:43.232 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:28:43.233 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 22:28:43.238 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 22:28:43.240 -03:00 [INF] Executed ViewResult - view VSL executed in 2.0992ms.
+2025-06-25 22:28:43.241 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 7.0382ms
+2025-06-25 22:28:43.242 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 22:28:43.243 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 13.7607ms
+2025-06-25 22:28:59.529 -03:00 [INF] Application is shutting down...
+2025-06-25 22:29:39.631 -03:00 [INF] Sistema iniciado em 25/06/2025 22:29:39
+2025-06-25 22:29:39.692 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 22:29:39.696 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 22:29:39.697 -03:00 [INF] Hosting environment: Development
+2025-06-25 22:29:39.697 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 22:59:27.240 -03:00 [INF] Sistema iniciado em 25/06/2025 22:59:27
+2025-06-25 22:59:27.338 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 22:59:27.342 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 22:59:27.344 -03:00 [INF] Hosting environment: Development
+2025-06-25 22:59:27.346 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 23:01:01.134 -03:00 [INF] Sistema iniciado em 25/06/2025 23:01:01
+2025-06-25 23:01:01.205 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-25 23:01:01.207 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-25 23:01:01.208 -03:00 [INF] Hosting environment: Development
+2025-06-25 23:01:01.209 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-25 23:01:03.585 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-06-25 23:01:03.616 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 23:01:03.630 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-06-25 23:01:03.644 -03:00 [INF] Executing ViewResult, running view Index.
+2025-06-25 23:01:03.747 -03:00 [INF] Executed ViewResult - view Index executed in 103.2786ms.
+2025-06-25 23:01:03.757 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 123.812ms
+2025-06-25 23:01:03.759 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-06-25 23:01:03.761 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 177.0959ms
+2025-06-25 23:01:11.198 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - null null
+2025-06-25 23:01:11.202 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 23:01:11.205 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 23:01:11.280 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 23:01:11.286 -03:00 [INF] Executed ViewResult - view VSL executed in 6.9154ms.
+2025-06-25 23:01:11.288 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 80.4203ms
+2025-06-25 23:01:11.289 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-25 23:01:11.291 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas - 200 null text/html; charset=utf-8 94.006ms
+2025-06-25 23:01:25.669 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-dc360 - null null
+2025-06-25 23:01:25.673 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-25 23:01:25.677 -03:00 [INF] Route matched with {action = "VSLDC360", controller = "Desafios"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult VSLDC360() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-25 23:01:25.688 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-25 23:01:25.689 -03:00 [INF] Executed ViewResult - view VSL executed in 1.4502ms.
+2025-06-25 23:01:25.691 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev) in 11.3846ms
+2025-06-25 23:01:25.692 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSLDC360 (site.diogocosta.dev)'
+2025-06-25 23:01:25.693 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-dc360 - 200 null text/html; charset=utf-8 24.4048ms
+2025-06-25 23:01:54.604 -03:00 [INF] Application is shutting down...

@@ -1,0 +1,752 @@
+@model site.diogocosta.dev.Models.DesafioModel
+@{
+    Layout = null;
+    ViewData["Title"] = $"{Model.Titulo} | VSL Criar SaaS - Diogo Costa";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Otimizado para VSL -->
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@Model.Subtitulo. Método completo para criar seu primeiro SaaS lucrativo em 7 dias. Aprenda com MVP Microsoft e tenha seu produto no ar." />
+    <meta name="keywords" content="criar saas, curso programação, curso c#, mvp microsoft, vsl, video sales letter, produto digital, entrepreneurship" />
+    <meta name="author" content="Diogo Costa - MVP Microsoft" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://diogocosta.dev/vsl-criar-saas" />
+    
+    <!-- Favicons Otimizados -->
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/D.png?v=2" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/D.png?v=2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/D_180.png?v=2" />
+    
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewData["Title"]" />
+    <meta property="og:description" content="@Model.Subtitulo. Método completo para criar seu primeiro SaaS lucrativo em 7 dias." />
+    <meta property="og:image" content="https://diogocosta.dev/img/logome.webp" />
+    <meta property="og:url" content="https://diogocosta.dev/vsl-criar-saas" />
+    <meta property="og:site_name" content="Diogo Costa - MVP Microsoft" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- CSS Brutalista VSL -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.4;
+            overflow-x: hidden;
+            padding-top: 40px;
+        }
+
+        /* Banner de Urgência Fixo */
+        .urgency-banner {
+            background: #ff4500;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: 900;
+            text-transform: uppercase;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @@keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Header VSL */
+        .vsl-header {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff4500 100%);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #fff;
+        }
+
+        .urgencia {
+            font-size: 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Seção do Vídeo */
+        .video-section {
+            background: #111;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid #ff6b35;
+        }
+
+        .headline {
+            font-size: clamp(32px, 6vw, 56px);
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            color: #ff6b35;
+            text-shadow: 3px 3px 0px #000;
+        }
+
+        .subheadline {
+            font-size: clamp(18px, 3vw, 28px);
+            margin-bottom: 40px;
+            color: #fff;
+            font-weight: 700;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border: 5px solid #ff6b35;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.4);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .video-cta {
+            font-size: 20px;
+            color: #ff6b35;
+            font-weight: 900;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        /* CTA Principal */
+        .main-cta {
+            background: linear-gradient(135deg, #ff6b35 0%, #ff4500 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+        }
+
+        .price-section {
+            background: #000;
+            border: 4px solid #ff6b35;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 700px;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
+        }
+
+        .price-original {
+            font-size: 28px;
+            text-decoration: line-through;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .price-promo {
+            font-size: 56px;
+            font-weight: 900;
+            color: #ff6b35;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px #000;
+        }
+
+        .countdown {
+            background: #ff4500;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ff00 0%, #32cd32 100%);
+            color: #000;
+            padding: 25px 50px;
+            font-size: 28px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 15px;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+            margin: 30px 15px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @@keyframes glow {
+            from { box-shadow: 0 0 15px #00ff00; }
+            to { box-shadow: 0 0 25px #00ff00, 0 0 35px #00ff00; }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 255, 0, 0.5);
+        }
+
+        .guarantee-text {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #ccc;
+            font-weight: 700;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #ff6b35;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        /* Benefits Grid */
+        .benefits-section {
+            background: #222;
+            padding: 80px 20px;
+            border-bottom: 5px solid #ff6b35;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: #111;
+            border: 3px solid #ff6b35;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .benefit-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-title {
+            font-size: 22px;
+            font-weight: 900;
+            color: #ff6b35;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .benefit-desc {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: #111;
+            padding: 80px 20px;
+            border-bottom: 5px solid #ff6b35;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: #000;
+            border: 3px solid #ff6b35;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .testimonial-author {
+            font-weight: 900;
+            color: #ff6b35;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #222;
+            padding: 80px 20px;
+            border-bottom: 5px solid #ff6b35;
+        }
+
+        .faq-item {
+            background: #111;
+            border: 3px solid #ff6b35;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-question {
+            background: #ff6b35;
+            color: #000;
+            padding: 25px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 18px;
+        }
+
+        .faq-question:hover {
+            background: #ff4500;
+        }
+
+        .faq-answer {
+            padding: 25px;
+            display: none;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Garantia */
+        .guarantee-section {
+            background: linear-gradient(135deg, #32cd32 0%, #00ff00 100%);
+            color: #000;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 5px solid #fff;
+            border-bottom: 5px solid #fff;
+        }
+
+        .guarantee-badge {
+            font-size: 80px;
+            margin-bottom: 25px;
+        }
+
+        .guarantee-title {
+            font-size: 36px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .guarantee-desc {
+            font-size: 20px;
+            font-weight: 700;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            background: #000;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 5px solid #ff6b35;
+        }
+
+        /* Responsivo */
+        @@media (max-width: 768px) {
+            .price-section {
+                margin: 20px 10px;
+                padding: 25px;
+            }
+            
+            .cta-button {
+                padding: 20px 30px;
+                font-size: 22px;
+                margin: 15px 10px;
+            }
+            
+            .benefits-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .video-wrapper {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+
+    <!-- HLS.js for video streaming -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.14/dist/hls.min.js"></script>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEU_GA_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SEU_GA_ID', {
+            content_group1: 'VSL Page'
+        });
+    </script>
+</head>
+<body>
+    <!-- Banner de Urgência Fixo -->
+    <div class="urgency-banner">
+        🚀 MÉTODO COMPLETO PARA CRIAR SEU PRIMEIRO SAAS LUCRATIVO EM 7 DIAS
+    </div>
+
+    <!-- Header VSL -->
+    <div class="vsl-header">
+        <div class="urgencia">
+            🔥 APRENDA COM MVP MICROSOFT - MÉTODO PRÁTICO E FUNCIONAL
+        </div>
+    </div>
+
+    <!-- Seção do Vídeo Principal -->
+    <div class="video-section">
+        <div class="container">
+            <h1 class="headline">@Model.Titulo</h1>
+            <p class="subheadline">@Model.Subtitulo</p>
+            
+            <div class="video-wrapper">
+                <video 
+                    id="video"
+                    controls 
+                    preload="metadata"
+                    poster="/img/logome.webp"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                    <source src="@Model.VideoUrl" type="application/x-mpegURL">
+                    <p>Seu navegador não suporta o elemento de vídeo. <a href="@Model.VideoUrl">Clique aqui para assistir.</a></p>
+                </video>
+            </div>
+            
+            <p class="video-cta">
+                👆 ASSISTA O VÍDEO COMPLETO ANTES DE CONTINUAR
+            </p>
+        </div>
+    </div>
+
+    <!-- CTA Principal -->
+    <div class="main-cta">
+        <div class="container">
+            <div class="price-section">
+                <div class="price-original">
+                    De: R$ @Model.PrecoOriginal.ToString("F0")
+                </div>
+                <div class="price-promo">
+                    Por apenas: R$ @Model.PrecoPromocional.ToString("F0")
+                </div>
+                <div class="countdown">
+                    ⏰ OFERTA ESPECIAL POR TEMPO LIMITADO
+                </div>
+                
+                <a href="@Model.CheckoutUrl" class="cta-button" onclick="trackPurchaseIntent()">
+                    🚀 QUERO MEU SAAS AGORA!
+                </a>
+                
+                <div class="guarantee-text">
+                    ✅ Acesso imediato • ✅ 7 dias de garantia • ✅ Suporte incluído
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Benefícios -->
+    <div class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">O que você vai receber:</h2>
+            <div class="benefits-grid">
+                @foreach (var funcionalidade in Model.Funcionalidades)
+                {
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🎯</div>
+                        <div class="benefit-title">Incluído</div>
+                        <div class="benefit-desc">@funcionalidade</div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Testimonials -->
+    <div class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Veja o que os alunos estão dizendo:</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Em 7 dias eu tinha meu SaaS rodando e já faturei R$ 1.200 no primeiro mês! O método do Diogo é surreal."
+                    </div>
+                    <div class="testimonial-author">- Carlos Silva, Desenvolvedor</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Nunca pensei que conseguiria criar um produto do zero. Hoje tenho meu próprio SaaS e 50 clientes pagantes!"
+                    </div>
+                    <div class="testimonial-author">- Ana Costa, Empreendedora</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "O curso mudou minha vida. Saí do freelancer frustrado para dono de produto. Melhor investimento que já fiz."
+                    </div>
+                    <div class="testimonial-author">- Pedro Santos, Founder</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Deploy em produção no primeiro dia! Em 1 semana estava vendendo. Método prático que realmente funciona."
+                    </div>
+                    <div class="testimonial-author">- Lucas Ferreira, Tech Lead</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção FAQ -->
+    <div class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes:</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    ❓ Preciso saber programar para fazer o curso?
+                </div>
+                <div class="faq-answer">
+                    Sim, é necessário conhecimento básico de C# e lógica de programação. Se você entende variáveis, classes e métodos, consegue acompanhar o curso perfeitamente. O foco é na construção prática do SaaS.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    ⏱️ Quanto tempo tenho de acesso ao curso?
+                </div>
+                <div class="faq-answer">
+                    Acesso vitalício! Você pode assistir quantas vezes quiser e recebe todas as atualizações gratuitamente por 1 ano. É seu para sempre.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    🔧 E se eu não conseguir fazer meu SaaS?
+                </div>
+                <div class="faq-answer">
+                    Temos 7 dias de garantia incondicional. Se seguir o método e não conseguir, devolvemos 100% do seu dinheiro, sem perguntas. Simples assim.
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    💬 Vou ter suporte durante o curso?
+                </div>
+                <div class="faq-answer">
+                    Sim! Acesso ao grupo privado no Telegram com suporte direto da nossa equipe e comunidade ativa de alunos. Nunca ficará sozinho.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    💰 O que eu vou ter no final do curso?
+                </div>
+                <div class="faq-answer">
+                    Um SaaS completo e funcional criado durante o curso. É um projeto didático real, com todas as funcionalidades. Se você quiser vender algo, precisará aplicar o conhecimento às suas próprias ideias.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    🚀 Posso usar esse conhecimento para meus próprios projetos?
+                </div>
+                <div class="faq-answer">
+                    Absolutamente! O objetivo é te ensinar a metodologia e arquitetura para criar qualquer SaaS. Depois você aplica em suas próprias ideias e projetos.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Garantia -->
+    <div class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-badge">🛡️</div>
+            <div class="guarantee-title">Garantia de 7 Dias</div>
+            <div class="guarantee-desc">
+                Se você não estiver 100% satisfeito, devolvemos seu dinheiro. Sem perguntas, sem burocracias. Risco zero para você.
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Final -->
+    <div class="footer-cta">
+        <div class="container">
+            <h2 class="section-title">Última Chance!</h2>
+            
+            <div class="price-section">
+                <div class="price-original">
+                    De: R$ @Model.PrecoOriginal.ToString("F0")
+                </div>
+                <div class="price-promo">
+                    Por apenas: R$ @Model.PrecoPromocional.ToString("F0")
+                </div>
+                <div class="countdown">
+                    ⏰ GARANTA SUA VAGA AGORA
+                </div>
+                
+                <a href="@Model.CheckoutUrl" class="cta-button" onclick="trackPurchaseIntent()">
+                    🚀 SIM, EU QUERO MEU SAAS!
+                </a>
+                
+                <div class="guarantee-text">
+                    💎 Investimento com valor real para sua carreira
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px; font-size: 14px; color: #666; text-align: center;">
+                © 2024 Diogo Costa - MVP Microsoft. Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isOpen = answer.style.display === 'block';
+            
+            // Fechar todas as FAQs
+            document.querySelectorAll('.faq-answer').forEach(faq => {
+                faq.style.display = 'none';
+            });
+            
+            // Abrir a FAQ clicada se não estava aberta
+            if (!isOpen) {
+                answer.style.display = 'block';
+            }
+        }
+
+
+
+        // Track Purchase Intent
+        function trackPurchaseIntent() {
+            // Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'begin_checkout', {
+                    currency: 'BRL',
+                    value: @Model.PrecoPromocional,
+                    items: [{
+                        item_id: 'vsl-criar-saas',
+                        item_name: '@Model.Titulo',
+                        category: 'Course',
+                        price: @Model.PrecoPromocional
+                    }]
+                });
+            }
+            
+            // Facebook Pixel
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'InitiateCheckout', {
+                    value: @Model.PrecoPromocional,
+                    currency: 'BRL',
+                    content_ids: ['vsl-criar-saas'],
+                    content_type: 'product'
+                });
+            }
+        }
+
+        // Inicialização do Player HLS
+        function initializeVideo() {
+            const video = document.getElementById('video');
+            const videoSrc = "https://comunidade.didaticos.com/videos-moodle/comunidade-didaticos-001.m3u8";
+
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(videoSrc);
+                hls.attachMedia(video);
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = videoSrc;
+            }
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeVideo();
+            
+            // Track page view
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: '@ViewData["Title"]',
+                    page_location: window.location.href,
+                    content_group1: 'VSL Page'
+                });
+            }
+        });
+
+        // Scroll tracking for analytics
+        let scrollTracked = {25: false, 50: false, 75: false, 100: false};
+        
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            Object.keys(scrollTracked).forEach(percent => {
+                if (scrollPercent >= percent && !scrollTracked[percent]) {
+                    scrollTracked[percent] = true;
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll', {
+                            scroll_depth: percent + '%'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
