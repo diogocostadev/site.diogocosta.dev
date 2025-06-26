@@ -708,12 +708,8 @@
             const video = document.getElementById('video');
             const videoSrc = '@Model.VideoUrl'; // Usar a URL do modelo, não hardcoded
 
-            console.log('Tentando carregar vídeo:', videoSrc); // Debug
-
             if (Hls.isSupported()) {
-                console.log('HLS.js é suportado');
                 const hls = new Hls({
-                    debug: true, // Ativar debug temporariamente
                     enableWorker: true,
                     lowLatencyMode: true,
                 });
@@ -722,24 +718,21 @@
                 hls.attachMedia(video);
                 
                 hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                    console.log('Manifest carregado com sucesso');
-                    video.play().catch(e => console.log('Autoplay bloqueado:', e));
+                    video.play().catch(e => {
+                        // Autoplay bloqueado - comportamento normal
+                    });
                 });
                 
                 hls.on(Hls.Events.ERROR, function (event, data) {
-                    console.error('Erro HLS:', data);
                     if (data.fatal) {
                         switch(data.type) {
                             case Hls.ErrorTypes.NETWORK_ERROR:
-                                console.log('Erro de rede, tentando recuperar...');
                                 hls.startLoad();
                                 break;
                             case Hls.ErrorTypes.MEDIA_ERROR:
-                                console.log('Erro de mídia, tentando recuperar...');
                                 hls.recoverMediaError();
                                 break;
                             default:
-                                console.log('Erro fatal, destruindo HLS');
                                 hls.destroy();
                                 // Fallback para vídeo normal
                                 video.src = videoSrc;
@@ -749,10 +742,8 @@
                 });
                 
             } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-                console.log('Safari HLS nativo suportado');
                 video.src = videoSrc;
             } else {
-                console.log('HLS não suportado, usando src direta');
                 video.src = videoSrc;
             }
         }
