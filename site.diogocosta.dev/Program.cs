@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
+using site.diogocosta.dev.Data;
 using site.diogocosta.dev.Extentions;
 using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos;
@@ -9,6 +11,33 @@ using StackExchange.Redis;
 var builder = WebApplication.CreateBuilder(args);
 
 //--------------------------------------------
+// Configurar Serilog com Seq
+builder.Host.UseSerilog((context, configuration) =>
+{
+    configuration
+        .ReadFrom.Configuration(context.Configuration)
+        .WriteTo.Console()
+        .WriteTo.File("logs/app-.txt", rollingInterval: RollingInterval.Day)
+        .Enrich.FromLogContext()
+        .Enrich.WithProperty("Application", "Site.DiogoCosta.Dev");
+
+    // Configurar Seq se disponível
+    var seqUrl = context.Configuration["Seq:ServerUrl"];
+    var seqApiKey = context.Configuration["Seq:ApiKey"];
+    
+    if (!string.IsNullOrEmpty(seqUrl))
+    {
+        configuration.WriteTo.Seq(seqUrl, apiKey: seqApiKey);
+    }
+});
+// Garantir que o diretório de logs existe
+var logsDir = Path.Combine(builder.Environment.ContentRootPath, "logs");
+if (!Directory.Exists(logsDir))
+{
+    Directory.CreateDirectory(logsDir);
+}
+//--------------------------------------------
+
 // Substituir Redis por armazenamento em arquivo
 var keysDirectory = Path.Combine(builder.Environment.ContentRootPath, "DataProtection-Keys");
 
@@ -21,10 +50,27 @@ if (!Directory.Exists(keysDirectory))
 builder.Services.AddDataProtection()
     .PersistKeysToFileSystem(new DirectoryInfo(keysDirectory))
     .SetApplicationName("Site Diogo Costa Dev");
+
+//--------------------------------------------
+// Configurar Entity Framework com PostgreSQL
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("conexao-site");
+    options.UseNpgsql(connectionString, npgsqlOptions =>
+    {
+        npgsqlOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(30), null);
+    });
+    
+    // Somente em desenvolvimento
+    if (builder.Environment.IsDevelopment())
+    {
+        options.EnableSensitiveDataLogging();
+        options.EnableDetailedErrors();
+    }
+});
 //--------------------------------------------
 
 builder.Services.AddControllersWithViews();
-builder.ConfigureSerilog();
 
 // Configuração do serviço de newsletter
 builder.Services.AddHttpClient<INewsletterService, N8nNewsletterService>(client =>
@@ -42,6 +88,9 @@ builder.Services.Configure<EmailSettings>(
 
 builder.Services.AddScoped<IEmailService, EmailService>();
 
+// Configuração do serviço de leads
+builder.Services.AddScoped<ILeadService, LeadService>();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -50,7 +99,37 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseStaticFiles();
+// Configurar arquivos estáticos com headers específicos para favicon
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = context =>
+    {
+        // Cache para arquivos de favicon
+        if (context.File.Name.Contains("favicon") || context.File.Name.Contains(".ico") || 
+            context.File.Name.EndsWith(".png") && (context.File.PhysicalPath?.Contains("img") ?? false))
+        {
+            context.Context.Response.Headers["Cache-Control"] = "public, max-age=604800"; // 1 semana
+            context.Context.Response.Headers["Expires"] = DateTime.UtcNow.AddDays(7).ToString("R");
+        }
+    }
+});
+
+// Middleware específico para favicon na raiz
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/favicon.ico")
+    {
+        context.Response.ContentType = "image/x-icon";
+        var faviconPath = Path.Combine(app.Environment.WebRootPath, "favicon.ico");
+        if (File.Exists(faviconPath))
+        {
+            await context.Response.SendFileAsync(faviconPath);
+            return;
+        }
+    }
+    await next();
+});
+
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllerRoute(
@@ -69,6 +148,15 @@ app.MapControllerRoute(
     name: "obrigado-desbloqueio",
     pattern: "obrigado-desbloqueio",
     defaults: new { controller = "Desbloqueio", action = "Obrigado" });
+app.MapControllerRoute(
+    name: "desafio-obrigado",
+    pattern: "obrigado-{slug}",
+    defaults: new { controller = "Desafios", action = "Obrigado" });
+app.MapControllerRoute(
+    name: "desafios",
+    pattern: "{slug}",
+    defaults: new { controller = "Desafios", action = "Index" },
+    constraints: new { slug = @"^desafio-.*" });
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

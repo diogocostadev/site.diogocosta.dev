@@ -6,40 +6,95 @@ using site.diogocosta.dev.Servicos.Interfaces;
 
 namespace site.diogocosta.dev.Servicos;
 
+// Configurações de email com nomes padronizados
+public class EmailConfiguration
+{
+    public string SmtpServer { get; set; } = string.Empty;
+    public int SmtpPort { get; set; }
+    public string SmtpUsername { get; set; } = string.Empty;
+    public string SmtpPassword { get; set; } = string.Empty;
+    public string FromEmail { get; set; } = string.Empty;
+    public string FromName { get; set; } = string.Empty;
+}
+
 public class EmailService : IEmailService
 {
-    private readonly EmailSettings _emailSettings;
+    private readonly EmailConfiguration _emailConfig;
+    private readonly EmailSettings _emailSettings; // Para compatibilidade
     private readonly ILogger<EmailService> _logger;
 
-    public EmailService(IOptions<EmailSettings> emailSettings, ILogger<EmailService> logger)
+    public EmailService(IConfiguration configuration, IOptions<EmailSettings> emailSettings, ILogger<EmailService> logger)
     {
+        // Usar a nova configuração padronizada
+        _emailConfig = new EmailConfiguration();
+        configuration.GetSection("Email").Bind(_emailConfig);
+        
+        // Manter compatibilidade com configuração antiga
         _emailSettings = emailSettings.Value;
         _logger = logger;
     }
 
     public async Task<bool> EnviarEmailAsync(string destinatario, string assunto, string corpo, bool isHtml = true)
     {
+        return await EnviarEmailAsync(destinatario, assunto, corpo, null, isHtml);
+    }
+
+    public async Task<bool> EnviarEmailAsync(string destinatario, string assunto, string corpoHtml, string? corpoTexto = null, bool isHtml = true)
+    {
         try
         {
-            using var client = new SmtpClient(_emailSettings.SmtpServer, _emailSettings.Port);
+            // Usar configuração nova se disponível, senão usar a antiga
+            var smtpServer = !string.IsNullOrEmpty(_emailConfig.SmtpServer) ? _emailConfig.SmtpServer : _emailSettings.SmtpServer;
+            var smtpPort = _emailConfig.SmtpPort > 0 ? _emailConfig.SmtpPort : _emailSettings.Port;
+            var username = !string.IsNullOrEmpty(_emailConfig.SmtpUsername) ? _emailConfig.SmtpUsername : _emailSettings.UserName;
+            var password = !string.IsNullOrEmpty(_emailConfig.SmtpPassword) ? _emailConfig.SmtpPassword : _emailSettings.Password;
+            var fromEmail = !string.IsNullOrEmpty(_emailConfig.FromEmail) ? _emailConfig.FromEmail : _emailSettings.FromEmail;
+            var fromName = !string.IsNullOrEmpty(_emailConfig.FromName) ? _emailConfig.FromName : _emailSettings.FromName;
+
+            using var client = new SmtpClient(smtpServer, smtpPort);
             client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential(_emailSettings.UserName, _emailSettings.Password);
+            client.Credentials = new NetworkCredential(username, password);
             client.EnableSsl = true;
+            client.Timeout = 30000; // 30 segundos
 
             using var mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(_emailSettings.FromEmail, _emailSettings.FromName);
+            mailMessage.From = new MailAddress(fromEmail, fromName);
             mailMessage.To.Add(destinatario);
             mailMessage.Subject = assunto;
-            mailMessage.Body = corpo;
-            mailMessage.IsBodyHtml = isHtml;
+            
+            if (isHtml && !string.IsNullOrEmpty(corpoHtml))
+            {
+                mailMessage.Body = corpoHtml;
+                mailMessage.IsBodyHtml = true;
+                
+                // Adicionar versão texto se fornecida
+                if (!string.IsNullOrEmpty(corpoTexto))
+                {
+                    var textView = AlternateView.CreateAlternateViewFromString(corpoTexto, null, "text/plain");
+                    var htmlView = AlternateView.CreateAlternateViewFromString(corpoHtml, null, "text/html");
+                    mailMessage.AlternateViews.Add(textView);
+                    mailMessage.AlternateViews.Add(htmlView);
+                }
+            }
+            else
+            {
+                mailMessage.Body = corpoTexto ?? corpoHtml;
+                mailMessage.IsBodyHtml = false;
+            }
 
             await client.SendMailAsync(mailMessage);
-            _logger.LogInformation("Email enviado com sucesso para {Email}", destinatario);
+            _logger.LogInformation("✅ Email enviado com sucesso para {Email} - Assunto: {Assunto}", destinatario, assunto);
             return true;
+        }
+        catch (SmtpException smtpEx)
+        {
+            _logger.LogError(smtpEx, "❌ Erro SMTP ao enviar email para {Email}: {StatusCode} - {Erro}", 
+                destinatario, smtpEx.StatusCode, smtpEx.Message);
+            return false;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Erro ao enviar email para {Email}", destinatario);
+            _logger.LogError(ex, "❌ Erro geral ao enviar email para {Email}: {Erro}", destinatario, ex.Message);
             return false;
         }
     }
