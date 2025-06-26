@@ -1,0 +1,30 @@
+{
+  "name": "Diogo Costa - MVP Microsoft",
+  "short_name": "Diogo Costa",
+  "description": "Transformando Programadores em Empreendedores - MVP Microsoft Diogo Costa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff6b35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/D.png",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/D_180.png",
+      "sizes": "180x180 144x144 120x120 96x96 72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+} 

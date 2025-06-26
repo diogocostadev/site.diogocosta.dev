@@ -33,21 +33,46 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="@canonicalUrl" />
     
-    <!-- Favicons Otimizados -->
-    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon" />
-    <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/D.png?v=2" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/D.png?v=2" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/D_180.png?v=2" />
+    <!-- Favicons Otimizados - Mesmos do site principal -->
+    <link rel="shortcut icon" href="~/favicon.ico?v=3" type="image/x-icon" />
+    <link rel="icon" href="~/favicon.ico?v=3" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/img/D.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/img/D_180.png?v=3" />
     
-    <!-- Favicon adicional para compatibilidade -->
-    <meta name="msapplication-TileImage" content="/img/D_180.png?v=2" />
+    <!-- Favicons adicionais para máxima compatibilidade -->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico?v=3" />
+    <link rel="apple-touch-icon" href="~/img/D_180.png?v=3" />
+    <link rel="apple-touch-icon" sizes="57x57" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="60x60" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="72x72" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="76x76" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="114x114" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="120x120" href="~/img/D.png?v=3" />
+    <link rel="apple-touch-icon" sizes="144x144" href="~/img/D_180.png?v=3" />
+    <link rel="apple-touch-icon" sizes="152x152" href="~/img/D_180.png?v=3" />
+    <link rel="apple-touch-icon" sizes="180x180" href="~/img/D_180.png?v=3" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="~/img/D_180.png?v=3" />
     <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-square70x70logo" content="~/img/D.png?v=3" />
+    <meta name="msapplication-square150x150logo" content="~/img/D_180.png?v=3" />
+    <meta name="msapplication-wide310x150logo" content="~/img/D_180.png?v=3" />
+    <meta name="msapplication-square310x310logo" content="~/img/D_180.png?v=3" />
     
-    <!-- Force favicon refresh -->
-    <meta http-equiv="cache-control" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="~/manifest.json?v=3" />
+    
+    <!-- Theme colors -->
+    <meta name="theme-color" content="#ff6b35" />
+    <meta name="msapplication-navbutton-color" content="#ff6b35" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Force favicon refresh and prevent caching issues -->
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
     
     <!-- Open Graph (Facebook/LinkedIn) -->
     <meta property="og:type" content="website" />
