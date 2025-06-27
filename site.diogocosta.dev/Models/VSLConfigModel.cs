@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace site.diogocosta.dev.Models
 {
@@ -40,12 +41,25 @@ namespace site.diogocosta.dev.Models
         public DateTime UpdatedAt { get; set; }
         
         // Propriedades navegacionais (populated from view)
+        [NotMapped]
         public string? VideoUrlProducao { get; set; }
+        
+        [NotMapped]
         public string? VideoUrlTeste { get; set; }
+        
+        [NotMapped]
         public string? VideoUrlAtivo { get; set; }
+        
+        [NotMapped]
         public string? ThumbnailUrlProducao { get; set; }
+        
+        [NotMapped]
         public string? ThumbnailUrlTeste { get; set; }
+        
+        [NotMapped]
         public int? DuracaoProducao { get; set; }
+        
+        [NotMapped]
         public int? DuracaoTeste { get; set; }
     }
 
