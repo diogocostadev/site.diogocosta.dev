@@ -129,23 +129,7 @@ namespace site.diogocosta.dev.Data
             {
                 entity.ToTable("vsl_videos", "leads_system");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("id");
-                
-                // Mapear todas as propriedades para snake_case
-                entity.Property(e => e.Slug).HasColumnName("slug");
-                entity.Property(e => e.Nome).HasColumnName("nome");
-                entity.Property(e => e.Descricao).HasColumnName("descricao");
-                entity.Property(e => e.VideoUrl).HasColumnName("video_url");
-                entity.Property(e => e.ThumbnailUrl).HasColumnName("thumbnail_url");
-                entity.Property(e => e.DuracaoSegundos).HasColumnName("duracao_segundos");
-                entity.Property(e => e.Formato).HasColumnName("formato");
-                entity.Property(e => e.Qualidade).HasColumnName("qualidade");
-                entity.Property(e => e.TamanhoBytes).HasColumnName("tamanho_bytes");
-                entity.Property(e => e.Ativo).HasColumnName("ativo");
-                entity.Property(e => e.Ambiente).HasColumnName("ambiente");
-                entity.Property(e => e.Observacoes).HasColumnName("observacoes");
-                entity.Property(e => e.CreatedAt).HasColumnName("created_at");
-                entity.Property(e => e.UpdatedAt).HasColumnName("updated_at");
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
                 
                 entity.HasIndex(e => e.Slug)
                       .IsUnique()
@@ -159,23 +143,7 @@ namespace site.diogocosta.dev.Data
             {
                 entity.ToTable("vsl_configs", "leads_system");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("id");
-                
-                // Mapear todas as propriedades para snake_case
-                entity.Property(e => e.Slug).HasColumnName("slug");
-                entity.Property(e => e.Nome).HasColumnName("nome");
-                entity.Property(e => e.Titulo).HasColumnName("titulo");
-                entity.Property(e => e.Subtitulo).HasColumnName("subtitulo");
-                entity.Property(e => e.Descricao).HasColumnName("descricao");
-                entity.Property(e => e.VideoId).HasColumnName("video_id");
-                entity.Property(e => e.VideoIdTeste).HasColumnName("video_id_teste");
-                entity.Property(e => e.PrecoOriginal).HasColumnName("preco_original");
-                entity.Property(e => e.PrecoPromocional).HasColumnName("preco_promocional");
-                entity.Property(e => e.CheckoutUrl).HasColumnName("checkout_url");
-                entity.Property(e => e.Ativo).HasColumnName("ativo");
-                entity.Property(e => e.AmbienteAtivo).HasColumnName("ambiente_ativo");
-                entity.Property(e => e.CreatedAt).HasColumnName("created_at");
-                entity.Property(e => e.UpdatedAt).HasColumnName("updated_at");
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
                 
                 entity.HasIndex(e => e.Slug)
                       .IsUnique()

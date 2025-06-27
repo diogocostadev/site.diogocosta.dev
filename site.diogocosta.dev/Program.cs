@@ -59,7 +59,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString, npgsqlOptions =>
     {
         npgsqlOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(30), null);
-    });
+    }).UseSnakeCaseNamingConvention();
     
     // Somente em desenvolvimento
     if (builder.Environment.IsDevelopment())
