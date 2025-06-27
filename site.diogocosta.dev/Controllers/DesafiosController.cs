@@ -12,17 +12,20 @@ namespace site.diogocosta.dev.Controllers
         private readonly INewsletterService _newsletterService;
         private readonly IEmailService _emailService;
         private readonly ILeadService _leadService;
+        private readonly IVSLService _vslService;
         private readonly ILogger<DesafiosController> _logger;
 
         public DesafiosController(
             INewsletterService newsletterService, 
             IEmailService emailService,
             ILeadService leadService,
+            IVSLService vslService,
             ILogger<DesafiosController> logger)
         {
             _newsletterService = newsletterService;
             _emailService = emailService;
             _leadService = leadService;
+            _vslService = vslService;
             _logger = logger;
         }
 
@@ -314,20 +317,49 @@ namespace site.diogocosta.dev.Controllers
         }
 
         [HttpGet("/vsl-criar-saas")]
-        public IActionResult VSL()
+        public async Task<IActionResult> VSL()
         {
-            var model = new DesafioModel
+            // Buscar configuração da VSL no banco de dados
+            var vslConfig = await _vslService.ObterVSLPorSlugAsync("vsl-criar-saas");
+            
+            if (vslConfig == null)
             {
-                Nome = "Método VSL SaaS",
-                Slug = "vsl-criar-saas",
-                Titulo = "De Zero ao Seu Primeiro SaaS Lucrativo em 7 Dias",
-                Subtitulo = "O método completo para transformar sua ideia em um SaaS lucrativo, mesmo se você nunca programou antes",
+                _logger.LogWarning("⚠️ VSL 'vsl-criar-saas' não encontrada no banco de dados. Usando dados padrão.");
+                
+                // Fallback para dados hardcoded se não existir no banco
+                var model = new DesafioModel
+                {
+                    Nome = "Método VSL SaaS",
+                    Slug = "vsl-criar-saas",
+                    Titulo = "De Zero ao Seu Primeiro SaaS Lucrativo em 7 Dias",
+                    Subtitulo = "O método completo para transformar sua ideia em um SaaS lucrativo, mesmo se você nunca programou antes",
+                    Produto = "Curso Completo Criar SaaS",
+                    Descricao = "Sistema passo-a-passo para criar, lançar e monetizar seu primeiro SaaS",
+                    EhVSL = true,
+                    VideoUrl = "https://videos.diogocosta.dev/hls/2025-06-08_15-58-24/stream.m3u8",
+                    PrecoOriginal = 997,
+                    PrecoPromocional = 197,
+                    ValidadePromocao = DateTime.Now.AddDays(3),
+                    CheckoutUrl = "https://pay.kiwify.com.br/1ToZyFr",
+                    Ativo = true
+                };
+                
+                return View(model);
+            }
+
+            // Converter VSLConfigModel para DesafioModel
+            var desafioModel = new DesafioModel
+            {
+                Nome = vslConfig.Nome,
+                Slug = vslConfig.Slug,
+                Titulo = vslConfig.Titulo,
+                Subtitulo = vslConfig.Subtitulo ?? string.Empty,
                 Produto = "Curso Completo Criar SaaS",
-                Descricao = "Sistema passo-a-passo para criar, lançar e monetizar seu primeiro SaaS",
+                Descricao = vslConfig.Descricao ?? "Sistema passo-a-passo para criar, lançar e monetizar seu primeiro SaaS",
                 EhVSL = true,
-                VideoUrl = "https://videos.diogocosta.dev/hls/2025-06-08_15-58-24/stream.m3u8",
-                PrecoOriginal = 997,
-                PrecoPromocional = 197,
+                VideoUrl = vslConfig.VideoUrlAtivo ?? "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
+                PrecoOriginal = (decimal)(vslConfig.PrecoOriginal ?? 997m),
+                PrecoPromocional = (decimal)(vslConfig.PrecoPromocional ?? 197m),
                 ValidadePromocao = DateTime.Now.AddDays(3), // 3 dias de oferta
                 Funcionalidades = new List<string>
                 {
@@ -353,11 +385,14 @@ namespace site.diogocosta.dev.Controllers
                     "Métricas e analytics",
                     "Estratégias de monetização"
                 },
-                CheckoutUrl = "https://pay.kiwify.com.br/1ToZyFr",
-                Ativo = true
+                CheckoutUrl = vslConfig.CheckoutUrl ?? "https://pay.kiwify.com.br/1ToZyFr",
+                Ativo = vslConfig.Ativo
             };
 
-            return View(model);
+            _logger.LogInformation("✅ VSL carregada do banco: {Slug} - Ambiente: {Ambiente} - Vídeo: {VideoUrl}", 
+                vslConfig.Slug, vslConfig.AmbienteAtivo, vslConfig.VideoUrlAtivo);
+
+            return View(desafioModel);
         }
 
         [HttpGet("/obrigado-vsl")]
@@ -420,20 +455,49 @@ namespace site.diogocosta.dev.Controllers
         }
 
         [HttpGet("/vsl-dc360")]
-        public IActionResult VSLDC360()
+        public async Task<IActionResult> VSLDC360()
         {
-            var model = new DesafioModel
+            // Buscar configuração da VSL no banco de dados
+            var vslConfig = await _vslService.ObterVSLPorSlugAsync("vsl-dc360");
+            
+            if (vslConfig == null)
             {
-                Nome = "DC360 VSL - Formação dos Founders Tech",
-                Slug = "vsl-dc360",
-                Titulo = "DC360 — Transforme Seu Código em Império Digital",
-                Subtitulo = "A única formação que ensina programadores a construir, operar e escalar SaaS de forma perpétua",
+                _logger.LogWarning("⚠️ VSL 'vsl-dc360' não encontrada no banco de dados. Usando dados padrão.");
+                
+                // Fallback para dados hardcoded se não existir no banco
+                var model = new DesafioModel
+                {
+                    Nome = "DC360 VSL - Formação dos Founders Tech",
+                    Slug = "vsl-dc360",
+                    Titulo = "DC360 — Transforme Seu Código em Império Digital",
+                    Subtitulo = "A única formação que ensina programadores a construir, operar e escalar SaaS de forma perpétua",
+                    Produto = "Formação Completa DC360",
+                    Descricao = "Pare de vender hora. Pare de depender de cliente. Pare de ser apenas dev. Torne-se dono de império digital.",
+                    EhVSL = true,
+                    VideoUrl = "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
+                    PrecoOriginal = 2997,
+                    PrecoPromocional = 1497,
+                    ValidadePromocao = DateTime.Now.AddDays(7),
+                    CheckoutUrl = "https://pay.kiwify.com.br/BclEImU",
+                    Ativo = true
+                };
+                
+                return View("VSL", model);
+            }
+
+            // Converter VSLConfigModel para DesafioModel
+            var desafioModel = new DesafioModel
+            {
+                Nome = vslConfig.Nome,
+                Slug = vslConfig.Slug,
+                Titulo = vslConfig.Titulo,
+                Subtitulo = vslConfig.Subtitulo ?? string.Empty,
                 Produto = "Formação Completa DC360",
-                Descricao = "Pare de vender hora. Pare de depender de cliente. Pare de ser apenas dev. Torne-se dono de império digital.",
+                Descricao = vslConfig.Descricao ?? "Pare de vender hora. Pare de depender de cliente. Pare de ser apenas dev. Torne-se dono de império digital.",
                 EhVSL = true,
-                VideoUrl = "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
-                PrecoOriginal = 2997,
-                PrecoPromocional = 1497,
+                VideoUrl = vslConfig.VideoUrlAtivo ?? "https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8",
+                PrecoOriginal = (decimal)(vslConfig.PrecoOriginal ?? 2997m),
+                PrecoPromocional = (decimal)(vslConfig.PrecoPromocional ?? 1497m),
                 ValidadePromocao = DateTime.Now.AddDays(7),
                 Funcionalidades = new List<string>
                 {
@@ -459,11 +523,14 @@ namespace site.diogocosta.dev.Controllers
                     "Escalabilidade e automação",
                     "Gestão de múltiplos produtos"
                 },
-                CheckoutUrl = "https://pay.kiwify.com.br/BclEImU",
-                Ativo = true
+                CheckoutUrl = vslConfig.CheckoutUrl ?? "https://pay.kiwify.com.br/BclEImU",
+                Ativo = vslConfig.Ativo
             };
 
-            return View("VSL", model);
+            _logger.LogInformation("✅ VSL DC360 carregada do banco: {Slug} - Ambiente: {Ambiente} - Vídeo: {VideoUrl}", 
+                vslConfig.Slug, vslConfig.AmbienteAtivo, vslConfig.VideoUrlAtivo);
+
+            return View("VSL", desafioModel);
         }
 
         [HttpGet("/obrigado-dc360")]
