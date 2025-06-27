@@ -16,6 +16,8 @@ namespace site.diogocosta.dev.Data
         public DbSet<LeadInteractionModel> LeadInteractions { get; set; }
         public DbSet<EmailTemplateModel> EmailTemplates { get; set; }
         public DbSet<EmailLogModel> EmailLogs { get; set; }
+        public DbSet<VSLConfigModel> VSLConfigs { get; set; }
+        public DbSet<VSLVideoModel> VSLVideos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -121,6 +123,76 @@ namespace site.diogocosta.dev.Data
                       .HasForeignKey(e => e.TemplateId)
                       .OnDelete(DeleteBehavior.SetNull);
             });
+
+            // Configurar a tabela de vídeos VSL
+            modelBuilder.Entity<VSLVideoModel>(entity =>
+            {
+                entity.ToTable("vsl_videos", "leads_system");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("id");
+                
+                // Mapear todas as propriedades para snake_case
+                entity.Property(e => e.Slug).HasColumnName("slug");
+                entity.Property(e => e.Nome).HasColumnName("nome");
+                entity.Property(e => e.Descricao).HasColumnName("descricao");
+                entity.Property(e => e.VideoUrl).HasColumnName("video_url");
+                entity.Property(e => e.ThumbnailUrl).HasColumnName("thumbnail_url");
+                entity.Property(e => e.DuracaoSegundos).HasColumnName("duracao_segundos");
+                entity.Property(e => e.Formato).HasColumnName("formato");
+                entity.Property(e => e.Qualidade).HasColumnName("qualidade");
+                entity.Property(e => e.TamanhoBytes).HasColumnName("tamanho_bytes");
+                entity.Property(e => e.Ativo).HasColumnName("ativo");
+                entity.Property(e => e.Ambiente).HasColumnName("ambiente");
+                entity.Property(e => e.Observacoes).HasColumnName("observacoes");
+                entity.Property(e => e.CreatedAt).HasColumnName("created_at");
+                entity.Property(e => e.UpdatedAt).HasColumnName("updated_at");
+                
+                entity.HasIndex(e => e.Slug)
+                      .IsUnique()
+                      .HasDatabaseName("idx_vsl_videos_slug_unique");
+                entity.HasIndex(e => e.Ativo).HasDatabaseName("idx_vsl_videos_ativo");
+                entity.HasIndex(e => e.Ambiente).HasDatabaseName("idx_vsl_videos_ambiente");
+            });
+
+            // Configurar a tabela de configurações VSL
+            modelBuilder.Entity<VSLConfigModel>(entity =>
+            {
+                entity.ToTable("vsl_configs", "leads_system");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd().HasColumnName("id");
+                
+                // Mapear todas as propriedades para snake_case
+                entity.Property(e => e.Slug).HasColumnName("slug");
+                entity.Property(e => e.Nome).HasColumnName("nome");
+                entity.Property(e => e.Titulo).HasColumnName("titulo");
+                entity.Property(e => e.Subtitulo).HasColumnName("subtitulo");
+                entity.Property(e => e.Descricao).HasColumnName("descricao");
+                entity.Property(e => e.VideoId).HasColumnName("video_id");
+                entity.Property(e => e.VideoIdTeste).HasColumnName("video_id_teste");
+                entity.Property(e => e.PrecoOriginal).HasColumnName("preco_original");
+                entity.Property(e => e.PrecoPromocional).HasColumnName("preco_promocional");
+                entity.Property(e => e.CheckoutUrl).HasColumnName("checkout_url");
+                entity.Property(e => e.Ativo).HasColumnName("ativo");
+                entity.Property(e => e.AmbienteAtivo).HasColumnName("ambiente_ativo");
+                entity.Property(e => e.CreatedAt).HasColumnName("created_at");
+                entity.Property(e => e.UpdatedAt).HasColumnName("updated_at");
+                
+                entity.HasIndex(e => e.Slug)
+                      .IsUnique()
+                      .HasDatabaseName("idx_vsl_configs_slug_unique");
+                entity.HasIndex(e => e.Ativo).HasDatabaseName("idx_vsl_configs_ativo");
+
+                // Relacionamentos com vídeos
+                entity.HasOne<VSLVideoModel>()
+                      .WithMany()
+                      .HasForeignKey(e => e.VideoId)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                entity.HasOne<VSLVideoModel>()
+                      .WithMany()
+                      .HasForeignKey(e => e.VideoIdTeste)
+                      .OnDelete(DeleteBehavior.SetNull);
+            });
         }
 
         public override int SaveChanges()
@@ -138,7 +210,8 @@ namespace site.diogocosta.dev.Data
         private void UpdateTimestamps()
         {
             var entries = ChangeTracker.Entries()
-                .Where(e => e.Entity is LeadModel || e.Entity is LeadSourceModel || e.Entity is EmailTemplateModel)
+                .Where(e => e.Entity is LeadModel || e.Entity is LeadSourceModel || e.Entity is EmailTemplateModel || 
+                           e.Entity is VSLConfigModel || e.Entity is VSLVideoModel)
                 .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
 
             foreach (var entry in entries)
@@ -160,6 +233,16 @@ namespace site.diogocosta.dev.Data
                         template.CreatedAt = DateTime.UtcNow;
                         template.UpdatedAt = DateTime.UtcNow;
                     }
+                    else if (entry.Entity is VSLConfigModel vslConfig)
+                    {
+                        vslConfig.CreatedAt = DateTime.UtcNow;
+                        vslConfig.UpdatedAt = DateTime.UtcNow;
+                    }
+                    else if (entry.Entity is VSLVideoModel vslVideo)
+                    {
+                        vslVideo.CreatedAt = DateTime.UtcNow;
+                        vslVideo.UpdatedAt = DateTime.UtcNow;
+                    }
                 }
                 else if (entry.State == EntityState.Modified)
                 {
@@ -174,6 +257,14 @@ namespace site.diogocosta.dev.Data
                     else if (entry.Entity is EmailTemplateModel template)
                     {
                         template.UpdatedAt = DateTime.UtcNow;
+                    }
+                    else if (entry.Entity is VSLConfigModel vslConfig)
+                    {
+                        vslConfig.UpdatedAt = DateTime.UtcNow;
+                    }
+                    else if (entry.Entity is VSLVideoModel vslVideo)
+                    {
+                        vslVideo.UpdatedAt = DateTime.UtcNow;
                     }
                 }
             }

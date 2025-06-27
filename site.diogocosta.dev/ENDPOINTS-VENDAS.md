@@ -94,8 +94,10 @@ Todas as páginas são responsivas e otimizadas para:
 ### 🔗 LINKS EXTERNOS
 
 **Checkout:** `https://pay.kiwify.com.br/1ToZyFr` (Kiwify)
-**Vídeo VSL:** `https://videos.diogocosta.dev/hls/2025-06-08_15-58-24/stream.m3u8` (VSL Principal - TESTE)
-**Vídeo VSL DC360:** `https://videos.diogocosta.dev/hls/comunidade-didaticos-001.m3u8` (VSL DC360 - PRODUÇÃO)
+**Vídeos VSL:** Agora gerenciados via banco de dados PostgreSQL
+- **Tabela**: `leads_system.vsl_videos` e `leads_system.vsl_configs`
+- **Troca de ambiente**: `SELECT trocar_ambiente_vsl('vsl-criar-saas', 'teste');`
+- **Status atual**: Consultar view `vw_vsl_completa`
 
 ### 💳 GATEWAY DE PAGAMENTO
 

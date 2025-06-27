@@ -91,6 +91,9 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 // Configuração do serviço de leads
 builder.Services.AddScoped<ILeadService, LeadService>();
 
+// Configuração do serviço de VSL
+builder.Services.AddScoped<IVSLService, VSLService>();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
