@@ -1,0 +1,5 @@
+2025-07-02 11:30:04.296 -03:00 [INF] Sistema iniciado em 02/07/2025 11:30:04
+2025-07-02 11:30:04.385 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-02 11:30:04.388 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-02 11:30:04.389 -03:00 [INF] Hosting environment: Development
+2025-07-02 11:30:04.390 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev

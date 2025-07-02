@@ -26,21 +26,57 @@ public class BlogIndexViewModel
 public class BlogController : Controller
 {
     private const int POSTS_PER_PAGE = 6; // Quantidade de posts por página
+    private readonly IWebHostEnvironment _environment;
+    private readonly ILogger<BlogController> _logger;
+
+    public BlogController(IWebHostEnvironment environment, ILogger<BlogController> logger)
+    {
+        _environment = environment;
+        _logger = logger;
+    }
 
     public IActionResult Index(int page = 1)
     {
-        var blogPath = Path.Combine(Directory.GetCurrentDirectory(), "Blog");
+        var blogPath = Path.Combine(_environment.ContentRootPath, "Blog");
+        
+        _logger.LogInformation("Blog path: {BlogPath}", blogPath);
+        _logger.LogInformation("Directory exists: {DirectoryExists}", Directory.Exists(blogPath));
         
         if (!Directory.Exists(blogPath))
-            return View(new BlogIndexViewModel());
+        {
+            _logger.LogWarning("Blog directory not found at: {BlogPath}", blogPath);
+            
+            // Tentar criar a pasta se ela não existir
+            try 
+            {
+                Directory.CreateDirectory(blogPath);
+                _logger.LogInformation("Created blog directory at: {BlogPath}", blogPath);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to create blog directory at: {BlogPath}", blogPath);
+                return View(new BlogIndexViewModel());
+            }
+            
+            // Verificar novamente se agora existe
+            if (!Directory.Exists(blogPath))
+            {
+                _logger.LogError("Blog directory still doesn't exist after creation attempt: {BlogPath}", blogPath);
+                return View(new BlogIndexViewModel());
+            }
+        }
 
         var allPosts = new List<BlogPost>();
         var markdownFiles = Directory.GetFiles(blogPath, "*.md");
+        
+        _logger.LogInformation("Found {FileCount} markdown files in blog directory", markdownFiles.Length);
 
         foreach (var file in markdownFiles)
         {
-            var fileName = Path.GetFileNameWithoutExtension(file);
-            var content = System.IO.File.ReadAllText(file);
+            try
+            {
+                var fileName = Path.GetFileNameWithoutExtension(file);
+                var content = System.IO.File.ReadAllText(file);
             
             // Extrair título (primeira linha que começa com #)
             var lines = content.Split('\n');
@@ -75,13 +111,19 @@ public class BlogController : Controller
                 postDate = System.IO.File.GetCreationTime(file);
             }
 
-            allPosts.Add(new BlogPost
+                allPosts.Add(new BlogPost
+                {
+                    Slug = fileName,
+                    Title = title,
+                    Excerpt = excerpt,
+                    Date = postDate
+                });
+            }
+            catch (Exception ex)
             {
-                Slug = fileName,
-                Title = title,
-                Excerpt = excerpt,
-                Date = postDate
-            });
+                _logger.LogError(ex, "Error processing blog file: {FileName}", file);
+                // Continue processing other files
+            }
         }
 
         // Ordenar por data (mais recente primeiro)
@@ -117,7 +159,7 @@ public class BlogController : Controller
         if (string.IsNullOrWhiteSpace(slug))
             return NotFound();
 
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "Blog", $"{slug}.md");
+        var path = Path.Combine(_environment.ContentRootPath, "Blog", $"{slug}.md");
 
         if (!System.IO.File.Exists(path))
             return NotFound();
@@ -129,5 +171,23 @@ public class BlogController : Controller
         ViewData["Title"] = slug.Replace("-", " ").ToUpperInvariant();
 
         return View("Post");
+    }
+
+    // Action de diagnóstico - REMOVER EM PRODUÇÃO DEPOIS DE TESTAR
+    [HttpGet("blog/debug")]
+    public IActionResult Debug()
+    {
+        var blogPath = Path.Combine(_environment.ContentRootPath, "Blog");
+        var info = new
+        {
+            BlogPath = blogPath,
+            DirectoryExists = Directory.Exists(blogPath),
+            ContentRootPath = _environment.ContentRootPath,
+            WebRootPath = _environment.WebRootPath,
+            Files = Directory.Exists(blogPath) ? Directory.GetFiles(blogPath, "*.md").Select(f => Path.GetFileName(f)).ToArray() : new string[0],
+            AllDirectories = Directory.GetDirectories(_environment.ContentRootPath).Select(d => Path.GetFileName(d)).ToArray()
+        };
+        
+        return Json(info);
     }
 }

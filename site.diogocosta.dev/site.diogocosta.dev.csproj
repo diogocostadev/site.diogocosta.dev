@@ -11,6 +11,13 @@
       <Folder Include="wwwroot\img\testemunhos\" />
     </ItemGroup>
 
+    <!-- Incluir arquivos de blog no build -->
+    <ItemGroup>
+      <Content Include="Blog\**\*.md">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
     <ItemGroup>
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>

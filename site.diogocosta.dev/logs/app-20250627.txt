@@ -212,3 +212,73 @@ LIMIT 1
 2025-06-27 16:35:00.209 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas?id=abfa959c-f4ef-4c38-a58a-fbb2ae32fee4&vscodeBrowserReqId=1751052896164 - 200 null text/html; charset=utf-8 4012.4335ms
 2025-06-27 16:35:00.215 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
 2025-06-27 16:35:00.222 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 40.8095ms
+2025-06-27 18:08:27.811 -03:00 [INF] Sistema iniciado em 27/06/2025 18:08:27
+2025-06-27 18:08:27.899 -03:00 [INF] Now listening on: http://localhost:5000
+2025-06-27 18:08:27.903 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-27 18:08:27.904 -03:00 [INF] Hosting environment: Development
+2025-06-27 18:08:27.905 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-06-27 18:08:49.019 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/admin/execute-sql-script?id=abfa959c-f4ef-4c38-a58a-fbb2ae32fee4&vscodeBrowserReqId=1751058528984 - null null
+2025-06-27 18:08:49.060 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.ExecuteSqlScript (site.diogocosta.dev)'
+2025-06-27 18:08:49.081 -03:00 [INF] Route matched with {action = "ExecuteSqlScript", controller = "Desafios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExecuteSqlScript() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-27 18:08:49.579 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-06-27 18:08:51.936 -03:00 [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+                    INSERT INTO leads_system.vsl_videos (
+                        slug, nome, descricao, video_url, formato, ambiente, ativo, created_at, updated_at
+                    ) VALUES (
+                        'dia-1-parte-3',
+                        'Vídeo Dia 1 Parte 3 - Teste VSL',
+                        'Vídeo de teste para VSL - Dia 1 Parte 3 do conteúdo',
+                        'https://videos.diogocosta.dev/hls/dia-1-parte-3/stream.m3u8',
+                        'hls',
+                        'teste',
+                        TRUE,
+                        CURRENT_TIMESTAMP,
+                        CURRENT_TIMESTAMP
+                    )
+                    ON CONFLICT (slug) DO UPDATE SET
+                        nome = EXCLUDED.nome,
+                        descricao = EXCLUDED.descricao,
+                        video_url = EXCLUDED.video_url,
+                        formato = EXCLUDED.formato,
+                        ambiente = EXCLUDED.ambiente,
+                        ativo = EXCLUDED.ativo,
+                        updated_at = CURRENT_TIMESTAMP;
+2025-06-27 18:08:52.219 -03:00 [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+                    UPDATE leads_system.vsl_configs 
+                    SET 
+                        video_id_teste = (SELECT id FROM leads_system.vsl_videos WHERE slug = 'dia-1-parte-3'),
+                        ambiente_ativo = 'teste',
+                        updated_at = CURRENT_TIMESTAMP
+                    WHERE slug = 'vsl-criar-saas';
+2025-06-27 18:08:52.221 -03:00 [INF] ✅ Script SQL executado com sucesso! Novo vídeo adicionado e VSL configurada para teste.
+2025-06-27 18:08:52.225 -03:00 [INF] Executing JsonResult, writing value of type '<>f__AnonymousType0`2[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-27 18:08:52.244 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.ExecuteSqlScript (site.diogocosta.dev) in 3159.2463ms
+2025-06-27 18:08:52.249 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.ExecuteSqlScript (site.diogocosta.dev)'
+2025-06-27 18:08:52.257 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/admin/execute-sql-script?id=abfa959c-f4ef-4c38-a58a-fbb2ae32fee4&vscodeBrowserReqId=1751058528984 - 200 null application/json; charset=utf-8 3241.0507ms
+2025-06-27 18:09:02.868 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/vsl-criar-saas?id=abfa959c-f4ef-4c38-a58a-fbb2ae32fee4&vscodeBrowserReqId=1751058542862 - null null
+2025-06-27 18:09:02.873 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-27 18:09:02.878 -03:00 [INF] Route matched with {action = "VSL", controller = "Desafios"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VSL() on controller site.diogocosta.dev.Controllers.DesafiosController (site.diogocosta.dev).
+2025-06-27 18:09:03.438 -03:00 [INF] Executed DbCommand (288ms) [Parameters=[@__slug_0='vsl-criar-saas'], CommandType='"Text"', CommandTimeout='30']
+SELECT v.id, v.ambiente_ativo, v.ativo, v.checkout_url, v.created_at, v.descricao, v.nome, v.preco_original, v.preco_promocional, v.slug, v.subtitulo, v.titulo, v.updated_at, v.video_id, v.video_id_teste
+FROM leads_system.vsl_configs AS v
+WHERE v.slug = @__slug_0 AND v.ativo
+LIMIT 1
+2025-06-27 18:09:03.814 -03:00 [INF] Executed DbCommand (288ms) [Parameters=[@__vsl_VideoId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT v.id, v.ambiente, v.ativo, v.created_at, v.descricao, v.duracao_segundos, v.formato, v.nome, v.observacoes, v.qualidade, v.slug, v.tamanho_bytes, v.thumbnail_url, v.updated_at, v.video_url
+FROM leads_system.vsl_videos AS v
+WHERE v.id = @__vsl_VideoId_0
+LIMIT 1
+2025-06-27 18:09:04.109 -03:00 [INF] Executed DbCommand (261ms) [Parameters=[@__vsl_VideoIdTeste_0='3' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT v.id, v.ambiente, v.ativo, v.created_at, v.descricao, v.duracao_segundos, v.formato, v.nome, v.observacoes, v.qualidade, v.slug, v.tamanho_bytes, v.thumbnail_url, v.updated_at, v.video_url
+FROM leads_system.vsl_videos AS v
+WHERE v.id = @__vsl_VideoIdTeste_0
+LIMIT 1
+2025-06-27 18:09:04.113 -03:00 [INF] 🎬 VSL encontrada: vsl-criar-saas - Ambiente: teste
+2025-06-27 18:09:04.115 -03:00 [INF] ✅ VSL carregada do banco: vsl-criar-saas - Ambiente: teste - Vídeo: https://videos.diogocosta.dev/hls/dia-1-parte-3/stream.m3u8
+2025-06-27 18:09:04.125 -03:00 [INF] Executing ViewResult, running view VSL.
+2025-06-27 18:09:04.144 -03:00 [INF] Executed ViewResult - view VSL executed in 21.6859ms.
+2025-06-27 18:09:04.145 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev) in 1264.6391ms
+2025-06-27 18:09:04.146 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesafiosController.VSL (site.diogocosta.dev)'
+2025-06-27 18:09:04.148 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/vsl-criar-saas?id=abfa959c-f4ef-4c38-a58a-fbb2ae32fee4&vscodeBrowserReqId=1751058542862 - 200 null text/html; charset=utf-8 1280.143ms

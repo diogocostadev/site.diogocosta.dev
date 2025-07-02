@@ -19,12 +19,6 @@
       "sizes": "180x180 144x144 120x120 96x96 72x72",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/favicon.ico",
-      "sizes": "48x48 32x32 16x16",
-      "type": "image/x-icon",
-      "purpose": "any"
     }
   ]
 } 
