@@ -94,6 +94,9 @@ builder.Services.AddScoped<ILeadService, LeadService>();
 // Configuração do serviço de VSL
 builder.Services.AddScoped<IVSLService, VSLService>();
 
+// Configuração do serviço de PDF Downloads
+builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())

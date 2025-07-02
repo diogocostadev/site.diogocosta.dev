@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using site.diogocosta.dev.Contratos.Entrada;
 using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos.Interfaces;
+using site.diogocosta.dev.Servicos;
 
 namespace site.diogocosta.dev.Controllers;
 
@@ -11,17 +12,20 @@ public class DesbloqueioController : Controller
     private readonly IEmailService _emailService;
     private readonly IWebHostEnvironment _hostingEnvironment;
     private readonly ILogger<DesbloqueioController> _logger;
+    private readonly IPdfDownloadService _pdfDownloadService;
 
     public DesbloqueioController(
         INewsletterService newsletterService, 
         IEmailService emailService,
         IWebHostEnvironment hostingEnvironment,
-        ILogger<DesbloqueioController> logger)
+        ILogger<DesbloqueioController> logger,
+        IPdfDownloadService pdfDownloadService)
     {
         _newsletterService = newsletterService;
         _emailService = emailService;
         _hostingEnvironment = hostingEnvironment;
         _logger = logger;
+        _pdfDownloadService = pdfDownloadService;
     }
 
     public IActionResult Index()
@@ -74,7 +78,7 @@ public class DesbloqueioController : Controller
     }
 
     [Route("desbloqueio/download-pdf")]
-    public IActionResult DownloadPdf()
+    public async Task<IActionResult> DownloadPdf(string? email = null)
     {
         try
         {
@@ -89,7 +93,26 @@ public class DesbloqueioController : Controller
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
             var fileName = "Manual_da_Primeira_Virada_Diogo_Costa.pdf";
             
-            _logger.LogInformation("Download do PDF realizado - arquivo: {FileName}", fileName);
+            // Registrar download no banco de dados
+            await _pdfDownloadService.RegistrarDownloadAsync(
+                fileName, 
+                HttpContext, 
+                "download_direto_obrigado", 
+                email);
+            
+            // Manter log tradicional também (backup)
+            var userInfo = new
+            {
+                IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
+                UserAgent = Request.Headers["User-Agent"].ToString(),
+                Referer = Request.Headers["Referer"].ToString(),
+                Email = email,
+                Timestamp = DateTime.UtcNow,
+                FileName = fileName
+            };
+            
+            _logger.LogInformation("📥 DOWNLOAD PDF REALIZADO: {UserInfo}", 
+                System.Text.Json.JsonSerializer.Serialize(userInfo));
             
             return File(fileBytes, "application/pdf", fileName);
         }
@@ -97,6 +120,128 @@ public class DesbloqueioController : Controller
         {
             _logger.LogError(ex, "Erro ao processar download do PDF");
             return StatusCode(500, "Erro interno do servidor.");
+        }
+    }
+
+    // Endpoint para ver estatísticas de downloads do banco (apenas em desenvolvimento)
+    [Route("desbloqueio/downloads-stats")]
+    public async Task<IActionResult> DownloadStats()
+    {
+        try
+        {
+            // Verificar se estamos em desenvolvimento
+            if (!_hostingEnvironment.IsDevelopment())
+            {
+                return NotFound(); // Esconder em produção por segurança
+            }
+
+            // Buscar estatísticas do banco de dados
+            var stats = await _pdfDownloadService.ObterEstatisticasAsync();
+            var downloadsRecentes = await _pdfDownloadService.ObterDownloadsRecentesAsync(20);
+
+            return Json(new
+            {
+                Message = "📊 Estatísticas de Downloads de PDF - Banco de Dados",
+                DataSource = "PostgreSQL Database",
+                Estatisticas = new
+                {
+                    TotalDownloads = stats.TotalDownloads,
+                    DownloadsHoje = stats.DownloadsHoje,
+                    DownloadsUltimaSemana = stats.DownloadsUltimaSemana,
+                    DownloadsUltimoMes = stats.DownloadsUltimoMes,
+                    ArquivoMaisBaixado = stats.ArquivoMaisBaixado,
+                    OrigemMaisComum = stats.OrigemMaisComum,
+                    DispositivoMaisComum = stats.DispositivoMaisComum
+                },
+                DownloadsPorDia = stats.DownloadsPorDia.Take(30), // Últimos 30 dias
+                DownloadsPorOrigem = stats.DownloadsPorOrigem,
+                DownloadsRecentes = downloadsRecentes.Select(d => new
+                {
+                    Id = d.Id,
+                    ArquivoNome = d.ArquivoNome,
+                    Email = d.Email,
+                    IpAddress = d.IpAddress,
+                    Dispositivo = d.Dispositivo,
+                    Navegador = d.Navegador,
+                    SistemaOperacional = d.SistemaOperacional,
+                    Origem = d.Origem,
+                    CreatedAt = d.CreatedAt,
+                    Sucesso = d.Sucesso,
+                    LeadId = d.LeadId
+                })
+            });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Erro ao obter estatísticas de downloads do banco");
+            return Json(new { Error = "Erro interno", Message = ex.Message });
+        }
+    }
+
+    // Endpoint backup para ver estatísticas de downloads dos logs (apenas em desenvolvimento)
+    [Route("desbloqueio/downloads-stats-logs")]
+    public IActionResult DownloadStatsLogs()
+    {
+        try
+        {
+            // Verificar se estamos em desenvolvimento
+            if (!_hostingEnvironment.IsDevelopment())
+            {
+                return NotFound(); // Esconder em produção por segurança
+            }
+
+            var logsPath = Path.Combine(_hostingEnvironment.ContentRootPath, "logs");
+            var downloads = new List<object>();
+
+            if (Directory.Exists(logsPath))
+            {
+                var logFiles = Directory.GetFiles(logsPath, "app-*.txt");
+                
+                foreach (var logFile in logFiles.OrderByDescending(f => f))
+                {
+                    var lines = System.IO.File.ReadAllLines(logFile);
+                    
+                    foreach (var line in lines)
+                    {
+                        if (line.Contains("DOWNLOAD PDF REALIZADO"))
+                        {
+                            try
+                            {
+                                var jsonStart = line.IndexOf("{");
+                                if (jsonStart > -1)
+                                {
+                                    var jsonPart = line.Substring(jsonStart);
+                                    var downloadInfo = System.Text.Json.JsonSerializer.Deserialize<object>(jsonPart);
+                                    downloads.Add(new
+                                    {
+                                        LogFile = Path.GetFileName(logFile),
+                                        DateTime = line.Substring(0, 23), // Pegar timestamp do log
+                                        Info = downloadInfo
+                                    });
+                                }
+                            }
+                            catch
+                            {
+                                // Ignorar erros de parsing
+                            }
+                        }
+                    }
+                }
+            }
+
+            return Json(new
+            {
+                Message = "📁 Estatísticas de Downloads de PDF - Arquivos de Log",
+                DataSource = "Log Files",
+                TotalDownloads = downloads.Count,
+                Downloads = downloads.Take(50), // Últimos 50 downloads
+                LogsPath = logsPath
+            });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Erro ao obter estatísticas de downloads dos logs");
+            return Json(new { Error = "Erro interno" });
         }
     }
 }
