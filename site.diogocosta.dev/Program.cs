@@ -59,7 +59,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString, npgsqlOptions =>
     {
         npgsqlOptions.EnableRetryOnFailure(maxRetryCount: 3, maxRetryDelay: TimeSpan.FromSeconds(30), null);
-    });
+    }).UseSnakeCaseNamingConvention();
     
     // Somente em desenvolvimento
     if (builder.Environment.IsDevelopment())
@@ -117,13 +117,13 @@ app.UseStaticFiles(new StaticFileOptions
     }
 });
 
-// Middleware específico para favicon na raiz
+// Middleware específico para favicon na raiz - redireciona para PNG
 app.Use(async (context, next) =>
 {
     if (context.Request.Path == "/favicon.ico")
     {
-        context.Response.ContentType = "image/x-icon";
-        var faviconPath = Path.Combine(app.Environment.WebRootPath, "favicon.ico");
+        context.Response.ContentType = "image/png";
+        var faviconPath = Path.Combine(app.Environment.WebRootPath, "img", "D.png");
         if (File.Exists(faviconPath))
         {
             await context.Response.SendFileAsync(faviconPath);

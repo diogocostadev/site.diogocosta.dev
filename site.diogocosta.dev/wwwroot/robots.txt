@@ -40,7 +40,8 @@ Allow: /css/
 Allow: /js/
 Allow: /img/
 Allow: /pdfs/
-Allow: /favicon.ico
+Allow: /img/D.png
+Allow: /img/D_180.png
 Allow: /sitemap.xml
 
 # Sitemap
