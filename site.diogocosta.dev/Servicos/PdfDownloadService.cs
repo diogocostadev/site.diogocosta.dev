@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using site.diogocosta.dev.Data;
 using site.diogocosta.dev.Models;
 using System.Text.Json;
@@ -19,11 +20,19 @@ namespace site.diogocosta.dev.Servicos
     {
         private readonly ApplicationDbContext _context;
         private readonly ILogger<PdfDownloadService> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IpLocalizationSettings _ipLocalizationSettings;
 
-        public PdfDownloadService(ApplicationDbContext context, ILogger<PdfDownloadService> logger)
+        public PdfDownloadService(
+            ApplicationDbContext context, 
+            ILogger<PdfDownloadService> logger,
+            IHttpClientFactory httpClientFactory,
+            IOptions<IpLocalizationSettings> ipLocalizationSettings)
         {
             _context = context;
             _logger = logger;
+            _httpClientFactory = httpClientFactory;
+            _ipLocalizationSettings = ipLocalizationSettings.Value;
         }
 
         public async Task<PdfDownloadModel> RegistrarDownloadAsync(string arquivoNome, HttpContext httpContext, string? origem = null, string? email = null)
@@ -47,6 +56,9 @@ namespace site.diogocosta.dev.Servicos
                 // Parse básico do User Agent
                 var userAgentInfo = ParseUserAgent(userAgent);
 
+                // Obter localização do IP
+                var localizacao = await ObterLocalizacaoIpAsync(ipAddress);
+
                 // Tentar encontrar o lead associado pelo email
                 int? leadId = null;
                 if (!string.IsNullOrEmpty(email))
@@ -67,6 +79,8 @@ namespace site.diogocosta.dev.Servicos
                     UserAgent = userAgent,
                     Referer = referer,
                     Origem = origem,
+                    Pais = localizacao?.Pais,
+                    Cidade = localizacao?.Cidade,
                     Dispositivo = userAgentInfo.Dispositivo,
                     Navegador = userAgentInfo.Navegador,
                     SistemaOperacional = userAgentInfo.SistemaOperacional,
@@ -81,15 +95,20 @@ namespace site.diogocosta.dev.Servicos
                         is_mobile = userAgentInfo.Dispositivo == "mobile",
                         parsed_browser = userAgentInfo.Navegador,
                         parsed_os = userAgentInfo.SistemaOperacional,
-                        email_recuperado_automaticamente = string.IsNullOrEmpty(httpContext.Request.Query["email"]) && !string.IsNullOrEmpty(email)
+                        email_recuperado_automaticamente = string.IsNullOrEmpty(httpContext.Request.Query["email"]) && !string.IsNullOrEmpty(email),
+                        localizacao_api = localizacao != null ? new { 
+                            pais = localizacao.Pais, 
+                            cidade = localizacao.Cidade,
+                            ip_consultado = ipAddress
+                        } : null
                     })
                 };
 
                 _context.PdfDownloads.Add(download);
                 await _context.SaveChangesAsync();
 
-                _logger.LogInformation("📥 Download PDF registrado no banco: {ArquivoNome} por {Email} ({IP}) - ID: {Id}", 
-                    arquivoNome, email ?? "anônimo", ipAddress, download.Id);
+                _logger.LogInformation("📥 Download PDF registrado: {ArquivoNome} por {Email} ({IP}) de {Cidade}, {Pais} - ID: {Id}", 
+                    arquivoNome, email ?? "anônimo", ipAddress, localizacao?.Cidade ?? "N/A", localizacao?.Pais ?? "N/A", download.Id);
 
                 return download;
             }
@@ -123,13 +142,76 @@ namespace site.diogocosta.dev.Servicos
         }
 
         /// <summary>
+        /// Obtém localização (país e cidade) baseada no IP usando a API do usuario
+        /// </summary>
+        private async Task<LocalizacaoInfo?> ObterLocalizacaoIpAsync(string ipAddress)
+        {
+            try
+            {
+                // Verificar se a API está configurada
+                if (string.IsNullOrEmpty(_ipLocalizationSettings.BaseUrl))
+                {
+                    _logger.LogWarning("🌍 API de localização IP não configurada");
+                    return null;
+                }
+
+                // Não tentar localizar IPs locais/privados
+                if (string.IsNullOrEmpty(ipAddress) || 
+                    ipAddress == "unknown" || 
+                    ipAddress.StartsWith("127.") ||
+                    ipAddress.StartsWith("192.168.") ||
+                    ipAddress.StartsWith("10.") ||
+                    ipAddress.StartsWith("172."))
+                {
+                    _logger.LogInformation("🌍 IP local/privado detectado, pulando localização: {IP}", ipAddress);
+                    return null;
+                }
+
+                _logger.LogInformation("🌍 Consultando localização para IP {IP} via {BaseUrl}", ipAddress, _ipLocalizationSettings.BaseUrl);
+
+                // Criar cliente HTTP e fazer requisições paralelas
+                using var httpClient = _httpClientFactory.CreateClient();
+                httpClient.DefaultRequestHeaders.Add("User-Agent", "site.diogocosta.dev");
+                
+                var paisTask = httpClient.GetStringAsync($"{_ipLocalizationSettings.BaseUrl}/GetIp/GetCountry?ip={ipAddress}");
+                var cidadeTask = httpClient.GetStringAsync($"{_ipLocalizationSettings.BaseUrl}/GetIp/GetCity?ip={ipAddress}");
+
+                // Aguardar ambas com timeout
+                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(_ipLocalizationSettings.Timeout));
+                var pais = await paisTask.WaitAsync(cts.Token);
+                var cidade = await cidadeTask.WaitAsync(cts.Token);
+
+                var localizacao = new LocalizacaoInfo
+                {
+                    Pais = !string.IsNullOrWhiteSpace(pais) ? pais.Trim() : null,
+                    Cidade = !string.IsNullOrWhiteSpace(cidade) ? cidade.Trim() : null
+                };
+
+                _logger.LogInformation("🌍 Localização obtida para {IP}: {Cidade}, {Pais}", 
+                    ipAddress, localizacao.Cidade ?? "N/A", localizacao.Pais ?? "N/A");
+
+                return localizacao;
+            }
+            catch (OperationCanceledException)
+            {
+                _logger.LogWarning("⏰ Timeout ao consultar localização para IP {IP} (timeout: {Timeout}s)", ipAddress, _ipLocalizationSettings.Timeout);
+                return null;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "🌍 Erro ao obter localização para IP {IP}", ipAddress);
+                return null;
+            }
+        }
+
+        /// <summary>
         /// Tenta recuperar o email de um usuário baseado no IP e referer
         /// </summary>
         private async Task<string?> TentarRecuperarEmailAsync(string ipAddress, string referer)
         {
             try
             {
-                // Tentar primeiro por leads recentes do mesmo IP (últimas 24 horas)
+                // Tentar por leads recentes do mesmo IP (últimas 24 horas)
                 var lead = await _context.Leads
                     .Where(l => l.IpAddress == ipAddress)
                     .Where(l => l.CreatedAt >= DateTime.UtcNow.AddHours(-24))
@@ -138,20 +220,26 @@ namespace site.diogocosta.dev.Servicos
 
                 if (lead != null)
                 {
+                    _logger.LogInformation("📧 Email recuperado automaticamente do lead recente: {Email} para IP {IP}", lead.Email, ipAddress);
                     return lead.Email;
                 }
 
-                // Se não encontrar lead, tentar por NewsletterSubscriptions recentes
-                var subscription = await _context.NewsletterSubscriptions
-                    .Where(s => s.CreatedAt >= DateTime.UtcNow.AddHours(-24))
-                    .OrderByDescending(s => s.CreatedAt)
-                    .FirstOrDefaultAsync();
-
-                if (subscription != null && !string.IsNullOrEmpty(subscription.Email))
+                // Se não encontrar pelo IP, tentar pelo referer (se vier da página de obrigado)
+                if (!string.IsNullOrEmpty(referer) && referer.Contains("obrigado"))
                 {
-                    return subscription.Email;
+                    var leadRecente = await _context.Leads
+                        .Where(l => l.CreatedAt >= DateTime.UtcNow.AddHours(-2))
+                        .OrderByDescending(l => l.CreatedAt)
+                        .FirstOrDefaultAsync();
+
+                    if (leadRecente != null)
+                    {
+                        _logger.LogInformation("📧 Email recuperado do lead mais recente (últimas 2h): {Email}", leadRecente.Email);
+                        return leadRecente.Email;
+                    }
                 }
 
+                _logger.LogInformation("🔍 Não foi possível recuperar email automaticamente para IP {IP}", ipAddress);
                 return null;
             }
             catch (Exception ex)
@@ -312,55 +400,39 @@ namespace site.diogocosta.dev.Servicos
                 };
             }
 
-            var ua = userAgent.ToLower();
-            
+            userAgent = userAgent.ToLower();
+
             // Detectar dispositivo
             string dispositivo = "desktop";
-            if (ua.Contains("mobile") || ua.Contains("android") || ua.Contains("iphone") || 
-                ua.Contains("blackberry") || ua.Contains("windows phone"))
+            if (userAgent.Contains("mobile") || userAgent.Contains("android") || userAgent.Contains("iphone"))
                 dispositivo = "mobile";
-            else if (ua.Contains("ipad") || ua.Contains("tablet"))
+            else if (userAgent.Contains("tablet") || userAgent.Contains("ipad"))
                 dispositivo = "tablet";
-            else if (ua.Contains("bot") || ua.Contains("crawler") || ua.Contains("spider"))
-                dispositivo = "bot";
 
             // Detectar navegador
             string navegador = "unknown";
-            if (ua.Contains("edg/"))
-                navegador = "Edge";
-            else if (ua.Contains("chrome/"))
+            if (userAgent.Contains("chrome") && !userAgent.Contains("edg"))
                 navegador = "Chrome";
-            else if (ua.Contains("firefox/"))
+            else if (userAgent.Contains("firefox"))
                 navegador = "Firefox";
-            else if (ua.Contains("safari/") && !ua.Contains("chrome"))
+            else if (userAgent.Contains("safari") && !userAgent.Contains("chrome"))
                 navegador = "Safari";
-            else if (ua.Contains("opera") || ua.Contains("opr/"))
+            else if (userAgent.Contains("edg"))
+                navegador = "Edge";
+            else if (userAgent.Contains("opera"))
                 navegador = "Opera";
-            else if (ua.Contains("trident") || ua.Contains("msie"))
-                navegador = "Internet Explorer";
 
             // Detectar sistema operacional
             string sistemaOperacional = "unknown";
-            if (ua.Contains("windows nt"))
-            {
-                if (ua.Contains("windows nt 10"))
-                    sistemaOperacional = "Windows 10/11";
-                else if (ua.Contains("windows nt 6.3"))
-                    sistemaOperacional = "Windows 8.1";
-                else if (ua.Contains("windows nt 6.2"))
-                    sistemaOperacional = "Windows 8";
-                else if (ua.Contains("windows nt 6.1"))
-                    sistemaOperacional = "Windows 7";
-                else
-                    sistemaOperacional = "Windows";
-            }
-            else if (ua.Contains("mac os x") || ua.Contains("macos"))
+            if (userAgent.Contains("windows"))
+                sistemaOperacional = "Windows";
+            else if (userAgent.Contains("mac"))
                 sistemaOperacional = "macOS";
-            else if (ua.Contains("linux"))
+            else if (userAgent.Contains("linux"))
                 sistemaOperacional = "Linux";
-            else if (ua.Contains("android"))
+            else if (userAgent.Contains("android"))
                 sistemaOperacional = "Android";
-            else if (ua.Contains("iphone") || ua.Contains("ipad"))
+            else if (userAgent.Contains("ios") || userAgent.Contains("iphone") || userAgent.Contains("ipad"))
                 sistemaOperacional = "iOS";
 
             return new UserAgentInfo
@@ -372,10 +444,18 @@ namespace site.diogocosta.dev.Servicos
         }
     }
 
+    // Classe auxiliar para informações do User Agent
     public class UserAgentInfo
     {
         public string Dispositivo { get; set; } = string.Empty;
         public string Navegador { get; set; } = string.Empty;
         public string SistemaOperacional { get; set; } = string.Empty;
+    }
+
+    // Classe auxiliar para informações de localização
+    public class LocalizacaoInfo
+    {
+        public string? Pais { get; set; }
+        public string? Cidade { get; set; }
     }
 } 

@@ -86,6 +86,10 @@ builder.Services.Configure<NewsletterSettings>(
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings"));
 
+// Configuração da API de localização IP
+builder.Services.Configure<IpLocalizationSettings>(
+    builder.Configuration.GetSection("IpLocalizationApi"));
+
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Configuração do serviço de leads
@@ -95,6 +99,7 @@ builder.Services.AddScoped<ILeadService, LeadService>();
 builder.Services.AddScoped<IVSLService, VSLService>();
 
 // Configuração do serviço de PDF Downloads
+builder.Services.AddHttpClient(); // HttpClient genérico para injeção
 builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
 
 var app = builder.Build();
