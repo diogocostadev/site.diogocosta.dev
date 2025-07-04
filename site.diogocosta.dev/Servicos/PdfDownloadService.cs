@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using site.diogocosta.dev.Data;
 using site.diogocosta.dev.Models;
 using System.Text.Json;
@@ -20,18 +21,18 @@ namespace site.diogocosta.dev.Servicos
         private readonly ApplicationDbContext _context;
         private readonly ILogger<PdfDownloadService> _logger;
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly IWebHostEnvironment _environment;
+        private readonly IpLocalizationSettings _ipLocalizationSettings;
 
         public PdfDownloadService(
             ApplicationDbContext context, 
             ILogger<PdfDownloadService> logger,
             IHttpClientFactory httpClientFactory,
-            IWebHostEnvironment environment)
+            IOptions<IpLocalizationSettings> ipLocalizationSettings)
         {
             _context = context;
             _logger = logger;
             _httpClientFactory = httpClientFactory;
-            _environment = environment;
+            _ipLocalizationSettings = ipLocalizationSettings.Value;
         }
 
         public async Task<PdfDownloadModel> RegistrarDownloadAsync(string arquivoNome, HttpContext httpContext, string? origem = null, string? email = null)
@@ -147,6 +148,13 @@ namespace site.diogocosta.dev.Servicos
         {
             try
             {
+                // Verificar se a API está configurada
+                if (string.IsNullOrEmpty(_ipLocalizationSettings.BaseUrl))
+                {
+                    _logger.LogWarning("🌍 API de localização IP não configurada");
+                    return null;
+                }
+
                 // Não tentar localizar IPs locais/privados
                 if (string.IsNullOrEmpty(ipAddress) || 
                     ipAddress == "unknown" || 
@@ -159,22 +167,17 @@ namespace site.diogocosta.dev.Servicos
                     return null;
                 }
 
-                // Determinar URL base da API baseada no ambiente
-                var baseUrl = _environment.IsDevelopment() 
-                    ? "https://dev-localiza-ip.diogocosta.dev"
-                    : "https://localiza-ip.diogocosta.dev";
-
-                _logger.LogInformation("🌍 Consultando localização para IP {IP} via {BaseUrl}", ipAddress, baseUrl);
+                _logger.LogInformation("🌍 Consultando localização para IP {IP} via {BaseUrl}", ipAddress, _ipLocalizationSettings.BaseUrl);
 
                 // Criar cliente HTTP e fazer requisições paralelas
                 using var httpClient = _httpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("User-Agent", "site.diogocosta.dev");
                 
-                var paisTask = httpClient.GetStringAsync($"{baseUrl}/GetIp/GetCountry?ip={ipAddress}");
-                var cidadeTask = httpClient.GetStringAsync($"{baseUrl}/GetIp/GetCity?ip={ipAddress}");
+                var paisTask = httpClient.GetStringAsync($"{_ipLocalizationSettings.BaseUrl}/GetIp/GetCountry?ip={ipAddress}");
+                var cidadeTask = httpClient.GetStringAsync($"{_ipLocalizationSettings.BaseUrl}/GetIp/GetCity?ip={ipAddress}");
 
                 // Aguardar ambas com timeout
-                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+                using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(_ipLocalizationSettings.Timeout));
                 var pais = await paisTask.WaitAsync(cts.Token);
                 var cidade = await cidadeTask.WaitAsync(cts.Token);
 
@@ -191,7 +194,7 @@ namespace site.diogocosta.dev.Servicos
             }
             catch (OperationCanceledException)
             {
-                _logger.LogWarning("⏰ Timeout ao consultar localização para IP {IP}", ipAddress);
+                _logger.LogWarning("⏰ Timeout ao consultar localização para IP {IP} (timeout: {Timeout}s)", ipAddress, _ipLocalizationSettings.Timeout);
                 return null;
             }
             catch (Exception ex)

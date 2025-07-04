@@ -86,6 +86,10 @@ builder.Services.Configure<NewsletterSettings>(
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("EmailSettings"));
 
+// Configuração da API de localização IP
+builder.Services.Configure<IpLocalizationSettings>(
+    builder.Configuration.GetSection("IpLocalizationApi"));
+
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Configuração do serviço de leads

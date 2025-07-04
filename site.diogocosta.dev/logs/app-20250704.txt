@@ -130,3 +130,91 @@ RETURNING id;
 2025-07-04 20:37:25.782 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 4.1998ms
 2025-07-04 20:37:25.784 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
 2025-07-04 20:43:16.513 -03:00 [INF] Application is shutting down...
+2025-07-04 20:47:18.768 -03:00 [INF] Sistema iniciado em 04/07/2025 20:47:18
+2025-07-04 20:47:18.896 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-04 20:47:18.902 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-04 20:47:18.903 -03:00 [INF] Hosting environment: Development
+2025-07-04 20:47:18.904 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-04 20:47:31.665 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-04 20:47:31.717 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-04 20:47:31.749 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-04 20:47:31.769 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-04 20:47:31.916 -03:00 [INF] Executed ViewResult - view Index executed in 149.9123ms.
+2025-07-04 20:47:31.929 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 176.3234ms
+2025-07-04 20:47:31.930 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-04 20:47:31.935 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 271.642ms
+2025-07-04 20:47:35.770 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desbloqueio - null null
+2025-07-04 20:47:35.774 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev)'
+2025-07-04 20:47:35.777 -03:00 [INF] Route matched with {action = "Index", controller = "Desbloqueio"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:47:35.850 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-04 20:47:35.873 -03:00 [INF] Executed ViewResult - view Index executed in 23.2868ms.
+2025-07-04 20:47:35.875 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev) in 95.0801ms
+2025-07-04 20:47:35.876 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev)'
+2025-07-04 20:47:35.879 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desbloqueio - 200 null text/html; charset=utf-8 109.4644ms
+2025-07-04 20:47:46.794 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Desbloqueio/Cadastrar - application/x-www-form-urlencoded 228
+2025-07-04 20:47:46.800 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Cadastrar (site.diogocosta.dev)'
+2025-07-04 20:47:46.811 -03:00 [INF] Route matched with {action = "Cadastrar", controller = "Desbloqueio"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Cadastrar(site.diogocosta.dev.Models.DesbloqueioModel) on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:47:46.834 -03:00 [INF] Iniciando cadastro de usuário na newsletter: diogo@codigocentral.com.br
+2025-07-04 20:47:46.845 -03:00 [INF] Start processing HTTP request POST https://n8n.diogocosta.dev/webhook/colocar-na-lista
+2025-07-04 20:47:46.847 -03:00 [INF] Sending HTTP request POST https://n8n.diogocosta.dev/webhook/colocar-na-lista
+2025-07-04 20:47:47.759 -03:00 [INF] Received HTTP response headers after 909.1061ms - 200
+2025-07-04 20:47:47.761 -03:00 [INF] End processing HTTP request after 917.1036ms - 200
+2025-07-04 20:47:47.762 -03:00 [INF] Usuário cadastrado com sucesso na newsletter: diogo@codigocentral.com.br
+2025-07-04 20:47:54.868 -03:00 [INF] ✅ Email enviado com sucesso para diogo@codigocentral.com.br - Assunto: Seu Manual da Primeira Virada está pronto para download!
+2025-07-04 20:47:54.870 -03:00 [INF] 🔍 DEBUG CADASTRO - Email salvo no TempData: 'diogo@codigocentral.com.br'
+2025-07-04 20:47:54.871 -03:00 [INF] 🔍 DEBUG CADASTRO - Nome salvo no TempData: 'Diogo'
+2025-07-04 20:47:54.872 -03:00 [INF] Usuário Diogo (diogo@codigocentral.com.br) se cadastrou para receber o Manual da Primeira Virada
+2025-07-04 20:47:54.875 -03:00 [INF] Executing RedirectResult, redirecting to /obrigado-desbloqueio.
+2025-07-04 20:47:54.878 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Cadastrar (site.diogocosta.dev) in 8065.262ms
+2025-07-04 20:47:54.880 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Cadastrar (site.diogocosta.dev)'
+2025-07-04 20:47:54.882 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Desbloqueio/Cadastrar - 302 0 null 8088.1658ms
+2025-07-04 20:47:54.886 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/obrigado-desbloqueio - null null
+2025-07-04 20:47:54.888 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Obrigado (site.diogocosta.dev)'
+2025-07-04 20:47:54.897 -03:00 [INF] Route matched with {action = "Obrigado", controller = "Desbloqueio"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Obrigado() on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:47:54.903 -03:00 [INF] 🔍 DEBUG OBRIGADO - Email recuperado do TempData: 'diogo@codigocentral.com.br'
+2025-07-04 20:47:54.903 -03:00 [INF] 🔍 DEBUG OBRIGADO - Nome recuperado do TempData: 'Diogo'
+2025-07-04 20:47:54.907 -03:00 [INF] Executing ViewResult, running view Obrigado.
+2025-07-04 20:47:54.913 -03:00 [INF] Executed ViewResult - view Obrigado executed in 6.5915ms.
+2025-07-04 20:47:54.914 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Obrigado (site.diogocosta.dev) in 15.6791ms
+2025-07-04 20:47:54.915 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Obrigado (site.diogocosta.dev)'
+2025-07-04 20:47:54.916 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/obrigado-desbloqueio - 200 null text/html; charset=utf-8 30.2135ms
+2025-07-04 20:48:12.536 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desbloqueio/download-pdf?email=diogo%40codigocentral.com.br - null null
+2025-07-04 20:48:12.541 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.DownloadPdf (site.diogocosta.dev)'
+2025-07-04 20:48:12.545 -03:00 [INF] Route matched with {action = "DownloadPdf", controller = "Desbloqueio"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadPdf(System.String) on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:48:12.553 -03:00 [INF] 🔍 DEBUG DOWNLOAD - Email recebido: 'diogo@codigocentral.com.br'
+2025-07-04 20:48:12.554 -03:00 [INF] 🔍 DEBUG DOWNLOAD - Query string completa: '?email=diogo%40codigocentral.com.br'
+2025-07-04 20:48:12.559 -03:00 [INF] 🔍 DEBUG DOWNLOAD - Parâmetros recebidos: email=diogo@codigocentral.com.br
+2025-07-04 20:48:12.561 -03:00 [INF] ✅ Email recebido para download: diogo@codigocentral.com.br
+2025-07-04 20:48:12.563 -03:00 [INF] 🔄 Chamando PdfDownloadService.RegistrarDownloadAsync com email: 'diogo@codigocentral.com.br'
+2025-07-04 20:48:12.583 -03:00 [INF] 🌍 Consultando localização para IP ::1 via https://dev-localiza-ip.diogocosta.dev
+2025-07-04 20:48:12.585 -03:00 [INF] Start processing HTTP request GET https://dev-localiza-ip.diogocosta.dev/GetIp/GetCountry?*
+2025-07-04 20:48:12.586 -03:00 [INF] Sending HTTP request GET https://dev-localiza-ip.diogocosta.dev/GetIp/GetCountry?*
+2025-07-04 20:48:12.588 -03:00 [INF] Start processing HTTP request GET https://dev-localiza-ip.diogocosta.dev/GetIp/GetCity?*
+2025-07-04 20:48:12.589 -03:00 [INF] Sending HTTP request GET https://dev-localiza-ip.diogocosta.dev/GetIp/GetCity?*
+2025-07-04 20:48:13.518 -03:00 [INF] Received HTTP response headers after 926.7534ms - 500
+2025-07-04 20:48:13.519 -03:00 [INF] End processing HTTP request after 931.3236ms - 500
+2025-07-04 20:48:13.523 -03:00 [INF] Received HTTP response headers after 936.4268ms - 500
+2025-07-04 20:48:13.525 -03:00 [INF] End processing HTTP request after 939.9053ms - 500
+2025-07-04 20:48:13.527 -03:00 [WRN] 🌍 Erro ao obter localização para IP ::1
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at System.Net.Http.HttpClient.GetStringAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at site.diogocosta.dev.Servicos.PdfDownloadService.ObterLocalizacaoIpAsync(String ipAddress) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Servicos\PdfDownloadService.cs:line 178
+2025-07-04 20:48:13.884 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-04 20:48:16.433 -03:00 [INF] Executed DbCommand (293ms) [Parameters=[@__ToLower_0='diogo@codigocentral.com.br'], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.desafio_slug, l.email, l.ip_address, l.nome, l.notas, l.opt_in, l.source_id, l.status, l.tags, l.updated_at, l.user_agent, l.utm_campaign, l.utm_content, l.utm_medium, l.utm_source, l.utm_term
+FROM leads_system.leads AS l
+WHERE l.email = @__ToLower_0
+ORDER BY l.created_at DESC
+LIMIT 1
+2025-07-04 20:48:16.866 -03:00 [INF] Executed DbCommand (261ms) [Parameters=[@p0='Manual_da_Primeira_Virada_Diogo_Costa.pdf' (Nullable = false), @p1=NULL, @p2='2025-07-04T23:48:16.4891415Z' (DbType = DateTime), @p3='{"ua_full":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","request_method":"GET","request_scheme":"http","request_host":"localhost:5000","is_mobile":false,"parsed_browser":"Chrome","parsed_os":"Windows","email_recuperado_automaticamente":false,"localizacao_api":null}' (DbType = Object), @p4='desktop', @p5='diogo@codigocentral.com.br', @p6='::1', @p7=NULL (DbType = Int32), @p8='Chrome', @p9='download_direto_obrigado', @p10=NULL, @p11='http://localhost:5000/obrigado-desbloqueio', @p12='Windows', @p13='True', @p14=NULL (DbType = Int64), @p15=NULL (DbType = Int32), @p16='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO leads_system.pdf_downloads (arquivo_nome, cidade, created_at, dados_extra, dispositivo, email, ip_address, lead_id, navegador, origem, pais, referer, sistema_operacional, sucesso, tamanho_arquivo, tempo_download_ms, user_agent)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16)
+RETURNING id;
+2025-07-04 20:48:16.883 -03:00 [INF] 📥 Download PDF registrado: Manual_da_Primeira_Virada_Diogo_Costa.pdf por diogo@codigocentral.com.br (::1) de N/A, N/A - ID: 8
+2025-07-04 20:48:16.885 -03:00 [INF] ✅ Download registrado no banco - ID: 8, Email gravado: 'diogo@codigocentral.com.br'
+2025-07-04 20:48:16.890 -03:00 [INF] 📥 DOWNLOAD PDF REALIZADO: {"IpAddress":"::1","UserAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","Referer":"http://localhost:5000/obrigado-desbloqueio","Email":"diogo@codigocentral.com.br","Origem":"download_direto_obrigado","Timestamp":"2025-07-04T23:48:16.886679Z","FileName":"Manual_da_Primeira_Virada_Diogo_Costa.pdf"}
+2025-07-04 20:48:16.892 -03:00 [INF] Executing FileContentResult, sending file with download name 'Manual_da_Primeira_Virada_Diogo_Costa.pdf' ...
+2025-07-04 20:48:16.908 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.DownloadPdf (site.diogocosta.dev) in 4361.3143ms
+2025-07-04 20:48:16.910 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.DownloadPdf (site.diogocosta.dev)'
+2025-07-04 20:48:16.915 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desbloqueio/download-pdf?email=diogo%40codigocentral.com.br - 200 1932663 application/pdf 4378.8679ms

@@ -12,7 +12,7 @@
         <div class="bg-green-50 border border-green-200 rounded-lg p-6 text-left">
             <h3 class="text-lg font-semibold text-green-800 mb-2">📧 Verifique seu email</h3>
             <p class="text-green-700">
-                Acabamos de enviar um email com o link para download do <strong>Manual da Primeira Virada</strong>.
+                Acabamos de enviar um email com o <strong>Manual da Primeira Virada</strong>.
             </p>
             <p class="text-green-700 mt-2">
                 Se não encontrar o email na sua caixa de entrada, verifique a pasta de spam ou lixo eletrônico.
@@ -29,16 +29,8 @@
         </div>
 
         <script>
-            // DEBUG: Log da URL gerada
-            console.log('🔍 DEBUG - Email do usuário: @(userEmail ?? "NULL")');
-            console.log('🔍 DEBUG - URL de download gerada: @downloadUrl');
-            console.log('🔍 DEBUG - ViewBag.UserEmail: @ViewBag.UserEmail');
-            
             // Função para rastrear downloads do PDF
             function trackPdfDownload(source) {
-                console.log('📥 Iniciando download do PDF, fonte:', source);
-                console.log('📥 URL sendo acessada:', '@downloadUrl');
-                
                 // Google Analytics 4
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'file_download', {
@@ -54,8 +46,6 @@
                 if (typeof _paq !== 'undefined') {
                     _paq.push(['trackEvent', 'PDF Downloads', 'Download', 'Manual da Primeira Virada', source]);
                 }
-
-                console.log('📥 PDF Download tracked:', source);
             }
         </script>
         
