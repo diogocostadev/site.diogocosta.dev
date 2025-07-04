@@ -60,6 +60,10 @@ public class DesbloqueioController : Controller
                 _logger.LogWarning("Falha ao enviar email de download para {Email}", model.Email);
             }
 
+            // Armazenar email na sessão para usar na página de obrigado
+            TempData["UserEmail"] = model.Email;
+            TempData["UserName"] = model.Nome;
+
             _logger.LogInformation("Usuário {Nome} ({Email}) se cadastrou para receber o Manual da Primeira Virada", 
                 model.Nome, model.Email);
         }
@@ -74,6 +78,10 @@ public class DesbloqueioController : Controller
     [Route("obrigado-desbloqueio")]
     public IActionResult Obrigado()
     {
+        // Tentar recuperar email da sessão
+        ViewBag.UserEmail = TempData["UserEmail"] as string;
+        ViewBag.UserName = TempData["UserName"] as string;
+        
         return View();
     }
 
@@ -93,11 +101,32 @@ public class DesbloqueioController : Controller
             var fileBytes = System.IO.File.ReadAllBytes(filePath);
             var fileName = "Manual_da_Primeira_Virada_Diogo_Costa.pdf";
             
+            // Determinar origem do download
+            var origem = "download_direto";
+            var referer = Request.Headers["Referer"].ToString();
+            
+            if (!string.IsNullOrEmpty(referer))
+            {
+                if (referer.Contains("obrigado-desbloqueio"))
+                    origem = "download_direto_obrigado";
+                else if (referer.Contains("gmail.com") || referer.Contains("outlook.com") || referer.Contains("yahoo.com"))
+                    origem = "email_link";
+                else if (referer.Contains("diogocosta.dev"))
+                    origem = "site_interno";
+            }
+            
+            // Se o email não foi passado como parâmetro, tentar detectar origem
+            if (string.IsNullOrEmpty(email))
+            {
+                _logger.LogInformation("📧 Download sem email especificado. Referer: {Referer}", referer);
+                origem = origem + "_sem_email";
+            }
+
             // Registrar download no banco de dados
             await _pdfDownloadService.RegistrarDownloadAsync(
                 fileName, 
                 HttpContext, 
-                "download_direto_obrigado", 
+                origem, 
                 email);
             
             // Manter log tradicional também (backup)
@@ -105,8 +134,9 @@ public class DesbloqueioController : Controller
             {
                 IpAddress = HttpContext.Connection.RemoteIpAddress?.ToString(),
                 UserAgent = Request.Headers["User-Agent"].ToString(),
-                Referer = Request.Headers["Referer"].ToString(),
-                Email = email,
+                Referer = referer,
+                Email = email ?? "não_informado",
+                Origem = origem,
                 Timestamp = DateTime.UtcNow,
                 FileName = fileName
             };

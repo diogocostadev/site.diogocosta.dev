@@ -34,6 +34,16 @@ namespace site.diogocosta.dev.Servicos
                 var referer = httpContext.Request.Headers["Referer"].ToString();
                 var ipAddress = GetClientIpAddress(httpContext);
 
+                // Tentar descobrir email automaticamente se não fornecido
+                if (string.IsNullOrEmpty(email))
+                {
+                    email = await TentarRecuperarEmailAsync(ipAddress, referer);
+                    if (!string.IsNullOrEmpty(email))
+                    {
+                        _logger.LogInformation("📧 Email recuperado automaticamente para download: {Email} (IP: {IP})", email, ipAddress);
+                    }
+                }
+
                 // Parse básico do User Agent
                 var userAgentInfo = ParseUserAgent(userAgent);
 
@@ -70,7 +80,8 @@ namespace site.diogocosta.dev.Servicos
                         request_host = httpContext.Request.Host.Value,
                         is_mobile = userAgentInfo.Dispositivo == "mobile",
                         parsed_browser = userAgentInfo.Navegador,
-                        parsed_os = userAgentInfo.SistemaOperacional
+                        parsed_os = userAgentInfo.SistemaOperacional,
+                        email_recuperado_automaticamente = string.IsNullOrEmpty(httpContext.Request.Query["email"]) && !string.IsNullOrEmpty(email)
                     })
                 };
 
@@ -108,6 +119,45 @@ namespace site.diogocosta.dev.Servicos
                     // Se ainda assim falhar, retornar objeto com ID 0
                     return downloadBasico;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Tenta recuperar o email de um usuário baseado no IP e referer
+        /// </summary>
+        private async Task<string?> TentarRecuperarEmailAsync(string ipAddress, string referer)
+        {
+            try
+            {
+                // Tentar primeiro por leads recentes do mesmo IP (últimas 24 horas)
+                var lead = await _context.Leads
+                    .Where(l => l.IpAddress == ipAddress)
+                    .Where(l => l.CreatedAt >= DateTime.UtcNow.AddHours(-24))
+                    .OrderByDescending(l => l.CreatedAt)
+                    .FirstOrDefaultAsync();
+
+                if (lead != null)
+                {
+                    return lead.Email;
+                }
+
+                // Se não encontrar lead, tentar por NewsletterSubscriptions recentes
+                var subscription = await _context.NewsletterSubscriptions
+                    .Where(s => s.CreatedAt >= DateTime.UtcNow.AddHours(-24))
+                    .OrderByDescending(s => s.CreatedAt)
+                    .FirstOrDefaultAsync();
+
+                if (subscription != null && !string.IsNullOrEmpty(subscription.Email))
+                {
+                    return subscription.Email;
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Erro ao tentar recuperar email automaticamente para IP {IP}", ipAddress);
+                return null;
             }
         }
 

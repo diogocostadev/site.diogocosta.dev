@@ -1,5 +1,7 @@
 @{
     ViewData["Title"] = "Obrigado";
+    var userEmail = ViewBag.UserEmail as string;
+    var downloadUrl = !string.IsNullOrEmpty(userEmail) ? $"/desbloqueio/download-pdf?email={Uri.EscapeDataString(userEmail)}" : "/desbloqueio/download-pdf";
 }
 
 <div class="bg-white min-h-screen py-24">
@@ -19,7 +21,7 @@
         
         <div class="border-t pt-6 mt-8">
             <p class="text-gray-600">Caso não tenha recebido o email, você também pode baixar diretamente:</p>
-            <a href="/desbloqueio/download-pdf" 
+            <a href="@downloadUrl" 
                class="block bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 mt-4"
                onclick="trackPdfDownload('download_direto_obrigado')">
                 Download Direto do PDF
