@@ -104,7 +104,8 @@ public class EmailService : IEmailService
         try
         {
             var nomeUsuario = !string.IsNullOrEmpty(nome) ? nome : "Caro(a) leitor(a)";
-            var downloadUrl = "https://diogocosta.dev/desbloqueio/download-pdf";
+            // Incluir email como parâmetro na URL para rastreamento
+            var downloadUrl = $"https://diogocosta.dev/desbloqueio/download-pdf?email={Uri.EscapeDataString(email)}";
 
             var corpoEmail = $@"
 <!DOCTYPE html>
