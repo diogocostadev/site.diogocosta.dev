@@ -29,8 +29,16 @@
         </div>
 
         <script>
+            // DEBUG: Log da URL gerada
+            console.log('🔍 DEBUG - Email do usuário: @(userEmail ?? "NULL")');
+            console.log('🔍 DEBUG - URL de download gerada: @downloadUrl');
+            console.log('🔍 DEBUG - ViewBag.UserEmail: @ViewBag.UserEmail');
+            
             // Função para rastrear downloads do PDF
             function trackPdfDownload(source) {
+                console.log('📥 Iniciando download do PDF, fonte:', source);
+                console.log('📥 URL sendo acessada:', '@downloadUrl');
+                
                 // Google Analytics 4
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'file_download', {

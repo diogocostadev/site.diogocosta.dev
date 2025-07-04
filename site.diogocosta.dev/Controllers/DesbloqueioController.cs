@@ -63,6 +63,10 @@ public class DesbloqueioController : Controller
             // Armazenar email na sessão para usar na página de obrigado
             TempData["UserEmail"] = model.Email;
             TempData["UserName"] = model.Nome;
+            
+            // LOG DETALHADO PARA DEBUG
+            _logger.LogInformation("🔍 DEBUG CADASTRO - Email salvo no TempData: '{Email}'", model.Email);
+            _logger.LogInformation("🔍 DEBUG CADASTRO - Nome salvo no TempData: '{Nome}'", model.Nome);
 
             _logger.LogInformation("Usuário {Nome} ({Email}) se cadastrou para receber o Manual da Primeira Virada", 
                 model.Nome, model.Email);
@@ -79,8 +83,15 @@ public class DesbloqueioController : Controller
     public IActionResult Obrigado()
     {
         // Tentar recuperar email da sessão
-        ViewBag.UserEmail = TempData["UserEmail"] as string;
-        ViewBag.UserName = TempData["UserName"] as string;
+        var userEmail = TempData["UserEmail"] as string;
+        var userName = TempData["UserName"] as string;
+        
+        // LOG DETALHADO PARA DEBUG
+        _logger.LogInformation("🔍 DEBUG OBRIGADO - Email recuperado do TempData: '{Email}'", userEmail ?? "NULL");
+        _logger.LogInformation("🔍 DEBUG OBRIGADO - Nome recuperado do TempData: '{Nome}'", userName ?? "NULL");
+        
+        ViewBag.UserEmail = userEmail;
+        ViewBag.UserName = userName;
         
         return View();
     }
@@ -90,6 +101,12 @@ public class DesbloqueioController : Controller
     {
         try
         {
+            // LOG DETALHADO PARA DEBUG
+            _logger.LogInformation("🔍 DEBUG DOWNLOAD - Email recebido: '{Email}'", email ?? "NULL");
+            _logger.LogInformation("🔍 DEBUG DOWNLOAD - Query string completa: '{QueryString}'", Request.QueryString.Value);
+            _logger.LogInformation("🔍 DEBUG DOWNLOAD - Parâmetros recebidos: {Parameters}", 
+                string.Join(", ", Request.Query.Select(q => $"{q.Key}={q.Value}")));
+
             var filePath = Path.Combine(_hostingEnvironment.WebRootPath, "pdfs", "manual_primeira_virada.pdf");
             
             if (!System.IO.File.Exists(filePath))
@@ -118,16 +135,25 @@ public class DesbloqueioController : Controller
             // Se o email não foi passado como parâmetro, tentar detectar origem
             if (string.IsNullOrEmpty(email))
             {
-                _logger.LogInformation("📧 Download sem email especificado. Referer: {Referer}", referer);
+                _logger.LogWarning("⚠️ PROBLEMA: Download sem email especificado. Referer: {Referer}", referer);
                 origem = origem + "_sem_email";
             }
+            else
+            {
+                _logger.LogInformation("✅ Email recebido para download: {Email}", email);
+            }
 
-            // Registrar download no banco de dados
-            await _pdfDownloadService.RegistrarDownloadAsync(
+            // CHAMAR O SERVIÇO COM LOG ANTES E DEPOIS
+            _logger.LogInformation("🔄 Chamando PdfDownloadService.RegistrarDownloadAsync com email: '{Email}'", email ?? "NULL");
+            
+            var downloadRegistrado = await _pdfDownloadService.RegistrarDownloadAsync(
                 fileName, 
                 HttpContext, 
                 origem, 
                 email);
+                
+            _logger.LogInformation("✅ Download registrado no banco - ID: {Id}, Email gravado: '{EmailGravado}'", 
+                downloadRegistrado.Id, downloadRegistrado.Email ?? "NULL");
             
             // Manter log tradicional também (backup)
             var userInfo = new
@@ -148,7 +174,7 @@ public class DesbloqueioController : Controller
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Erro ao processar download do PDF");
+            _logger.LogError(ex, "💥 ERRO ao processar download do PDF");
             return StatusCode(500, "Erro interno do servidor.");
         }
     }

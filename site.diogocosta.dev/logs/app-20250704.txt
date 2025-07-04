@@ -1,0 +1,132 @@
+2025-07-04 20:35:42.468 -03:00 [INF] Sistema iniciado em 04/07/2025 20:35:42
+2025-07-04 20:35:42.555 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-04 20:35:42.559 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-04 20:35:42.560 -03:00 [INF] Hosting environment: Development
+2025-07-04 20:35:42.560 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-04 20:35:45.733 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-04 20:35:45.772 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-04 20:35:45.791 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-04 20:35:45.806 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-04 20:35:45.945 -03:00 [INF] Executed ViewResult - view Index executed in 139.5693ms.
+2025-07-04 20:35:45.955 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 160.9996ms
+2025-07-04 20:35:45.956 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-04 20:35:45.958 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 227.0832ms
+2025-07-04 20:35:45.994 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-04 20:35:46.002 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-04 20:35:46.023 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-04 20:35:46.023 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-04 20:35:46.037 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 46.8992ms
+2025-07-04 20:35:46.032 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 5883 text/javascript 29.8998ms
+2025-07-04 20:35:46.879 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-07-04 20:35:46.879 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-07-04 20:35:46.881 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-07-04 20:35:46.882 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-07-04 20:35:46.882 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-07-04 20:35:46.883 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-07-04 20:35:46.883 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-07-04 20:35:46.886 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-07-04 20:35:46.890 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-07-04 20:35:46.898 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-07-04 20:35:46.901 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-07-04 20:35:46.904 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-07-04 20:35:46.905 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 25.9798ms
+2025-07-04 20:35:46.907 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 27.67ms
+2025-07-04 20:35:46.909 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 27.3339ms
+2025-07-04 20:35:46.911 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 29.7762ms
+2025-07-04 20:35:46.914 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 31.3393ms
+2025-07-04 20:35:46.915 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 31.9006ms
+2025-07-04 20:35:46.917 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-07-04 20:35:46.920 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-07-04 20:35:46.922 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-07-04 20:35:46.925 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-07-04 20:35:46.928 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-07-04 20:35:46.932 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-07-04 20:35:46.935 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-07-04 20:35:46.938 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-07-04 20:35:46.940 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-07-04 20:35:46.945 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-07-04 20:35:46.949 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/manifest.json?v=4 - null null
+2025-07-04 20:35:46.949 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-07-04 20:35:46.952 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-07-04 20:35:46.953 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 35.8552ms
+2025-07-04 20:35:46.954 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 34.3456ms
+2025-07-04 20:35:46.955 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 33.0584ms
+2025-07-04 20:35:46.956 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 31.4841ms
+2025-07-04 20:35:46.961 -03:00 [INF] Sending file. Request path: '/manifest.json'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\manifest.json'
+2025-07-04 20:35:46.963 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 34.6735ms
+2025-07-04 20:35:46.964 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 32.7212ms
+2025-07-04 20:35:46.967 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-07-04 20:35:46.969 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - null null
+2025-07-04 20:35:46.976 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/manifest.json?v=4 - 200 646 application/json 27.1717ms
+2025-07-04 20:35:46.982 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D_180.png - null null
+2025-07-04 20:35:46.985 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-07-04 20:35:46.987 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-07-04 20:35:46.993 -03:00 [INF] Sending file. Request path: '/img/D_180.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D_180.png'
+2025-07-04 20:35:46.993 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 26.2226ms
+2025-07-04 20:35:46.995 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - 200 8803 image/png 25.3052ms
+2025-07-04 20:35:46.996 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D_180.png - 200 3792 image/png 13.7914ms
+2025-07-04 20:36:19.493 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desbloqueio - null null
+2025-07-04 20:36:19.499 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev)'
+2025-07-04 20:36:19.504 -03:00 [INF] Route matched with {action = "Index", controller = "Desbloqueio"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:36:19.846 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-04 20:36:19.875 -03:00 [INF] Executed ViewResult - view Index executed in 29.6539ms.
+2025-07-04 20:36:19.877 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev) in 371.6391ms
+2025-07-04 20:36:19.879 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev)'
+2025-07-04 20:36:19.881 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desbloqueio - 200 null text/html; charset=utf-8 388.3212ms
+2025-07-04 20:36:31.217 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Desbloqueio/Cadastrar - application/x-www-form-urlencoded 228
+2025-07-04 20:36:31.222 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Cadastrar (site.diogocosta.dev)'
+2025-07-04 20:36:31.233 -03:00 [INF] Route matched with {action = "Cadastrar", controller = "Desbloqueio"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Cadastrar(site.diogocosta.dev.Models.DesbloqueioModel) on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:36:31.264 -03:00 [INF] Iniciando cadastro de usuário na newsletter: diogo@codigocentral.com.br
+2025-07-04 20:36:31.274 -03:00 [INF] Start processing HTTP request POST https://n8n.diogocosta.dev/webhook/colocar-na-lista
+2025-07-04 20:36:31.276 -03:00 [INF] Sending HTTP request POST https://n8n.diogocosta.dev/webhook/colocar-na-lista
+2025-07-04 20:36:32.244 -03:00 [INF] Received HTTP response headers after 964.3104ms - 200
+2025-07-04 20:36:32.246 -03:00 [INF] End processing HTTP request after 972.3406ms - 200
+2025-07-04 20:36:32.248 -03:00 [INF] Usuário cadastrado com sucesso na newsletter: diogo@codigocentral.com.br
+2025-07-04 20:36:45.329 -03:00 [INF] ✅ Email enviado com sucesso para diogo@codigocentral.com.br - Assunto: Seu Manual da Primeira Virada está pronto para download!
+2025-07-04 20:36:45.331 -03:00 [INF] 🔍 DEBUG CADASTRO - Email salvo no TempData: 'diogo@codigocentral.com.br'
+2025-07-04 20:36:45.332 -03:00 [INF] 🔍 DEBUG CADASTRO - Nome salvo no TempData: 'Diogo'
+2025-07-04 20:36:45.333 -03:00 [INF] Usuário Diogo (diogo@codigocentral.com.br) se cadastrou para receber o Manual da Primeira Virada
+2025-07-04 20:36:45.335 -03:00 [INF] Executing RedirectResult, redirecting to /obrigado-desbloqueio.
+2025-07-04 20:36:45.337 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Cadastrar (site.diogocosta.dev) in 14101.5996ms
+2025-07-04 20:36:45.338 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Cadastrar (site.diogocosta.dev)'
+2025-07-04 20:36:45.340 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Desbloqueio/Cadastrar - 302 0 null 14122.2829ms
+2025-07-04 20:36:45.345 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/obrigado-desbloqueio - null null
+2025-07-04 20:36:45.347 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Obrigado (site.diogocosta.dev)'
+2025-07-04 20:36:45.350 -03:00 [INF] Route matched with {action = "Obrigado", controller = "Desbloqueio"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Obrigado() on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:36:45.358 -03:00 [INF] 🔍 DEBUG OBRIGADO - Email recuperado do TempData: 'diogo@codigocentral.com.br'
+2025-07-04 20:36:45.359 -03:00 [INF] 🔍 DEBUG OBRIGADO - Nome recuperado do TempData: 'Diogo'
+2025-07-04 20:36:45.364 -03:00 [INF] Executing ViewResult, running view Obrigado.
+2025-07-04 20:36:45.369 -03:00 [INF] Executed ViewResult - view Obrigado executed in 5.6275ms.
+2025-07-04 20:36:45.370 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Obrigado (site.diogocosta.dev) in 19.2043ms
+2025-07-04 20:36:45.372 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Obrigado (site.diogocosta.dev)'
+2025-07-04 20:36:45.373 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/obrigado-desbloqueio - 200 null text/html; charset=utf-8 27.9363ms
+2025-07-04 20:37:06.732 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desbloqueio/download-pdf?email=diogo%40codigocentral.com.br - null null
+2025-07-04 20:37:06.736 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.DownloadPdf (site.diogocosta.dev)'
+2025-07-04 20:37:06.740 -03:00 [INF] Route matched with {action = "DownloadPdf", controller = "Desbloqueio"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DownloadPdf(System.String) on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-04 20:37:06.749 -03:00 [INF] 🔍 DEBUG DOWNLOAD - Email recebido: 'diogo@codigocentral.com.br'
+2025-07-04 20:37:06.750 -03:00 [INF] 🔍 DEBUG DOWNLOAD - Query string completa: '?email=diogo%40codigocentral.com.br'
+2025-07-04 20:37:06.753 -03:00 [INF] 🔍 DEBUG DOWNLOAD - Parâmetros recebidos: email=diogo@codigocentral.com.br
+2025-07-04 20:37:06.755 -03:00 [INF] ✅ Email recebido para download: diogo@codigocentral.com.br
+2025-07-04 20:37:06.756 -03:00 [INF] 🔄 Chamando PdfDownloadService.RegistrarDownloadAsync com email: 'diogo@codigocentral.com.br'
+2025-07-04 20:37:07.322 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-04 20:37:09.917 -03:00 [INF] Executed DbCommand (296ms) [Parameters=[@__ToLower_0='diogo@codigocentral.com.br'], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.desafio_slug, l.email, l.ip_address, l.nome, l.notas, l.opt_in, l.source_id, l.status, l.tags, l.updated_at, l.user_agent, l.utm_campaign, l.utm_content, l.utm_medium, l.utm_source, l.utm_term
+FROM leads_system.leads AS l
+WHERE l.email = @__ToLower_0
+ORDER BY l.created_at DESC
+LIMIT 1
+2025-07-04 20:37:10.371 -03:00 [INF] Executed DbCommand (268ms) [Parameters=[@p0='Manual_da_Primeira_Virada_Diogo_Costa.pdf' (Nullable = false), @p1=NULL, @p2='2025-07-04T23:37:09.9795329Z' (DbType = DateTime), @p3='{"ua_full":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","request_method":"GET","request_scheme":"http","request_host":"localhost:5000","is_mobile":false,"parsed_browser":"Chrome","parsed_os":"Windows 10/11","email_recuperado_automaticamente":false}' (DbType = Object), @p4='desktop', @p5='diogo@codigocentral.com.br', @p6='::1', @p7=NULL (DbType = Int32), @p8='Chrome', @p9='download_direto_obrigado', @p10=NULL, @p11='http://localhost:5000/obrigado-desbloqueio', @p12='Windows 10/11', @p13='True', @p14=NULL (DbType = Int64), @p15=NULL (DbType = Int32), @p16='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO leads_system.pdf_downloads (arquivo_nome, cidade, created_at, dados_extra, dispositivo, email, ip_address, lead_id, navegador, origem, pais, referer, sistema_operacional, sucesso, tamanho_arquivo, tempo_download_ms, user_agent)
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16)
+RETURNING id;
+2025-07-04 20:37:10.393 -03:00 [INF] 📥 Download PDF registrado no banco: Manual_da_Primeira_Virada_Diogo_Costa.pdf por diogo@codigocentral.com.br (::1) - ID: 7
+2025-07-04 20:37:10.395 -03:00 [INF] ✅ Download registrado no banco - ID: 7, Email gravado: 'diogo@codigocentral.com.br'
+2025-07-04 20:37:10.400 -03:00 [INF] 📥 DOWNLOAD PDF REALIZADO: {"IpAddress":"::1","UserAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36","Referer":"http://localhost:5000/obrigado-desbloqueio","Email":"diogo@codigocentral.com.br","Origem":"download_direto_obrigado","Timestamp":"2025-07-04T23:37:10.3967423Z","FileName":"Manual_da_Primeira_Virada_Diogo_Costa.pdf"}
+2025-07-04 20:37:10.402 -03:00 [INF] Executing FileContentResult, sending file with download name 'Manual_da_Primeira_Virada_Diogo_Costa.pdf' ...
+2025-07-04 20:37:10.431 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.DownloadPdf (site.diogocosta.dev) in 3689.3106ms
+2025-07-04 20:37:10.433 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.DownloadPdf (site.diogocosta.dev)'
+2025-07-04 20:37:10.438 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desbloqueio/download-pdf?email=diogo%40codigocentral.com.br - 200 1932663 application/pdf 3706.1365ms
+2025-07-04 20:37:25.778 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - null null
+2025-07-04 20:37:25.782 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 4.1998ms
+2025-07-04 20:37:25.784 -03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2025-07-04 20:43:16.513 -03:00 [INF] Application is shutting down...

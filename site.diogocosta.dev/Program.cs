@@ -95,6 +95,7 @@ builder.Services.AddScoped<ILeadService, LeadService>();
 builder.Services.AddScoped<IVSLService, VSLService>();
 
 // Configuração do serviço de PDF Downloads
+builder.Services.AddHttpClient(); // HttpClient genérico para injeção
 builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
 
 var app = builder.Build();
