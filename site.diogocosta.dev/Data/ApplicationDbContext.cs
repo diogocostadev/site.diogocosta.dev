@@ -18,6 +18,7 @@ namespace site.diogocosta.dev.Data
         public DbSet<EmailLogModel> EmailLogs { get; set; }
         public DbSet<VSLConfigModel> VSLConfigs { get; set; }
         public DbSet<VSLVideoModel> VSLVideos { get; set; }
+        public DbSet<PdfDownloadModel> PdfDownloads { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -161,6 +162,29 @@ namespace site.diogocosta.dev.Data
                       .HasForeignKey(e => e.VideoIdTeste)
                       .OnDelete(DeleteBehavior.SetNull);
             });
+
+            // Configurar a tabela de downloads de PDF
+            modelBuilder.Entity<PdfDownloadModel>(entity =>
+            {
+                entity.ToTable("pdf_downloads", "leads_system");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                
+                // Índices para performance
+                entity.HasIndex(e => e.ArquivoNome).HasDatabaseName("idx_pdf_downloads_arquivo_nome");
+                entity.HasIndex(e => e.Email).HasDatabaseName("idx_pdf_downloads_email");
+                entity.HasIndex(e => e.CreatedAt).HasDatabaseName("idx_pdf_downloads_created_at");
+                entity.HasIndex(e => e.LeadId).HasDatabaseName("idx_pdf_downloads_lead_id");
+                entity.HasIndex(e => e.IpAddress).HasDatabaseName("idx_pdf_downloads_ip_address");
+                entity.HasIndex(e => e.Origem).HasDatabaseName("idx_pdf_downloads_origem");
+                entity.HasIndex(e => e.Sucesso).HasDatabaseName("idx_pdf_downloads_sucesso");
+
+                // Relacionamento com Lead (opcional)
+                entity.HasOne(e => e.Lead)
+                      .WithMany()
+                      .HasForeignKey(e => e.LeadId)
+                      .OnDelete(DeleteBehavior.SetNull);
+            });
         }
 
         public override int SaveChanges()
@@ -179,7 +203,7 @@ namespace site.diogocosta.dev.Data
         {
             var entries = ChangeTracker.Entries()
                 .Where(e => e.Entity is LeadModel || e.Entity is LeadSourceModel || e.Entity is EmailTemplateModel || 
-                           e.Entity is VSLConfigModel || e.Entity is VSLVideoModel)
+                           e.Entity is VSLConfigModel || e.Entity is VSLVideoModel || e.Entity is PdfDownloadModel)
                 .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
 
             foreach (var entry in entries)

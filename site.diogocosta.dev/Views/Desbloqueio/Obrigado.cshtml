@@ -19,10 +19,35 @@
         
         <div class="border-t pt-6 mt-8">
             <p class="text-gray-600">Caso não tenha recebido o email, você também pode baixar diretamente:</p>
-            <a href="/desbloqueio/download-pdf" class="block bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 mt-4">
+            <a href="/desbloqueio/download-pdf" 
+               class="block bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 mt-4"
+               onclick="trackPdfDownload('download_direto_obrigado')">
                 Download Direto do PDF
             </a>
         </div>
+
+        <script>
+            // Função para rastrear downloads do PDF
+            function trackPdfDownload(source) {
+                // Google Analytics 4
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'file_download', {
+                        'file_name': 'Manual_da_Primeira_Virada_Diogo_Costa.pdf',
+                        'file_extension': 'pdf',
+                        'download_source': source,
+                        'event_category': 'PDF Downloads',
+                        'event_label': 'Manual da Primeira Virada'
+                    });
+                }
+
+                // Matomo
+                if (typeof _paq !== 'undefined') {
+                    _paq.push(['trackEvent', 'PDF Downloads', 'Download', 'Manual da Primeira Virada', source]);
+                }
+
+                console.log('📥 PDF Download tracked:', source);
+            }
+        </script>
         
         <p class="mt-8 text-gray-600">
             Quer ir mais fundo? Em breve abrirei inscrições para o 

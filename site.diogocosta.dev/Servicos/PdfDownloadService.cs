@@ -1,0 +1,331 @@
+using Microsoft.EntityFrameworkCore;
+using site.diogocosta.dev.Data;
+using site.diogocosta.dev.Models;
+using System.Text.Json;
+using System.Text.RegularExpressions;
+
+namespace site.diogocosta.dev.Servicos
+{
+    public interface IPdfDownloadService
+    {
+        Task<PdfDownloadModel> RegistrarDownloadAsync(string arquivoNome, HttpContext httpContext, string? origem = null, string? email = null);
+        Task<PdfDownloadStats> ObterEstatisticasAsync(DateTime? dataInicio = null, DateTime? dataFim = null);
+        Task<List<PdfDownloadModel>> ObterDownloadsRecentesAsync(int quantidade = 50);
+        Task<List<PdfDownloadModel>> BuscarDownloadsPorEmailAsync(string email);
+        Task<List<PdfDownloadModel>> BuscarDownloadsPorArquivoAsync(string arquivoNome);
+    }
+
+    public class PdfDownloadService : IPdfDownloadService
+    {
+        private readonly ApplicationDbContext _context;
+        private readonly ILogger<PdfDownloadService> _logger;
+
+        public PdfDownloadService(ApplicationDbContext context, ILogger<PdfDownloadService> logger)
+        {
+            _context = context;
+            _logger = logger;
+        }
+
+        public async Task<PdfDownloadModel> RegistrarDownloadAsync(string arquivoNome, HttpContext httpContext, string? origem = null, string? email = null)
+        {
+            try
+            {
+                var userAgent = httpContext.Request.Headers["User-Agent"].ToString();
+                var referer = httpContext.Request.Headers["Referer"].ToString();
+                var ipAddress = GetClientIpAddress(httpContext);
+
+                // Parse básico do User Agent
+                var userAgentInfo = ParseUserAgent(userAgent);
+
+                // Tentar encontrar o lead associado pelo email
+                int? leadId = null;
+                if (!string.IsNullOrEmpty(email))
+                {
+                    var lead = await _context.Leads
+                        .Where(l => l.Email == email.ToLower())
+                        .OrderByDescending(l => l.CreatedAt)
+                        .FirstOrDefaultAsync();
+                    
+                    leadId = lead?.Id;
+                }
+
+                var download = new PdfDownloadModel
+                {
+                    ArquivoNome = arquivoNome,
+                    Email = email?.ToLower(),
+                    IpAddress = ipAddress,
+                    UserAgent = userAgent,
+                    Referer = referer,
+                    Origem = origem,
+                    Dispositivo = userAgentInfo.Dispositivo,
+                    Navegador = userAgentInfo.Navegador,
+                    SistemaOperacional = userAgentInfo.SistemaOperacional,
+                    LeadId = leadId,
+                    Sucesso = true,
+                    DadosExtra = JsonSerializer.Serialize(new
+                    {
+                        ua_full = userAgent,
+                        request_method = httpContext.Request.Method,
+                        request_scheme = httpContext.Request.Scheme,
+                        request_host = httpContext.Request.Host.Value,
+                        is_mobile = userAgentInfo.Dispositivo == "mobile",
+                        parsed_browser = userAgentInfo.Navegador,
+                        parsed_os = userAgentInfo.SistemaOperacional
+                    })
+                };
+
+                _context.PdfDownloads.Add(download);
+                await _context.SaveChangesAsync();
+
+                _logger.LogInformation("📥 Download PDF registrado no banco: {ArquivoNome} por {Email} ({IP}) - ID: {Id}", 
+                    arquivoNome, email ?? "anônimo", ipAddress, download.Id);
+
+                return download;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao registrar download no banco: {ArquivoNome}", arquivoNome);
+                
+                // Em caso de erro, criar um registro básico
+                var downloadBasico = new PdfDownloadModel
+                {
+                    ArquivoNome = arquivoNome,
+                    Email = email?.ToLower(),
+                    IpAddress = GetClientIpAddress(httpContext),
+                    Origem = origem,
+                    Sucesso = false,
+                    DadosExtra = JsonSerializer.Serialize(new { erro = ex.Message })
+                };
+
+                try
+                {
+                    _context.PdfDownloads.Add(downloadBasico);
+                    await _context.SaveChangesAsync();
+                    return downloadBasico;
+                }
+                catch
+                {
+                    // Se ainda assim falhar, retornar objeto com ID 0
+                    return downloadBasico;
+                }
+            }
+        }
+
+        public async Task<PdfDownloadStats> ObterEstatisticasAsync(DateTime? dataInicio = null, DateTime? dataFim = null)
+        {
+            try
+            {
+                dataInicio ??= DateTime.UtcNow.AddDays(-30);
+                dataFim ??= DateTime.UtcNow.AddDays(1);
+
+                var query = _context.PdfDownloads.Where(d => d.CreatedAt >= dataInicio && d.CreatedAt <= dataFim);
+
+                var stats = new PdfDownloadStats
+                {
+                    TotalDownloads = await query.CountAsync(),
+                    DownloadsHoje = await query.Where(d => d.CreatedAt >= DateTime.UtcNow.Date).CountAsync(),
+                    DownloadsUltimaSemana = await query.Where(d => d.CreatedAt >= DateTime.UtcNow.AddDays(-7)).CountAsync(),
+                    DownloadsUltimoMes = await query.Where(d => d.CreatedAt >= DateTime.UtcNow.AddDays(-30)).CountAsync()
+                };
+
+                // Arquivo mais baixado
+                stats.ArquivoMaisBaixado = await query
+                    .GroupBy(d => d.ArquivoNome)
+                    .OrderByDescending(g => g.Count())
+                    .Select(g => g.Key)
+                    .FirstOrDefaultAsync();
+
+                // Origem mais comum
+                stats.OrigemMaisComum = await query
+                    .Where(d => d.Origem != null)
+                    .GroupBy(d => d.Origem)
+                    .OrderByDescending(g => g.Count())
+                    .Select(g => g.Key)
+                    .FirstOrDefaultAsync();
+
+                // Dispositivo mais comum
+                stats.DispositivoMaisComum = await query
+                    .Where(d => d.Dispositivo != null)
+                    .GroupBy(d => d.Dispositivo)
+                    .OrderByDescending(g => g.Count())
+                    .Select(g => g.Key)
+                    .FirstOrDefaultAsync();
+
+                // Downloads por dia
+                stats.DownloadsPorDia = await query
+                    .GroupBy(d => d.CreatedAt.Date)
+                    .Select(g => new DownloadPorDia
+                    {
+                        Data = g.Key,
+                        Quantidade = g.Count()
+                    })
+                    .OrderBy(d => d.Data)
+                    .ToListAsync();
+
+                // Downloads por origem
+                stats.DownloadsPorOrigem = await query
+                    .Where(d => d.Origem != null)
+                    .GroupBy(d => d.Origem)
+                    .Select(g => new DownloadPorOrigem
+                    {
+                        Origem = g.Key!,
+                        Quantidade = g.Count()
+                    })
+                    .OrderByDescending(d => d.Quantidade)
+                    .ToListAsync();
+
+                return stats;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao obter estatísticas de downloads");
+                return new PdfDownloadStats();
+            }
+        }
+
+        public async Task<List<PdfDownloadModel>> ObterDownloadsRecentesAsync(int quantidade = 50)
+        {
+            try
+            {
+                return await _context.PdfDownloads
+                    .Include(d => d.Lead)
+                    .OrderByDescending(d => d.CreatedAt)
+                    .Take(quantidade)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao obter downloads recentes");
+                return new List<PdfDownloadModel>();
+            }
+        }
+
+        public async Task<List<PdfDownloadModel>> BuscarDownloadsPorEmailAsync(string email)
+        {
+            try
+            {
+                return await _context.PdfDownloads
+                    .Where(d => d.Email == email.ToLower())
+                    .OrderByDescending(d => d.CreatedAt)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao buscar downloads por email: {Email}", email);
+                return new List<PdfDownloadModel>();
+            }
+        }
+
+        public async Task<List<PdfDownloadModel>> BuscarDownloadsPorArquivoAsync(string arquivoNome)
+        {
+            try
+            {
+                return await _context.PdfDownloads
+                    .Include(d => d.Lead)
+                    .Where(d => d.ArquivoNome == arquivoNome)
+                    .OrderByDescending(d => d.CreatedAt)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Erro ao buscar downloads por arquivo: {ArquivoNome}", arquivoNome);
+                return new List<PdfDownloadModel>();
+            }
+        }
+
+        private static string GetClientIpAddress(HttpContext context)
+        {
+            var ipAddress = context.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+            
+            if (string.IsNullOrEmpty(ipAddress) || ipAddress.ToLower() == "unknown")
+                ipAddress = context.Request.Headers["X-Real-IP"].FirstOrDefault();
+            
+            if (string.IsNullOrEmpty(ipAddress) || ipAddress.ToLower() == "unknown")
+                ipAddress = context.Connection.RemoteIpAddress?.ToString();
+            
+            // Se há múltiplos IPs (proxy chain), pegar o primeiro
+            if (!string.IsNullOrEmpty(ipAddress) && ipAddress.Contains(','))
+                ipAddress = ipAddress.Split(',')[0].Trim();
+            
+            return ipAddress ?? "unknown";
+        }
+
+        private static UserAgentInfo ParseUserAgent(string userAgent)
+        {
+            if (string.IsNullOrEmpty(userAgent))
+            {
+                return new UserAgentInfo
+                {
+                    Dispositivo = "unknown",
+                    Navegador = "unknown",
+                    SistemaOperacional = "unknown"
+                };
+            }
+
+            var ua = userAgent.ToLower();
+            
+            // Detectar dispositivo
+            string dispositivo = "desktop";
+            if (ua.Contains("mobile") || ua.Contains("android") || ua.Contains("iphone") || 
+                ua.Contains("blackberry") || ua.Contains("windows phone"))
+                dispositivo = "mobile";
+            else if (ua.Contains("ipad") || ua.Contains("tablet"))
+                dispositivo = "tablet";
+            else if (ua.Contains("bot") || ua.Contains("crawler") || ua.Contains("spider"))
+                dispositivo = "bot";
+
+            // Detectar navegador
+            string navegador = "unknown";
+            if (ua.Contains("edg/"))
+                navegador = "Edge";
+            else if (ua.Contains("chrome/"))
+                navegador = "Chrome";
+            else if (ua.Contains("firefox/"))
+                navegador = "Firefox";
+            else if (ua.Contains("safari/") && !ua.Contains("chrome"))
+                navegador = "Safari";
+            else if (ua.Contains("opera") || ua.Contains("opr/"))
+                navegador = "Opera";
+            else if (ua.Contains("trident") || ua.Contains("msie"))
+                navegador = "Internet Explorer";
+
+            // Detectar sistema operacional
+            string sistemaOperacional = "unknown";
+            if (ua.Contains("windows nt"))
+            {
+                if (ua.Contains("windows nt 10"))
+                    sistemaOperacional = "Windows 10/11";
+                else if (ua.Contains("windows nt 6.3"))
+                    sistemaOperacional = "Windows 8.1";
+                else if (ua.Contains("windows nt 6.2"))
+                    sistemaOperacional = "Windows 8";
+                else if (ua.Contains("windows nt 6.1"))
+                    sistemaOperacional = "Windows 7";
+                else
+                    sistemaOperacional = "Windows";
+            }
+            else if (ua.Contains("mac os x") || ua.Contains("macos"))
+                sistemaOperacional = "macOS";
+            else if (ua.Contains("linux"))
+                sistemaOperacional = "Linux";
+            else if (ua.Contains("android"))
+                sistemaOperacional = "Android";
+            else if (ua.Contains("iphone") || ua.Contains("ipad"))
+                sistemaOperacional = "iOS";
+
+            return new UserAgentInfo
+            {
+                Dispositivo = dispositivo,
+                Navegador = navegador,
+                SistemaOperacional = sistemaOperacional
+            };
+        }
+    }
+
+    public class UserAgentInfo
+    {
+        public string Dispositivo { get; set; } = string.Empty;
+        public string Navegador { get; set; } = string.Empty;
+        public string SistemaOperacional { get; set; } = string.Empty;
+    }
+} 
