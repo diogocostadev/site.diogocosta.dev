@@ -183,7 +183,7 @@ namespace site.diogocosta.dev.Servicos
 
                 var localizacao = new LocalizacaoInfo
                 {
-                    Pais = !string.IsNullOrWhiteSpace(pais) ? pais.Trim() : null,
+                    Pais = !string.IsNullOrWhiteSpace(pais) ? pais.Trim().ToUpperInvariant().Substring(0, Math.Min(2, pais.Trim().Length)) : null,
                     Cidade = !string.IsNullOrWhiteSpace(cidade) ? cidade.Trim() : null
                 };
 
