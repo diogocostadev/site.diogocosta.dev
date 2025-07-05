@@ -181,10 +181,32 @@ namespace site.diogocosta.dev.Servicos
                 var pais = await paisTask.WaitAsync(cts.Token);
                 var cidade = await cidadeTask.WaitAsync(cts.Token);
 
+                // Função auxiliar para extrair valor puro de JSON ou texto
+                string ExtrairValor(string? resposta, string chave)
+                {
+                    if (string.IsNullOrWhiteSpace(resposta)) return null;
+                    resposta = resposta.Trim();
+                    if (resposta.StartsWith("{") && resposta.Contains($"\"{chave}\""))
+                    {
+                        try
+                        {
+                            using var doc = JsonDocument.Parse(resposta);
+                            if (doc.RootElement.TryGetProperty(chave, out var prop))
+                                return prop.GetString();
+                        }
+                        catch { }
+                    }
+                    // Se não for JSON, retorna o texto puro
+                    return resposta;
+                }
+
+                var paisValor = ExtrairValor(pais, "country");
+                var cidadeValor = ExtrairValor(cidade, "city");
+
                 var localizacao = new LocalizacaoInfo
                 {
-                    Pais = !string.IsNullOrWhiteSpace(pais) ? pais.Trim().ToUpperInvariant().Substring(0, Math.Min(2, pais.Trim().Length)) : null,
-                    Cidade = !string.IsNullOrWhiteSpace(cidade) ? cidade.Trim().Substring(0, Math.Min(100, cidade.Trim().Length)) : null
+                    Pais = !string.IsNullOrWhiteSpace(paisValor) ? paisValor.Trim().ToUpperInvariant().Substring(0, Math.Min(2, paisValor.Trim().Length)) : null,
+                    Cidade = !string.IsNullOrWhiteSpace(cidadeValor) ? cidadeValor.Trim().Substring(0, Math.Min(100, cidadeValor.Trim().Length)) : null
                 };
 
                 _logger.LogInformation("🌍 Localização obtida para {IP}: {Cidade}, {Pais}", 
