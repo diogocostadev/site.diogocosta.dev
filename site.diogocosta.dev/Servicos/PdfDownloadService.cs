@@ -184,7 +184,7 @@ namespace site.diogocosta.dev.Servicos
                 var localizacao = new LocalizacaoInfo
                 {
                     Pais = !string.IsNullOrWhiteSpace(pais) ? pais.Trim().ToUpperInvariant().Substring(0, Math.Min(2, pais.Trim().Length)) : null,
-                    Cidade = !string.IsNullOrWhiteSpace(cidade) ? cidade.Trim() : null
+                    Cidade = !string.IsNullOrWhiteSpace(cidade) ? cidade.Trim().Substring(0, Math.Min(100, cidade.Trim().Length)) : null
                 };
 
                 _logger.LogInformation("🌍 Localização obtida para {IP}: {Cidade}, {Pais}", 
