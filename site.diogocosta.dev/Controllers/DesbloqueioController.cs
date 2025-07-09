@@ -46,9 +46,13 @@ public class DesbloqueioController : Controller
 
         try
         {
+            _logger.LogInformation("🔄 INICIANDO PROCESSO DE CADASTRO - Email: {Email}, Nome: {Nome}", model.Email, model.Nome);
+            
             // Capturar dados do usuário para o lead
             var ipAddress = GetClientIpAddress();
             var userAgent = Request.Headers["User-Agent"].ToString();
+            
+            _logger.LogInformation("🔍 DADOS CAPTURADOS - IP: {IP}, UserAgent: {UserAgent}", ipAddress, userAgent);
 
             // Capturar UTM parameters
             var utmSource = Request.Query["utm_source"];
@@ -56,6 +60,9 @@ public class DesbloqueioController : Controller
             var utmCampaign = Request.Query["utm_campaign"];
             var utmContent = Request.Query["utm_content"];
             var utmTerm = Request.Query["utm_term"];
+            
+            _logger.LogInformation("🔍 UTM PARAMETERS - Source: {Source}, Medium: {Medium}, Campaign: {Campaign}", 
+                utmSource.ToString(), utmMedium.ToString(), utmCampaign.ToString());
 
             // Criar lead no sistema de leads
             var leadRequest = new CriarLeadRequest
@@ -70,16 +77,27 @@ public class DesbloqueioController : Controller
                 UtmTerm = utmTerm
             };
 
-            var lead = await _leadService.CriarLeadAsync(leadRequest, ipAddress, userAgent);
+            _logger.LogInformation("🚀 CHAMANDO _leadService.CriarLeadAsync - Email: {Email}, Slug: {Slug}", 
+                leadRequest.Email, leadRequest.DesafioSlug);
 
-            if (lead != null)
+            try
             {
-                _logger.LogInformation("💰 Lead criado com sucesso para Manual da Primeira Virada: {Email} (ID: {LeadId})", 
-                    model.Email, lead.Id);
+                var lead = await _leadService.CriarLeadAsync(leadRequest, ipAddress, userAgent);
+
+                if (lead != null)
+                {
+                    _logger.LogInformation("💰 Lead criado com sucesso para Manual da Primeira Virada: {Email} (ID: {LeadId})", 
+                        model.Email, lead.Id);
+                }
+                else
+                {
+                    _logger.LogWarning("⚠️ Falha ao criar lead para {Email}, mas continuando com o processo", model.Email);
+                }
             }
-            else
+            catch (Exception leadEx)
             {
-                _logger.LogWarning("⚠️ Falha ao criar lead para {Email}, mas continuando com o processo", model.Email);
+                _logger.LogError(leadEx, "🚨 ERRO CRÍTICO ao criar lead para {Email}: {ErrorMessage}", 
+                    model.Email, leadEx.Message);
             }
 
             // Cadastra na newsletter (mantendo funcionalidade existente)
