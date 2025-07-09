@@ -13,19 +13,22 @@ public class DesbloqueioController : Controller
     private readonly IWebHostEnvironment _hostingEnvironment;
     private readonly ILogger<DesbloqueioController> _logger;
     private readonly IPdfDownloadService _pdfDownloadService;
+    private readonly ILeadService _leadService;
 
     public DesbloqueioController(
         INewsletterService newsletterService, 
         IEmailService emailService,
         IWebHostEnvironment hostingEnvironment,
         ILogger<DesbloqueioController> logger,
-        IPdfDownloadService pdfDownloadService)
+        IPdfDownloadService pdfDownloadService,
+        ILeadService leadService)
     {
         _newsletterService = newsletterService;
         _emailService = emailService;
         _hostingEnvironment = hostingEnvironment;
         _logger = logger;
         _pdfDownloadService = pdfDownloadService;
+        _leadService = leadService;
     }
 
     public IActionResult Index()
@@ -43,7 +46,43 @@ public class DesbloqueioController : Controller
 
         try
         {
-            // Cadastra na newsletter
+            // Capturar dados do usuário para o lead
+            var ipAddress = GetClientIpAddress();
+            var userAgent = Request.Headers["User-Agent"].ToString();
+
+            // Capturar UTM parameters
+            var utmSource = Request.Query["utm_source"];
+            var utmMedium = Request.Query["utm_medium"];
+            var utmCampaign = Request.Query["utm_campaign"];
+            var utmContent = Request.Query["utm_content"];
+            var utmTerm = Request.Query["utm_term"];
+
+            // Criar lead no sistema de leads
+            var leadRequest = new CriarLeadRequest
+            {
+                Nome = model.Nome,
+                Email = model.Email,
+                DesafioSlug = "manual-primeira-virada", // Identificador único para o manual
+                UtmSource = utmSource,
+                UtmMedium = utmMedium,
+                UtmCampaign = utmCampaign,
+                UtmContent = utmContent,
+                UtmTerm = utmTerm
+            };
+
+            var lead = await _leadService.CriarLeadAsync(leadRequest, ipAddress, userAgent);
+
+            if (lead != null)
+            {
+                _logger.LogInformation("💰 Lead criado com sucesso para Manual da Primeira Virada: {Email} (ID: {LeadId})", 
+                    model.Email, lead.Id);
+            }
+            else
+            {
+                _logger.LogWarning("⚠️ Falha ao criar lead para {Email}, mas continuando com o processo", model.Email);
+            }
+
+            // Cadastra na newsletter (mantendo funcionalidade existente)
             var usuario = new UsuarioNewsletter
             {
                 Email = model.Email,
@@ -77,6 +116,32 @@ public class DesbloqueioController : Controller
         }
 
         return RedirectToAction("Obrigado");
+    }
+
+    private string GetClientIpAddress()
+    {
+        try
+        {
+            // Verificar headers de proxy
+            var forwardedFor = Request.Headers["X-Forwarded-For"].ToString();
+            if (!string.IsNullOrEmpty(forwardedFor))
+            {
+                return forwardedFor.Split(',')[0].Trim();
+            }
+
+            var realIp = Request.Headers["X-Real-IP"].ToString();
+            if (!string.IsNullOrEmpty(realIp))
+            {
+                return realIp;
+            }
+
+            // Fallback para RemoteIpAddress
+            return Request.HttpContext.Connection.RemoteIpAddress?.ToString() ?? "unknown";
+        }
+        catch
+        {
+            return "unknown";
+        }
     }
 
     [Route("obrigado-desbloqueio")]
