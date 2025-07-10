@@ -3449,3 +3449,11 @@ WHERE l.created_at >= @__recentCutoff_0
 SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
 FROM leads_system.lead_interactions AS l
 WHERE l.created_at >= @__recentCutoff_0
+2025-07-10 20:14:53.890 -03:00 [INF] Executed DbCommand (267ms) [Parameters=[@__recentCutoff_0='2025-07-10T22:44:51.9897503Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-10 20:14:58.413 -03:00 [INF] Application is shutting down...
+2025-07-10 20:14:58.418 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-10 20:14:58.419 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-10 20:14:58.420 -03:00 [INF] 🛑 Bot Detector Background Service parado.
