@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net;
 using System.Text.Json;
+using AntiSpam.Core.Models;
 
 namespace site.diogocosta.dev.Models
 {
@@ -76,7 +77,7 @@ namespace site.diogocosta.dev.Models
     }
 
     [Table("lead_interactions", Schema = "leads_system")]
-    public class LeadInteractionModel
+    public class LeadInteractionModel : ILeadInteraction
     {
         [Key]
         public int Id { get; set; }
@@ -97,6 +98,19 @@ namespace site.diogocosta.dev.Models
 
         // Navigation properties
         public virtual LeadModel Lead { get; set; } = null!;
+
+        // Implementação da interface ILeadInteraction
+        object? ILeadInteraction.IpAddress 
+        { 
+            get => IpAddress; 
+            set => IpAddress = value as IPAddress; 
+        }
+        
+        object? ILeadInteraction.Dados 
+        { 
+            get => Dados; 
+            set => Dados = value as JsonDocument; 
+        }
     }
 
     [Table("email_templates", Schema = "leads_system")]

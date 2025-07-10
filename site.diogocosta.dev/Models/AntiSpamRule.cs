@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using AntiSpam.Core.Models;
 
 namespace site.diogocosta.dev.Models
 {
     [Table("antispam_rules")]
-    public class AntiSpamRule
+    public class AntiSpamRule : IAntiSpamRule
     {
         [Key]
         [Column("id")]
@@ -20,7 +21,7 @@ namespace site.diogocosta.dev.Models
         public string RuleValue { get; set; } = string.Empty;
 
         [Column("description")]
-        public string? Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         [MaxLength(20)]
         [Column("severity")]

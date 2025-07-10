@@ -9,6 +9,7 @@ using site.diogocosta.dev.Servicos.Interfaces;
 using StackExchange.Redis;
 using Npgsql;
 using System.Net;
+using AntiSpam.Core.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -104,8 +105,17 @@ builder.Services.AddScoped<IVSLService, VSLService>();
 builder.Services.AddHttpClient(); // HttpClient genérico para injeção
 builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
 
-// Configuração do serviço anti-spam
-builder.Services.AddSingleton<IAntiSpamService, AntiSpamService>();
+// Configuração do serviço anti-spam usando AntiSpam.Core (simplificado)
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<AntiSpamServiceCore>();
+builder.Services.AddScoped<IAntiSpamService>(provider => provider.GetRequiredService<AntiSpamServiceCore>());
+
+// Manter o serviço original também para compatibilidade
+builder.Services.AddScoped<AntiSpamService>();
+
+// Background services para detecção automática de bots
+builder.Services.AddHostedService<BotDetectorBackgroundService>(); // Original
+builder.Services.AddHostedService<BotDetectorBackgroundServiceCore>(); // Novo
 
 var app = builder.Build();
 
@@ -148,7 +158,7 @@ app.Use(async (context, next) =>
 
 app.UseRouting();
 
-// Rate limiting middleware
+// Rate limiting middleware (manter o original por enquanto)
 app.UseMiddleware<site.diogocosta.dev.Middleware.RateLimitingMiddleware>();
 
 app.UseAuthorization();
