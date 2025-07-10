@@ -19,6 +19,7 @@ namespace site.diogocosta.dev.Data
         public DbSet<VSLConfigModel> VSLConfigs { get; set; }
         public DbSet<VSLVideoModel> VSLVideos { get; set; }
         public DbSet<PdfDownloadModel> PdfDownloads { get; set; }
+        public DbSet<AntiSpamRule> AntiSpamRules { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -185,6 +186,20 @@ namespace site.diogocosta.dev.Data
                       .HasForeignKey(e => e.LeadId)
                       .OnDelete(DeleteBehavior.SetNull);
             });
+
+            // Configurar a tabela de regras anti-spam
+            modelBuilder.Entity<AntiSpamRule>(entity =>
+            {
+                entity.ToTable("antispam_rules", "public");
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                
+                // Índices para performance
+                entity.HasIndex(e => new { e.RuleType, e.IsActive }).HasDatabaseName("idx_antispam_rules_type_active");
+                entity.HasIndex(e => e.RuleValue).HasDatabaseName("idx_antispam_rules_value");
+                entity.HasIndex(e => e.CreatedAt).HasDatabaseName("idx_antispam_rules_created_at");
+                entity.HasIndex(e => e.Severity).HasDatabaseName("idx_antispam_rules_severity");
+            });
         }
 
         public override int SaveChanges()
@@ -203,7 +218,8 @@ namespace site.diogocosta.dev.Data
         {
             var entries = ChangeTracker.Entries()
                 .Where(e => e.Entity is LeadModel || e.Entity is LeadSourceModel || e.Entity is EmailTemplateModel || 
-                           e.Entity is VSLConfigModel || e.Entity is VSLVideoModel || e.Entity is PdfDownloadModel)
+                           e.Entity is VSLConfigModel || e.Entity is VSLVideoModel || e.Entity is PdfDownloadModel ||
+                           e.Entity is AntiSpamRule)
                 .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
 
             foreach (var entry in entries)
@@ -235,6 +251,11 @@ namespace site.diogocosta.dev.Data
                         vslVideo.CreatedAt = DateTime.UtcNow;
                         vslVideo.UpdatedAt = DateTime.UtcNow;
                     }
+                    else if (entry.Entity is AntiSpamRule antiSpamRule)
+                    {
+                        antiSpamRule.CreatedAt = DateTime.UtcNow;
+                        antiSpamRule.UpdatedAt = DateTime.UtcNow;
+                    }
                 }
                 else if (entry.State == EntityState.Modified)
                 {
@@ -257,6 +278,10 @@ namespace site.diogocosta.dev.Data
                     else if (entry.Entity is VSLVideoModel vslVideo)
                     {
                         vslVideo.UpdatedAt = DateTime.UtcNow;
+                    }
+                    else if (entry.Entity is AntiSpamRule antiSpamRule)
+                    {
+                        antiSpamRule.UpdatedAt = DateTime.UtcNow;
                     }
                 }
             }

@@ -1,0 +1,21 @@
+{
+  "log_file": "F:\\Projetos\\Serviço de Pagamento\\site.diogocosta.dev\\site.diogocosta.dev\\logs\\app-20250710.txt",
+  "api_url": "https://localhost:5000/api/antispam",
+  "api_key": null,
+  "thresholds": {
+    "ip_attempts": 10,
+    "user_agent_attempts": 15,
+    "email_domain_attempts": 5,
+    "suspicious_name_attempts": 3
+  },
+  "monitoring": {
+    "analysis_interval_minutes": 5,
+    "follow_log": true,
+    "backup_detected_patterns": true
+  },
+  "notifications": {
+    "webhook_url": null,
+    "email_alerts": false,
+    "log_level": "INFO"
+  }
+}

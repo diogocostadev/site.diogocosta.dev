@@ -14,6 +14,7 @@ public class DesbloqueioController : Controller
     private readonly ILogger<DesbloqueioController> _logger;
     private readonly IPdfDownloadService _pdfDownloadService;
     private readonly ILeadService _leadService;
+    private readonly IAntiSpamService _antiSpamService;
 
     public DesbloqueioController(
         INewsletterService newsletterService, 
@@ -21,13 +22,16 @@ public class DesbloqueioController : Controller
         IWebHostEnvironment hostingEnvironment,
         ILogger<DesbloqueioController> logger,
         IPdfDownloadService pdfDownloadService,
-        ILeadService leadService)
+        ILeadService leadService,
+        IAntiSpamService antiSpamService)
     {
         _newsletterService = newsletterService;
         _emailService = emailService;
         _hostingEnvironment = hostingEnvironment;
         _logger = logger;
         _pdfDownloadService = pdfDownloadService;
+        _leadService = leadService;
+        _antiSpamService = antiSpamService;
         _leadService = leadService;
     }
 
@@ -46,11 +50,73 @@ public class DesbloqueioController : Controller
 
         try
         {
-            _logger.LogInformation("🔄 INICIANDO PROCESSO DE CADASTRO - Email: {Email}, Nome: {Nome}", model.Email, model.Nome);
-            
-            // Capturar dados do usuário para o lead
+            // Verificação anti-bot: Honeypot fields
+            if (!string.IsNullOrWhiteSpace(model.Website) || 
+                !string.IsNullOrWhiteSpace(model.Phone) || 
+                !string.IsNullOrWhiteSpace(model.EmailConfirm))
+            {
+                _logger.LogWarning("🤖 Bot detectado via honeypot - Email: {Email}, IP: {IP}", 
+                    model.Email, GetClientIpAddress());
+                
+                // Simular sucesso para não dar dica ao bot
+                TempData["Email"] = model.Email;
+                TempData["Nome"] = model.Nome;
+                return Redirect("/obrigado-desbloqueio");
+            }
+
+            // Verificação anti-bot: Emails suspeitos
+            if (_antiSpamService.IsSuspiciousEmail(model.Email) || _antiSpamService.IsSuspiciousName(model.Nome))
+            {
+                _logger.LogWarning("🤖 Email/Nome suspeito detectado - Email: {Email}, Nome: {Nome}, IP: {IP}", 
+                    model.Email, model.Nome, GetClientIpAddress());
+                
+                // Simular sucesso para não dar dica ao bot
+                TempData["Email"] = model.Email;
+                TempData["Nome"] = model.Nome;
+                return Redirect("/obrigado-desbloqueio");
+            }
+
+            // Capturar dados do usuário para verificações adicionais
             var ipAddress = GetClientIpAddress();
             var userAgent = Request.Headers["User-Agent"].ToString();
+            
+            // Verificação anti-spam: IP blacklistado
+            if (_antiSpamService.IsBlacklistedIp(ipAddress))
+            {
+                _logger.LogWarning("🚫 IP blacklistado detectado - Email: {Email}, IP: {IP}", 
+                    model.Email, ipAddress);
+                
+                // Simular sucesso para não dar dica ao bot
+                TempData["Email"] = model.Email;
+                TempData["Nome"] = model.Nome;
+                return Redirect("/obrigado-desbloqueio");
+            }
+
+            // Verificação anti-spam: User-Agent suspeito
+            if (_antiSpamService.IsSuspiciousUserAgent(userAgent))
+            {
+                _logger.LogWarning("🤖 User-Agent suspeito detectado - Email: {Email}, UserAgent: {UserAgent}, IP: {IP}", 
+                    model.Email, userAgent, ipAddress);
+                
+                // Simular sucesso para não dar dica ao bot
+                TempData["Email"] = model.Email;
+                TempData["Nome"] = model.Nome;
+                return Redirect("/obrigado-desbloqueio");
+            }
+
+            // Verificação anti-spam: Email descartável
+            if (_antiSpamService.IsDisposableEmail(model.Email))
+            {
+                _logger.LogWarning("📧 Email descartável detectado - Email: {Email}, IP: {IP}", 
+                    model.Email, ipAddress);
+                
+                // Simular sucesso para não dar dica ao bot
+                TempData["Email"] = model.Email;
+                TempData["Nome"] = model.Nome;
+                return Redirect("/obrigado-desbloqueio");
+            }
+            
+            _logger.LogInformation("🔄 INICIANDO PROCESSO DE CADASTRO - Email: {Email}, Nome: {Nome}", model.Email, model.Nome);
             
             _logger.LogInformation("🔍 DADOS CAPTURADOS - IP: {IP}, UserAgent: {UserAgent}", ipAddress, userAgent);
 

@@ -104,6 +104,9 @@ builder.Services.AddScoped<IVSLService, VSLService>();
 builder.Services.AddHttpClient(); // HttpClient genérico para injeção
 builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
 
+// Configuração do serviço anti-spam
+builder.Services.AddSingleton<IAntiSpamService, AntiSpamService>();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
@@ -144,6 +147,10 @@ app.Use(async (context, next) =>
 });
 
 app.UseRouting();
+
+// Rate limiting middleware
+app.UseMiddleware<site.diogocosta.dev.Middleware.RateLimitingMiddleware>();
+
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "blog-post",
