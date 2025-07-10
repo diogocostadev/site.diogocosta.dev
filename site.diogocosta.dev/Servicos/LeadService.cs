@@ -3,6 +3,7 @@ using site.diogocosta.dev.Data;
 using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos.Interfaces;
 using System.Text.Json;
+using System.Net;
 
 namespace site.diogocosta.dev.Servicos
 {
@@ -69,7 +70,7 @@ namespace site.diogocosta.dev.Servicos
                     Email = request.Email.ToLower(),
                     DesafioSlug = request.DesafioSlug,
                     SourceId = fonte.Id,
-                    IpAddress = ipAddress,
+                    IpAddress = string.IsNullOrEmpty(ipAddress) ? null : IPAddress.Parse(ipAddress),
                     UserAgent = userAgent,
                     UtmSource = request.UtmSource,
                     UtmMedium = request.UtmMedium,
@@ -147,7 +148,7 @@ namespace site.diogocosta.dev.Servicos
                     LeadId = leadId,
                     Tipo = tipo,
                     Descricao = descricao,
-                    Dados = dados != null ? JsonSerializer.Serialize(dados) : null
+                    Dados = dados != null ? JsonDocument.Parse(JsonSerializer.Serialize(dados)) : null
                 };
 
                 _context.LeadInteractions.Add(interacao);
