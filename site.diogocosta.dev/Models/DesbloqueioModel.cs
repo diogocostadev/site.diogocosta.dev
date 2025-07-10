@@ -12,4 +12,9 @@ public class DesbloqueioModel
     [EmailAddress(ErrorMessage = "Email inválido")]
     [Display(Name = "E-mail")]
     public string Email { get; set; } = string.Empty;
+    
+    // Honeypot fields - should always be empty
+    public string? Website { get; set; } = string.Empty;
+    public string? Phone { get; set; } = string.Empty;
+    public string? EmailConfirm { get; set; } = string.Empty;
 }
