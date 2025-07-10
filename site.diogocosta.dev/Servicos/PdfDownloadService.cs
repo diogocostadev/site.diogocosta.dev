@@ -4,6 +4,7 @@ using site.diogocosta.dev.Data;
 using site.diogocosta.dev.Models;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Net;
 
 namespace site.diogocosta.dev.Servicos
 {
@@ -234,8 +235,15 @@ namespace site.diogocosta.dev.Servicos
             try
             {
                 // Tentar por leads recentes do mesmo IP (últimas 24 horas)
+                // Converter string para IPAddress para comparação
+                IPAddress? ipAddr = null;
+                if (!string.IsNullOrEmpty(ipAddress) && IPAddress.TryParse(ipAddress, out var parsedIp))
+                {
+                    ipAddr = parsedIp;
+                }
+
                 var lead = await _context.Leads
-                    .Where(l => l.IpAddress == ipAddress)
+                    .Where(l => l.IpAddress != null && l.IpAddress.Equals(ipAddr))
                     .Where(l => l.CreatedAt >= DateTime.UtcNow.AddHours(-24))
                     .OrderByDescending(l => l.CreatedAt)
                     .FirstOrDefaultAsync();

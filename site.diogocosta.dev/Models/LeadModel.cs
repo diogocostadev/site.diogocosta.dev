@@ -1,5 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Net;
+using System.Text.Json;
 
 namespace site.diogocosta.dev.Models
 {
@@ -25,7 +27,7 @@ namespace site.diogocosta.dev.Models
         [StringLength(100)]
         public string DesafioSlug { get; set; } = string.Empty;
 
-        public string? IpAddress { get; set; }
+        public IPAddress? IpAddress { get; set; }
         public string? UserAgent { get; set; }
         public string? UtmSource { get; set; }
         public string? UtmMedium { get; set; }
@@ -87,8 +89,8 @@ namespace site.diogocosta.dev.Models
         public string Tipo { get; set; } = string.Empty; // 'email_sent', 'email_opened', 'form_submitted', etc
 
         public string? Descricao { get; set; }
-        public string? Dados { get; set; } // JSON data
-        public string? IpAddress { get; set; }
+        public JsonDocument? Dados { get; set; } // JSON data
+        public IPAddress? IpAddress { get; set; }
         public string? UserAgent { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

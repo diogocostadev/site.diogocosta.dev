@@ -7,6 +7,8 @@ using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos;
 using site.diogocosta.dev.Servicos.Interfaces;
 using StackExchange.Redis;
+using Npgsql;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
