@@ -35,6 +35,81 @@ FROM leads_system.pdf_downloads
 GROUP BY arquivo_nome, sucesso
 ORDER BY arquivo_nome;
 
+-- Dashboard: Downloads Analytics - RECOMENDADO PARA ACOMPANHAMENTO
+-- Painel 1: Downloads ao Longo do Tempo (Time Series)
+-- Visualização: Time Series com múltiplas linhas
+SELECT 
+    DATE_TRUNC('hour', created_at) AS time,
+    COUNT(*) AS "Total Downloads",
+    COUNT(CASE WHEN sucesso = true THEN 1 END) AS "Downloads Bem-sucedidos",
+    COUNT(CASE WHEN sucesso = false THEN 1 END) AS "Downloads com Erro"
+FROM leads_system.pdf_downloads
+WHERE created_at >= NOW() - INTERVAL '7 days'
+GROUP BY time
+ORDER BY time;
+
+-- Painel 2: KPI - Total de Downloads Hoje (Stat)
+-- Visualização: Stat/Single Value
+SELECT COUNT(*) AS downloads_hoje
+FROM leads_system.pdf_downloads
+WHERE DATE(created_at) = CURRENT_DATE;
+
+-- Painel 3: KPI - Taxa de Sucesso (Gauge)
+-- Visualização: Gauge (0-100%)
+SELECT 
+    ROUND(
+        COUNT(CASE WHEN sucesso = true THEN 1 END)::numeric / 
+        NULLIF(COUNT(*), 0) * 100, 
+        1
+    ) AS taxa_sucesso_pct
+FROM leads_system.pdf_downloads
+WHERE created_at >= CURRENT_DATE - INTERVAL '7 days';
+
+-- Painel 4: Top Arquivos Mais Baixados (Bar Chart Horizontal)
+-- Visualização: Bar Chart (Horizontal)
+SELECT 
+    arquivo_nome,
+    COUNT(*) AS total_downloads,
+    COUNT(CASE WHEN sucesso = true THEN 1 END) AS downloads_sucesso
+FROM leads_system.pdf_downloads
+WHERE created_at >= NOW() - INTERVAL '30 days'
+GROUP BY arquivo_nome
+ORDER BY total_downloads DESC
+LIMIT 10;
+
+-- Painel 5: Downloads por Hora do Dia (Heatmap)
+-- Visualização: Bar Chart ou Heatmap
+SELECT 
+    EXTRACT(HOUR FROM created_at) AS hora,
+    COUNT(*) AS total_downloads
+FROM leads_system.pdf_downloads
+WHERE created_at >= NOW() - INTERVAL '30 days'
+GROUP BY hora
+ORDER BY hora;
+
+-- Painel 6: Comparação Período Atual vs Anterior (Stat com comparação)
+-- Visualização: Stat com comparação percentual
+WITH periodo_atual AS (
+    SELECT COUNT(*) AS downloads_atual
+    FROM leads_system.pdf_downloads
+    WHERE created_at >= CURRENT_DATE - INTERVAL '7 days'
+),
+periodo_anterior AS (
+    SELECT COUNT(*) AS downloads_anterior
+    FROM leads_system.pdf_downloads
+    WHERE created_at >= CURRENT_DATE - INTERVAL '14 days'
+    AND created_at < CURRENT_DATE - INTERVAL '7 days'
+)
+SELECT 
+    pa.downloads_atual,
+    pan.downloads_anterior,
+    CASE 
+        WHEN pan.downloads_anterior > 0 THEN
+            ROUND(((pa.downloads_atual - pan.downloads_anterior)::numeric / pan.downloads_anterior) * 100, 1)
+        ELSE 0
+    END AS variacao_pct
+FROM periodo_atual pa, periodo_anterior pan;
+
 -- Dashboard: Interações dos Leads
 -- Painel: Tipos de Interações Realizadas
 -- Visualização recomendada: Gráfico de barras ou pizza
@@ -139,5 +214,74 @@ ORDER BY total_leads DESC;
 -- 8. Análise de campanhas: utm_campaign, utm_medium
 -- 9. Funil Manual da Primeira Virada: cadastros → downloads → conversão
 -- 10. Comparação de desempenho entre diferentes desafios/produtos
+
+-- QUERIES EXTRAS PARA ANÁLISE DETALHADA DE DOWNLOADS -----------------------------
+
+-- Painel 7: Análise de Falhas de Download (Table)
+-- Visualização: Table para debug
+SELECT 
+    arquivo_nome,
+    erro_detalhes,
+    COUNT(*) AS total_erros,
+    DATE(created_at) AS data_erro
+FROM leads_system.pdf_downloads
+WHERE sucesso = false
+    AND created_at >= NOW() - INTERVAL '7 days'
+GROUP BY arquivo_nome, erro_detalhes, DATE(created_at)
+ORDER BY total_erros DESC, data_erro DESC;
+
+-- Painel 8: Velocidade de Download (Time to Download)
+-- Visualização: Histogram ou Stat
+SELECT 
+    arquivo_nome,
+    AVG(EXTRACT(EPOCH FROM (updated_at - created_at))) AS tempo_medio_segundos,
+    COUNT(*) AS total_downloads
+FROM leads_system.pdf_downloads
+WHERE sucesso = true 
+    AND updated_at IS NOT NULL
+    AND created_at >= NOW() - INTERVAL '7 days'
+GROUP BY arquivo_nome
+ORDER BY tempo_medio_segundos DESC;
+
+-- Painel 9: Downloads por Dispositivo/User Agent (Pie Chart)
+-- Visualização: Pie Chart ou Bar Chart
+SELECT 
+    CASE 
+        WHEN user_agent ILIKE '%mobile%' OR user_agent ILIKE '%android%' OR user_agent ILIKE '%iphone%' THEN 'Mobile'
+        WHEN user_agent ILIKE '%tablet%' OR user_agent ILIKE '%ipad%' THEN 'Tablet'
+        WHEN user_agent ILIKE '%bot%' OR user_agent ILIKE '%crawler%' THEN 'Bot'
+        ELSE 'Desktop'
+    END AS dispositivo,
+    COUNT(*) AS total_downloads
+FROM leads_system.pdf_downloads
+WHERE created_at >= NOW() - INTERVAL '30 days'
+GROUP BY dispositivo
+ORDER BY total_downloads DESC;
+
+-- Painel 10: Correlação Downloads x Cadastros (Time Series)
+-- Visualização: Time Series com duas linhas
+SELECT 
+    DATE(d.created_at) AS dia,
+    COUNT(d.id) AS downloads,
+    COUNT(DISTINCT l.id) AS novos_cadastros
+FROM leads_system.pdf_downloads d
+LEFT JOIN leads_system.leads l ON DATE(l.created_at) = DATE(d.created_at)
+WHERE d.created_at >= NOW() - INTERVAL '30 days'
+GROUP BY DATE(d.created_at)
+ORDER BY dia;
+
+-- Painel 11: Top Downloads por Lead (Table)
+-- Visualização: Table - Quem mais baixa?
+SELECT 
+    p.email,
+    COUNT(p.id) AS total_downloads,
+    COUNT(DISTINCT p.arquivo_nome) AS arquivos_diferentes,
+    MAX(p.created_at) AS ultimo_download
+FROM leads_system.pdf_downloads p
+WHERE p.created_at >= NOW() - INTERVAL '30 days'
+GROUP BY p.email
+HAVING COUNT(p.id) > 1
+ORDER BY total_downloads DESC
+LIMIT 20;
 
 -- Observação: Para uso no Grafana, configure o datasource como PostgreSQL e utilize as queries acima para criar painéis dinâmicos. 
