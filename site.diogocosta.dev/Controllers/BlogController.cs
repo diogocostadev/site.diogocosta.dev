@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Markdig;
+using Markdig.Extensions.Tables;
+using Markdig.Extensions.TaskLists;
+using Markdig.Extensions.AutoLinks;
 
 namespace site.diogocosta.dev.Controllers;
 
@@ -165,10 +168,20 @@ public class BlogController : Controller
             return NotFound();
 
         var markdown = System.IO.File.ReadAllText(path);
-        var html = Markdown.ToHtml(markdown);
+        
+        // Configurar o Markdig com extensões avançadas
+        var pipeline = new MarkdownPipelineBuilder()
+            .UseAdvancedExtensions()
+            .Build();
+        
+        var html = Markdown.ToHtml(markdown, pipeline);
 
         ViewData["Content"] = html;
-        ViewData["Title"] = slug.Replace("-", " ").ToUpperInvariant();
+        
+        // Extrair título do markdown
+        var lines = markdown.Split('\n');
+        var title = lines.FirstOrDefault(l => l.StartsWith("# "))?.Substring(2).Trim() ?? slug.Replace("-", " ").ToUpperInvariant();
+        ViewData["Title"] = title;
 
         return View("Post");
     }
