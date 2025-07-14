@@ -18,17 +18,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload font crítico - carregamento otimizado -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/newsreader/v20/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- CSS crítico -->
+    <link rel="stylesheet" href="~/css/critical.css">
     
-    <!-- Preload CSS crítico -->
-    <link rel="preload" href="~/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="~/css/critical.css"></noscript>
+    <!-- Tailwind CSS - carregar imediatamente mas de forma otimizada -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Preload recursos de imagem críticos -->
+    <!-- Preload imagem above-the-fold -->
     <link rel="preload" href="~/img/IMG_0045.webp" as="image" type="image/webp">
-    <link rel="preload" href="~/img/logome.webp" as="image" type="image/webp">
-    <link rel="preload" href="~/js/newsletter.js" as="script">
     
     <!-- CSS crítico inline otimizado -->
     <style>
@@ -118,131 +115,36 @@
         }
     </style>
     
-    <!-- Carregamento otimizado de CSS e fontes -->
+    <!-- Carregamento SUPER otimizado - ZERO JavaScript bloqueante -->
     <script>
-        // Função para carregar CSS de forma assíncrona
-        function loadCSS(href, before, media, callback) {
-            var doc = window.document;
-            var ss = doc.createElement("link");
-            var ref;
-            
-            if (before) {
-                ref = before;
-            } else {
-                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-                ref = refs[refs.length - 1];
-            }
-            
-            var sheets = doc.styleSheets;
-            
-            if (callback) {
-                ss.onload = callback;
-            }
-            
-            ss.rel = "stylesheet";
-            ss.href = href;
-            ss.media = "only x";
-            
-            function ready(cb) {
-                if (doc.body) {
-                    return cb();
-                }
-                setTimeout(function() {
-                    ready(cb);
-                });
-            }
-            
-            ready(function() {
-                ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+        // REMOVER completamente o Tailwind até ser necessário
+        // Usar apenas CSS crítico
+        
+        // Função ultra-leve para carregar CSS
+        function loadCSS(href, media, onload) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            link.media = media || 'all';
+            if (onload) link.onload = onload;
+            document.head.appendChild(link);
+        }
+        
+        // Carregar fonte de forma super otimizada
+        function loadFonts() {
+            // Usar font-display: swap diretamente
+            loadCSS('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap');
+        }
+        
+        // Detectar quando fontes carregaram
+        if ('fonts' in document) {
+            document.fonts.ready.then(function() {
+                document.documentElement.classList.add('fonts-loaded');
             });
-            
-            var onloadcssdefined = function(ss, cb) {
-                var resolvedHref = ss.href;
-                var i = sheets.length;
-                while (i--) {
-                    if (sheets[i].href === resolvedHref) {
-                        return cb();
-                    }
-                }
-                setTimeout(function() {
-                    onloadcssdefined(ss, cb);
-                });
-            };
-            
-            function loadCB() {
-                if (ss.addEventListener) {
-                    ss.removeEventListener("load", loadCB);
-                }
-                ss.media = media || "all";
-            }
-            
-            if (ss.addEventListener) {
-                ss.addEventListener("load", loadCB);
-            }
-            
-            ss.onloadcssdefined = onloadcssdefined;
-            onloadcssdefined(ss, loadCB);
-            
-            return ss;
         }
         
-        // Carregar fonte otimizada
-        loadCSS('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap');
-        
-        // Aplicar fonte após carregamento
-        document.addEventListener('DOMContentLoaded', function() {
-            // Detectar quando a fonte carregou
-            if ('fonts' in document) {
-                document.fonts.ready.then(function() {
-                    document.documentElement.classList.add('fonts-loaded');
-                });
-            } else {
-                // Fallback para navegadores sem suporte
-                setTimeout(function() {
-                    document.documentElement.classList.add('fonts-loaded');
-                }, 1000);
-            }
-        });
-        
-        // Carregamento condicional do Tailwind
-        function loadTailwind() {
-            if (!window.tailwind && !document.querySelector('script[src*="tailwindcss"]')) {
-                const script = document.createElement('script');
-                script.src = 'https://cdn.tailwindcss.com';
-                script.async = true;
-                script.onload = function() {
-                    if (window.tailwind && window.tailwind.config) {
-                        window.tailwind.config = {
-                            theme: {
-                                extend: {
-                                    colors: {
-                                        'navy': {
-                                            900: '#0a1930'
-                                        }
-                                    }
-                                }
-                            }
-                        };
-                    }
-                };
-                document.head.appendChild(script);
-            }
-        }
-        
-        // Carregar Tailwind após interação ou delay
-        let tailwindLoaded = false;
-        function loadTailwindOnce() {
-            if (!tailwindLoaded) {
-                tailwindLoaded = true;
-                loadTailwind();
-            }
-        }
-        
-        ['mousedown', 'touchstart', 'keydown'].forEach(function(event) {
-            document.addEventListener(event, loadTailwindOnce, {once: true, passive: true});
-        });
-        
-        setTimeout(loadTailwindOnce, 2000);
+        // Carregar recursos críticos imediatamente
+        loadFonts();
     </script>
 
     <!-- Favicons - Usando apenas imagens PNG -->
@@ -386,73 +288,68 @@
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Scripts de tracking otimizados - MANTENDO GTM e Facebook Pixel -->
+    <!-- Scripts de tracking SUPER otimizados - Carregamento apenas após interação real -->
 <script>
-    // Carregamento assíncrono otimizado para tracking
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0YZHXVSL7M', {
-        'custom_map': {'custom_parameter': 'dimension1'}
-    });
+    // Evitar carregamento imediato - só após clique real do usuário
+    let trackingLoaded = false;
     
-    // Google Tag Manager - MANTIDO conforme solicitado
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    // Função para carregar tracking apenas quando necessário
+    function loadTrackingOnDemand() {
+        if (trackingLoaded) return;
+        trackingLoaded = true;
+        
+        // Google Tag Manager - carregado apenas após interação
+        (function(w,d,s,l,i){
+            if (w[l]) return; // Evitar duplo carregamento
+            w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+            var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+            j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+            j.onload=function(){console.log('GTM loaded on demand');};
+            f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-K4FFVLNX');
-    
-    // Defer carregamento do Google Analytics
-    function loadGoogleAnalytics() {
+        
+        // Google Analytics - carregado apenas após interação
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-0YZHXVSL7M', {'send_page_view': false});
+        
+        // Carregar script GA
         const gaScript = document.createElement('script');
-        gaScript.async = true;
         gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YZHXVSL7M';
-        document.head.appendChild(gaScript);
-    }
-    
-    // Facebook Pixel - MANTIDO conforme solicitado
-    !function(f,b,e,v,n,t,s) {
-        if(f.fbq) return;
-        n = f.fbq = function() {
-            n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
+        gaScript.async = true;
+        gaScript.onload = function() {
+            gtag('config', 'G-0YZHXVSL7M');
+            console.log('GA loaded on demand');
         };
-        if(!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = '2.0';
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s);
-    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    
-    // Configurar Facebook Pixel após carregamento
-    function initFacebookPixel() {
-        if (window.fbq) {
-            fbq('init', 'REPLACE_WITH_PIXEL_ID');
-            fbq('track', 'PageView');
-        }
+        document.head.appendChild(gaScript);
+        
+        // Facebook Pixel - carregado apenas após interação
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq) return; // Evitar duplo carregamento
+            n = f.fbq = function() {
+                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
+            };
+            if(!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+            t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            t.onload = function() {
+                fbq('init', 'REPLACE_WITH_PIXEL_ID');
+                fbq('track', 'PageView');
+                console.log('FB Pixel loaded on demand');
+            };
+            s.parentNode.insertBefore(t,s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     }
     
-    // Carregar scripts de tracking após interação do usuário
-    let userInteracted = false;
-    function loadTrackingScripts() {
-        if (!userInteracted) {
-            userInteracted = true;
-            loadGoogleAnalytics();
-            initFacebookPixel();
-        }
-    }
-    
-    // Carregar após primeira interação ou após 3 segundos
-    ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'].forEach(function(event) {
-        document.addEventListener(event, loadTrackingScripts, {once: true, passive: true});
+    // Carregar APENAS após clique real (não hover ou scroll)
+    ['click', 'touchstart'].forEach(function(event) {
+        document.addEventListener(event, loadTrackingOnDemand, {once: true, passive: true});
     });
     
-    setTimeout(loadTrackingScripts, 3000);
+    // Fallback MUITO tardio - só após 10 segundos
+    setTimeout(loadTrackingOnDemand, 10000);
 </script>
 <noscript>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_PIXEL_ID&amp;ev=PageView&amp;noscript=1" />
@@ -561,104 +458,48 @@
 
 @RenderSection("Scripts", required: false)
 
-<!-- Scripts otimizados para performance -->
+<!-- Scripts MÍNIMOS para performance máxima -->
 <script>
-    // Registrar Service Worker
+    // Service Worker registration (não bloqueante)
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => console.log('SW registered'))
-                .catch(registrationError => console.log('SW registration failed'));
+            navigator.serviceWorker.register('/sw.js').catch(function(){});
         });
     }
     
-    // Script global para lidar com as mensagens de feedback dos formulários
-    document.addEventListener('DOMContentLoaded', function() {
-        // Remove mensagens de feedback após 5 segundos
+    // Função ultra-leve para feedback de formulários
+    function hideFeedbacks() {
         setTimeout(function() {
-            const feedbacks = document.querySelectorAll('.bg-green-100, .bg-red-100');
-            feedbacks.forEach(function(element) {
-                element.style.transition = 'opacity 0.5s ease-out';
-                element.style.opacity = '0';
-                setTimeout(function() {
-                    element.style.display = 'none';
-                }, 500);
-            });
+            var feedbacks = document.querySelectorAll('.bg-green-100, .bg-red-100');
+            for (var i = 0; i < feedbacks.length; i++) {
+                feedbacks[i].style.display = 'none';
+            }
         }, 5000);
-    });
+    }
     
-    // Scroll optimization com throttling
-    let scrollTimeout;
+    // Scroll otimizado com throttling agressivo
+    var scrollTimer;
     window.addEventListener('scroll', function() {
-        if (!scrollTimeout) {
-            scrollTimeout = setTimeout(function() {
+        if (!scrollTimer) {
+            scrollTimer = setTimeout(function() {
                 var nav = document.querySelector('nav');
-                if (window.scrollY > 40) {
-                    nav.classList.add('shadow-md');
-                } else {
-                    nav.classList.remove('shadow-md');
+                if (nav) {
+                    if (window.scrollY > 40) {
+                        nav.classList.add('shadow-md');
+                    } else {
+                        nav.classList.remove('shadow-md');
+                    }
                 }
-                scrollTimeout = null;
-            }, 10);
+                scrollTimer = null;
+            }, 16); // 60fps
         }
     }, { passive: true });
     
-    // Preload recursos críticos
-    function preloadCriticalResources() {
-        const criticalResources = [
-            { href: '/js/newsletter.js', as: 'script' },
-            { href: '/img/IMG_0045.webp', as: 'image' },
-            { href: '/img/logome.webp', as: 'image' }
-        ];
-        
-        criticalResources.forEach(resource => {
-            if (!document.querySelector(`link[href="${resource.href}"]`)) {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = resource.href;
-                link.as = resource.as;
-                if (resource.as === 'script') {
-                    link.crossOrigin = 'anonymous';
-                }
-                document.head.appendChild(link);
-            }
-        });
-    }
-    
-    // Lazy load recursos não críticos
-    function loadNonCriticalResources() {
-        // Carregar Tailwind apenas se necessário
-        if (!window.tailwind) {
-            const tailwindScript = document.createElement('script');
-            tailwindScript.src = 'https://cdn.tailwindcss.com';
-            tailwindScript.async = true;
-            tailwindScript.onload = function() {
-                console.log('Tailwind carregado');
-            };
-            document.head.appendChild(tailwindScript);
-        }
-    }
-    
-    // Otimização de performance
-    document.addEventListener('DOMContentLoaded', function() {
-        preloadCriticalResources();
-        
-        // Delay para recursos não críticos
-        setTimeout(loadNonCriticalResources, 1000);
-    });
-    
-    // Detectar conexão lenta
-    if ('connection' in navigator) {
-        const connection = navigator.connection;
-        if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-            // Aplicar otimizações para conexão lenta
-            document.documentElement.classList.add('slow-connection');
-        }
-    }
+    // Execute após DOM
+    document.addEventListener('DOMContentLoaded', hideFeedbacks);
 </script>
 
-<!-- Carregar scripts otimizados -->
-<script src="~/js/image-optimizer.js" async></script>
+<!-- Carregar APENAS scripts essenciais -->
 <script src="~/js/newsletter.js" defer></script>
 
 </body>

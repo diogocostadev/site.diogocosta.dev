@@ -1798,3 +1798,157 @@ WHERE l.created_at >= @__recentCutoff_0
 2025-07-14 12:48:11.177 -03:00 [INF] BotDetectorBackgroundService finalizado
 2025-07-14 12:48:11.178 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
 2025-07-14 12:48:11.179 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 14:46:07.033 -03:00 [INF] Sistema iniciado em 14/07/2025 14:46:07
+2025-07-14 14:46:07.089 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 14:46:07.091 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 14:46:07.557 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 14:46:07.959 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 14:46:07.981 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 14:46:07.983 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 14:46:07.984 -03:00 [INF] Hosting environment: Development
+2025-07-14 14:46:07.984 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 14:46:10.078 -03:00 [INF] Executed DbCommand (281ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:16:07.1807167Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 14:46:11.136 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 14:46:11.144 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:11.168 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 14:46:11.176 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 14:46:11.196 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 14:46:11.358 -03:00 [INF] Executed ViewResult - view Index executed in 140.88ms.
+2025-07-14 14:46:11.364 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 187.1078ms
+2025-07-14 14:46:11.366 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 14:46:11.367 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:11.375 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 239.9222ms
+2025-07-14 14:46:11.410 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/image-optimizer.js - null null
+2025-07-14 14:46:11.414 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:11.425 -03:00 [INF] Sending file. Request path: '/js/image-optimizer.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\image-optimizer.js'
+2025-07-14 14:46:11.427 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:11.429 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/image-optimizer.js - 200 null text/javascript 18.5602ms
+2025-07-14 14:46:13.560 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 14:46:13.562 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:13.567 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 14:46:13.568 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:13.570 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 9.4928ms
+2025-07-14 14:46:13.591 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/robots.txt - null null
+2025-07-14 14:46:13.593 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:13.593 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sitemap.xml - null null
+2025-07-14 14:46:13.595 -03:00 [INF] Sending file. Request path: '/robots.txt'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\robots.txt'
+2025-07-14 14:46:13.597 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:13.598 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:13.600 -03:00 [INF] Sending file. Request path: '/sitemap.xml'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sitemap.xml'
+2025-07-14 14:46:13.600 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/robots.txt - 200 null text/plain 9.371ms
+2025-07-14 14:46:13.601 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:13.606 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sitemap.xml - 200 null text/xml 11.9875ms
+2025-07-14 14:51:11.890 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:21:10.1208943Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 14:56:13.693 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:26:11.8946061Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:01:13.946 -03:00 [INF] Executed DbCommand (246ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:31:13.6993128Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:06:14.204 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:36:13.9543629Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:11:14.471 -03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:41:14.2204534Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:16:16.236 -03:00 [INF] Executed DbCommand (250ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:46:14.4733774Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:21:18.014 -03:00 [INF] Executed DbCommand (253ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:51:16.2465796Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:23:30.787 -03:00 [INF] Application is shutting down...
+2025-07-14 15:23:30.793 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:23:30.796 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:23:30.797 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:29:30.555 -03:00 [INF] Sistema iniciado em 14/07/2025 15:29:30
+2025-07-14 15:29:30.610 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:29:30.612 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:29:31.117 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:29:31.458 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:29:31.487 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:29:31.488 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:29:31.489 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:29:31.490 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:29:32.903 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 15:29:32.912 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:32.946 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:29:32.955 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:29:32.970 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:29:33.118 -03:00 [INF] Executed ViewResult - view Index executed in 148.3785ms.
+2025-07-14 15:29:33.132 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 174.746ms
+2025-07-14 15:29:33.136 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:29:33.137 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:33.149 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 246.9999ms
+2025-07-14 15:29:33.665 -03:00 [INF] Executed DbCommand (310ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:59:30.7046093Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:29:34.914 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:29:34.916 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.923 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:29:34.924 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.925 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 11.4077ms
+2025-07-14 15:29:34.941 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/critical.css - null null
+2025-07-14 15:29:34.943 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-07-14 15:29:34.943 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-14 15:29:34.945 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.946 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.947 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.953 -03:00 [INF] Sending file. Request path: '/css/critical.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\critical.css'
+2025-07-14 15:29:34.953 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-14 15:29:34.953 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-07-14 15:29:34.955 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.956 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.957 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.960 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/critical.css - 200 null text/css 18.8187ms
+2025-07-14 15:29:34.960 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 16.9631ms
+2025-07-14 15:29:34.960 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 17.5395ms
+2025-07-14 15:29:34.965 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-14 15:29:34.969 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.970 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-14 15:29:34.972 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.973 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 null text/javascript 8.5289ms
+2025-07-14 15:29:44.063 -03:00 [INF] Application is shutting down...
+2025-07-14 15:29:44.071 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:29:44.072 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:29:44.073 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:32:05.490 -03:00 [INF] Sistema iniciado em 14/07/2025 15:32:05
+2025-07-14 15:32:05.556 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:32:05.560 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:32:06.066 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:32:06.416 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:32:06.439 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:32:06.440 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:32:06.440 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:32:06.441 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:32:08.578 -03:00 [INF] Executed DbCommand (285ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:02:05.6606514Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:32:15.334 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=dd3a36ad-5914-42de-bada-ce7270ef5a90&vscodeBrowserReqId=1752517935284 - null null
+2025-07-14 15:32:15.356 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:32:15.395 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:32:15.401 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:32:15.421 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:32:15.543 -03:00 [INF] Executed ViewResult - view Index executed in 125.8993ms.
+2025-07-14 15:32:15.548 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 143.8208ms
+2025-07-14 15:32:15.549 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:32:15.550 -03:00 [INF] The response has been cached.
+2025-07-14 15:32:15.555 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/?id=dd3a36ad-5914-42de-bada-ce7270ef5a90&vscodeBrowserReqId=1752517935284 - 200 null text/html; charset=utf-8 222.1789ms
+2025-07-14 15:32:26.735 -03:00 [INF] Application is shutting down...
+2025-07-14 15:32:26.743 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:32:26.745 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:32:26.746 -03:00 [INF] 🛑 Bot Detector Background Service parado.
