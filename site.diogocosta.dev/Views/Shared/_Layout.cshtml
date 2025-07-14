@@ -37,12 +37,15 @@
     </script>
 </head>
 <body>
+    <!-- Skip Links para acessibilidade -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top" role="navigation" aria-label="Menu principal">
         <div class="container">
             <a class="navbar-brand" asp-controller="Home" asp-action="Index">Diogo Costa</a>
             
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="color: white;">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="color: white;" aria-label="Alternar navegação" aria-expanded="false" aria-controls="navbarNav">
                 <i class="fas fa-bars"></i>
             </button>
             
@@ -70,7 +73,7 @@
                 
                 <div class="d-flex">
                     <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="newsletterDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="newsletterDropdown" data-bs-toggle="dropdown" aria-label="Inscrever-se na newsletter" aria-expanded="false">
                             <i class="fas fa-envelope me-2"></i>Newsletter
                         </button>
                         <div class="dropdown-menu dropdown-menu-end p-3 shadow" style="min-width: 320px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);">
@@ -87,7 +90,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         @RenderBody()
     </main>
 
@@ -111,19 +114,19 @@
                 <div class="col-md-3">
                     <h6 class="footer-title">Redes Sociais</h6>
                     <div class="d-flex flex-wrap gap-2">
-                        <a href="https://linkedin.com/in/diogotj" target="_blank" class="social-link" title="LinkedIn">
+                        <a href="https://linkedin.com/in/diogotj" target="_blank" class="social-link" title="LinkedIn" aria-label="Perfil do LinkedIn de Diogo Costa">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://x.com/diogocostadev" target="_blank" class="social-link" title="Twitter">
+                        <a href="https://x.com/diogocostadev" target="_blank" class="social-link" title="Twitter" aria-label="Perfil do Twitter de Diogo Costa">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://youtube.com/diogocostadev" target="_blank" class="social-link" title="YouTube">
+                        <a href="https://youtube.com/diogocostadev" target="_blank" class="social-link" title="YouTube" aria-label="Canal do YouTube de Diogo Costa">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="https://instagram.com/diogocostadev" target="_blank" class="social-link" title="Instagram">
+                        <a href="https://instagram.com/diogocostadev" target="_blank" class="social-link" title="Instagram" aria-label="Perfil do Instagram de Diogo Costa">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://twitch.tv/diogocostadev" target="_blank" class="social-link" title="Twitch">
+                        <a href="https://twitch.tv/diogocostadev" target="_blank" class="social-link" title="Twitch" aria-label="Canal da Twitch de Diogo Costa">
                             <i class="fab fa-twitch"></i>
                         </a>
                     </div>
