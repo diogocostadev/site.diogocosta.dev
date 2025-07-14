@@ -5,4 +5,8 @@ riderModule.iml
 /_ReSharper.Caches/
 .idea/
 
+# Logs (apenas desenvolvimento)
+logs/
+*.log
+
 .DS_Store

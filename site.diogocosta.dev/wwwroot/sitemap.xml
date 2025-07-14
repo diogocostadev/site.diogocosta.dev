@@ -8,9 +8,19 @@
     <!-- Página Principal -->
     <url>
         <loc>https://diogocosta.dev/</loc>
-        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <lastmod>2025-07-14T10:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
+            <image:title>Diogo Costa - Crie seu MVP SaaS - Programador Empreendedor</image:title>
+            <image:caption>Aprenda a criar seu MVP SaaS do zero - Mentoria para programadores empreendedores</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/logome.webp</image:loc>
+            <image:title>Diogo Costa Dev - Logo</image:title>
+            <image:caption>Site oficial de Diogo Costa, mentor para criação de MVP SaaS</image:caption>
+        </image:image>
     </url>
 
     <!-- Sobre -->
@@ -53,8 +63,8 @@
         <priority>0.9</priority>
         <image:image>
             <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
-            <image:title>Diogo Costa - MVP Microsoft</image:title>
-            <image:caption>Instrutor do Desafio SaaS Financeiro</image:caption>
+            <image:title>Diogo Costa - Mentor MVP SaaS</image:title>
+            <image:caption>Instrutor de criação de MVP SaaS para programadores empreendedores</image:caption>
         </image:image>
     </url>
 
@@ -65,8 +75,8 @@
         <priority>0.9</priority>
         <image:image>
             <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
-            <image:title>Diogo Costa - MVP Microsoft</image:title>
-            <image:caption>Instrutor do Desafio SaaS Leads</image:caption>
+            <image:title>Diogo Costa - Mentor MVP SaaS</image:title>
+            <image:caption>Instrutor de criação de MVP SaaS para programadores empreendedores</image:caption>
         </image:image>
     </url>
 
@@ -77,8 +87,8 @@
         <priority>0.9</priority>
         <image:image>
             <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
-            <image:title>Diogo Costa - MVP Microsoft</image:title>
-            <image:caption>Instrutor do Desafio SaaS Vendas</image:caption>
+            <image:title>Diogo Costa - Mentor MVP SaaS</image:title>
+            <image:caption>Instrutor de criação de MVP SaaS para programadores empreendedores</image:caption>
         </image:image>
     </url>
 
@@ -90,13 +100,13 @@
         <priority>0.95</priority>
         <image:image>
             <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
-            <image:title>VSL Criar SaaS - Método Completo - Diogo Costa MVP</image:title>
-            <image:caption>Video Sales Letter - Aprenda a criar seu primeiro SaaS lucrativo em 7 dias</image:caption>
+            <image:title>VSL Criar MVP SaaS - Método Completo - Diogo Costa</image:title>
+            <image:caption>Video Sales Letter - Aprenda a criar seu primeiro MVP SaaS lucrativo em 7 dias</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://diogocosta.dev/img/logome.webp</image:loc>
             <image:title>Diogo Costa Dev - Logo</image:title>
-            <image:caption>Diogo Costa - Desenvolvedor MVP Microsoft e Founder</image:caption>
+            <image:caption>Diogo Costa - Mentor para criação de MVP SaaS</image:caption>
         </image:image>
     </url>
 

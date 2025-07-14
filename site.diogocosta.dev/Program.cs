@@ -6,12 +6,45 @@ using site.diogocosta.dev.Extentions;
 using site.diogocosta.dev.Models;
 using site.diogocosta.dev.Servicos;
 using site.diogocosta.dev.Servicos.Interfaces;
+using site.diogocosta.dev.Middleware;
 using StackExchange.Redis;
 using Npgsql;
 using System.Net;
 using AntiSpam.Core.Extensions;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configurar compressão de resposta
+builder.Services.AddResponseCompression(options =>
+{
+    options.EnableForHttps = true;
+    options.Providers.Add<BrotliCompressionProvider>();
+    options.Providers.Add<GzipCompressionProvider>();
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[]
+    {
+        "text/plain",
+        "text/css",
+        "text/javascript",
+        "text/html",
+        "application/javascript",
+        "application/json",
+        "application/xml",
+        "text/xml",
+        "image/svg+xml"
+    });
+});
+
+builder.Services.Configure<BrotliCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Optimal;
+});
+
+builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Optimal;
+});
 
 //--------------------------------------------
 // Configurar Serilog com Seq
@@ -20,9 +53,16 @@ builder.Host.UseSerilog((context, configuration) =>
     configuration
         .ReadFrom.Configuration(context.Configuration)
         .WriteTo.Console()
-        .WriteTo.File("logs/app-.txt", rollingInterval: RollingInterval.Day)
         .Enrich.FromLogContext()
         .Enrich.WithProperty("Application", "Site.DiogoCosta.Dev");
+
+    // Logs em arquivo APENAS no ambiente de desenvolvimento
+    // ou se explicitamente habilitado na configuração
+    var enableFileLogging = context.Configuration.GetValue<bool>("Logging:EnableFileLogging");
+    if (context.HostingEnvironment.IsDevelopment() || enableFileLogging)
+    {
+        configuration.WriteTo.File("logs/app-.txt", rollingInterval: RollingInterval.Day);
+    }
 
     // Configurar Seq se disponível
     var seqUrl = context.Configuration["Seq:ServerUrl"];
@@ -33,11 +73,16 @@ builder.Host.UseSerilog((context, configuration) =>
         configuration.WriteTo.Seq(seqUrl, apiKey: seqApiKey);
     }
 });
-// Garantir que o diretório de logs existe
-var logsDir = Path.Combine(builder.Environment.ContentRootPath, "logs");
-if (!Directory.Exists(logsDir))
+
+// Garantir que o diretório de logs existe APENAS quando necessário
+var enableFileLoggingConfig = builder.Configuration.GetValue<bool>("Logging:EnableFileLogging");
+if (builder.Environment.IsDevelopment() || enableFileLoggingConfig)
 {
-    Directory.CreateDirectory(logsDir);
+    var logsDir = Path.Combine(builder.Environment.ContentRootPath, "logs");
+    if (!Directory.Exists(logsDir))
+    {
+        Directory.CreateDirectory(logsDir);
+    }
 }
 //--------------------------------------------
 
@@ -119,23 +164,66 @@ builder.Services.AddHostedService<BotDetectorBackgroundServiceCore>(); // Novo
 
 var app = builder.Build();
 
+// Habilitar compressão de resposta
+app.UseResponseCompression();
+
+// Adicionar headers de performance
+app.UsePerformanceHeaders();
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
-// Configurar arquivos estáticos com headers específicos para favicon
+// Configurar arquivos estáticos com cache otimizado
 app.UseStaticFiles(new StaticFileOptions
 {
     OnPrepareResponse = context =>
     {
-        // Cache para arquivos de favicon
-        if (context.File.Name.Contains("favicon") || context.File.Name.Contains(".ico") || 
-            context.File.Name.EndsWith(".png") && (context.File.PhysicalPath?.Contains("img") ?? false))
+        var file = context.File;
+        var response = context.Context.Response;
+        var headers = response.Headers;
+        
+        // Cache agressivo para recursos de imagem
+        if (file.Name.EndsWith(".webp") || file.Name.EndsWith(".png") || 
+            file.Name.EndsWith(".jpg") || file.Name.EndsWith(".jpeg") ||
+            file.Name.EndsWith(".gif") || file.Name.EndsWith(".svg"))
         {
-            context.Context.Response.Headers["Cache-Control"] = "public, max-age=604800"; // 1 semana
-            context.Context.Response.Headers["Expires"] = DateTime.UtcNow.AddDays(7).ToString("R");
+            headers["Cache-Control"] = "public, max-age=31536000, immutable"; // 1 ano
+            headers["Expires"] = DateTime.UtcNow.AddYears(1).ToString("R");
+        }
+        // Cache para JavaScript e CSS
+        else if (file.Name.EndsWith(".js") || file.Name.EndsWith(".css"))
+        {
+            headers["Cache-Control"] = "public, max-age=2592000"; // 30 dias
+            headers["Expires"] = DateTime.UtcNow.AddDays(30).ToString("R");
+        }
+        // Cache específico para favicons
+        else if (file.Name.Contains("favicon") || file.Name.Contains(".ico") || 
+                (file.Name.EndsWith(".png") && file.PhysicalPath?.Contains("img") == true))
+        {
+            headers["Cache-Control"] = "public, max-age=604800"; // 1 semana
+            headers["Expires"] = DateTime.UtcNow.AddDays(7).ToString("R");
+        }
+        // Cache padrão para outros recursos
+        else
+        {
+            headers["Cache-Control"] = "public, max-age=86400"; // 1 dia
+        }
+        
+        // Adicionar ETag para versionamento
+        var etag = $"\"{file.LastModified:yyyyMMddHHmmss}\"";
+        headers["ETag"] = etag;
+        
+        // Adicionar headers de compressão se não estiver comprimido
+        if (!response.HasStarted && file.Length > 1024) // Arquivos maiores que 1KB
+        {
+            var acceptEncoding = context.Context.Request.Headers["Accept-Encoding"].ToString();
+            if (acceptEncoding.Contains("gzip"))
+            {
+                headers["Vary"] = "Accept-Encoding";
+            }
         }
     }
 });

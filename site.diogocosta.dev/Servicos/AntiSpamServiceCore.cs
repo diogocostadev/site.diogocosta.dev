@@ -36,7 +36,7 @@ public class AntiSpamServiceCore : IAntiSpamService
             if (!string.IsNullOrEmpty(ipAddress))
             {
                 var ipRules = activeRules.Where(r => r.RuleType == AntiSpamRuleTypes.IP);
-                if (await CheckRulesAsync(ipAddress, ipRules))
+                if (CheckRules(ipAddress, ipRules))
                 {
                     _logger.LogWarning("IP {IpAddress} bloqueado por regra anti-spam", ipAddress);
                     return false;
@@ -47,7 +47,7 @@ public class AntiSpamServiceCore : IAntiSpamService
             if (!string.IsNullOrEmpty(email))
             {
                 var emailRules = activeRules.Where(r => r.RuleType == AntiSpamRuleTypes.Domain || r.RuleType == AntiSpamRuleTypes.EmailPattern);
-                if (await CheckRulesAsync(email, emailRules))
+                if (CheckRules(email, emailRules))
                 {
                     _logger.LogWarning("Email {Email} bloqueado por regra anti-spam", email);
                     return false;
@@ -58,7 +58,7 @@ public class AntiSpamServiceCore : IAntiSpamService
             if (!string.IsNullOrEmpty(userAgent))
             {
                 var userAgentRules = activeRules.Where(r => r.RuleType == AntiSpamRuleTypes.UserAgent);
-                if (await CheckRulesAsync(userAgent, userAgentRules))
+                if (CheckRules(userAgent, userAgentRules))
                 {
                     _logger.LogWarning("User Agent {UserAgent} bloqueado por regra anti-spam", userAgent);
                     return false;
@@ -78,7 +78,7 @@ public class AntiSpamServiceCore : IAntiSpamService
     {
         var rules = await GetActiveRulesFromCacheAsync();
         var ipRules = rules.Where(r => r.RuleType == AntiSpamRuleTypes.IP);
-        return await CheckRulesAsync(ipAddress, ipRules);
+        return CheckRules(ipAddress, ipRules);
     }
 
     public async Task<bool> IsDisposableEmailAsync(string email)
@@ -88,28 +88,28 @@ public class AntiSpamServiceCore : IAntiSpamService
 
         var rules = await GetActiveRulesFromCacheAsync();
         var domainRules = rules.Where(r => r.RuleType == AntiSpamRuleTypes.Domain);
-        return await CheckRulesAsync(domain, domainRules);
+        return CheckRules(domain, domainRules);
     }
 
     public async Task<bool> IsSuspiciousEmailAsync(string email)
     {
         var rules = await GetActiveRulesFromCacheAsync();
         var emailRules = rules.Where(r => r.RuleType == AntiSpamRuleTypes.EmailPattern);
-        return await CheckRulesAsync(email, emailRules);
+        return CheckRules(email, emailRules);
     }
 
     public async Task<bool> IsSuspiciousUserAgentAsync(string userAgent)
     {
         var rules = await GetActiveRulesFromCacheAsync();
         var userAgentRules = rules.Where(r => r.RuleType == AntiSpamRuleTypes.UserAgent);
-        return await CheckRulesAsync(userAgent, userAgentRules);
+        return CheckRules(userAgent, userAgentRules);
     }
 
     public async Task<bool> IsSuspiciousNameAsync(string name)
     {
         var rules = await GetActiveRulesFromCacheAsync();
         var nameRules = rules.Where(r => r.RuleType == AntiSpamRuleTypes.NamePattern);
-        return await CheckRulesAsync(name, nameRules);
+        return CheckRules(name, nameRules);
     }
 
     public async Task AddRuleAsync(string ruleType, string ruleValue, string description, string severity, bool isRegex, string? createdBy)
@@ -211,7 +211,7 @@ public class AntiSpamServiceCore : IAntiSpamService
         return rules;
     }
 
-    private async Task<bool> CheckRulesAsync(string value, IEnumerable<AntiSpamRule> rules)
+    private bool CheckRules(string value, IEnumerable<AntiSpamRule> rules)
     {
         foreach (var rule in rules)
         {
