@@ -105,7 +105,7 @@
             </p>
             
             <div class="form-container">
-                <form asp-action="Cadastrar" method="post" class="desbloqueio-form" data-submit-time="">
+                <form asp-action="Cadastrar" method="post" class="desbloqueio-form" data-submit-time="" role="form" novalidate>
                     <!-- Honeypot fields - hidden from humans but visible to bots -->
                     <div class="honeypot-fields">
                         <input type="text" name="website" placeholder="Website" tabindex="-1" autocomplete="off" />
@@ -127,7 +127,7 @@
                         <span asp-validation-for="Email" class="form-error"></span>
                     </div>
                     
-                    <button type="submit" class="btn btn-cta">
+                    <button type="submit" class="btn btn-cta" aria-label="Quero receber o manual agora">
                         🚀 QUERO RECEBER O MANUAL AGORA
                     </button>
                     

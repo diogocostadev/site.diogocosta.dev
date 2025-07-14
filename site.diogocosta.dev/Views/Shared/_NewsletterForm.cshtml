@@ -8,7 +8,7 @@
 }
 
 <div id="@(formId + "Container")">
-    <form id="@formId" class="modern-form">
+    <form id="@formId" class="modern-form" role="form" novalidate>
         <!-- Honeypot fields (hidden anti-bot protection) -->
         <div style="position: absolute; left: -9999px; top: -9999px; visibility: hidden;">
             <input type="text" name="name" tabindex="-1" autocomplete="off">
@@ -17,18 +17,21 @@
         </div>
         
         <div class="form-group">
+            <label for="newsletter-email-@formId" class="sr-only">Endereço de e-mail</label>
             <input type="email" 
+                  id="newsletter-email-@formId"
                   name="Email" 
                   class="@(isHeaderForm ? "form-control mb-3" : "form-control-modern w-100 mb-3")" 
                   placeholder="Seu melhor e-mail"
                   style="@(isHeaderForm ? "background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 0.75rem; color: #212529;" : "")"
-                  required>
-            <button type="submit" class="@(isHeaderForm ? "btn btn-primary w-100" : submitButtonClass)">
+                  required
+                  aria-describedby="newsletter-info-@formId">
+            <button type="submit" class="@(isHeaderForm ? "btn btn-primary w-100" : submitButtonClass)" aria-label="Inscrever-se na newsletter">
                 <i class="fas fa-envelope me-2"></i>
                 @(isHeaderForm ? "Inscrever-se" : "Inscreva-se Agora")
             </button>
         </div>
-        <p class="text-center mt-3 mb-0" style="color: @(isHeaderForm ? "#6c757d" : "rgba(255, 255, 255, 0.7)"); font-size: 0.8rem;">
+        <p id="newsletter-info-@formId" class="text-center mt-3 mb-0" style="color: @(isHeaderForm ? "#6c757d" : "rgba(255, 255, 255, 0.7)"); font-size: 0.8rem;">
             Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.
         </p>
     </form>

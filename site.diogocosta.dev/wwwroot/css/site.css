@@ -942,6 +942,78 @@ section {
     font-weight: bold;
 }
 
+/* Melhorias de acessibilidade para links */
+a {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration-color: currentColor;
+}
+
+/* Links de navegação específicos */
+.nav-link {
+    text-decoration: none !important;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Links em botões mantêm comportamento sem sublinhado */
+.btn, .btn-primary, .btn-secondary, .btn-cta {
+    text-decoration: none !important;
+}
+
+/* Skip Link para acessibilidade */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 9999;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+    color: #fff;
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .post-footer {
     text-align: center;
     padding: 2rem 0;
