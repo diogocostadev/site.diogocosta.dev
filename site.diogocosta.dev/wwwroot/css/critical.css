@@ -1,7 +1,7 @@
-/* Critical CSS for Above the Fold Content */
-/* Este arquivo contém apenas os estilos críticos necessários para renderizar o conteúdo acima da dobra */
+/* CSS Crítico - Above the Fold */
+/* Otimizado para PageSpeed Insights - Evita layout shifts */
 
-/* Reset básico */
+/* Reset básico para evitar layout shift */
 * {
     box-sizing: border-box;
 }
@@ -13,9 +13,11 @@ html {
 
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    padding: 0;
     background-color: #ffffff;
     color: #111827;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
 }
 
 /* Navigation crítico */
@@ -240,4 +242,161 @@ img[loading="lazy"] {
 
 img[loading="lazy"].loaded {
     opacity: 1;
+}
+
+/* Hero section crítica */
+.hero-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    min-height: 70vh;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.max-w-4xl {
+    max-width: 56rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Prevent layout shift for images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* Image optimization placeholders */
+.img-placeholder {
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+/* Loading states para evitar layout shift */
+.loading-placeholder {
+    background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Font optimization */
+.font-serif {
+    font-family: 'Newsreader', serif;
+    font-display: swap;
+}
+
+/* Responsivo crítico - Mobile First */
+@media (max-width: 768px) {
+    .text-5xl {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .text-2xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    
+    .space-x-6 > * + * {
+        margin-left: 0.75rem;
+    }
+    
+    .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .dropdown-form {
+        min-width: 280px;
+        right: -1rem;
+    }
+    
+    .hero-section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-5xl {
+        font-size: 1.75rem;
+    }
+    
+    .dropdown-form {
+        min-width: 260px;
+        right: -1.5rem;
+    }
+}
+
+/* WebP support detection */
+.webp img[data-src-webp] {
+    content: attr(data-src-webp);
+}
+
+.no-webp img[data-src-fallback] {
+    content: attr(data-src-fallback);
+}
+
+/* Otimização para CLS (Cumulative Layout Shift) */
+.preserve-aspect-ratio {
+    position: relative;
+    overflow: hidden;
+}
+
+.preserve-aspect-ratio::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Ajustar conforme necessário */
+}
+
+.preserve-aspect-ratio img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

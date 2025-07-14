@@ -162,13 +162,59 @@ builder.Services.AddScoped<AntiSpamService>();
 builder.Services.AddHostedService<BotDetectorBackgroundService>(); // Original
 builder.Services.AddHostedService<BotDetectorBackgroundServiceCore>(); // Novo
 
+// Configurar Response Caching para PageSpeed otimização
+builder.Services.AddResponseCaching(options =>
+{
+    options.MaximumBodySize = 1024 * 1024; // 1MB
+    options.UseCaseSensitivePaths = false;
+    options.SizeLimit = 100 * 1024 * 1024; // 100MB
+});
+
+// Configurar HTTP Cache Headers
+builder.Services.Configure<StaticFileOptions>(options =>
+{
+    options.OnPrepareResponse = ctx =>
+    {
+        const int durationInSeconds = 60 * 60 * 24 * 365; // 1 ano
+        ctx.Context.Response.Headers.Append("Cache-Control", $"public,max-age={durationInSeconds}");
+        ctx.Context.Response.Headers.Append("Expires", DateTime.UtcNow.AddYears(1).ToString("R"));
+    };
+});
+
 var app = builder.Build();
 
-// Habilitar compressão de resposta
+// Middleware de cache e otimização de performance
 app.UseResponseCompression();
+app.UseResponseCaching();
 
-// Adicionar headers de performance
-app.UsePerformanceHeaders();
+// Middleware personalizado para otimização de headers
+app.Use(async (context, next) =>
+{
+    // Adicionar headers de segurança e performance
+    context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    context.Response.Headers["X-Frame-Options"] = "DENY";
+    context.Response.Headers["X-XSS-Protection"] = "1; mode=block";
+    context.Response.Headers["Referrer-Policy"] = "strict-origin-when-cross-origin";
+    
+    // Headers específicos para performance
+    if (context.Request.Path.StartsWithSegments("/img") ||
+        context.Request.Path.StartsWithSegments("/css") ||
+        context.Request.Path.StartsWithSegments("/js"))
+    {
+        context.Response.Headers["Access-Control-Allow-Origin"] = "*";
+        context.Response.Headers["Cross-Origin-Resource-Policy"] = "cross-origin";
+    }
+    
+    // Cache policy para diferentes tipos de conteúdo
+    if (context.Request.Path.Value?.EndsWith(".html") == true ||
+        context.Request.Path == "/" ||
+        context.Request.Path.StartsWithSegments("/blog"))
+    {
+        context.Response.Headers["Cache-Control"] = "public, max-age=300, stale-while-revalidate=60";
+    }
+    
+    await next();
+});
 
 if (!app.Environment.IsDevelopment())
 {

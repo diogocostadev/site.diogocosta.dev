@@ -1,94 +1,190 @@
-const CACHE_NAME = 'site-diogocosta-v1.1';
-const urlsToCache = [
+// Service Worker Otimizado para Performance e Cache
+const CACHE_NAME = 'diogocosta-v2.1';
+const STATIC_CACHE = 'static-v2.1';
+const DYNAMIC_CACHE = 'dynamic-v2.1';
+
+// Recursos críticos para cache imediato
+const CRITICAL_ASSETS = [
     '/',
-    '/js/newsletter.js',
     '/css/critical.css',
-    '/img/logome.webp',
-    '/img/D.png',
-    '/img/D_180.png',
+    '/js/newsletter.js',
     '/img/IMG_0045.webp',
-    '/manifest.json',
-    'https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap',
-    'https://fonts.gstatic.com/s/newsreader/v20/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF.woff2'
+    '/img/logome.webp',
+    '/manifest.json'
 ];
 
-// Instalar Service Worker
+// Recursos para cache estático
+const STATIC_ASSETS = [
+    '/img/D.png',
+    '/img/D_180.png',
+    '/robots.txt',
+    '/sitemap.xml'
+];
+
+// URLs para não cachear (tracking, analytics)
+const NO_CACHE_URLS = [
+    /\/analytics/,
+    /\/gtag/,
+    /\/fbevents/,
+    /googletagmanager/,
+    /connect\.facebook\.net/,
+    /matomo/,
+    /\?.*utm_/
+];
+
+// Install Event - Cache recursos críticos
 self.addEventListener('install', event => {
+    console.log('SW: Installing...');
+    
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('Cache aberto');
-                return cache.addAll(urlsToCache);
+        Promise.all([
+            // Cache crítico
+            caches.open(CACHE_NAME).then(cache => {
+                console.log('SW: Caching critical assets');
+                return cache.addAll(CRITICAL_ASSETS);
+            }),
+            // Cache estático
+            caches.open(STATIC_CACHE).then(cache => {
+                console.log('SW: Caching static assets');
+                return cache.addAll(STATIC_ASSETS);
             })
-            .catch(error => {
-                console.log('Erro ao adicionar recursos ao cache:', error);
-            })
-    );
-});
-
-// Fetch com estratégia Cache First para recursos estáticos
-self.addEventListener('fetch', event => {
-    // Verificar se é um recurso que deve ser cacheado
-    if (event.request.destination === 'image' || 
-        event.request.destination === 'script' || 
-        event.request.destination === 'style' ||
-        event.request.url.includes('/img/') ||
-        event.request.url.includes('/js/') ||
-        event.request.url.includes('fonts.googleapis.com')) {
-        
-        event.respondWith(
-            caches.match(event.request)
-                .then(response => {
-                    // Cache hit - retornar resposta do cache
-                    if (response) {
-                        return response;
-                    }
-                    
-                    // Fazer fetch e adicionar ao cache
-                    return fetch(event.request).then(response => {
-                        // Verificar se a resposta é válida
-                        if (!response || response.status !== 200 || response.type !== 'basic') {
-                            return response;
-                        }
-                        
-                        // Clonar a resposta
-                        const responseToCache = response.clone();
-                        
-                        caches.open(CACHE_NAME)
-                            .then(cache => {
-                                cache.put(event.request, responseToCache);
-                            });
-                        
-                        return response;
-                    });
-                })
-                .catch(() => {
-                    // Fallback para recursos essenciais
-                    if (event.request.destination === 'image') {
-                        return new Response('<!-- Imagem não disponível -->', {
-                            headers: { 'Content-Type': 'text/html' }
-                        });
-                    }
-                })
-        );
-    }
-});
-
-// Ativar Service Worker e limpar caches antigos
-self.addEventListener('activate', event => {
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheName !== CACHE_NAME) {
-                        console.log('Removendo cache antigo:', cacheName);
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
+        ]).then(() => {
+            console.log('SW: Installation complete');
+            return self.skipWaiting();
         })
     );
 });
+
+// Activate Event - Limpar caches antigos
+self.addEventListener('activate', event => {
+    console.log('SW: Activating...');
+    
+    event.waitUntil(
+        caches.keys().then(cacheNames => {
+            return Promise.all(
+                cacheNames
+                    .filter(cacheName => 
+                        cacheName !== CACHE_NAME && 
+                        cacheName !== STATIC_CACHE && 
+                        cacheName !== DYNAMIC_CACHE
+                    )
+                    .map(cacheName => {
+                        console.log('SW: Deleting old cache:', cacheName);
+                        return caches.delete(cacheName);
+                    })
+            );
+        }).then(() => {
+            console.log('SW: Activation complete');
+            return self.clients.claim();
+        })
+    );
+});
+
+// Fetch Event - Estratégias de cache inteligentes
+self.addEventListener('fetch', event => {
+    const { request } = event;
+    const url = new URL(request.url);
+    
+    // Ignorar URLs que não devem ser cacheadas
+    if (shouldSkipCache(url, request)) {
+        return;
+    }
+    
+    // Cache First para recursos estáticos (imagens, CSS, JS)
+    if (request.destination === 'image' || 
+        request.destination === 'script' || 
+        request.destination === 'style' ||
+        request.url.includes('/img/') ||
+        request.url.includes('/js/') ||
+        request.url.includes('/css/')) {
+        
+        event.respondWith(cacheFirstStrategy(request));
+    }
+    // Stale While Revalidate para páginas HTML
+    else if (request.destination === 'document') {
+        event.respondWith(staleWhileRevalidateStrategy(request));
+    }
+    // Network First para APIs e conteúdo dinâmico
+    else {
+        event.respondWith(networkFirstStrategy(request));
+    }
+});
+
+// Cache First - Para recursos estáticos
+async function cacheFirstStrategy(request) {
+    try {
+        const cachedResponse = await caches.match(request);
+        if (cachedResponse) {
+            return cachedResponse;
+        }
+        
+        const networkResponse = await fetch(request);
+        
+        if (networkResponse && networkResponse.status === 200) {
+            const cache = await caches.open(STATIC_CACHE);
+            cache.put(request, networkResponse.clone());
+        }
+        
+        return networkResponse;
+    } catch (error) {
+        console.log('SW: Cache first failed:', error);
+        return new Response('Offline', { status: 503 });
+    }
+}
+
+// Network First - Para conteúdo dinâmico
+async function networkFirstStrategy(request) {
+    try {
+        const networkResponse = await fetch(request);
+        
+        if (networkResponse && networkResponse.status === 200) {
+            const cache = await caches.open(DYNAMIC_CACHE);
+            cache.put(request, networkResponse.clone());
+        }
+        
+        return networkResponse;
+    } catch (error) {
+        console.log('SW: Network first failed, trying cache:', error);
+        const cachedResponse = await caches.match(request);
+        return cachedResponse || new Response('Offline', { status: 503 });
+    }
+}
+
+// Stale While Revalidate - Para páginas
+async function staleWhileRevalidateStrategy(request) {
+    const cache = await caches.open(DYNAMIC_CACHE);
+    const cachedResponse = await cache.match(request);
+    
+    const fetchPromise = fetch(request).then(networkResponse => {
+        if (networkResponse && networkResponse.status === 200) {
+            cache.put(request, networkResponse.clone());
+        }
+        return networkResponse;
+    }).catch(error => {
+        console.log('SW: Stale while revalidate network failed:', error);
+    });
+    
+    return cachedResponse || fetchPromise;
+}
+
+function shouldSkipCache(url, request) {
+    // Não cachear URLs específicas
+    if (NO_CACHE_URLS.some(pattern => pattern.test(url.href))) {
+        return true;
+    }
+    
+    // Não cachear métodos diferentes de GET
+    if (request.method !== 'GET') {
+        return true;
+    }
+    
+    // Não cachear origens diferentes (exceto nosso domínio)
+    if (url.origin !== location.origin && !url.href.includes('diogocosta.dev')) {
+        return true;
+    }
+    
+    return false;
+}
 
 // Background sync para melhorar a experiência offline
 self.addEventListener('sync', event => {

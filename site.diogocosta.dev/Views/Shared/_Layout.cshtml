@@ -7,9 +7,9 @@
 
     <title>Diogo Costa - Crie seu MVP SaaS | Programador Empreendedor</title>
     
-    <!-- DNS Prefetch para domínios externos -->
+    <!-- DNS Prefetch para domínios externos - otimizado -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="dns-prefetch" href="//connect.facebook.net">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//matomo.codigocentral.com.br">
@@ -18,26 +18,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload recursos críticos -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap"></noscript>
-    
-    <!-- Preload Tailwind CSS -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <!-- Preload font crítico - carregamento otimizado -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/newsreader/v20/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Preload CSS crítico -->
     <link rel="preload" href="~/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="~/css/critical.css"></noscript>
     
     <!-- Preload recursos de imagem críticos -->
-    <link rel="preload" href="~/img/IMG_0045.webp" as="image">
-    <link rel="preload" href="~/img/logome.webp" as="image">
+    <link rel="preload" href="~/img/IMG_0045.webp" as="image" type="image/webp">
+    <link rel="preload" href="~/img/logome.webp" as="image" type="image/webp">
     <link rel="preload" href="~/js/newsletter.js" as="script">
     
-    <!-- CSS crítico inline -->
+    <!-- CSS crítico inline otimizado -->
     <style>
-        /* CSS crítico para Above the Fold */
-        .font-serif { font-family: system-ui, serif; } /* Fallback temporário */
+        /* CSS crítico para Above the Fold - otimizado para PageSpeed */
+        .font-serif { 
+            font-family: 'Newsreader', serif; 
+            font-display: swap;
+        }
+        
+        /* Fallback para quando a fonte não carregou */
+        .font-serif-fallback {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
         .fixed-nav {
             position: fixed;
             top: 0;
@@ -46,6 +51,7 @@
             background: white;
             z-index: 1000;
         }
+        
         .dropdown-form {
             display: none;
             position: absolute;
@@ -58,14 +64,17 @@
             min-width: 320px;
             margin-top: 0.5rem;
         }
+        
         .dropdown-form.active {
             display: block;
         }
+        
         /* Garantir que todos os inputs tenham texto escuro */
         input[type="text"], input[type="email"], input[type="password"], textarea {
             color: #1f2937 !important;
             background-color: white !important;
         }
+        
         /* Estilos críticos para navegação e layout */
         .container { max-width: 1200px; margin: 0 auto; }
         .mx-auto { margin-left: auto; margin-right: auto; }
@@ -89,51 +98,151 @@
         .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
         .relative { position: relative; }
         .bg-white { background-color: #ffffff; }
+        
+        /* Loading otimização */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        img[loading="lazy"].loaded,
+        img[loading="eager"] {
+            opacity: 1;
+        }
+        
+        /* Prevent layout shift */
+        .responsive-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
     
-    <!-- Carregamento assíncrono do Tailwind -->
+    <!-- Carregamento otimizado de CSS e fontes -->
     <script>
-        // Carrega Tailwind de forma não bloqueante
-        const script = document.createElement('script');
-        script.src = 'https://cdn.tailwindcss.com';
-        script.async = true;
-        script.onload = function() {
-            // Configura Tailwind após carregamento
-            if (window.tailwind && window.tailwind.config) {
-                window.tailwind.config = {
-                    theme: {
-                        extend: {
-                            colors: {
-                                'navy': {
-                                    900: '#0a1930'
-                                }
-                            }
-                        }
-                    }
-                };
+        // Função para carregar CSS de forma assíncrona
+        function loadCSS(href, before, media, callback) {
+            var doc = window.document;
+            var ss = doc.createElement("link");
+            var ref;
+            
+            if (before) {
+                ref = before;
+            } else {
+                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+                ref = refs[refs.length - 1];
             }
             
-            // Aplicar fonte Newsreader após carregamento
-            setTimeout(() => {
-                const fontElements = document.querySelectorAll('.font-serif');
-                fontElements.forEach(el => {
-                    el.style.fontFamily = "'Newsreader', serif";
+            var sheets = doc.styleSheets;
+            
+            if (callback) {
+                ss.onload = callback;
+            }
+            
+            ss.rel = "stylesheet";
+            ss.href = href;
+            ss.media = "only x";
+            
+            function ready(cb) {
+                if (doc.body) {
+                    return cb();
+                }
+                setTimeout(function() {
+                    ready(cb);
                 });
-            }, 100);
-        };
-        document.head.appendChild(script);
-        
-        // Fallback para aplicar fonte quando CSS estiver carregado
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(() => {
-                const fontElements = document.querySelectorAll('.font-serif');
-                fontElements.forEach(el => {
-                    if (el.style.fontFamily.includes('system-ui')) {
-                        el.style.fontFamily = "'Newsreader', serif";
+            }
+            
+            ready(function() {
+                ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+            });
+            
+            var onloadcssdefined = function(ss, cb) {
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while (i--) {
+                    if (sheets[i].href === resolvedHref) {
+                        return cb();
                     }
+                }
+                setTimeout(function() {
+                    onloadcssdefined(ss, cb);
                 });
-            }, 500);
+            };
+            
+            function loadCB() {
+                if (ss.addEventListener) {
+                    ss.removeEventListener("load", loadCB);
+                }
+                ss.media = media || "all";
+            }
+            
+            if (ss.addEventListener) {
+                ss.addEventListener("load", loadCB);
+            }
+            
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined(ss, loadCB);
+            
+            return ss;
+        }
+        
+        // Carregar fonte otimizada
+        loadCSS('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap');
+        
+        // Aplicar fonte após carregamento
+        document.addEventListener('DOMContentLoaded', function() {
+            // Detectar quando a fonte carregou
+            if ('fonts' in document) {
+                document.fonts.ready.then(function() {
+                    document.documentElement.classList.add('fonts-loaded');
+                });
+            } else {
+                // Fallback para navegadores sem suporte
+                setTimeout(function() {
+                    document.documentElement.classList.add('fonts-loaded');
+                }, 1000);
+            }
         });
+        
+        // Carregamento condicional do Tailwind
+        function loadTailwind() {
+            if (!window.tailwind && !document.querySelector('script[src*="tailwindcss"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://cdn.tailwindcss.com';
+                script.async = true;
+                script.onload = function() {
+                    if (window.tailwind && window.tailwind.config) {
+                        window.tailwind.config = {
+                            theme: {
+                                extend: {
+                                    colors: {
+                                        'navy': {
+                                            900: '#0a1930'
+                                        }
+                                    }
+                                }
+                            }
+                        };
+                    }
+                };
+                document.head.appendChild(script);
+            }
+        }
+        
+        // Carregar Tailwind após interação ou delay
+        let tailwindLoaded = false;
+        function loadTailwindOnce() {
+            if (!tailwindLoaded) {
+                tailwindLoaded = true;
+                loadTailwind();
+            }
+        }
+        
+        ['mousedown', 'touchstart', 'keydown'].forEach(function(event) {
+            document.addEventListener(event, loadTailwindOnce, {once: true, passive: true});
+        });
+        
+        setTimeout(loadTailwindOnce, 2000);
     </script>
 
     <!-- Favicons - Usando apenas imagens PNG -->
@@ -277,27 +386,32 @@
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Scripts de tracking otimizados -->
+    <!-- Scripts de tracking otimizados - MANTENDO GTM e Facebook Pixel -->
 <script>
-    // Google Analytics com carregamento otimizado
-    window.gtag = window.gtag || function() { (gtag.q = gtag.q || []).push(arguments); };
+    // Carregamento assíncrono otimizado para tracking
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-0YZHXVSL7M');
+    gtag('config', 'G-0YZHXVSL7M', {
+        'custom_map': {'custom_parameter': 'dimension1'}
+    });
     
-    // Google Tag Manager
+    // Google Tag Manager - MANTIDO conforme solicitado
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-K4FFVLNX');
     
-    // Carregamento assíncrono do Google Analytics
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YZHXVSL7M';
-    document.head.appendChild(gaScript);
+    // Defer carregamento do Google Analytics
+    function loadGoogleAnalytics() {
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YZHXVSL7M';
+        document.head.appendChild(gaScript);
+    }
     
-    // Facebook Pixel moderno
+    // Facebook Pixel - MANTIDO conforme solicitado
     !function(f,b,e,v,n,t,s) {
         if(f.fbq) return;
         n = f.fbq = function() {
@@ -315,8 +429,30 @@
         s.parentNode.insertBefore(t,s);
     }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
     
-    fbq('init', 'REPLACE_WITH_PIXEL_ID');
-    fbq('track', 'PageView');
+    // Configurar Facebook Pixel após carregamento
+    function initFacebookPixel() {
+        if (window.fbq) {
+            fbq('init', 'REPLACE_WITH_PIXEL_ID');
+            fbq('track', 'PageView');
+        }
+    }
+    
+    // Carregar scripts de tracking após interação do usuário
+    let userInteracted = false;
+    function loadTrackingScripts() {
+        if (!userInteracted) {
+            userInteracted = true;
+            loadGoogleAnalytics();
+            initFacebookPixel();
+        }
+    }
+    
+    // Carregar após primeira interação ou após 3 segundos
+    ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart', 'click'].forEach(function(event) {
+        document.addEventListener(event, loadTrackingScripts, {once: true, passive: true});
+    });
+    
+    setTimeout(loadTrackingScripts, 3000);
 </script>
 <noscript>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_PIXEL_ID&amp;ev=PageView&amp;noscript=1" />
@@ -425,7 +561,7 @@
 
 @RenderSection("Scripts", required: false)
 
-<!-- Scripts otimizados -->
+<!-- Scripts otimizados para performance -->
 <script>
     // Registrar Service Worker
     if ('serviceWorker' in navigator) {
@@ -451,19 +587,79 @@
         }, 5000);
     });
     
-    // Scroll optimization
+    // Scroll optimization com throttling
+    let scrollTimeout;
     window.addEventListener('scroll', function() {
-        var nav = document.querySelector('nav');
-        if (window.scrollY > 40) { // altura do banner do Black Friday
-            nav.classList.add('shadow-md');
-        } else {
-            nav.classList.remove('shadow-md');
+        if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+                var nav = document.querySelector('nav');
+                if (window.scrollY > 40) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+                scrollTimeout = null;
+            }, 10);
         }
     }, { passive: true });
+    
+    // Preload recursos críticos
+    function preloadCriticalResources() {
+        const criticalResources = [
+            { href: '/js/newsletter.js', as: 'script' },
+            { href: '/img/IMG_0045.webp', as: 'image' },
+            { href: '/img/logome.webp', as: 'image' }
+        ];
+        
+        criticalResources.forEach(resource => {
+            if (!document.querySelector(`link[href="${resource.href}"]`)) {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = resource.href;
+                link.as = resource.as;
+                if (resource.as === 'script') {
+                    link.crossOrigin = 'anonymous';
+                }
+                document.head.appendChild(link);
+            }
+        });
+    }
+    
+    // Lazy load recursos não críticos
+    function loadNonCriticalResources() {
+        // Carregar Tailwind apenas se necessário
+        if (!window.tailwind) {
+            const tailwindScript = document.createElement('script');
+            tailwindScript.src = 'https://cdn.tailwindcss.com';
+            tailwindScript.async = true;
+            tailwindScript.onload = function() {
+                console.log('Tailwind carregado');
+            };
+            document.head.appendChild(tailwindScript);
+        }
+    }
+    
+    // Otimização de performance
+    document.addEventListener('DOMContentLoaded', function() {
+        preloadCriticalResources();
+        
+        // Delay para recursos não críticos
+        setTimeout(loadNonCriticalResources, 1000);
+    });
+    
+    // Detectar conexão lenta
+    if ('connection' in navigator) {
+        const connection = navigator.connection;
+        if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+            // Aplicar otimizações para conexão lenta
+            document.documentElement.classList.add('slow-connection');
+        }
+    }
 </script>
 
-<!-- Carregar newsletter.js de forma otimizada -->
-<script src="~/js/newsletter.js" async></script>
+<!-- Carregar scripts otimizados -->
+<script src="~/js/image-optimizer.js" async></script>
+<script src="~/js/newsletter.js" defer></script>
 
 </body>
 </html>
