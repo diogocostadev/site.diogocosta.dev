@@ -773,3 +773,1024 @@ WHERE l.created_at >= @__recentCutoff_0
 SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
 FROM leads_system.lead_interactions AS l
 WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 09:52:06.296 -03:00 [INF] Executed DbCommand (266ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:22:04.4014644Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 09:57:08.233 -03:00 [INF] Executed DbCommand (268ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:27:06.3148461Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:02:10.114 -03:00 [INF] Executed DbCommand (267ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:32:08.2458372Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:07:12.007 -03:00 [INF] Executed DbCommand (268ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:37:10.1258312Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:12:13.910 -03:00 [INF] Executed DbCommand (267ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:42:12.0201764Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:17:15.790 -03:00 [INF] Executed DbCommand (267ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:47:13.9168112Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:22:17.671 -03:00 [INF] Executed DbCommand (268ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:52:15.7968911Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:27:19.590 -03:00 [INF] Executed DbCommand (272ms) [Parameters=[@__recentCutoff_0='2025-07-14T12:57:17.6801885Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:32:21.348 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:02:19.5958523Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:37:23.108 -03:00 [INF] Executed DbCommand (254ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:07:21.3566730Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:38:27.954 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=b1cc70dd-d02c-4c23-883c-c1c0c45940ce&vscodeBrowserReqId=1752500307918 - null null
+2025-07-14 10:38:27.983 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:38:27.991 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 10:38:28.011 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 10:38:28.121 -03:00 [INF] Executed ViewResult - view Index executed in 112.0042ms.
+2025-07-14 10:38:28.127 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 133.5944ms
+2025-07-14 10:38:28.128 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:38:28.134 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/?id=b1cc70dd-d02c-4c23-883c-c1c0c45940ce&vscodeBrowserReqId=1752500307918 - 200 null text/html; charset=utf-8 180.7005ms
+2025-07-14 10:40:14.720 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=b1cc70dd-d02c-4c23-883c-c1c0c45940ce&vscodeBrowserReqId=1752500307918 - null null
+2025-07-14 10:40:14.725 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:14.727 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 10:40:14.731 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 10:40:14.738 -03:00 [INF] Executed ViewResult - view Index executed in 6.8958ms.
+2025-07-14 10:40:14.740 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 10.0638ms
+2025-07-14 10:40:14.741 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:14.745 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/?id=b1cc70dd-d02c-4c23-883c-c1c0c45940ce&vscodeBrowserReqId=1752500307918 - 200 null text/html; charset=utf-8 25.6215ms
+2025-07-14 10:40:16.585 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 10:40:16.588 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:16.589 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 10:40:16.591 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 10:40:16.594 -03:00 [INF] Executed ViewResult - view Index executed in 3.3803ms.
+2025-07-14 10:40:16.596 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 5.3308ms
+2025-07-14 10:40:16.596 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:16.598 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 12.9705ms
+2025-07-14 10:40:16.706 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 10:40:16.716 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 10:40:16.718 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 12.7196ms
+2025-07-14 10:40:18.286 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 10:40:18.291 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 10:40:18.293 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 6.3576ms
+2025-07-14 10:40:18.393 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 10:40:18.395 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:18.396 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 10:40:18.398 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 10:40:18.399 -03:00 [INF] Executed ViewResult - view Index executed in 1.6635ms.
+2025-07-14 10:40:18.400 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 2.9337ms
+2025-07-14 10:40:18.402 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:18.404 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 11.9594ms
+2025-07-14 10:40:18.441 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/critical.css - null null
+2025-07-14 10:40:18.443 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-14 10:40:18.447 -03:00 [INF] Sending file. Request path: '/css/critical.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\critical.css'
+2025-07-14 10:40:18.447 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-07-14 10:40:18.447 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-14 10:40:18.450 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-07-14 10:40:18.451 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-07-14 10:40:18.451 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-14 10:40:18.451 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/critical.css - 200 null text/css 9.6104ms
+2025-07-14 10:40:18.457 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-07-14 10:40:18.459 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-14 10:40:18.461 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-07-14 10:40:18.463 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-07-14 10:40:18.465 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 null text/javascript 21.6042ms
+2025-07-14 10:40:18.468 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-07-14 10:40:18.471 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.471 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.473 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.475 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.478 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-07-14 10:40:18.481 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-07-14 10:40:18.489 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.490 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.492 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.495 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.498 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-07-14 10:40:18.498 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.500 -03:00 [ERR] Connection id "0HNE2RERF0TUS", Request id "0HNE2RERF0TUS:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.500 -03:00 [ERR] Connection id "0HNE2RERF0TUT", Request id "0HNE2RERF0TUT:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.501 -03:00 [ERR] Connection id "0HNE2RERF0TUU", Request id "0HNE2RERF0TUU:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.502 -03:00 [ERR] Connection id "0HNE2RERF0TUV", Request id "0HNE2RERF0TUV:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.503 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.506 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.510 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 62.6373ms
+2025-07-14 10:40:18.513 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 65.6753ms
+2025-07-14 10:40:18.516 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 65.7196ms
+2025-07-14 10:40:18.521 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.522 -03:00 [ERR] Connection id "0HNE2RERF0TUQ", Request id "0HNE2RERF0TUQ:00000007": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.520 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 68.7986ms
+2025-07-14 10:40:18.528 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-07-14 10:40:18.529 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-07-14 10:40:18.531 -03:00 [ERR] Connection id "0HNE2RERF0TUR", Request id "0HNE2RERF0TUR:00000002": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.533 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 65.5293ms
+2025-07-14 10:40:18.531 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-07-14 10:40:18.539 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-07-14 10:40:18.541 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-07-14 10:40:18.544 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 66.5012ms
+2025-07-14 10:40:18.537 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-07-14 10:40:18.547 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-07-14 10:40:18.549 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-07-14 10:40:18.549 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.550 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.555 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-07-14 10:40:18.556 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-07-14 10:40:18.559 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-07-14 10:40:18.560 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.563 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.565 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.566 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-07-14 10:40:18.567 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.569 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.572 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.572 -03:00 [ERR] Connection id "0HNE2RERF0TV0", Request id "0HNE2RERF0TV0:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.573 -03:00 [ERR] Connection id "0HNE2RERF0TV1", Request id "0HNE2RERF0TV1:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.574 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.577 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.579 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.580 -03:00 [ERR] Connection id "0HNE2RERF0TV2", Request id "0HNE2RERF0TV2:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.583 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 54.3393ms
+2025-07-14 10:40:18.586 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 57.0497ms
+2025-07-14 10:40:18.588 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.589 -03:00 [ERR] Connection id "0HNE2RERF0TV3", Request id "0HNE2RERF0TV3:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.591 -03:00 [ERR] Connection id "0HNE2RERF0TV4", Request id "0HNE2RERF0TV4:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.594 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 63.3452ms
+2025-07-14 10:40:18.599 -03:00 [ERR] Connection id "0HNE2RERF0TV5", Request id "0HNE2RERF0TV5:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.603 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 65.3875ms
+2025-07-14 10:40:18.606 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 58.7037ms
+2025-07-14 10:40:18.612 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 56.524ms
+2025-07-14 10:40:18.614 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-07-14 10:40:18.616 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-07-14 10:40:18.620 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-07-14 10:40:18.622 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-07-14 10:40:18.625 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-07-14 10:40:18.627 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-07-14 10:40:18.628 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.629 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.630 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.632 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.635 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.638 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.638 -03:00 [ERR] Connection id "0HNE2RERF0TV6", Request id "0HNE2RERF0TV6:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.639 -03:00 [ERR] Connection id "0HNE2RERF0TV7", Request id "0HNE2RERF0TV7:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.639 -03:00 [ERR] Connection id "0HNE2RERF0TV8", Request id "0HNE2RERF0TV8:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.642 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 28.0524ms
+2025-07-14 10:40:18.645 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 28.8144ms
+2025-07-14 10:40:18.648 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 27.2305ms
+2025-07-14 10:40:18.676 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - null null
+2025-07-14 10:40:18.679 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-07-14 10:40:18.681 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 10:40:18.684 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 10:40:18.685 -03:00 [ERR] Connection id "0HNE2RERF0TV9", Request id "0HNE2RERF0TV9:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 10:40:18.689 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - 200 8803 image/png 12.9068ms
+2025-07-14 10:40:21.028 -03:00 [INF] Application is shutting down...
+2025-07-14 10:40:21.033 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 10:40:21.035 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 10:40:21.036 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 10:40:34.235 -03:00 [INF] Sistema iniciado em 14/07/2025 10:40:34
+2025-07-14 10:40:34.287 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 10:40:34.290 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 10:40:34.727 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 10:40:35.024 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 10:40:35.047 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 10:40:35.048 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 10:40:35.049 -03:00 [INF] Hosting environment: Development
+2025-07-14 10:40:35.050 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 10:40:36.541 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 10:40:36.584 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:36.595 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 10:40:36.612 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 10:40:36.807 -03:00 [INF] Executed ViewResult - view Index executed in 195.3067ms.
+2025-07-14 10:40:36.825 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 227.1058ms
+2025-07-14 10:40:36.826 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:36.836 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 295.5855ms
+2025-07-14 10:40:37.182 -03:00 [INF] Executed DbCommand (283ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:10:34.3842422Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:40:38.768 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 10:40:38.777 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 10:40:38.779 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 10.3869ms
+2025-07-14 10:40:41.663 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 10:40:41.666 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:41.667 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 10:40:41.671 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 10:40:41.675 -03:00 [INF] Executed ViewResult - view Index executed in 4.4462ms.
+2025-07-14 10:40:41.678 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 8.6054ms
+2025-07-14 10:40:41.678 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 10:40:41.680 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 17.3454ms
+2025-07-14 10:40:43.352 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 10:40:43.356 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 10:40:43.358 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 6.4503ms
+2025-07-14 10:45:39.015 -03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:15:37.2367782Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:50:40.846 -03:00 [INF] Executed DbCommand (256ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:20:39.0269685Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:55:42.610 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:25:40.8587961Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 10:57:40.551 -03:00 [INF] Application is shutting down...
+2025-07-14 10:57:40.555 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 10:57:40.557 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 10:57:40.557 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 11:10:55.292 -03:00 [INF] Sistema iniciado em 14/07/2025 11:10:55
+2025-07-14 11:10:55.351 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 11:10:55.354 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 11:10:55.809 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 11:10:56.145 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 11:10:56.171 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 11:10:56.172 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 11:10:56.173 -03:00 [INF] Hosting environment: Development
+2025-07-14 11:10:56.174 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 11:10:57.914 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 11:10:57.951 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 11:10:57.963 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 11:10:57.982 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 11:10:58.185 -03:00 [INF] Executed ViewResult - view Index executed in 205.4424ms.
+2025-07-14 11:10:58.217 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 251.5603ms
+2025-07-14 11:10:58.219 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 11:10:58.230 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 316.9161ms
+2025-07-14 11:10:58.264 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-14 11:10:58.264 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-07-14 11:10:58.264 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/critical.css - null null
+2025-07-14 11:10:58.264 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-14 11:10:58.280 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-07-14 11:10:58.280 -03:00 [INF] Sending file. Request path: '/css/critical.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\critical.css'
+2025-07-14 11:10:58.280 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-14 11:10:58.280 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-14 11:10:58.283 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.284 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/critical.css - 200 null text/css 19.9685ms
+2025-07-14 11:10:58.285 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 null text/javascript 21.1617ms
+2025-07-14 11:10:58.286 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.290 -03:00 [INF] Executed DbCommand (308ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:40:55.4475264Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:10:58.294 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.304 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.307 -03:00 [ERR] Connection id "0HNE2S10J96A2", Request id "0HNE2S10J96A2:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.308 -03:00 [ERR] Connection id "0HNE2S10J96A1", Request id "0HNE2S10J96A1:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.312 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 47.949ms
+2025-07-14 11:10:58.315 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 51.102ms
+2025-07-14 11:10:58.331 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-07-14 11:10:58.331 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-07-14 11:10:58.335 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-07-14 11:10:58.336 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-07-14 11:10:58.337 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-07-14 11:10:58.337 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-07-14 11:10:58.337 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-07-14 11:10:58.338 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-07-14 11:10:58.340 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-07-14 11:10:58.344 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-07-14 11:10:58.347 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-07-14 11:10:58.349 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-07-14 11:10:58.350 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.351 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.352 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.354 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.355 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.356 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.358 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.362 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.365 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.367 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.370 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.372 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.372 -03:00 [ERR] Connection id "0HNE2S10J96A0", Request id "0HNE2S10J96A0:00000002": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.373 -03:00 [ERR] Connection id "0HNE2S10J969V", Request id "0HNE2S10J969V:00000003": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.374 -03:00 [ERR] Connection id "0HNE2S10J96A3", Request id "0HNE2S10J96A3:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.374 -03:00 [ERR] Connection id "0HNE2S10J96A4", Request id "0HNE2S10J96A4:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.375 -03:00 [ERR] Connection id "0HNE2S10J96A5", Request id "0HNE2S10J96A5:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.376 -03:00 [ERR] Connection id "0HNE2S10J96A6", Request id "0HNE2S10J96A6:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.381 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 50.0907ms
+2025-07-14 11:10:58.384 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 52.0506ms
+2025-07-14 11:10:58.391 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 55.1867ms
+2025-07-14 11:10:58.397 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 60.37ms
+2025-07-14 11:10:58.401 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 63.8523ms
+2025-07-14 11:10:58.388 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 52.7952ms
+2025-07-14 11:10:58.405 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-07-14 11:10:58.407 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-07-14 11:10:58.412 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-07-14 11:10:58.416 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-07-14 11:10:58.418 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-07-14 11:10:58.420 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-07-14 11:10:58.422 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-07-14 11:10:58.425 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-07-14 11:10:58.427 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-07-14 11:10:58.431 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-07-14 11:10:58.433 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-07-14 11:10:58.436 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-07-14 11:10:58.437 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.438 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.439 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.440 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.441 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.442 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.446 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.448 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.451 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.453 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.455 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.458 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.458 -03:00 [ERR] Connection id "0HNE2S10J96A7", Request id "0HNE2S10J96A7:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.459 -03:00 [ERR] Connection id "0HNE2S10J96A8", Request id "0HNE2S10J96A8:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.460 -03:00 [ERR] Connection id "0HNE2S10J96A9", Request id "0HNE2S10J96A9:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.460 -03:00 [ERR] Connection id "0HNE2S10J96AA", Request id "0HNE2S10J96AA:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.462 -03:00 [ERR] Connection id "0HNE2S10J96AB", Request id "0HNE2S10J96AB:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.462 -03:00 [ERR] Connection id "0HNE2S10J96AC", Request id "0HNE2S10J96AC:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.466 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 60.6922ms
+2025-07-14 11:10:58.470 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 62.3358ms
+2025-07-14 11:10:58.473 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 60.3865ms
+2025-07-14 11:10:58.475 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 59.4891ms
+2025-07-14 11:10:58.480 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 61.6046ms
+2025-07-14 11:10:58.483 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 62.6464ms
+2025-07-14 11:10:58.502 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-07-14 11:10:58.505 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-07-14 11:10:58.506 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.509 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.510 -03:00 [ERR] Connection id "0HNE2S10J96AD", Request id "0HNE2S10J96AD:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.515 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 12.5189ms
+2025-07-14 11:10:58.770 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 11:10:58.773 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 11:10:58.775 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - null null
+2025-07-14 11:10:58.775 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/manifest.json?v=4 - null null
+2025-07-14 11:10:58.776 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 5.8918ms
+2025-07-14 11:10:58.779 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-07-14 11:10:58.782 -03:00 [INF] Sending file. Request path: '/manifest.json'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\manifest.json'
+2025-07-14 11:10:58.785 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.787 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/manifest.json?v=4 - 200 null application/json 11.3373ms
+2025-07-14 11:10:58.790 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.794 -03:00 [ERR] Connection id "0HNE2S10J96AG", Request id "0HNE2S10J96AG:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.794 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png - null null
+2025-07-14 11:10:58.795 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D_180.png - null null
+2025-07-14 11:10:58.797 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - 200 8803 image/png 21.9952ms
+2025-07-14 11:10:58.799 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-07-14 11:10:58.802 -03:00 [INF] Sending file. Request path: '/img/D_180.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D_180.png'
+2025-07-14 11:10:58.805 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.806 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-07-14 11:10:58.808 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.811 -03:00 [WRN] The response has already started, the error page middleware will not be executed.
+2025-07-14 11:10:58.812 -03:00 [ERR] Connection id "0HNE2S10J96AE", Request id "0HNE2S10J96AE:00000002": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.813 -03:00 [ERR] Connection id "0HNE2S10J96AH", Request id "0HNE2S10J96AH:00000001": An unhandled exception was thrown by the application.
+System.InvalidOperationException: Headers are read-only, response has already started.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.ThrowHeadersReadOnlyException()
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpHeaders.Microsoft.AspNetCore.Http.IHeaderDictionary.set_Item(String key, StringValues value)
+   at site.diogocosta.dev.Middleware.PerformanceHeadersMiddleware.InvokeAsync(HttpContext context) in F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Middleware\PerformanceHeadersMiddleware.cs:line 39
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2025-07-14 11:10:58.816 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png - 200 8803 image/png 21.2948ms
+2025-07-14 11:10:58.818 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D_180.png - 200 3792 image/png 23.2049ms
+2025-07-14 11:10:58.820 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 11:10:58.823 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/manifest.json - null null
+2025-07-14 11:10:58.824 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 11:10:58.825 -03:00 [INF] Sending file. Request path: '/manifest.json'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\manifest.json'
+2025-07-14 11:10:58.826 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 11:10:58.828 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/manifest.json - 200 null application/json 5.2719ms
+2025-07-14 11:10:58.831 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 11:10:58.836 -03:00 [INF] Executed ViewResult - view Index executed in 4.9585ms.
+2025-07-14 11:10:58.837 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 7.8676ms
+2025-07-14 11:10:58.838 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 11:10:58.840 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 19.3652ms
+2025-07-14 11:11:04.837 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/blog - null null
+2025-07-14 11:11:04.841 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.BlogController.Index (site.diogocosta.dev)'
+2025-07-14 11:11:04.849 -03:00 [INF] Route matched with {action = "Index", controller = "Blog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(Int32) on controller site.diogocosta.dev.Controllers.BlogController (site.diogocosta.dev).
+2025-07-14 11:11:04.857 -03:00 [INF] Blog path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Blog
+2025-07-14 11:11:04.858 -03:00 [INF] Directory exists: true
+2025-07-14 11:11:04.860 -03:00 [INF] Found 7 markdown files in blog directory
+2025-07-14 11:11:04.866 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 11:11:04.872 -03:00 [INF] Executed ViewResult - view Index executed in 6.1286ms.
+2025-07-14 11:11:04.873 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.BlogController.Index (site.diogocosta.dev) in 22.2255ms
+2025-07-14 11:11:04.874 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.BlogController.Index (site.diogocosta.dev)'
+2025-07-14 11:11:04.877 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/blog - 200 null text/html; charset=utf-8 40.4128ms
+2025-07-14 11:11:06.610 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 11:11:06.615 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 11:11:06.617 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 6.5221ms
+2025-07-14 11:16:00.142 -03:00 [INF] Executed DbCommand (253ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:45:58.3576188Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:21:01.955 -03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:51:00.1445109Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:26:03.713 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T13:56:01.9632069Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:31:05.472 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:01:03.7197003Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:36:07.272 -03:00 [INF] Executed DbCommand (250ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:06:05.4842040Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:41:09.039 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:11:07.2871798Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:46:10.803 -03:00 [INF] Executed DbCommand (252ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:16:09.0446225Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:51:12.575 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:21:10.8180176Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 11:56:14.343 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:26:12.5911314Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:01:16.104 -03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:31:14.3547816Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:06:17.865 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:36:16.1199892Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:11:19.619 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:41:17.8799320Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:16:21.401 -03:00 [INF] Executed DbCommand (260ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:46:19.6247696Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:21:23.159 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:51:21.4148599Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:26:24.926 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T14:56:23.1741703Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:31:26.696 -03:00 [INF] Executed DbCommand (254ms) [Parameters=[@__recentCutoff_0='2025-07-14T15:01:24.9374562Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:36:28.452 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T15:06:26.7112160Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:41:30.213 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T15:11:28.4612600Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 12:46:31.968 -03:00 [INF] Executed DbCommand (250ms) [Parameters=[@__recentCutoff_0='2025-07-14T15:16:30.2159370Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0

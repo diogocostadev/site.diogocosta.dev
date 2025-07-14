@@ -138,7 +138,7 @@ namespace site.diogocosta.dev.Controllers
             {
                 RuleType = request.RuleType,
                 RuleValue = request.RuleValue,
-                Description = request.Description,
+                Description = request.Description ?? string.Empty,
                 Severity = request.Severity,
                 IsActive = request.IsActive,
                 IsRegex = request.IsRegex,

@@ -183,7 +183,7 @@ namespace site.diogocosta.dev.Servicos
                 var cidade = await cidadeTask.WaitAsync(cts.Token);
 
                 // Função auxiliar para extrair valor puro de JSON ou texto
-                string ExtrairValor(string? resposta, string chave)
+                string? ExtrairValor(string? resposta, string chave)
                 {
                     if (string.IsNullOrWhiteSpace(resposta)) return null;
                     resposta = resposta.Trim();
