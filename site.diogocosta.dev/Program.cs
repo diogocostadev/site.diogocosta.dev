@@ -242,15 +242,15 @@ app.UseStaticFiles(new StaticFileOptions
         // Cache para JavaScript e CSS
         else if (file.Name.EndsWith(".js") || file.Name.EndsWith(".css"))
         {
-            headers["Cache-Control"] = "public, max-age=2592000"; // 30 dias
-            headers["Expires"] = DateTime.UtcNow.AddDays(30).ToString("R");
+            headers["Cache-Control"] = "public, max-age=31536000, immutable"; // 1 ano
+            headers["Expires"] = DateTime.UtcNow.AddYears(1).ToString("R");
         }
         // Cache específico para favicons
         else if (file.Name.Contains("favicon") || file.Name.Contains(".ico") || 
                 (file.Name.EndsWith(".png") && file.PhysicalPath?.Contains("img") == true))
         {
-            headers["Cache-Control"] = "public, max-age=604800"; // 1 semana
-            headers["Expires"] = DateTime.UtcNow.AddDays(7).ToString("R");
+            headers["Cache-Control"] = "public, max-age=31536000, immutable"; // 1 ano
+            headers["Expires"] = DateTime.UtcNow.AddYears(1).ToString("R");
         }
         // Cache padrão para outros recursos
         else

@@ -16,8 +16,10 @@ body {
     padding: 0;
     background-color: #ffffff;
     color: #111827;
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     line-height: 1.6;
+    font-feature-settings: 'cv11', 'ss01';
+    font-optical-sizing: auto;
 }
 
 /* Navigation crítico */
@@ -317,9 +319,42 @@ img {
 }
 
 /* Font optimization */
-.font-serif {
-    font-family: 'Newsreader', serif;
+.font-primary {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     font-display: swap;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+    font-display: swap;
+}
+
+.font-display {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    font-display: swap;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+}
+
+.text-5xl {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.01em;
 }
 
 /* Responsivo crítico - Mobile First */

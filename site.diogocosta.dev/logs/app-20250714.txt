@@ -1798,3 +1798,710 @@ WHERE l.created_at >= @__recentCutoff_0
 2025-07-14 12:48:11.177 -03:00 [INF] BotDetectorBackgroundService finalizado
 2025-07-14 12:48:11.178 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
 2025-07-14 12:48:11.179 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 14:46:07.033 -03:00 [INF] Sistema iniciado em 14/07/2025 14:46:07
+2025-07-14 14:46:07.089 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 14:46:07.091 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 14:46:07.557 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 14:46:07.959 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 14:46:07.981 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 14:46:07.983 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 14:46:07.984 -03:00 [INF] Hosting environment: Development
+2025-07-14 14:46:07.984 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 14:46:10.078 -03:00 [INF] Executed DbCommand (281ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:16:07.1807167Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 14:46:11.136 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 14:46:11.144 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:11.168 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 14:46:11.176 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 14:46:11.196 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 14:46:11.358 -03:00 [INF] Executed ViewResult - view Index executed in 140.88ms.
+2025-07-14 14:46:11.364 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 187.1078ms
+2025-07-14 14:46:11.366 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 14:46:11.367 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:11.375 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 239.9222ms
+2025-07-14 14:46:11.410 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/image-optimizer.js - null null
+2025-07-14 14:46:11.414 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:11.425 -03:00 [INF] Sending file. Request path: '/js/image-optimizer.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\image-optimizer.js'
+2025-07-14 14:46:11.427 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:11.429 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/image-optimizer.js - 200 null text/javascript 18.5602ms
+2025-07-14 14:46:13.560 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 14:46:13.562 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:13.567 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 14:46:13.568 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:13.570 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 9.4928ms
+2025-07-14 14:46:13.591 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/robots.txt - null null
+2025-07-14 14:46:13.593 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:13.593 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sitemap.xml - null null
+2025-07-14 14:46:13.595 -03:00 [INF] Sending file. Request path: '/robots.txt'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\robots.txt'
+2025-07-14 14:46:13.597 -03:00 [INF] No cached response available for this request.
+2025-07-14 14:46:13.598 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:13.600 -03:00 [INF] Sending file. Request path: '/sitemap.xml'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sitemap.xml'
+2025-07-14 14:46:13.600 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/robots.txt - 200 null text/plain 9.371ms
+2025-07-14 14:46:13.601 -03:00 [INF] The response has been cached.
+2025-07-14 14:46:13.606 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sitemap.xml - 200 null text/xml 11.9875ms
+2025-07-14 14:51:11.890 -03:00 [INF] Executed DbCommand (248ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:21:10.1208943Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 14:56:13.693 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:26:11.8946061Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:01:13.946 -03:00 [INF] Executed DbCommand (246ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:31:13.6993128Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:06:14.204 -03:00 [INF] Executed DbCommand (249ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:36:13.9543629Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:11:14.471 -03:00 [INF] Executed DbCommand (251ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:41:14.2204534Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:16:16.236 -03:00 [INF] Executed DbCommand (250ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:46:14.4733774Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:21:18.014 -03:00 [INF] Executed DbCommand (253ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:51:16.2465796Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:23:30.787 -03:00 [INF] Application is shutting down...
+2025-07-14 15:23:30.793 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:23:30.796 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:23:30.797 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:29:30.555 -03:00 [INF] Sistema iniciado em 14/07/2025 15:29:30
+2025-07-14 15:29:30.610 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:29:30.612 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:29:31.117 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:29:31.458 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:29:31.487 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:29:31.488 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:29:31.489 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:29:31.490 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:29:32.903 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 15:29:32.912 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:32.946 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:29:32.955 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:29:32.970 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:29:33.118 -03:00 [INF] Executed ViewResult - view Index executed in 148.3785ms.
+2025-07-14 15:29:33.132 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 174.746ms
+2025-07-14 15:29:33.136 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:29:33.137 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:33.149 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 246.9999ms
+2025-07-14 15:29:33.665 -03:00 [INF] Executed DbCommand (310ms) [Parameters=[@__recentCutoff_0='2025-07-14T17:59:30.7046093Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:29:34.914 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:29:34.916 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.923 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:29:34.924 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.925 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 11.4077ms
+2025-07-14 15:29:34.941 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/critical.css - null null
+2025-07-14 15:29:34.943 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/logome.webp - null null
+2025-07-14 15:29:34.943 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-14 15:29:34.945 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.946 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.947 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.953 -03:00 [INF] Sending file. Request path: '/css/critical.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\critical.css'
+2025-07-14 15:29:34.953 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-14 15:29:34.953 -03:00 [INF] Sending file. Request path: '/img/logome.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\logome.webp'
+2025-07-14 15:29:34.955 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.956 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.957 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.960 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/critical.css - 200 null text/css 18.8187ms
+2025-07-14 15:29:34.960 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 16.9631ms
+2025-07-14 15:29:34.960 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/logome.webp - 200 18060 image/webp 17.5395ms
+2025-07-14 15:29:34.965 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-14 15:29:34.969 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:29:34.970 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-14 15:29:34.972 -03:00 [INF] The response has been cached.
+2025-07-14 15:29:34.973 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 null text/javascript 8.5289ms
+2025-07-14 15:29:44.063 -03:00 [INF] Application is shutting down...
+2025-07-14 15:29:44.071 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:29:44.072 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:29:44.073 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:32:05.490 -03:00 [INF] Sistema iniciado em 14/07/2025 15:32:05
+2025-07-14 15:32:05.556 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:32:05.560 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:32:06.066 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:32:06.416 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:32:06.439 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:32:06.440 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:32:06.440 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:32:06.441 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:32:08.578 -03:00 [INF] Executed DbCommand (285ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:02:05.6606514Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:32:15.334 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/?id=dd3a36ad-5914-42de-bada-ce7270ef5a90&vscodeBrowserReqId=1752517935284 - null null
+2025-07-14 15:32:15.356 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:32:15.395 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:32:15.401 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:32:15.421 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:32:15.543 -03:00 [INF] Executed ViewResult - view Index executed in 125.8993ms.
+2025-07-14 15:32:15.548 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 143.8208ms
+2025-07-14 15:32:15.549 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:32:15.550 -03:00 [INF] The response has been cached.
+2025-07-14 15:32:15.555 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/?id=dd3a36ad-5914-42de-bada-ce7270ef5a90&vscodeBrowserReqId=1752517935284 - 200 null text/html; charset=utf-8 222.1789ms
+2025-07-14 15:32:26.735 -03:00 [INF] Application is shutting down...
+2025-07-14 15:32:26.743 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:32:26.745 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:32:26.746 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:33:56.593 -03:00 [INF] Sistema iniciado em 14/07/2025 15:33:56
+2025-07-14 15:33:56.643 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:33:56.645 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:33:57.070 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:33:57.373 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:33:57.395 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:33:57.396 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:33:57.397 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:33:57.398 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:33:59.513 -03:00 [INF] Executed DbCommand (283ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:03:56.7327232Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:33:59.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-07-14 15:33:59.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-07-14 15:33:59.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-07-14 15:33:59.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-07-14 15:33:59.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-07-14 15:33:59.717 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-07-14 15:33:59.728 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.728 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.729 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.731 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.734 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.736 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.761 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-07-14 15:33:59.761 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-07-14 15:33:59.763 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-07-14 15:33:59.763 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-07-14 15:33:59.763 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-07-14 15:33:59.763 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-07-14 15:33:59.767 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.768 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.770 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.778 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 62.9954ms
+2025-07-14 15:33:59.773 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.775 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.778 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 63.0515ms
+2025-07-14 15:33:59.772 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.779 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 64.6806ms
+2025-07-14 15:33:59.786 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 71.0945ms
+2025-07-14 15:33:59.786 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 71.3803ms
+2025-07-14 15:33:59.786 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-07-14 15:33:59.790 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-07-14 15:33:59.792 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 76.9467ms
+2025-07-14 15:33:59.795 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-07-14 15:33:59.798 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-07-14 15:33:59.802 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-07-14 15:33:59.805 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.807 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.812 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-07-14 15:33:59.813 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.816 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.818 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.821 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-07-14 15:33:59.821 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-07-14 15:33:59.823 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.826 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-07-14 15:33:59.827 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-07-14 15:33:59.828 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-07-14 15:33:59.829 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.831 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.833 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-07-14 15:33:59.835 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.837 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.838 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.839 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 52.9221ms
+2025-07-14 15:33:59.840 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 49.7056ms
+2025-07-14 15:33:59.842 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.842 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 47.0707ms
+2025-07-14 15:33:59.843 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 45.1546ms
+2025-07-14 15:33:59.844 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 42.3448ms
+2025-07-14 15:33:59.849 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-07-14 15:33:59.850 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 38.1271ms
+2025-07-14 15:33:59.858 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:33:59.863 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-07-14 15:33:59.865 -03:00 [INF] The response has been cached.
+2025-07-14 15:33:59.866 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 17.0371ms
+2025-07-14 15:34:01.405 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:01.407 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:01.415 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:01.416 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:01.417 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 12.1183ms
+2025-07-14 15:34:02.737 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 15:34:02.739 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:02.763 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:02.773 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:34:02.787 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:02.899 -03:00 [INF] Executed ViewResult - view Index executed in 112.4236ms.
+2025-07-14 15:34:02.901 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 125.9382ms
+2025-07-14 15:34:02.902 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:02.903 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:02.905 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 168.6098ms
+2025-07-14 15:34:04.675 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:04.678 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:04.680 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:04.681 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:04.682 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 7.5344ms
+2025-07-14 15:34:06.221 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Sobre - null null
+2025-07-14 15:34:06.223 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:06.225 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:06.228 -03:00 [INF] Route matched with {action = "Index", controller = "Sobre"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.SobreController (site.diogocosta.dev).
+2025-07-14 15:34:06.231 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:06.239 -03:00 [INF] Executed ViewResult - view Index executed in 8.001ms.
+2025-07-14 15:34:06.240 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev) in 10.9597ms
+2025-07-14 15:34:06.241 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:06.242 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:34:06.244 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Sobre - 200 null text/html; charset=utf-8 23.3649ms
+2025-07-14 15:34:06.509 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:06.512 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:06.513 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:06.514 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:06.516 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 6.1786ms
+2025-07-14 15:34:07.929 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:07.931 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:07.932 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:07.933 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:07.934 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 5.0305ms
+2025-07-14 15:34:16.016 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Sobre - null null
+2025-07-14 15:34:16.018 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:16.020 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:16.021 -03:00 [INF] Route matched with {action = "Index", controller = "Sobre"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.SobreController (site.diogocosta.dev).
+2025-07-14 15:34:16.025 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:16.029 -03:00 [INF] Executed ViewResult - view Index executed in 3.3563ms.
+2025-07-14 15:34:16.030 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev) in 6.0118ms
+2025-07-14 15:34:16.031 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:16.032 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:34:16.034 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Sobre - 200 null text/html; charset=utf-8 17.8781ms
+2025-07-14 15:34:17.672 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:17.674 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:17.676 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:17.677 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:17.678 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 5.6088ms
+2025-07-14 15:34:19.254 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Cursos - null null
+2025-07-14 15:34:19.256 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.257 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:19.260 -03:00 [INF] Route matched with {action = "Index", controller = "Cursos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.CursosController (site.diogocosta.dev).
+2025-07-14 15:34:19.263 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:19.271 -03:00 [INF] Executed ViewResult - view Index executed in 8.7028ms.
+2025-07-14 15:34:19.273 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev) in 11.5705ms
+2025-07-14 15:34:19.274 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:19.275 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:34:19.277 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Cursos - 200 null text/html; charset=utf-8 22.3939ms
+2025-07-14 15:34:19.320 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/v1.jpg - null null
+2025-07-14 15:34:19.320 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/v2.jpg - null null
+2025-07-14 15:34:19.320 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/v3.jpg - null null
+2025-07-14 15:34:19.320 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/v4.webp - null null
+2025-07-14 15:34:19.321 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/testemunhos/1.jpg - null null
+2025-07-14 15:34:19.321 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/testemunhos/2.jpg - null null
+2025-07-14 15:34:19.322 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.325 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.328 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.330 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.332 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.334 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.336 -03:00 [INF] Sending file. Request path: '/img/v1.jpg'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\v1.jpg'
+2025-07-14 15:34:19.336 -03:00 [INF] Sending file. Request path: '/img/v2.jpg'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\v2.jpg'
+2025-07-14 15:34:19.337 -03:00 [INF] Sending file. Request path: '/img/v3.jpg'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\v3.jpg'
+2025-07-14 15:34:19.338 -03:00 [INF] Sending file. Request path: '/img/v4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\v4.webp'
+2025-07-14 15:34:19.339 -03:00 [INF] Sending file. Request path: '/img/testemunhos/1.jpg'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\testemunhos\1.jpg'
+2025-07-14 15:34:19.340 -03:00 [INF] Sending file. Request path: '/img/testemunhos/2.jpg'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\testemunhos\2.jpg'
+2025-07-14 15:34:19.345 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.346 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.347 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.348 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.350 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.351 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.351 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/v1.jpg - 200 1228 image/jpeg 31.8266ms
+2025-07-14 15:34:19.352 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/v2.jpg - 200 1439 image/jpeg 32.4101ms
+2025-07-14 15:34:19.353 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/v3.jpg - 200 2313 image/jpeg 32.4798ms
+2025-07-14 15:34:19.353 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/v4.webp - 200 644 image/webp 32.9343ms
+2025-07-14 15:34:19.354 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/testemunhos/1.jpg - 200 1833 image/jpeg 33.1485ms
+2025-07-14 15:34:19.355 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/testemunhos/2.jpg - 200 1613 image/jpeg 33.9919ms
+2025-07-14 15:34:19.366 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/testemunhos/3.webp - null null
+2025-07-14 15:34:19.369 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/testemunhos/5.webp - null null
+2025-07-14 15:34:19.371 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/testemunhos/4.jpg - null null
+2025-07-14 15:34:19.376 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/testemunhos/6.webp - null null
+2025-07-14 15:34:19.378 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.380 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.383 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.384 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:19.386 -03:00 [INF] Sending file. Request path: '/img/testemunhos/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\testemunhos\3.webp'
+2025-07-14 15:34:19.387 -03:00 [INF] Sending file. Request path: '/img/testemunhos/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\testemunhos\5.webp'
+2025-07-14 15:34:19.387 -03:00 [INF] Sending file. Request path: '/img/testemunhos/4.jpg'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\testemunhos\4.jpg'
+2025-07-14 15:34:19.389 -03:00 [INF] Sending file. Request path: '/img/testemunhos/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\testemunhos\6.webp'
+2025-07-14 15:34:19.390 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.393 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.394 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.395 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:19.396 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/testemunhos/3.webp - 200 1334 image/webp 29.7816ms
+2025-07-14 15:34:19.397 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/testemunhos/5.webp - 200 1136 image/webp 27.8807ms
+2025-07-14 15:34:19.397 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/testemunhos/4.jpg - 200 1539 image/jpeg 25.9553ms
+2025-07-14 15:34:19.398 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/testemunhos/6.webp - 200 1266 image/webp 21.9913ms
+2025-07-14 15:34:21.015 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:21.017 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:21.019 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:21.020 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:21.021 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 5.5336ms
+2025-07-14 15:34:23.260 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Cursos - null null
+2025-07-14 15:34:23.262 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:23.264 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:23.264 -03:00 [INF] Route matched with {action = "Index", controller = "Cursos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.CursosController (site.diogocosta.dev).
+2025-07-14 15:34:23.266 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:23.268 -03:00 [INF] Executed ViewResult - view Index executed in 2.4025ms.
+2025-07-14 15:34:23.270 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev) in 3.6476ms
+2025-07-14 15:34:23.271 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:23.271 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:34:23.274 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Cursos - 200 null text/html; charset=utf-8 13.8747ms
+2025-07-14 15:34:23.893 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/desbloqueio - null null
+2025-07-14 15:34:23.895 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:23.896 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:23.898 -03:00 [INF] Route matched with {action = "Index", controller = "Desbloqueio"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.DesbloqueioController (site.diogocosta.dev).
+2025-07-14 15:34:23.903 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:23.926 -03:00 [INF] Executed ViewResult - view Index executed in 23.3775ms.
+2025-07-14 15:34:23.927 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev) in 26.6164ms
+2025-07-14 15:34:23.927 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.DesbloqueioController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:23.928 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:34:23.930 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/desbloqueio - 200 null text/html; charset=utf-8 37.7994ms
+2025-07-14 15:34:26.934 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/blog - null null
+2025-07-14 15:34:26.936 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:26.937 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.BlogController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:26.943 -03:00 [INF] Route matched with {action = "Index", controller = "Blog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index(Int32) on controller site.diogocosta.dev.Controllers.BlogController (site.diogocosta.dev).
+2025-07-14 15:34:26.949 -03:00 [INF] Blog path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\Blog
+2025-07-14 15:34:26.950 -03:00 [INF] Directory exists: true
+2025-07-14 15:34:26.951 -03:00 [INF] Found 7 markdown files in blog directory
+2025-07-14 15:34:26.956 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:26.960 -03:00 [INF] Executed ViewResult - view Index executed in 5.1677ms.
+2025-07-14 15:34:26.962 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.BlogController.Index (site.diogocosta.dev) in 17.0223ms
+2025-07-14 15:34:26.963 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.BlogController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:26.964 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:26.966 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/blog - 200 null text/html; charset=utf-8 31.2465ms
+2025-07-14 15:34:32.077 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Contato - null null
+2025-07-14 15:34:32.079 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:32.080 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.ContatoController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:32.081 -03:00 [INF] Route matched with {action = "Index", controller = "Contato"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.ContatoController (site.diogocosta.dev).
+2025-07-14 15:34:32.083 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:34:32.088 -03:00 [INF] Executed ViewResult - view Index executed in 5.1554ms.
+2025-07-14 15:34:32.089 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.ContatoController.Index (site.diogocosta.dev) in 6.6327ms
+2025-07-14 15:34:32.090 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.ContatoController.Index (site.diogocosta.dev)'
+2025-07-14 15:34:32.092 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:34:32.094 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Contato - 200 null text/html; charset=utf-8 16.8369ms
+2025-07-14 15:34:38.809 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:34:38.811 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:34:38.812 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:34:38.814 -03:00 [INF] The response has been cached.
+2025-07-14 15:34:38.814 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 5.0056ms
+2025-07-14 15:39:01.352 -03:00 [INF] Executed DbCommand (255ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:08:59.5604976Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:44:03.114 -03:00 [INF] Application is shutting down...
+2025-07-14 15:44:03.118 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:44:03.120 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:44:03.188 -03:00 [INF] Executed DbCommand (252ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:14:01.3630424Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:44:03.190 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:44:05.989 -03:00 [INF] Sistema iniciado em 14/07/2025 15:44:05
+2025-07-14 15:44:06.051 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:44:06.053 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:44:06.471 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:44:06.515 -03:00 [INF] Application is shutting down...
+2025-07-14 15:44:06.769 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:44:06.770 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:44:06.788 -03:00 [ERR] Hosting failed to start
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-07-14 15:44:32.691 -03:00 [INF] Sistema iniciado em 14/07/2025 15:44:32
+2025-07-14 15:44:32.748 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:44:32.750 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:44:33.184 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:44:33.484 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:44:33.504 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:44:33.505 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:44:33.506 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:44:33.507 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:44:35.230 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 15:44:35.238 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:44:35.267 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:44:35.276 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:44:35.294 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:44:35.441 -03:00 [INF] Executed ViewResult - view Index executed in 145.5408ms.
+2025-07-14 15:44:35.479 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 200.4157ms
+2025-07-14 15:44:35.481 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:44:35.482 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:35.495 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 266.4536ms
+2025-07-14 15:44:35.537 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/typography.css - null null
+2025-07-14 15:44:35.537 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/tailwind-config.js - null null
+2025-07-14 15:44:35.541 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:44:35.543 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:44:35.563 -03:00 [INF] Sending file. Request path: '/js/tailwind-config.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\tailwind-config.js'
+2025-07-14 15:44:35.563 -03:00 [INF] Sending file. Request path: '/css/typography.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\typography.css'
+2025-07-14 15:44:35.566 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:35.568 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:35.571 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/tailwind-config.js - 200 null text/javascript 34.3137ms
+2025-07-14 15:44:35.571 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/typography.css - 200 null text/css 34.3194ms
+2025-07-14 15:44:35.630 -03:00 [INF] Executed DbCommand (289ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:14:32.8386135Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:44:36.129 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-07-14 15:44:36.132 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:44:36.134 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-07-14 15:44:36.135 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:36.136 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 6.977ms
+2025-07-14 15:44:37.593 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:44:37.595 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:44:37.597 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:44:37.598 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.599 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 6.2296ms
+2025-07-14 15:44:37.805 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 15:44:37.808 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:44:37.809 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:44:37.812 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:44:37.815 -03:00 [INF] Executed ViewResult - view Index executed in 3.4087ms.
+2025-07-14 15:44:37.817 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 6.1765ms
+2025-07-14 15:44:37.818 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:44:37.819 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.821 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 15.5434ms
+2025-07-14 15:44:37.861 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/critical.css - null null
+2025-07-14 15:44:37.862 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/typography.css - null null
+2025-07-14 15:44:37.862 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/tailwind-config.js - null null
+2025-07-14 15:44:37.863 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-14 15:44:37.863 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-14 15:44:37.882 -03:00 [INF] Sending file. Request path: '/css/typography.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\typography.css'
+2025-07-14 15:44:37.882 -03:00 [INF] Sending file. Request path: '/css/critical.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\critical.css'
+2025-07-14 15:44:37.885 -03:00 [INF] Sending file. Request path: '/js/tailwind-config.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\tailwind-config.js'
+2025-07-14 15:44:37.888 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-14 15:44:37.891 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-14 15:44:37.892 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.893 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.895 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.896 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.898 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:37.899 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/typography.css - 200 null text/css 37.4468ms
+2025-07-14 15:44:37.900 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/critical.css - 200 null text/css 38.5585ms
+2025-07-14 15:44:37.901 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/tailwind-config.js - 200 null text/javascript 38.5243ms
+2025-07-14 15:44:37.901 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 38.5533ms
+2025-07-14 15:44:37.903 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 null text/javascript 39.6987ms
+2025-07-14 15:44:38.746 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-07-14 15:44:38.747 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-07-14 15:44:38.747 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-07-14 15:44:38.748 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-07-14 15:44:38.748 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-07-14 15:44:38.748 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-07-14 15:44:38.750 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-07-14 15:44:38.752 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-07-14 15:44:38.755 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-07-14 15:44:38.758 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-07-14 15:44:38.760 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-07-14 15:44:38.763 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-07-14 15:44:38.763 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.765 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.766 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.767 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.768 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.770 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.771 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 24.3072ms
+2025-07-14 15:44:38.771 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 24.5572ms
+2025-07-14 15:44:38.772 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 25.3566ms
+2025-07-14 15:44:38.773 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 25.0263ms
+2025-07-14 15:44:38.774 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 25.3433ms
+2025-07-14 15:44:38.775 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 26.2535ms
+2025-07-14 15:44:38.778 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-07-14 15:44:38.783 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-07-14 15:44:38.786 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-07-14 15:44:38.789 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-07-14 15:44:38.791 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-07-14 15:44:38.793 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-07-14 15:44:38.796 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-07-14 15:44:38.798 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-07-14 15:44:38.800 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-07-14 15:44:38.802 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-07-14 15:44:38.804 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-07-14 15:44:38.807 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-07-14 15:44:38.808 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.809 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.811 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.812 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.813 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.814 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.815 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 36.8757ms
+2025-07-14 15:44:38.815 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 32.4109ms
+2025-07-14 15:44:38.816 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 30.1318ms
+2025-07-14 15:44:38.816 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 27.3237ms
+2025-07-14 15:44:38.817 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 25.2309ms
+2025-07-14 15:44:38.817 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 24.215ms
+2025-07-14 15:44:38.820 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-07-14 15:44:38.833 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-07-14 15:44:38.835 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.835 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 15.5603ms
+2025-07-14 15:44:38.848 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-07-14 15:44:38.851 -03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\favicon.ico'
+2025-07-14 15:44:38.852 -03:00 [INF] The response has been cached.
+2025-07-14 15:44:38.853 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 200 5430 image/x-icon 5.419ms
+2025-07-14 15:48:15.463 -03:00 [INF] Application is shutting down...
+2025-07-14 15:48:15.468 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 15:48:15.469 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 15:48:15.470 -03:00 [INF] 🛑 Bot Detector Background Service parado.
+2025-07-14 15:49:05.372 -03:00 [INF] Sistema iniciado em 14/07/2025 15:49:05
+2025-07-14 15:49:05.422 -03:00 [INF] 🤖 Bot Detector Background Service iniciado!
+2025-07-14 15:49:05.424 -03:00 [INF] 📊 Configurações: IP Threshold=10, UserAgent Threshold=15, Análise a cada "00:05:00"
+2025-07-14 15:49:05.929 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-07-14 15:49:06.286 -03:00 [INF] BotDetectorBackgroundService iniciado
+2025-07-14 15:49:06.308 -03:00 [INF] Now listening on: http://localhost:5000
+2025-07-14 15:49:06.309 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-14 15:49:06.310 -03:00 [INF] Hosting environment: Development
+2025-07-14 15:49:06.311 -03:00 [INF] Content root path: F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev
+2025-07-14 15:49:08.429 -03:00 [INF] Executed DbCommand (287ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:19:05.5128186Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:49:12.172 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:49:12.178 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:49:12.197 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:49:12.199 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:12.202 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 30.8014ms
+2025-07-14 15:49:12.844 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-14 15:49:12.866 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:49:12.872 -03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.HomeController (site.diogocosta.dev).
+2025-07-14 15:49:12.891 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:49:13.002 -03:00 [INF] Executed ViewResult - view Index executed in 113.001ms.
+2025-07-14 15:49:13.005 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev) in 131.1421ms
+2025-07-14 15:49:13.006 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.HomeController.Index (site.diogocosta.dev)'
+2025-07-14 15:49:13.007 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.010 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 166.3703ms
+2025-07-14 15:49:13.037 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/critical.css - null null
+2025-07-14 15:49:13.039 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/typography.css - null null
+2025-07-14 15:49:13.043 -03:00 [INF] Sending file. Request path: '/css/critical.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\critical.css'
+2025-07-14 15:49:13.044 -03:00 [INF] Sending file. Request path: '/css/typography.css'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\css\typography.css'
+2025-07-14 15:49:13.045 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.045 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.047 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/critical.css - 200 null text/css 9.6688ms
+2025-07-14 15:49:13.048 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/typography.css - 200 null text/css 9.3595ms
+2025-07-14 15:49:13.057 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - null null
+2025-07-14 15:49:13.060 -03:00 [INF] Sending file. Request path: '/img/IMG_0045.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\IMG_0045.webp'
+2025-07-14 15:49:13.061 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.062 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/IMG_0045.webp - 200 43926 image/webp 5.6842ms
+2025-07-14 15:49:13.066 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/js/newsletter.js - null null
+2025-07-14 15:49:13.068 -03:00 [INF] Sending file. Request path: '/js/newsletter.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\js\newsletter.js'
+2025-07-14 15:49:13.070 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.071 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/js/newsletter.js - 200 null text/javascript 5.1142ms
+2025-07-14 15:49:13.478 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/1.webp - null null
+2025-07-14 15:49:13.479 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/6.webp - null null
+2025-07-14 15:49:13.481 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/3.webp - null null
+2025-07-14 15:49:13.481 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/5.webp - null null
+2025-07-14 15:49:13.481 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/4.webp - null null
+2025-07-14 15:49:13.482 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/7.webp - null null
+2025-07-14 15:49:13.483 -03:00 [INF] Sending file. Request path: '/img/1.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\1.webp'
+2025-07-14 15:49:13.485 -03:00 [INF] Sending file. Request path: '/img/6.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\6.webp'
+2025-07-14 15:49:13.488 -03:00 [INF] Sending file. Request path: '/img/3.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\3.webp'
+2025-07-14 15:49:13.490 -03:00 [INF] Sending file. Request path: '/img/5.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\5.webp'
+2025-07-14 15:49:13.492 -03:00 [INF] Sending file. Request path: '/img/4.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\4.webp'
+2025-07-14 15:49:13.494 -03:00 [INF] Sending file. Request path: '/img/7.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\7.webp'
+2025-07-14 15:49:13.495 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.496 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.497 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.498 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.499 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.500 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.501 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/1.webp - 200 6562 image/webp 22.978ms
+2025-07-14 15:49:13.502 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/6.webp - 200 7306 image/webp 23.36ms
+2025-07-14 15:49:13.502 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/3.webp - 200 4492 image/webp 21.6997ms
+2025-07-14 15:49:13.504 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/5.webp - 200 8740 image/webp 22.4785ms
+2025-07-14 15:49:13.506 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/4.webp - 200 8996 image/webp 24.1222ms
+2025-07-14 15:49:13.506 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/7.webp - 200 4522 image/webp 24.3008ms
+2025-07-14 15:49:13.509 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/8.webp - null null
+2025-07-14 15:49:13.511 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/9.webp - null null
+2025-07-14 15:49:13.513 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/12.webp - null null
+2025-07-14 15:49:13.516 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/10.webp - null null
+2025-07-14 15:49:13.517 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/11.webp - null null
+2025-07-14 15:49:13.520 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/13.webp - null null
+2025-07-14 15:49:13.525 -03:00 [INF] Sending file. Request path: '/img/8.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\8.webp'
+2025-07-14 15:49:13.527 -03:00 [INF] Sending file. Request path: '/img/9.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\9.webp'
+2025-07-14 15:49:13.540 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.532 -03:00 [INF] Sending file. Request path: '/img/10.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\10.webp'
+2025-07-14 15:49:13.534 -03:00 [INF] Sending file. Request path: '/img/11.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\11.webp'
+2025-07-14 15:49:13.538 -03:00 [INF] Sending file. Request path: '/img/13.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\13.webp'
+2025-07-14 15:49:13.538 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.530 -03:00 [INF] Sending file. Request path: '/img/12.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\12.webp'
+2025-07-14 15:49:13.541 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/9.webp - 200 13526 image/webp 29.8243ms
+2025-07-14 15:49:13.542 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.543 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.544 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.545 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/8.webp - 200 11264 image/webp 35.9082ms
+2025-07-14 15:49:13.546 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.550 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/10.webp - 200 7788 image/webp 34.7041ms
+2025-07-14 15:49:13.551 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/11.webp - 200 5346 image/webp 33.6748ms
+2025-07-14 15:49:13.551 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/13.webp - 200 9486 image/webp 31.1074ms
+2025-07-14 15:49:13.554 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/14.webp - null null
+2025-07-14 15:49:13.555 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/12.webp - 200 4880 image/webp 42.2742ms
+2025-07-14 15:49:13.567 -03:00 [INF] Sending file. Request path: '/img/14.webp'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\14.webp'
+2025-07-14 15:49:13.570 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.571 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/14.webp - 200 7290 image/webp 16.6523ms
+2025-07-14 15:49:13.665 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - null null
+2025-07-14 15:49:13.668 -03:00 [INF] Sending file. Request path: '/img/D.png'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\img\D.png'
+2025-07-14 15:49:13.671 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:13.673 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/img/D.png?v=4 - 200 8803 image/png 7.9381ms
+2025-07-14 15:49:27.112 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Sobre - null null
+2025-07-14 15:49:27.114 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:49:27.116 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev)'
+2025-07-14 15:49:27.119 -03:00 [INF] Route matched with {action = "Index", controller = "Sobre"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.SobreController (site.diogocosta.dev).
+2025-07-14 15:49:27.124 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:49:27.131 -03:00 [INF] Executed ViewResult - view Index executed in 7.4827ms.
+2025-07-14 15:49:27.132 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev) in 10.3016ms
+2025-07-14 15:49:27.133 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.SobreController.Index (site.diogocosta.dev)'
+2025-07-14 15:49:27.134 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:49:27.136 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Sobre - 200 null text/html; charset=utf-8 24.4722ms
+2025-07-14 15:49:28.886 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:49:28.889 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:49:28.892 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:49:28.893 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:28.894 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 8.2214ms
+2025-07-14 15:49:40.213 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Cursos - null null
+2025-07-14 15:49:40.216 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:49:40.219 -03:00 [INF] Executing endpoint 'site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev)'
+2025-07-14 15:49:40.222 -03:00 [INF] Route matched with {action = "Index", controller = "Cursos"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller site.diogocosta.dev.Controllers.CursosController (site.diogocosta.dev).
+2025-07-14 15:49:40.227 -03:00 [INF] Executing ViewResult, running view Index.
+2025-07-14 15:49:40.234 -03:00 [INF] Executed ViewResult - view Index executed in 8.0316ms.
+2025-07-14 15:49:40.235 -03:00 [INF] Executed action site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev) in 11.2752ms
+2025-07-14 15:49:40.237 -03:00 [INF] Executed endpoint 'site.diogocosta.dev.Controllers.CursosController.Index (site.diogocosta.dev)'
+2025-07-14 15:49:40.238 -03:00 [INF] The response could not be cached for this request.
+2025-07-14 15:49:40.240 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Cursos - 200 null text/html; charset=utf-8 26.9076ms
+2025-07-14 15:49:42.056 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/sw.js - null null
+2025-07-14 15:49:42.058 -03:00 [INF] No cached response available for this request.
+2025-07-14 15:49:42.059 -03:00 [INF] Sending file. Request path: '/sw.js'. Physical path: 'F:\Projetos\Serviço de Pagamento\site.diogocosta.dev\site.diogocosta.dev\wwwroot\sw.js'
+2025-07-14 15:49:42.060 -03:00 [INF] The response has been cached.
+2025-07-14 15:49:42.061 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/sw.js - 200 null text/javascript 5.266ms
+2025-07-14 15:54:10.261 -03:00 [INF] Executed DbCommand (254ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:24:08.4697110Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 15:59:12.101 -03:00 [INF] Executed DbCommand (254ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:29:10.2650868Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 16:04:13.875 -03:00 [INF] Executed DbCommand (256ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:34:12.1119008Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 16:09:15.672 -03:00 [INF] Executed DbCommand (252ms) [Parameters=[@__recentCutoff_0='2025-07-14T18:39:13.8932605Z' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+SELECT l.id, l.created_at, l.dados, l.descricao, l.ip_address, l.lead_id, l.tipo, l.user_agent
+FROM leads_system.lead_interactions AS l
+WHERE l.created_at >= @__recentCutoff_0
+2025-07-14 16:12:26.085 -03:00 [INF] Application is shutting down...
+2025-07-14 16:12:26.090 -03:00 [INF] BotDetectorBackgroundService finalizado
+2025-07-14 16:12:26.091 -03:00 [INF] 🛑 Parando Bot Detector Background Service...
+2025-07-14 16:12:26.092 -03:00 [INF] 🛑 Bot Detector Background Service parado.
