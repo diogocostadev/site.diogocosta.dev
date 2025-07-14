@@ -1,6 +1,6 @@
 ﻿@model NewsletterSubscription
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Programador Empreendedor | Crie seu SaaS | Mentoria MVP Microsoft - Diogo Costa";
 }
 
 <div class="bg-white min-h-screen">
@@ -112,7 +112,13 @@
         <div class="container mx-auto px-4 text-center max-w-3xl">
             <!-- Profile Image -->
             <div class="flex justify-center mb-12">
-                <img src="~/img/IMG_0045.webp" alt="Profile" class="w-32 h-32 rounded-full">
+                <img src="~/img/IMG_0045.webp" 
+                     alt="Profile" 
+                     class="w-32 h-32 rounded-full object-cover"
+                     width="128" 
+                     height="128"
+                     style="aspect-ratio: 1; object-fit: cover;"
+                     loading="lazy">
             </div>
 
             <h2 class="text-4xl font-serif mb-4">Oi, sou Diogo Costa ajudo programadores a conquistarem sua liberdade no trabalho e na vida.</h2>
@@ -182,3 +188,37 @@
         </div>
     </div>
 </div>
+
+<!-- FAQ Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@@context": "https://schema.org",
+  "@@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@@type": "Question",
+      "name": "Como um programador pode se tornar empreendedor?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Programadores podem se tornar empreendedores criando seus próprios SaaS, produtos digitais e oferecendo mentoria. É essencial desenvolver visão de negócio além das habilidades técnicas, entender o mercado e criar soluções que resolvam problemas reais."
+      }
+    },
+    {
+      "@@type": "Question", 
+      "name": "O que é necessário para criar um SaaS do zero?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Para criar um SaaS é necessário: conhecimento técnico (como C# e .NET), entendimento de negócio, validação de mercado, infraestrutura cloud, estratégia de monetização e marketing digital. Diogo Costa ensina todo esse processo através de mentoria especializada."
+      }
+    },
+    {
+      "@@type": "Question",
+      "name": "Por que escolher Diogo Costa como mentor?",
+      "acceptedAnswer": {
+        "@@type": "Answer",
+        "text": "Diogo Costa é MVP Microsoft com mais de 20 anos de experiência, já trabalhou em grandes empresas como Microsoft, Itaú e Hospital Albert Einstein. Ele combina conhecimento técnico avançado com visão de negócio, ensinando programadores a criarem produtos digitais lucrativos."
+      }
+    }
+  ]
+}
+</script>

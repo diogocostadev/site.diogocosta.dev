@@ -1,12 +1,14 @@
 {
-  "name": "Diogo Costa - MVP Microsoft",
+  "name": "Diogo Costa - Transformando Programadores em Empreendedores",
   "short_name": "Diogo Costa",
-  "description": "Transformando Programadores em Empreendedores - MVP Microsoft Diogo Costa",
+  "description": "Aprenda a transformar suas habilidades de programação em um negócio lucrativo",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ff6b35",
+  "background_color": "#ffffff",
+  "theme_color": "#0a1930",
   "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
   "icons": [
     {
       "src": "/img/D.png",
@@ -19,6 +21,45 @@
       "sizes": "180x180 144x144 120x120 96x96 72x72",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "business", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Cursos e Mentorias",
+      "short_name": "Cursos",
+      "description": "Acesse os cursos e mentorias",
+      "url": "/cursos",
+      "icons": [
+        {
+          "src": "/img/D.png",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog", 
+      "description": "Leia os artigos do blog",
+      "url": "/blog",
+      "icons": [
+        {
+          "src": "/img/D.png",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "Desbloqueio Mental",
+      "short_name": "Desbloqueio",
+      "description": "Acesse o curso de desbloqueio mental",
+      "url": "/desbloqueio",
+      "icons": [
+        {
+          "src": "/img/D.png",
+          "sizes": "32x32"
+        }
+      ]
     }
   ]
 } 

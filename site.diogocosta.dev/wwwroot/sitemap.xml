@@ -8,9 +8,19 @@
     <!-- Página Principal -->
     <url>
         <loc>https://diogocosta.dev/</loc>
-        <lastmod>2024-12-15T10:00:00+00:00</lastmod>
+        <lastmod>2025-07-14T10:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/IMG_0045.webp</image:loc>
+            <image:title>Diogo Costa - MVP Microsoft - Programador Empreendedor</image:title>
+            <image:caption>MVP Microsoft que ensina programadores a criarem SaaS e produtos digitais lucrativos</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://diogocosta.dev/img/logome.webp</image:loc>
+            <image:title>Diogo Costa Dev - Logo</image:title>
+            <image:caption>Site oficial de Diogo Costa, programador empreendedor e MVP Microsoft</image:caption>
+        </image:image>
     </url>
 
     <!-- Sobre -->
