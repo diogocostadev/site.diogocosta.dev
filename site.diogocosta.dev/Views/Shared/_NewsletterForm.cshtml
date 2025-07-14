@@ -1,13 +1,14 @@
 @{
     var formId = ViewBag.FormId ?? "newsletterForm";
+    var isHeaderForm = formId == "headerForm";
     var fullWidthButton = ViewBag.FullWidthButton ?? true;
     var submitButtonClass = fullWidthButton 
-        ? "mt-2 bg-blue-600 text-white px-6 py-2 rounded-md w-full hover:bg-blue-700" 
-        : "mt-2 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700";
+        ? "btn-modern btn-primary-modern w-100 mt-3" 
+        : "btn-modern btn-primary-modern mt-3";
 }
 
 <div id="@(formId + "Container")">
-    <form id="@formId" class="space-y-4">
+    <form id="@formId" class="modern-form">
         <!-- Honeypot fields (hidden anti-bot protection) -->
         <div style="position: absolute; left: -9999px; top: -9999px; visibility: hidden;">
             <input type="text" name="name" tabindex="-1" autocomplete="off">
@@ -15,36 +16,40 @@
             <input type="text" name="website" tabindex="-1" autocomplete="off">
         </div>
         
-        <div>
+        <div class="form-group">
             <input type="email" 
                   name="Email" 
-                  class="w-full px-4 py-2 rounded-md border border-gray-300 text-gray-900 bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" 
+                  class="@(isHeaderForm ? "form-control mb-3" : "form-control-modern w-100 mb-3")" 
                   placeholder="Seu melhor e-mail"
+                  style="@(isHeaderForm ? "background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 0.75rem; color: #212529;" : "")"
                   required>
-            <button type="submit" class="@submitButtonClass">
-                Inscreva-se
+            <button type="submit" class="@(isHeaderForm ? "btn btn-primary w-100" : submitButtonClass)">
+                <i class="fas fa-envelope me-2"></i>
+                @(isHeaderForm ? "Inscrever-se" : "Inscreva-se Agora")
             </button>
         </div>
-        <p class="text-sm text-gray-500 text-center">
+        <p class="text-center mt-3 mb-0" style="color: @(isHeaderForm ? "#6c757d" : "rgba(255, 255, 255, 0.7)"); font-size: 0.8rem;">
             Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.
         </p>
     </form>
     
-    <div id="@(formId + "Message")" class="mt-4 hidden">
+    <div id="@(formId + "Message")" class="mt-4 d-none">
         <!-- Mensagem de sucesso ou erro será inserida aqui via JavaScript -->
     </div>
     
     @if (TempData["Success"] != null)
     {
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4" role="alert">
-            <span class="block sm:inline">@TempData["Success"]</span>
+        <div class="alert alert-success mt-4" role="alert">
+            <i class="fas fa-check-circle me-2"></i>
+            @TempData["Success"]
         </div>
     }
 
     @if (TempData["Error"] != null)
     {
-        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
-            <span class="block sm:inline">@TempData["Error"]</span>
+        <div class="alert alert-danger mt-4" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            @TempData["Error"]
         </div>
     }
 </div> 

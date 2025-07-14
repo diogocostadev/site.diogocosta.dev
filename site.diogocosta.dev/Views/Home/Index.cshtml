@@ -3,191 +3,195 @@
     ViewData["Title"] = "Crie seu MVP SaaS | Programador Empreendedor | Mentoria Diogo Costa";
 }
 
-<div class="bg-white min-h-screen">
-    <!-- Hero Section -->
-    <div class="container mx-auto px-4 py-24">
-        <h1 class="text-6xl font-display text-gray-900 mb-4">Crie seu MVP: Programador Empreendedor que Transforma Código em SaaS Lucrativo</h1>
-        <p class="text-xl text-gray-600 mb-8">
-            Mentoria, conteúdo e ferramentas práticas para devs .NET que querem parar de só codar
-            e começar a criar negócios próprios — com domínio técnico real e visão de produto.
-        </p>
-        <p class="text-lg text-gray-600 mb-8">
-            Chega de depender de frameworks mágicos, tutoriais genéricos ou promessas de IA.<br />
-            Aqui você aprende a criar, lançar e escalar produtos digitais reais, com domínio total do
-            código, da infraestrutura e da visão de negócio.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-            <div>
-                <h2 class="text-3xl font-display text-gray-900 mb-4">Comunidade de Programadores que Criam MVP SaaS</h2>
-                <p class="text-gray-600 mb-8">Junte-se a mais de mil leitores e receba dicas exclusivas, estratégias práticas e recursos indispensáveis para criar, expandir e monetizar seu software.</p>
-            </div>
-            <div>
-                <h2 class="text-3xl font-display text-gray-900 mb-4">Comece seu MVP SaaS Hoje</h2>
-                @{
-                    ViewBag.FormId = "homeHeroForm";
-                }
-                <partial name="_NewsletterForm" />
-            </div>
-        </div>
-    </div>
-
-    <!-- Featured Section -->
-    <div class="bg-gray-50 py-8">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <div class="flex justify-center items-center space-x-8">
-                    <img src="/img/1.webp"
-                         alt="Américas"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/6.webp"
-                         alt="Itaú"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/3.webp"
-                         alt="Amil"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/4.webp"
-                         alt="Uol"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/5.webp"
-                         alt="Antigo Poyry"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/7.webp"
-                         alt="Panasonic"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/8.webp"
-                         alt="Volkswagem"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/9.webp"
-                         alt="Mercedez Benz"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/10.webp"
-                         alt="Gol Linhas Aéreas"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/11.webp"
-                         alt="Vivo"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/12.webp"
-                         alt="Microsoft"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/13.webp"
-                         alt="Hospital Albert Einstein"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
-                    <img src="/img/14.webp"
-                         alt="HP"
-                         class="h-8 md:h-10 object-contain filter brightness-0"
-                         loading="lazy">
-
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content animate-fade-in">
+            <h1 class="hero-title">
+                Transforme Código em Negócio
+            </h1>
+            <p class="hero-subtitle">
+                Mentoria exclusiva para devs .NET que querem criar produtos próprios, 
+                dominar o mercado e construir liberdade financeira real.
+            </p>
+            
+            <div class="hero-grid">
+                <div class="modern-card">
+                    <h2 class="card-title">Comunidade Exclusiva</h2>
+                    <p class="card-text">
+                        Mais de 1000 programadores já transformaram suas carreiras. 
+                        Junte-se a uma comunidade que realmente entende o que significa 
+                        ser um dev empreendedor.
+                    </p>
+                </div>
+                
+                <div class="modern-card">
+                    <h3 class="card-title">Comece Agora</h3>
+                    <p class="card-text mb-3">
+                        Receba estratégias exclusivas, templates prontos e 
+                        o roadmap completo para seu primeiro MVP SaaS.
+                    </p>
+                    @{
+                        ViewBag.FormId = "homeHeroForm";
+                    }
+                    <div class="newsletter-form">
+                        <partial name="_NewsletterForm" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Profile Section with Dark Blue Background -->
-    <div class="bg-[#0a1930] text-white py-24">
-        <div class="container mx-auto px-4 text-center max-w-3xl">
-            <!-- Profile Image -->
-            <div class="flex justify-center mb-12">
-                <img src="~/img/IMG_0045.webp" 
-                     alt="Profile" 
-                     class="w-32 h-32 rounded-full object-cover"
-                     width="128" 
-                     height="128"
-                     style="aspect-ratio: 1; object-fit: cover;"
-                     loading="lazy">
-            </div>
+<!-- Companies Section -->
+<section class="companies-section">
+    <div class="container">
+        <img src="/img/1.webp" alt="Américas" class="company-logo" loading="lazy">
+        <img src="/img/6.webp" alt="Itaú" class="company-logo" loading="lazy">
+        <img src="/img/3.webp" alt="Amil" class="company-logo" loading="lazy">
+        <img src="/img/4.webp" alt="Uol" class="company-logo" loading="lazy">
+        <img src="/img/5.webp" alt="Antigo Poyry" class="company-logo" loading="lazy">
+        <img src="/img/7.webp" alt="Panasonic" class="company-logo" loading="lazy">
+        <img src="/img/8.webp" alt="Volkswagem" class="company-logo" loading="lazy">
+        <img src="/img/9.webp" alt="Mercedez Benz" class="company-logo" loading="lazy">
+        <img src="/img/10.webp" alt="Gol Linhas Aéreas" class="company-logo" loading="lazy">
+        <img src="/img/11.webp" alt="Vivo" class="company-logo" loading="lazy">
+        <img src="/img/12.webp" alt="Microsoft" class="company-logo" loading="lazy">
+        <img src="/img/13.webp" alt="Hospital Albert Einstein" class="company-logo" loading="lazy">
+        <img src="/img/14.webp" alt="HP" class="company-logo" loading="lazy">
+    </div>
+</section>
 
-            <h2 class="text-4xl font-display mb-4">Oi, sou Diogo Costa ajudo programadores a conquistarem sua liberdade no trabalho e na vida.</h2>
-            <p class="text-emerald-400 mb-16">[Uma carta aberta para quem busca liberdade]</p>
+<!-- Profile Section -->
+<section class="profile-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="profile-content text-center">
+                    <div class="mb-5">
+                        <img src="~/img/IMG_0045.webp" 
+                             alt="Diogo Costa" 
+                             class="profile-image mx-auto d-block animate-fade-in"
+                             loading="lazy">
+                    </div>
 
-            <!-- Story Content -->
-            <div class="space-y-8 text-xl">
-                <p>Ser programador é abraçar tanto sua profissão quanto sua vida.</p>
+                    <h2 class="profile-title animate-fade-in">
+                        Oi, sou Diogo Costa e ajudo programadores a conquistarem 
+                        sua liberdade no trabalho e na vida.
+                    </h2>
+                    
+                    <p class="profile-subtitle animate-fade-in">
+                        [Uma carta aberta para quem busca liberdade]
+                    </p>
 
-                <p>Encaramos nosso trabalho com uma mentalidade que prioriza independência, criatividade e propósito, em vez de focar apenas no ganho financeiro.</p>
+                    <div class="profile-content-text animate-fade-in">
+                        <p class="profile-text">
+                            Ser programador é abraçar tanto sua profissão quanto sua vida.
+                        </p>
 
-                <p>Um programador não pergunta apenas: "Qual o emprego mais bem pago que eu posso conseguir?"</p>
+                        <p class="profile-text">
+                            Encaramos nosso trabalho com uma mentalidade que prioriza independência, 
+                            criatividade e propósito, em vez de focar apenas no ganho financeiro.
+                        </p>
 
-                <p>Ele pergunta: "Que tipo de vida eu quero levar?" e então constrói uma carreira ou projeto que sustente esse estilo de vida.</p>
+                        <p class="profile-text">
+                            Um programador não pergunta apenas: "Qual o emprego mais bem pago que eu posso conseguir?"
+                        </p>
 
-                <p class="text-gray-400">Não se trata de buscar sempre mais. Trata-se de encontrar o suficiente.</p>
+                        <p class="profile-text">
+                            Ele pergunta: "Que tipo de vida eu quero levar?" e então constrói uma carreira 
+                            ou projeto que sustente esse estilo de vida.
+                        </p>
 
-                <p class="text-gray-400">Mantemos nossos processos simples e eficientes, priorizando código limpo, projetos significativos e ferramentas que ajudam a simplificar o trabalho.</p>
+                        <p class="profile-text text-muted">
+                            Não se trata de buscar sempre mais. Trata-se de encontrar o suficiente.
+                        </p>
 
-                <p class="text-gray-400">Às vezes, isso significa trabalhar como freelancer ou desenvolvedor independente. Outras vezes, colaborar com pequenas equipes talentosas ou contribuir para projetos open source.</p>
+                        <p class="profile-text text-muted">
+                            Mantemos nossos processos simples e eficientes, priorizando código limpo, 
+                            projetos significativos e ferramentas que ajudam a simplificar o trabalho.
+                        </p>
 
-                <p class="mt-16">No final das contas, o que nos une é um objetivo claro e simples:</p>
+                        <p class="profile-text text-muted">
+                            Às vezes, isso significa trabalhar como freelancer ou desenvolvedor independente. 
+                            Outras vezes, colaborar com pequenas equipes talentosas ou contribuir para projetos open source.
+                        </p>
 
-                <p class="text-2xl font-display">Conquistar a liberdade de programar do nosso jeito, criar coisas que realmente importam e viver uma vida que amamos.</p>
+                        <p class="profile-text" style="margin-top: 3rem;">
+                            No final das contas, o que nos une é um objetivo claro e simples:
+                        </p>
+
+                        <p class="profile-text" style="font-size: 1.3rem; font-weight: 600;">
+                            Conquistar a liberdade de programar do nosso jeito, criar coisas que realmente importam 
+                            e viver uma vida que amamos.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Freedom Section -->
-    <div class="bg-white py-24">
-        <div class="container mx-auto px-4 text-center max-w-2xl">
-            <div class="space-y-12">
-                <div>
-                    <h2 class="text-4xl font-display">
-                        <span class="text-blue-600">Liberdade</span> para<br>
+<!-- Freedom Section -->
+<section class="freedom-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="freedom-item animate-fade-in">
+                    <h2 class="freedom-title">
+                        <span class="freedom-highlight">Liberdade</span> para<br>
                         viver como você quiser.
                     </h2>
                 </div>
-                <div>
-                    <h2 class="text-4xl font-display">
-                        <span class="text-blue-600">Liberdade</span> para<br>
+                
+                <div class="freedom-item animate-fade-in">
+                    <h2 class="freedom-title">
+                        <span class="freedom-highlight">Liberdade</span> para<br>
                         colocar sua família em primeiro lugar.
                     </h2>
                 </div>
-                <div>
-                    <h2 class="text-4xl font-display">
-                        <span class="text-blue-600">Liberdade</span> para<br>
+                
+                <div class="freedom-item animate-fade-in">
+                    <h2 class="freedom-title">
+                        <span class="freedom-highlight">Liberdade</span> para<br>
                         criar sua própria história.
                     </h2>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Newsletter Section -->
-    <div class="bg-blue-600 py-24">
-        <div class="container mx-auto px-4 text-center max-w-2xl">
-            <h2 class="text-4xl font-display text-white mb-8">Mude sua história.</h2>
-            <div class="bg-white rounded-lg p-8">
-                <h3 class="text-2xl font-display mb-4">Inscreva-se para iniciar.</h3>
-                <p class="text-gray-600 mb-6">Junte-se a mais de mil leitores e receba dicas exclusivas, estratégias práticas e recursos indispensáveis para criar, expandir e monetizar seu software.</p>
-                @{
-                    ViewBag.FormId = "homeBottomForm";
-                }
-                <partial name="_NewsletterForm" />
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="newsletter-title animate-fade-in">
+                        Mude sua história hoje mesmo.
+                    </h2>
+                </div>
+                
+                <div class="newsletter-card animate-fade-in">
+                    <h3 class="newsletter-subtitle">Inscreva-se para começar</h3>
+                    <p class="newsletter-text">
+                        Junte-se a mais de mil programadores que já estão construindo seus próprios negócios. 
+                        Receba estratégias exclusivas, templates prontos e o roadmap completo para transformar 
+                        sua carreira.
+                    </p>
+                    
+                    @{
+                        ViewBag.FormId = "homeBottomForm";
+                    }
+                    <div class="newsletter-form">
+                        <partial name="_NewsletterForm" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- FAQ Schema for SEO -->
 <script type="application/ld+json">

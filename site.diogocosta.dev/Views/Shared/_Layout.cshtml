@@ -3,223 +3,28 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Diogo Costa - Crie seu MVP SaaS | Programador Empreendedor</title>
+    <title>@ViewData["Title"] - Diogo Costa</title>
     
-    <!-- DNS Prefetch para domínios externos - otimizado -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//connect.facebook.net">
-    <link rel="dns-prefetch" href="//www.googletagmanager.com">
-    <link rel="dns-prefetch" href="//matomo.codigocentral.com.br">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Preconnect para recursos críticos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- CSS crítico -->
-    <link rel="stylesheet" href="~/css/critical.css">
-    <link rel="stylesheet" href="~/css/typography.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/css/site.css">
     
-    <!-- Tailwind CSS - carregar imediatamente mas de forma otimizada -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicons -->
+    <link rel="icon" href="~/img/D.png" type="image/png">
+    <link rel="apple-touch-icon" href="~/img/D_180.png">
     
-    <!-- Preload imagem above-the-fold -->
-    <link rel="preload" href="~/img/IMG_0045.webp" as="image" type="image/webp">
+    <!-- Meta tags essenciais -->
+    <meta name="description" content="Aprenda a criar seu MVP SaaS do zero. Diogo Costa ensina programadores a transformarem código em negócio lucrativo.">
+    <meta name="author" content="Diogo Costa">
     
-    <!-- CSS crítico inline otimizado -->
-    <style>
-        /* Tipografia moderna e técnica */
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-feature-settings: 'cv11', 'ss01';
-            font-optical-sizing: auto;
-        }
-        
-        /* Classes de tipografia técnica */
-        .font-display { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-            font-display: swap;
-        }
-        
-        .font-primary {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-display: swap;
-        }
-        
-        .font-mono {
-            font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-            font-display: swap;
-        }
-        
-        /* Headers com visual técnico */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-            line-height: 1.2;
-        }
-        
-        .fixed-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            z-index: 1000;
-        }
-        
-        .dropdown-form {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 100%;
-            background: white;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            min-width: 320px;
-            margin-top: 0.5rem;
-        }
-        
-        .dropdown-form.active {
-            display: block;
-        }
-        
-        /* Garantir que todos os inputs tenham texto escuro */
-        input[type="text"], input[type="email"], input[type="password"], textarea {
-            color: #1f2937 !important;
-            background-color: white !important;
-        }
-        
-        /* Estilos críticos para navegação e layout */
-        .container { max-width: 1200px; margin: 0 auto; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .h-16 { height: 4rem; }
-        .flex { display: flex; }
-        .justify-between { justify-content: space-between; }
-        .items-center { align-items: center; }
-        .space-x-6 > * + * { margin-left: 1.5rem; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-        .text-gray-900 { color: #111827; }
-        .text-gray-600 { color: #4b5563; }
-        .hover\:text-gray-900:hover { color: #111827; }
-        .bg-blue-600 { background-color: #2563eb; }
-        .text-white { color: #ffffff; }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .rounded-md { border-radius: 0.375rem; }
-        .hover\:bg-blue-700:hover { background-color: #1d4ed8; }
-        .border-b { border-bottom-width: 1px; }
-        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-        .relative { position: relative; }
-        .bg-white { background-color: #ffffff; }
-        
-        /* Loading otimização */
-        img[loading="lazy"] {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        img[loading="lazy"].loaded,
-        img[loading="eager"] {
-            opacity: 1;
-        }
-        
-        /* Prevent layout shift */
-        .responsive-img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
-    
-    <!-- Carregamento SUPER otimizado - ZERO JavaScript bloqueante -->
-    <script>
-        // REMOVER completamente o Tailwind até ser necessário
-        // Usar apenas CSS crítico
-        
-        // Função ultra-leve para carregar CSS
-        function loadCSS(href, media, onload) {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = href;
-            link.media = media || 'all';
-            if (onload) link.onload = onload;
-            document.head.appendChild(link);
-        }
-        
-        // Carregar fontes modernas e técnicas
-        function loadFonts() {
-            // Inter - Fonte principal moderna
-            loadCSS('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-            // JetBrains Mono - Fonte mono técnica
-            loadCSS('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-        }
-        
-        // Detectar quando fontes carregaram
-        if ('fonts' in document) {
-            document.fonts.ready.then(function() {
-                document.documentElement.classList.add('fonts-loaded');
-            });
-        }
-        
-        // Carregar recursos críticos imediatamente
-        loadFonts();
-    </script>
-
-    <!-- Favicons - Usando apenas imagens PNG -->
-    <link rel="icon" type="image/png" sizes="32x32" href="~/img/D.png?v=4" />
-    <link rel="icon" type="image/png" sizes="16x16" href="~/img/D.png?v=4" />
-    <link rel="shortcut icon" href="~/img/D.png?v=4" type="image/png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="~/img/D_180.png?v=4" />
-    
-    <!-- Microsoft Tiles -->
-    <meta name="msapplication-TileImage" content="~/img/D_180.png?v=4" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="~/manifest.json?v=4" />
-    
-    <!-- Theme colors -->
-    <meta name="theme-color" content="#ff6b35" />
-
-    <meta name="title" content="Diogo Costa - Transformando Programadores em Empreendedores">
-
-    <!-- Descrição -->
-    <meta name="description" content="🚀 Aprenda a criar seu MVP SaaS do zero. Diogo Costa, MVP Microsoft, ensina programadores a transformarem código em negócio lucrativo. Mentoria, cursos e estratégias para devs que querem liberdade financeira e sair do CLT.">
-
-    <!-- Palavras-Chave -->
-    <meta name="keywords" content="criar mvp saas, programador empreendedor, dev que virou empresário, programador independente, como criar saas, minimum viable product, mvp desenvolvimento, diogo costa, mentoria programador, curso criar saas, programador freelancer, monetizar programação, sair do CLT programação, developer indie, criar produto digital programador, desbloqueio mental programador, programador .NET empreendedor, startup para programadores, viver de programação própria">
-
-    <!-- Robots -->
-    <meta name="robots" content="index, follow">
-
-    <!-- Autor -->
-    <meta name="author" content="Diogo Costa - MVP Microsoft">
-
-    <!-- Open Graph (para compartilhamento em redes sociais) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.diogocosta.dev">
-    <meta property="og:title" content="Diogo Costa - Crie seu MVP SaaS | Programador Empreendedor">
-    <meta property="og:description" content="🚀 Aprenda a criar seu MVP SaaS do zero. Mentoria e cursos para programadores que querem transformar código em negócio lucrativo e sair do CLT.">
-    <meta property="og:image" content="https://www.diogocosta.dev/img/logome.webp">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.diogocosta.dev">
-    <meta name="twitter:title" content="Diogo Costa - Crie seu MVP SaaS | Programador Empreendedor">
-    <meta name="twitter:description" content="🚀 Aprenda a criar seu MVP SaaS do zero. Mentoria e cursos para programadores que querem transformar código em negócio lucrativo.">
-    <meta name="twitter:image" content="https://www.diogocosta.dev/img/logome.webp">
-
-    <!-- Matomo -->
+    <!-- Analytics -->
     <script>
         var _paq = window._paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
@@ -230,302 +35,109 @@
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
         })();
     </script>
-    <!-- End Matomo Code -->
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@@context": "https://schema.org",
-        "@@type": "Person",
-        "name": "Diogo Costa",
-        "jobTitle": "MVP Microsoft, Desenvolvedor e Mentor",
-        "url": "https://diogocosta.dev",
-        "image": "https://diogocosta.dev/img/IMG_0045.webp",
-        "sameAs": [
-            "https://linkedin.com/in/diogotj",
-            "https://x.com/diogocostadev",
-            "https://youtube.com/diogocostadev",
-            "https://instagram.com/diogocostadev",
-            "https://twitch.tv/diogocostadev",
-            "https://github.com/diogocostadev"
-        ],
-        "knowsAbout": [
-            "Programação C#",
-            "Desenvolvimento SaaS", 
-            "Empreendedorismo para Programadores",
-            "Mentoria em Tecnologia",
-            "Criação de Produtos Digitais",
-            "Microsoft Technologies",
-            "Desenvolvimento Web",
-            "Freelancing para Desenvolvedores"
-        ],
-        "hasOccupation": {
-            "@@type": "Occupation",
-            "name": "Mentor de Programadores Empreendedores e Criação de MVP SaaS",
-            "description": "Ensina programadores a transformarem seu conhecimento técnico em negócios lucrativos através de SaaS e produtos digitais",
-            "occupationLocation": {
-                "@@type": "Country",
-                "name": "Brasil"
-            }
-        },
-        "offers": [
-            {
-                "@@type": "EducationalOccupationalProgram",
-                "name": "Mentoria para Programadores Empreendedores",
-                "description": "Programa completo para desenvolvedores que querem criar seus próprios SaaS e produtos digitais",
-                "provider": {
-                    "@@type": "Person",
-                    "name": "Diogo Costa"
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- Schema.org para Website -->
-    <script type="application/ld+json">
-    {
-        "@@context": "https://schema.org",
-        "@@type": "WebSite",
-        "name": "Diogo Costa - Programador Empreendedor",
-        "alternateName": "Diogo Costa Dev",
-        "url": "https://diogocosta.dev",
-        "description": "Aprenda a criar seu MVP SaaS do zero. Mentoria e cursos para programadores que querem transformar código em negócio lucrativo.",
-        "inLanguage": "pt-BR",
-        "potentialAction": {
-            "@@type": "SearchAction",
-            "target": "https://diogocosta.dev/blog?q={search_term_string}",
-            "query-input": "required name=search_term_string"
-        },
-        "creator": {
-            "@@type": "Person",
-            "name": "Diogo Costa",
-            "jobTitle": "MVP Microsoft"
-        }
-    }
-    </script>
-
 </head>
-<body class="bg-white">
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4FFVLNX"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-    <!-- Scripts de tracking SUPER otimizados - Carregamento apenas após interação real -->
-<script>
-    // Evitar carregamento imediato - só após clique real do usuário
-    let trackingLoaded = false;
-    
-    // Função para carregar tracking apenas quando necessário
-    function loadTrackingOnDemand() {
-        if (trackingLoaded) return;
-        trackingLoaded = true;
-        
-        // Google Tag Manager - carregado apenas após interação
-        (function(w,d,s,l,i){
-            if (w[l]) return; // Evitar duplo carregamento
-            w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-            var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-            j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-            j.onload=function(){console.log('GTM loaded on demand');};
-            f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-K4FFVLNX');
-        
-        // Google Analytics - carregado apenas após interação
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-0YZHXVSL7M', {'send_page_view': false});
-        
-        // Carregar script GA
-        const gaScript = document.createElement('script');
-        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-0YZHXVSL7M';
-        gaScript.async = true;
-        gaScript.onload = function() {
-            gtag('config', 'G-0YZHXVSL7M');
-            console.log('GA loaded on demand');
-        };
-        document.head.appendChild(gaScript);
-        
-        // Facebook Pixel - carregado apenas após interação
-        !function(f,b,e,v,n,t,s) {
-            if(f.fbq) return; // Evitar duplo carregamento
-            n = f.fbq = function() {
-                n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments);
-            };
-            if(!f._fbq) f._fbq = n;
-            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
-            t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            t.onload = function() {
-                fbq('init', 'REPLACE_WITH_PIXEL_ID');
-                fbq('track', 'PageView');
-                console.log('FB Pixel loaded on demand');
-            };
-            s.parentNode.insertBefore(t,s);
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    }
-    
-    // Carregar APENAS após clique real (não hover ou scroll)
-    ['click', 'touchstart'].forEach(function(event) {
-        document.addEventListener(event, loadTrackingOnDemand, {once: true, passive: true});
-    });
-    
-    // Fallback MUITO tardio - só após 10 segundos
-    setTimeout(loadTrackingOnDemand, 10000);
-</script>
-<noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=REPLACE_WITH_PIXEL_ID&amp;ev=PageView&amp;noscript=1" />
-</noscript>
-
-<!-- Navigation -->
-<nav class="fixed-nav border-b shadow-sm">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center h-16">
-            <a asp-controller="Home" asp-action="Index" class="text-xl text-gray-900">Diogo Costa</a>
-            <div class="flex items-center space-x-6">
-                <a asp-controller="Home" asp-action="Index" class="text-gray-600 hover:text-gray-900">Criar MVP</a>
-                <a asp-controller="Sobre" asp-action="Index" class="text-gray-600 hover:text-gray-900">Programador Empreendedor</a>
-                <a asp-controller="Cursos" asp-action="Index" class="text-gray-600 hover:text-gray-900">Mentoria SaaS</a>
-                <a asp-controller="Desbloqueio" asp-action="Index" class="text-gray-600 hover:text-gray-900">Desbloqueio Mental</a>
-                <a href="/blog" class="text-gray-600 hover:text-gray-900">Blog para Devs</a>
-                <a href="https://comunidade.didaticos.com" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-900">Comunidade</a>
-                <a asp-controller="Contato" asp-action="Index" class="text-gray-600 hover:text-gray-900">Contato</a>
-                <div class="relative">
-                    <button id="joinButton" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
-                        Junte-se a +1000 leitores
-                    </button>
-                    <!-- Dropdown Form -->
-                    <div id="subscribeForm" class="dropdown-form">
-                        @{
-                            ViewBag.FormId = "headerForm";
-                        }
-                        <partial name="_NewsletterForm" />
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Diogo Costa</a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="color: white;">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Criar MVP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Sobre" asp-action="Index">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Cursos" asp-action="Index">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Desbloqueio" asp-action="Index">Desbloqueio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Contato" asp-action="Index">Contato</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="newsletterDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-envelope me-2"></i>Newsletter
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end p-3 shadow" style="min-width: 320px; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px);">
+                            <h6 class="dropdown-header text-dark">Junte-se a +1000 leitores</h6>
+                            @{
+                                ViewBag.FormId = "headerForm";
+                            }
+                            <partial name="_NewsletterForm" />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- Spacer para compensar o menu fixo -->
-<div class="h-16"></div>
+    <!-- Main Content -->
+    <main>
+        @RenderBody()
+    </main>
 
-<main>
-    @RenderBody()
-</main>
-
-<footer class="border-t py-12">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center">
-            <div>
-                <a href="/" class="text-xl font-display">Diogo Costa</a>
-                <p class="text-sm text-gray-500">© @DateTime.Now.Year Diogo Costa - v1.1.2</p>
-                <p class="text-sm text-gray-500 mt-1">Diogo Costa é MVP Microsoft há 4 anos e criador do método DC360 — uma abordagem prática para transformar código em negócio. Fundador do <a href="https://codigocentral.com.br" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Código Central</a>.</p>
-                
-            </div>
-            <div class="flex space-x-6">
-                <a asp-controller="Home" asp-action="Privacy" class="text-sm text-gray-500">Política de privacidade</a>
-                <a asp-controller="Home" asp-action="Termo" class="text-sm text-gray-500">Termo de uso</a>
-                <a asp-controller="Contato" asp-action="Index" class="text-sm text-gray-500">Entre em contato</a>
-                
-            </div>
-            <div class="flex space-x-4">
-
-                <a href="https://linkedin.com/in/diogotj" target="_blank" class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">LinkedIn</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-                    </svg>
-                </a>
-
-                <a href="https://x.com/diogocostadev" target="_blank"  class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">X (Twitter)</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-                    </svg>
-                </a>
-
-                <a href="https://youtube.com/diogocostadev" target="_blank"  class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">YouTube</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-
-                <a href="https://instagram.com/diogocostadev" target="_blank" class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">Instagram</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                </a>
-
-                <a href="https://twitch.tv/diogocostadev" target="_blank" class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">Twitch</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/>
-                    </svg>
-                </a>
-
-                <a href='https://youtube.com/@@codigodevalor' target="_blank"  class="text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">YouTube</span>
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                    </svg>
-                </a>
-                
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="footer-title">Diogo Costa</h5>
+                    <p class="footer-text">© @DateTime.Now.Year Diogo Costa - v1.1.2</p>
+                    <p class="footer-text">Diogo Costa é MVP Microsoft há 4 anos e criador do método DC360 — uma abordagem prática para transformar código em negócio. Fundador do <a href="https://codigocentral.com.br" target="_blank" class="footer-link">Código Central</a>.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="footer-title">Links Úteis</h6>
+                    <ul class="list-unstyled">
+                        <li><a asp-controller="Home" asp-action="Privacy" class="footer-link">Política de Privacidade</a></li>
+                        <li><a asp-controller="Home" asp-action="Termo" class="footer-link">Termos de Uso</a></li>
+                        <li><a asp-controller="Contato" asp-action="Index" class="footer-link">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="footer-title">Redes Sociais</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://linkedin.com/in/diogotj" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/diogocostadev" target="_blank" class="social-link" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://youtube.com/diogocostadev" target="_blank" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://instagram.com/diogocostadev" target="_blank" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitch.tv/diogocostadev" target="_blank" class="social-link" title="Twitch">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-@RenderSection("Scripts", required: false)
-
-<!-- Scripts MÍNIMOS para performance máxima -->
-<script>
-    // Service Worker registration (não bloqueante)
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/sw.js').catch(function(){});
-        });
-    }
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    // Função ultra-leve para feedback de formulários
-    function hideFeedbacks() {
-        setTimeout(function() {
-            var feedbacks = document.querySelectorAll('.bg-green-100, .bg-red-100');
-            for (var i = 0; i < feedbacks.length; i++) {
-                feedbacks[i].style.display = 'none';
-            }
-        }, 5000);
-    }
+    <!-- Custom JS -->
+    <script src="~/js/newsletter.js"></script>
     
-    // Scroll otimizado com throttling agressivo
-    var scrollTimer;
-    window.addEventListener('scroll', function() {
-        if (!scrollTimer) {
-            scrollTimer = setTimeout(function() {
-                var nav = document.querySelector('nav');
-                if (nav) {
-                    if (window.scrollY > 40) {
-                        nav.classList.add('shadow-md');
-                    } else {
-                        nav.classList.remove('shadow-md');
-                    }
-                }
-                scrollTimer = null;
-            }, 16); // 60fps
-        }
-    }, { passive: true });
-    
-    // Execute após DOM
-    document.addEventListener('DOMContentLoaded', hideFeedbacks);
-</script>
-
-<!-- Carregar APENAS scripts essenciais -->
-<script src="~/js/newsletter.js" defer></script>
-
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
