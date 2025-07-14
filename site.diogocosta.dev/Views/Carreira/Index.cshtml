@@ -1,43 +1,54 @@
 @model (List<site.diogocosta.dev.Models.VideoCarreira> Videos, NewsletterSubscription Newsletter)
 @{
-    ViewData["Title"] = "Carreira";
+    ViewData["Title"] = "Carreira - Diogo Costa";
     Layout = "~/Views/Shared/_Layout.cshtml";
     
     // Criar modelo para o formulário
     var newsletterModel = new site.diogocosta.dev.Models.NewsletterSubscription();
 }
 
-<div class="bg-blue-600 text-white py-24">
-    <div class="container mx-auto px-4 max-w-4xl text-center">
-        <h1 class="text-5xl font-display mb-4">Carreira e Opiniões</h1>
-        <p class="text-xl mb-8">Aqui compartilho um pouco da minha trajetória, aprendizados e reflexões sobre o mundo da tecnologia e desenvolvimento.</p>
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content animate-fade-in">
+            <h1 class="hero-title">
+                Carreira e Opiniões
+            </h1>
+            <p class="hero-subtitle">
+                Aqui compartilho um pouco da minha trajetória, aprendizados e reflexões sobre o mundo da tecnologia e desenvolvimento.
+            </p>
+        </div>
     </div>
-</div>
+</section>
 
-<div class="bg-[#0A192F] py-16">
-    <div class="container mx-auto px-4">
+<!-- Videos Section -->
+<section class="content-section">
+    <div class="container">
         @if (Model.Videos == null || !Model.Videos.Any())
         {
-            <div class="text-center py-16">
-                <p class="text-white text-xl">Nenhum vídeo encontrado.</p>
+            <div class="modern-card">
+                <div class="section-header">
+                    <h2 class="section-title">Nenhum vídeo encontrado</h2>
+                    <p class="section-subtitle">Em breve, novos conteúdos estarão disponíveis aqui.</p>
+                </div>
             </div>
         }
         else
         {
-            <div class="space-y-16">
+            <div class="videos-grid">
                 @for (int i = 0; i < Model.Videos.Count; i++)
                 {
                     var video = Model.Videos[i];
                     var isEven = i % 2 == 0;
                     
-                    <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-800">
-                        <div class="grid grid-cols-1 md:grid-cols-2 @(isEven ? "" : "md:grid-flow-dense")">
+                    <div class="video-card @(isEven ? "video-card-normal" : "video-card-reverse")">
+                        <div class="video-content">
                             <!-- Vídeo -->
-                            <div class="@(isEven ? "" : "md:col-start-2") h-full">
+                            <div class="video-container">
                                 @if (!string.IsNullOrWhiteSpace(video.UrlVideo))
                                 {
-                                    <div class="aspect-video w-full">
-                                        <iframe class="w-full h-full"
+                                    <div class="video-wrapper">
+                                        <iframe class="video-iframe"
                                                 src="@video.UrlVideo" 
                                                 title="@video.Titulo" 
                                                 frameborder="0" 
@@ -48,22 +59,35 @@
                                 }
                                 else
                                 {
-                                    <div class="aspect-video w-full bg-gray-800 flex items-center justify-center">
-                                        <p class="text-gray-400">URL do vídeo inválida</p>
+                                    <div class="video-placeholder">
+                                        <i class="fas fa-video"></i>
+                                        <p>Vídeo não disponível</p>
                                     </div>
                                 }
                             </div>
                             
-                            <!-- Conteúdo -->
-                            <div class="@(isEven ? "" : "md:col-start-1") p-8 flex flex-col justify-center">
-                                <h2 class="text-2xl font-display text-white mb-4">@video.Titulo</h2>
-                                <p class="text-gray-300 mb-6">@video.Descricao</p>
-                                <div class="flex items-center text-gray-400 text-sm">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                    </svg>
-                                    <span>Publicado em: @video.DataPublicacao.ToString("dd/MM/yyyy")</span>
+                            <!-- Informações do vídeo -->
+                            <div class="video-info">
+                                <div class="video-meta">
+                                    <span class="video-date">@video.DataPublicacao.ToString("dd/MM/yyyy")</span>
+                                    <span class="video-badge">Vídeo</span>
                                 </div>
+                                
+                                <h3 class="video-title">@video.Titulo</h3>
+                                
+                                @if (!string.IsNullOrWhiteSpace(video.Descricao))
+                                {
+                                    <p class="video-description">@video.Descricao</p>
+                                }
+                                
+                                @if (!string.IsNullOrWhiteSpace(video.UrlVideo))
+                                {
+                                    <div class="video-actions">
+                                        <a href="@video.UrlVideo" target="_blank" class="btn btn-primary">
+                                            <i class="fas fa-play"></i> Assistir
+                                        </a>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -71,39 +95,26 @@
             </div>
         }
     </div>
-</div>
+</section>
 
-<!-- CTA para inscrição -->
-<div class="bg-blue-600 py-24">
-    <div class="container mx-auto px-4 text-center max-w-2xl">
-        <h2 class="text-4xl font-display text-white mb-8">Aprenda com a experiência.</h2>
-        <div class="bg-white rounded-lg p-8">
-            <h3 class="text-2xl font-display mb-4">Inscreva-se para receber atualizações.</h3>
-            <p class="text-gray-600 mb-6">Receba notificações quando novos vídeos e artigos sobre carreira e desenvolvimento forem publicados, além de dicas exclusivas que não compartilho em outros lugares.</p>
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2 class="section-title">Junte-se a +1000 programadores</h2>
+            <p class="section-subtitle">
+                Receba insights exclusivos sobre carreira, tecnologia e desenvolvimento
+            </p>
             
             @{
                 ViewBag.FormId = "carreiraForm";
             }
-            <partial name="_NewsletterForm" />
-            
-            @*
-            @if (TempData["Success"] != null)
-            {
-                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
-                    <span class="block sm:inline">@TempData["Success"]</span>
-                </div>
-            }
-
-            @if (TempData["Error"] != null)
-            {
-                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                    <span class="block sm:inline">@TempData["Error"]</span>
-                </div>
-            }
-            *@
+            <div class="newsletter-form">
+                <partial name="_NewsletterForm" />
+            </div>
         </div>
     </div>
-</div> 
+</section> 
 
 @section Scripts {
     <script>

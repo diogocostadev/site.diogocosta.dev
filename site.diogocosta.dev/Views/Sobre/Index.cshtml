@@ -1,142 +1,121 @@
 @model NewsletterSubscription
 
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Sobre - Diogo Costa";
 }
 
-
-
-<div class="min-h-screen">
-    <!-- Hero Section com gradiente sutil -->
-    <div class="bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4 pt-32 pb-16 text-center max-w-4xl">
-            <h1 class="text-6xl font-display text-gray-900 mb-12">
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content animate-fade-in">
+            <h1 class="hero-title">
                 Oi, sou Diogo Costa
-                ajudo programadores a conquistarem sua liberdade no trabalho e na vida.
             </h1>
-            <img src="~/img/logome.webp" alt="Profile" class="w-32 h-32 rounded-full mx-auto">
-        </div>
-    </div>
-
-    <!-- História Section -->
-    <div class="bg-white py-16">
-        <div class="container mx-auto px-4 max-w-3xl text-center">
-            <div class="text-blue-600 mb-8">[Minha Jornada Resumida]</div>
-
-            <div class="space-y-8 text-lg text-gray-900">
-                <p>Por anos fui o dev experiente que entregava sistemas… para os outros. Mas faltava algo: <strong>visão de produto</strong>.</p>
-                <p>Quando percebi que escrever código não é suficiente, comecei a estudar o que realmente cria valor.</p>
-                <p>Hoje ensino desenvolvedores a pensarem como donos — e a construírem produtos reais, com <strong>arquitetura</strong>, <strong>posicionamento</strong> e <strong>escala</strong>.</p>
-                <p class="text-2xl font-display mt-12">Minha proposta é te guiar nessa jornada técnica + estratégica com base real e sem atalhos.</p>
+            <p class="hero-subtitle">
+                Ajudo programadores a conquistarem sua liberdade no trabalho e na vida.
+            </p>
+            
+            <div class="profile-container">
+                <img src="~/img/logome.webp" alt="Diogo Costa" class="profile-image">
             </div>
         </div>
     </div>
+</section>
 
-    
-    <!-- Topics Section -->
-    <div class="bg-gray-50 py-24">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24">
-                <div>
-                    <h2 class="text-4xl font-display text-gray-900 mb-8">
-                        Escrevo sobre estes tópicos essenciais para impulsionar sua jornada.
-                    </h2>
-                </div>
-                <div class="space-y-12">
-                    <!-- Crescimento Pessoal -->
-                    <div>
-                        <div class="text-gray-400 text-2xl mb-2">01</div>
-                        <a href="/blog" class="text-blue-600 text-2xl hover:underline mb-2 block">Crescimento Pessoal →</a>
-                        <p class="text-gray-600">
-                            Desenvolva uma mentalidade de crescimento que amplie seus horizontes. Aprenda a utilizar ferramentas práticas para evoluir como profissional e abrir caminho para novas oportunidades na sua carreira.
-                        </p>
-                    </div>
-
-                    <!-- Planejamento de Negócios -->
-                    <div>
-                        <div class="text-gray-400 text-2xl mb-2">02</div>
-                        <a href="/blog" class="text-blue-600 text-2xl hover:underline mb-2 block">Planejamento de Negócios →</a>
-                        <p class="text-gray-600">
-                            Descubra como planejar e estruturar seu negócio de forma estratégica. Crie um roteiro para alcançar seus objetivos, evitando erros comuns e garantindo que suas ideias saiam do papel.
-                        </p>
-                    </div>
-
-                    <!-- Validação de Ideias -->
-                    <div>
-                        <div class="text-gray-400 text-2xl mb-2">03</div>
-                        <a href="/blog" class="text-blue-600 text-2xl hover:underline mb-2 block">Validação de Ideias →</a>
-                        <p class="text-gray-600">
-                            Teste suas ideias antes de investir tempo ou recursos. Utilize estratégias práticas para validar conceitos, garantindo que seus projetos estejam alinhados às necessidades do mercado.
-                        </p>
-                    </div>
-
-                    <!-- Construção de Produtos -->
-                    <div>
-                        <div class="text-gray-400 text-2xl mb-2">04</div>
-                        <a href="/blog" class="text-blue-600 text-2xl hover:underline mb-2 block">Construção de Produtos →</a>
-                        <p class="text-gray-600">
-                            Dê vida às suas ideias com um processo claro de prototipagem e desenvolvimento. Crie produtos que resolvam problemas reais e se destaquem no mercado.
-                        </p>
-                    </div>
-
-                    <!-- Estratégias de Marketing -->
-                    <div>
-                        <div class="text-gray-400 text-2xl mb-2">05</div>
-                        <a href="/blog" class="text-blue-600 text-2xl hover:underline mb-2 block">Estratégias de Marketing →</a>
-                        <p class="text-gray-600">
-                            Aprenda a divulgar seus produtos e serviços de forma eficiente, mesmo que você não tenha experiência em marketing. Use estratégias práticas para alcançar seu público-alvo e construir uma base sólida de clientes.
-                        </p>
-                    </div>
-
-                    <!-- Sustentação e Escalabilidade -->
-                    <div>
-                        <div class="text-gray-400 text-2xl mb-2">06</div>
-                        <a href="/blog" class="text-blue-600 text-2xl hover:underline mb-2 block">Sustentação e Escalabilidade →</a>
-                        <p class="text-gray-600">
-                            Prepare seu negócio para crescer de forma estruturada e sustentável. Descubra como otimizar recursos e escalar suas operações sem perder a qualidade.
-                        </p>
-                    </div>
+<!-- História Section -->
+<section class="content-section">
+    <div class="container">
+        <div class="modern-card">
+            <div class="section-header">
+                <span class="section-badge">Minha Jornada Resumida</span>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>Por anos fui o dev experiente que entregava sistemas… para os outros. Mas faltava algo: <strong>visão de produto</strong>.</p>
+                    <p>Quando percebi que escrever código não é suficiente, comecei a estudar o que realmente cria valor.</p>
+                    <p>Hoje ensino desenvolvedores a pensarem como donos — e a construírem produtos reais, com <strong>arquitetura</strong>, <strong>posicionamento</strong> e <strong>escala</strong>.</p>
+                    <p class="hero-subtitle">Minha proposta é te guiar nessa jornada técnica + estratégica com base real e sem atalhos.</p>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Freedom Section -->
-    <div class="bg-white py-24">
-        <div class="container mx-auto px-4 max-w-4xl text-center">
-            <h2 class="text-5xl font-display text-gray-900 mb-16">
-                Vou te ajudar a dar uma virada na sua vida e conquistar sua liberdade.
-            </h2>
+<!-- Topics Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-intro">
+                <h2 class="section-title">
+                    Escrevo sobre estes tópicos essenciais para impulsionar sua jornada.
+                </h2>
+            </div>
+            
+            <div class="features-content">
+                <!-- Crescimento Pessoal -->
+                <div class="modern-card">
+                    <div class="feature-number">01</div>
+                    <h3 class="card-title">
+                        <a href="/blog" class="feature-link">Crescimento Pessoal →</a>
+                    </h3>
+                    <p class="card-text">
+                        Estratégias para melhorar sua mentalidade, hábitos e produtividade como desenvolvedor.
+                    </p>
+                </div>
 
-            <div class="space-y-8">
-                <div>
-                    <span class="text-blue-600 text-3xl">Liberdade para</span>
-                    <h3 class="text-3xl font-display">sair da sua rotina.</h3>
+                <!-- Carreira -->
+                <div class="modern-card">
+                    <div class="feature-number">02</div>
+                    <h3 class="card-title">
+                        <a href="/blog" class="feature-link">Carreira →</a>
+                    </h3>
+                    <p class="card-text">
+                        Guias práticos para acelerar sua carreira em programação e se destacar no mercado.
+                    </p>
                 </div>
-                <div>
-                    <span class="text-blue-600 text-3xl">Liberdade para</span>
-                    <h3 class="text-3xl font-display">criar seus próprios horários.</h3>
+
+                <!-- Empreendedorismo -->
+                <div class="modern-card">
+                    <div class="feature-number">03</div>
+                    <h3 class="card-title">
+                        <a href="/blog" class="feature-link">Empreendedorismo →</a>
+                    </h3>
+                    <p class="card-text">
+                        Como transformar suas habilidades técnicas em produtos lucrativos e negócios escaláveis.
+                    </p>
                 </div>
-                <div>
-                    <span class="text-blue-600 text-3xl">Liberdade para</span>
-                    <h3 class="text-3xl font-display">transformar sua paixão por programação em um negócio lucrativo.</h3>
+
+                <!-- Construção de Produtos -->
+                <div class="modern-card">
+                    <div class="feature-number">04</div>
+                    <h3 class="card-title">
+                        <a href="/blog" class="feature-link">Construção de Produtos →</a>
+                    </h3>
+                    <p class="card-text">
+                        Estratégias para criar MVPs, validar ideias e construir produtos que realmente vendem.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Newsletter Section -->
-    <div class="bg-blue-600 py-24">
-        <div class="container mx-auto px-4 text-center max-w-2xl">
-            <h2 class="text-4xl font-display text-white mb-8">Mude sua história.</h2>
-            <div class="bg-white rounded-lg p-8">
-                <h3 class="text-2xl font-display mb-4">Inscreva-se para iniciar.</h3>
-                <p class="text-gray-600 mb-6">Junte-se a mais de mil leitores e receba dicas exclusivas, estratégias práticas e recursos indispensáveis para criar, expandir e monetizar seu software.</p>
-                @{
-                    ViewBag.FormId = "sobreForm";
-                }
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2 class="section-title">Junte-se a +1000 programadores</h2>
+            <p class="section-subtitle">
+                Receba insights exclusivos sobre programação, carreira e empreendedorismo
+            </p>
+            
+            @{
+                ViewBag.FormId = "sobreForm";
+            }
+            <div class="newsletter-form">
                 <partial name="_NewsletterForm" />
             </div>
         </div>
     </div>
-</div>
+</section>
