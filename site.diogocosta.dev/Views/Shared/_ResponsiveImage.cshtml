@@ -1,0 +1,54 @@
+@model site.diogocosta.dev.Models.ResponsiveImageModel
+
+@{
+    var baseClass = Model.CssClass ?? "";
+    var isLazy = Model.Loading != "eager";
+    var placeholderClass = isLazy ? "loading-placeholder" : "";
+}
+
+<picture class="@baseClass @placeholderClass">
+    @if (!string.IsNullOrEmpty(Model.WebPSrc))
+    {
+        <source 
+            @if (isLazy) { <text>data-srcset="@Model.WebPSrc"</text> } else { <text>srcset="@Model.WebPSrc"</text> }
+            @if (!string.IsNullOrEmpty(Model.Sizes)) { <text>sizes="@Model.Sizes"</text> }
+            type="image/webp">
+    }
+    
+    <img 
+        @if (isLazy) 
+        { 
+            <text>
+                data-src="@Model.Src" 
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 @Model.Width @Model.Height'%3E%3C/svg%3E"
+            </text>
+        } 
+        else 
+        { 
+            <text>src="@Model.Src"</text> 
+        }
+        @if (!string.IsNullOrEmpty(Model.SrcSet) && !isLazy) { <text>srcset="@Model.SrcSet"</text> }
+        @if (!string.IsNullOrEmpty(Model.SrcSet) && isLazy) { <text>data-srcset="@Model.SrcSet"</text> }
+        @if (!string.IsNullOrEmpty(Model.Sizes)) { <text>sizes="@Model.Sizes"</text> }
+        alt="@Model.Alt"
+        width="@Model.Width"
+        height="@Model.Height"
+        loading="@(Model.Loading ?? "lazy")"
+        decoding="async"
+        class="responsive-img @Model.ImageClass"
+        style="@Model.Style; aspect-ratio: @Model.Width/@Model.Height;"
+        @if (!string.IsNullOrEmpty(Model.Id)) { <text>id="@Model.Id"</text> }>
+</picture>
+
+@if (isLazy)
+{
+    <noscript>
+        <picture class="@baseClass">
+            @if (!string.IsNullOrEmpty(Model.WebPSrc))
+            {
+                <source srcset="@Model.WebPSrc" type="image/webp">
+            }
+            <img src="@Model.Src" alt="@Model.Alt" width="@Model.Width" height="@Model.Height" class="responsive-img @Model.ImageClass">
+        </picture>
+    </noscript>
+}
