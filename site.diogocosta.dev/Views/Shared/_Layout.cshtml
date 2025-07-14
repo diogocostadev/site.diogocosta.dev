@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8"/>
@@ -20,6 +20,7 @@
     
     <!-- CSS crítico -->
     <link rel="stylesheet" href="~/css/critical.css">
+    <link rel="stylesheet" href="~/css/typography.css">
     
     <!-- Tailwind CSS - carregar imediatamente mas de forma otimizada -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,15 +30,37 @@
     
     <!-- CSS crítico inline otimizado -->
     <style>
-        /* CSS crítico para Above the Fold - otimizado para PageSpeed */
-        .font-serif { 
-            font-family: 'Newsreader', serif; 
+        /* Tipografia moderna e técnica */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-feature-settings: 'cv11', 'ss01';
+            font-optical-sizing: auto;
+        }
+        
+        /* Classes de tipografia técnica */
+        .font-display { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
             font-display: swap;
         }
         
-        /* Fallback para quando a fonte não carregou */
-        .font-serif-fallback {
-            font-family: Georgia, 'Times New Roman', Times, serif;
+        .font-primary {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-display: swap;
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-display: swap;
+        }
+        
+        /* Headers com visual técnico */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+            line-height: 1.2;
         }
         
         .fixed-nav {
@@ -130,10 +153,12 @@
             document.head.appendChild(link);
         }
         
-        // Carregar fonte de forma super otimizada
+        // Carregar fontes modernas e técnicas
         function loadFonts() {
-            // Usar font-display: swap diretamente
-            loadCSS('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&display=swap');
+            // Inter - Fonte principal moderna
+            loadCSS('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+            // JetBrains Mono - Fonte mono técnica
+            loadCSS('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
         }
         
         // Detectar quando fontes carregaram
@@ -396,7 +421,7 @@
     <div class="container mx-auto px-4">
         <div class="flex justify-between items-center">
             <div>
-                <a href="/" class="text-xl font-serif">Diogo Costa</a>
+                <a href="/" class="text-xl font-display">Diogo Costa</a>
                 <p class="text-sm text-gray-500">© @DateTime.Now.Year Diogo Costa - v1.1.2</p>
                 <p class="text-sm text-gray-500 mt-1">Diogo Costa é MVP Microsoft há 4 anos e criador do método DC360 — uma abordagem prática para transformar código em negócio. Fundador do <a href="https://codigocentral.com.br" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Código Central</a>.</p>
                 
