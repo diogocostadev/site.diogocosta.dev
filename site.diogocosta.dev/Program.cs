@@ -53,9 +53,16 @@ builder.Host.UseSerilog((context, configuration) =>
     configuration
         .ReadFrom.Configuration(context.Configuration)
         .WriteTo.Console()
-        .WriteTo.File("logs/app-.txt", rollingInterval: RollingInterval.Day)
         .Enrich.FromLogContext()
         .Enrich.WithProperty("Application", "Site.DiogoCosta.Dev");
+
+    // Logs em arquivo APENAS no ambiente de desenvolvimento
+    // ou se explicitamente habilitado na configuração
+    var enableFileLogging = context.Configuration.GetValue<bool>("Logging:EnableFileLogging");
+    if (context.HostingEnvironment.IsDevelopment() || enableFileLogging)
+    {
+        configuration.WriteTo.File("logs/app-.txt", rollingInterval: RollingInterval.Day);
+    }
 
     // Configurar Seq se disponível
     var seqUrl = context.Configuration["Seq:ServerUrl"];
@@ -66,11 +73,16 @@ builder.Host.UseSerilog((context, configuration) =>
         configuration.WriteTo.Seq(seqUrl, apiKey: seqApiKey);
     }
 });
-// Garantir que o diretório de logs existe
-var logsDir = Path.Combine(builder.Environment.ContentRootPath, "logs");
-if (!Directory.Exists(logsDir))
+
+// Garantir que o diretório de logs existe APENAS quando necessário
+var enableFileLoggingConfig = builder.Configuration.GetValue<bool>("Logging:EnableFileLogging");
+if (builder.Environment.IsDevelopment() || enableFileLoggingConfig)
 {
-    Directory.CreateDirectory(logsDir);
+    var logsDir = Path.Combine(builder.Environment.ContentRootPath, "logs");
+    if (!Directory.Exists(logsDir))
+    {
+        Directory.CreateDirectory(logsDir);
+    }
 }
 //--------------------------------------------
 
