@@ -101,7 +101,7 @@ section {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    position: relative;
+  position: relative;
 }
 
 .nav-link:hover {
@@ -624,6 +624,22 @@ section {
 
 .form-control-modern::placeholder {
     color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.form-control-modern::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.form-control-modern::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+}
+
+.form-control-modern:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 1;
 }
 
 .form-control-modern:focus {
@@ -3038,4 +3054,36 @@ section + section {
     .feature-text {
         font-size: 1rem;
     }
+}
+
+/* Animações e melhorias para mensagens */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Estilização para buttons em loading */
+button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: spin 1s linear infinite;
 }

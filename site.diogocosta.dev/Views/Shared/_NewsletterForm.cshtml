@@ -23,9 +23,11 @@
                   name="Email" 
                   class="@(isHeaderForm ? "form-control mb-3" : "form-control-modern w-100 mb-3")" 
                   placeholder="Seu melhor e-mail"
+                  value=""
                   style="@(isHeaderForm ? "background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 0.75rem; color: #212529;" : "")"
                   required
-                  aria-describedby="newsletter-info-@formId">
+                  aria-describedby="newsletter-info-@formId"
+                  autocomplete="email">
             <button type="submit" class="@(isHeaderForm ? "btn btn-primary w-100" : submitButtonClass)" aria-label="Inscrever-se na newsletter">
                 <i class="fas fa-envelope me-2"></i>
                 @(isHeaderForm ? "Inscrever-se" : "Inscreva-se Agora")
@@ -35,6 +37,18 @@
             Eu nunca lhe mandarei spam ou venderei seus dados. Nunca.
         </p>
     </form>
+    
+    <script>
+        // Inicialização simples do formulário newsletter
+        document.addEventListener('DOMContentLoaded', function() {
+            var emailField = document.getElementById('newsletter-email-@formId');
+            if (emailField) {
+                // Limpar campo na inicialização
+                emailField.value = '';
+                emailField.placeholder = 'Seu melhor e-mail';
+            }
+        });
+    </script>
     
     <div id="@(formId + "Message")" class="mt-4 d-none">
         <!-- Mensagem de sucesso ou erro será inserida aqui via JavaScript -->
