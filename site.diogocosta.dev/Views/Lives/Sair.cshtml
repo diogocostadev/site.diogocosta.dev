@@ -1,0 +1,746 @@
+@model site.diogocosta.dev.Models.DescadastroInteressadoLiveRequest
+
+@{
+    ViewData["Title"] = "Sair da Lista de Lives";
+    ViewData["Description"] = "Remova seu email da lista de notificações das nossas lives.";
+}
+
+<!-- Unsubscribe Section -->
+<section class="unsubscribe-section">
+    <div class="container">
+        <div class="unsubscribe-content">
+            <!-- Header com Emoji Animado -->
+            <div class="unsubscribe-header">
+                <div class="sad-emoji">😔</div>
+                <h1 class="unsubscribe-title">Sair da Lista</h1>
+                <p class="unsubscribe-subtitle">
+                    Sentiremos sua falta! Você não receberá mais notificações das nossas lives.
+                </p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="unsubscribe-grid">
+                <!-- Considerações antes de sair -->
+                <div class="consideration-card">
+                    <div class="card-header">
+                        <div class="warning-icon">⚠️</div>
+                        <h2 class="card-title">Antes de sair, considere:</h2>
+                    </div>
+                    
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📱</div>
+                            <div class="benefit-content">
+                                <h4>Você pode ajustar preferências</h4>
+                                <p>Talvez você prefira receber apenas por email ou WhatsApp?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🔔</div>
+                            <div class="benefit-content">
+                                <h4>Conteúdo exclusivo</h4>
+                                <p>Perdemos dicas valiosas sobre programação e carreira</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎯</div>
+                            <div class="benefit-content">
+                                <h4>Lives são raras</h4>
+                                <p>Não enviamos muitas mensagens, apenas quando há lives</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🚀</div>
+                            <div class="benefit-content">
+                                <h4>Crescimento profissional</h4>
+                                <p>Conteúdo que pode acelerar sua carreira em tecnologia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alternativas -->
+                    <div class="alternatives-section">
+                        <h3 class="alternatives-title">🤔 Alternativas:</h3>
+                        <div class="alternatives-grid">
+                            <a href="https://youtube.com/@@diogocostadev" target="_blank" class="alternative-option youtube">
+                                <div class="alt-icon">▶️</div>
+                                <div class="alt-content">
+                                    <h4>YouTube</h4>
+                                    <p>Ative o sininho</p>
+                                </div>
+                            </a>
+                            <a href="https://twitch.tv/diogocostadev" target="_blank" class="alternative-option twitch">
+                                <div class="alt-icon">🎮</div>
+                                <div class="alt-content">
+                                    <h4>Twitch</h4>
+                                    <p>Siga o canal</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de saída -->
+                <div class="unsubscribe-form-card">
+                    <div class="card-header">
+                        <div class="heart-icon">💔</div>
+                        <h2 class="card-title">Confirmar Saída</h2>
+                    </div>
+                    
+                    <p class="form-description">
+                        Se você não quer mais receber notificações das nossas lives, 
+                        informe seu email abaixo.
+                    </p>
+
+                    <form method="post" class="unsubscribe-form" id="unsubscribeForm">
+                        <div asp-validation-summary="All" class="validation-summary"></div>
+
+                        <div class="form-group">
+                            <label for="Email" class="form-label">
+                                📧 Email para remoção
+                            </label>
+                            <input asp-for="Email" 
+                                   type="email" 
+                                   class="form-input"
+                                   placeholder="Digite o email que deseja remover" 
+                                   required>
+                            <span asp-validation-for="Email" class="field-error"></span>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-unsubscribe" id="confirmBtn">
+                                <span class="btn-icon">😢</span>
+                                <span class="btn-text">Confirmar Saída</span>
+                                <div class="btn-loader" style="display: none;"></div>
+                            </button>
+                            
+                            <a href="@Url.Action("Index")" class="btn-stay">
+                                <span class="btn-icon">🎉</span>
+                                <span class="btn-text">Continuar Recebendo</span>
+                            </a>
+                        </div>
+                    </form>
+
+                    <!-- Garantia -->
+                    <div class="guarantee-box">
+                        <div class="guarantee-icon">🔒</div>
+                        <div class="guarantee-content">
+                            <h4>Garantia de Privacidade</h4>
+                            <p>Seus dados serão removidos imediatamente e não serão compartilhados com terceiros.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer com estatísticas -->
+            <div class="unsubscribe-footer">
+                <div class="stats-section">
+                    <h3 class="stats-title">📊 Você sabia?</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">dos usuários acham nossas lives úteis</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2-3x</div>
+                            <div class="stat-label">por mês enviamos notificações</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">conteúdo gratuito e de qualidade</div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="footer-text">
+                    <strong>Diogo Costa</strong> - MVP Microsoft<br>
+                    Mudou de ideia? <a href="@Url.Action("Index")" class="back-link">Voltar para o cadastro</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Página de Unsubscribe - Design Moderno */
+.unsubscribe-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 6rem 0 2rem 0; /* Adicionar padding-top para não grudar no header */
+    color: white;
+}
+
+.unsubscribe-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
+.unsubscribe-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.sad-emoji {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: sadFace 3s ease-in-out infinite;
+}
+
+@@keyframes sadFace {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.unsubscribe-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.unsubscribe-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Main Grid */
+.unsubscribe-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Cards */
+.consideration-card,
+.unsubscribe-form-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.consideration-card:hover,
+.unsubscribe-form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.warning-icon,
+.heart-icon {
+    font-size: 2rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+/* Benefits List */
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.benefit-content h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.benefit-content p {
+    opacity: 0.8;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Alternatives Section */
+.alternatives-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+}
+
+.alternatives-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.alternatives-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.alternative-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.alternative-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.alternative-option.youtube:hover {
+    border-color: #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+.alternative-option.twitch:hover {
+    border-color: #9146ff;
+    box-shadow: 0 5px 15px rgba(145, 70, 255, 0.3);
+}
+
+.alt-icon {
+    font-size: 1.5rem;
+}
+
+.alt-content h4 {
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+
+.alt-content p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Form */
+.form-description {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.unsubscribe-form {
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1);
+}
+
+.help-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-unsubscribe,
+.btn-stay {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    justify-content: center;
+}
+
+.btn-unsubscribe {
+    background: linear-gradient(45deg, #f97316, #ea580c);
+    color: white;
+    border: 2px solid #f97316;
+}
+
+.btn-stay {
+    background: linear-gradient(45deg, #10b981, #059669);
+    color: white;
+    border: 2px solid #10b981;
+}
+
+.btn-unsubscribe:hover,
+.btn-stay:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-icon {
+    font-size: 1.25rem;
+}
+
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Guarantee Box */
+.guarantee-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.guarantee-icon {
+    font-size: 1.5rem;
+    color: #10b981;
+}
+
+.guarantee-content h4 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.guarantee-content p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Footer */
+.unsubscribe-footer {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stats-section {
+    margin-bottom: 2rem;
+}
+
+.stats-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fbbf24;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    opacity: 0.9;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.footer-text {
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.back-link {
+    color: #fbbf24;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    color: #f59e0b;
+    text-decoration: underline;
+}
+
+/* Validation */
+.validation-summary {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #fca5a5;
+    display: none;
+}
+
+.validation-summary:not(:empty) {
+    display: block;
+}
+
+.field-error {
+    color: #fca5a5 !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none;
+}
+
+.field-error:not(:empty) {
+    display: block;
+}
+
+/* Responsive */
+@@media (max-width: 768px) {
+    .unsubscribe-section {
+        padding: 5rem 0 2rem 0; /* Reduzir padding no mobile */
+    }
+    
+    .unsubscribe-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .unsubscribe-title {
+        font-size: 2rem;
+    }
+    
+    .alternatives-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .consideration-card,
+    .unsubscribe-form-card {
+        padding: 1.5rem;
+    }
+}
+
+@@media (max-width: 480px) {
+    .unsubscribe-content {
+        padding: 0 0.5rem;
+    }
+    
+    .sad-emoji {
+        font-size: 3rem;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}
+</style>
+
+<script>
+// Funcionalidades da página de unsubscribe
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('unsubscribeForm');
+    const confirmBtn = document.getElementById('confirmBtn');
+    
+    if (form && confirmBtn) {
+        // Confirmação antes de enviar
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = form.querySelector('input[name="Email"]').value;
+            
+            if (!email) {
+                alert('Por favor, digite seu email.');
+                return;
+            }
+            
+            // Mostrar modal de confirmação
+            const confirmed = confirm(
+                `Tem certeza que deseja remover o email "${email}" da lista de notificações das lives?\n\n` +
+                `Você não receberá mais:\n` +
+                `• Notificações de lives ao vivo\n` +
+                `• Lembretes antes das transmissões\n` +
+                `• Dicas exclusivas de programação\n` +
+                `• Conteúdo sobre carreira tech\n\n` +
+                `Esta ação não pode ser desfeita.`
+            );
+            
+            if (confirmed) {
+                // Mostrar loading
+                const btnText = confirmBtn.querySelector('.btn-text');
+                const btnLoader = confirmBtn.querySelector('.btn-loader');
+                
+                btnText.style.display = 'none';
+                btnLoader.style.display = 'block';
+                confirmBtn.disabled = true;
+                
+                // Enviar formulário
+                form.submit();
+            }
+        });
+    }
+    
+    // Animação de entrada dos elementos
+    const cards = document.querySelectorAll('.consideration-card, .unsubscribe-form-card');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            card.style.transition = 'all 0.6s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 200 * index);
+    });
+    
+    // Animação dos benefícios
+    const benefits = document.querySelectorAll('.benefit-item');
+    benefits.forEach((benefit, index) => {
+        benefit.style.opacity = '0';
+        benefit.style.transform = 'translateX(-20px)';
+        
+        setTimeout(() => {
+            benefit.style.transition = 'all 0.4s ease';
+            benefit.style.opacity = '1';
+            benefit.style.transform = 'translateX(0)';
+        }, 500 + (100 * index));
+    });
+    
+    // Animação das estatísticas
+    const stats = document.querySelectorAll('.stat-item');
+    stats.forEach((stat, index) => {
+        stat.style.opacity = '0';
+        stat.style.transform = 'scale(0.8)';
+        
+        setTimeout(() => {
+            stat.style.transition = 'all 0.5s ease';
+            stat.style.opacity = '1';
+            stat.style.transform = 'scale(1)';
+        }, 1000 + (200 * index));
+    });
+});
+
+// Função para rastrear tentativas de saída (opcional)
+function trackUnsubscribeAttempt() {
+    // Aqui você pode adicionar tracking analytics se necessário
+    console.log('Usuário tentou se descadastrar');
+}
+</script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 
