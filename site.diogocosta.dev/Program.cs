@@ -150,6 +150,18 @@ builder.Services.AddScoped<IVSLService, VSLService>();
 builder.Services.AddHttpClient(); // HttpClient genérico para injeção
 builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
 
+// Configuração do serviço de WhatsApp
+builder.Services.Configure<WhatsAppSettings>(
+    builder.Configuration.GetSection("WhatsAppSettings"));
+builder.Services.AddHttpClient<IWhatsAppService, WhatsAppService>(client =>
+{
+    client.DefaultRequestHeaders.Add("User-Agent", "WhatsAppService");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+
+// Configuração do serviço de interessados nas lives
+builder.Services.AddScoped<IInteressadoLiveService, InteressadoLiveService>();
+
 // Configuração do serviço anti-spam usando AntiSpam.Core (simplificado)
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<AntiSpamServiceCore>();

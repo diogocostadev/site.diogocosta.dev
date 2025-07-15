@@ -20,6 +20,7 @@ namespace site.diogocosta.dev.Data
         public DbSet<VSLVideoModel> VSLVideos { get; set; }
         public DbSet<PdfDownloadModel> PdfDownloads { get; set; }
         public DbSet<AntiSpamRule> AntiSpamRules { get; set; }
+        public DbSet<InteressadoLiveModel> InteressadosLives { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
