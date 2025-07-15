@@ -1,7 +1,7 @@
 /* Design moderno inspirado em templates do Framer */
 
-/* Importar fontes do Google */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Fontes otimizadas - removido @import que bloqueia renderização */
+/* As fontes agora são carregadas via preload no HTML */
 
 /* Reset e variáveis */
 * {

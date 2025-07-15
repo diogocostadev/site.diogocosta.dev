@@ -38,18 +38,6 @@
         </p>
     </form>
     
-    <script>
-        // Inicialização simples do formulário newsletter
-        document.addEventListener('DOMContentLoaded', function() {
-            var emailField = document.getElementById('newsletter-email-@formId');
-            if (emailField) {
-                // Limpar campo na inicialização
-                emailField.value = '';
-                emailField.placeholder = 'Seu melhor e-mail';
-            }
-        });
-    </script>
-    
     <div id="@(formId + "Message")" class="mt-4 d-none">
         <!-- Mensagem de sucesso ou erro será inserida aqui via JavaScript -->
     </div>

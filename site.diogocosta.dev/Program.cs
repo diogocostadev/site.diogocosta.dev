@@ -150,6 +150,18 @@ builder.Services.AddScoped<IVSLService, VSLService>();
 builder.Services.AddHttpClient(); // HttpClient genérico para injeção
 builder.Services.AddScoped<IPdfDownloadService, PdfDownloadService>();
 
+// Configuração do serviço de WhatsApp
+builder.Services.Configure<WhatsAppSettings>(
+    builder.Configuration.GetSection("WhatsAppSettings"));
+builder.Services.AddHttpClient<IWhatsAppService, WhatsAppService>(client =>
+{
+    client.DefaultRequestHeaders.Add("User-Agent", "WhatsAppService");
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+
+// Configuração do serviço de interessados nas lives
+builder.Services.AddScoped<IInteressadoLiveService, InteressadoLiveService>();
+
 // Configuração do serviço anti-spam usando AntiSpam.Core (simplificado)
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<AntiSpamServiceCore>();
@@ -203,6 +215,10 @@ app.Use(async (context, next) =>
     {
         context.Response.Headers["Access-Control-Allow-Origin"] = "*";
         context.Response.Headers["Cross-Origin-Resource-Policy"] = "cross-origin";
+        
+        // Headers de performance para recursos estáticos
+        context.Response.Headers["Cache-Control"] = "public, max-age=31536000, immutable";
+        context.Response.Headers["Expires"] = DateTime.UtcNow.AddYears(1).ToString("R");
     }
     
     // Cache policy para diferentes tipos de conteúdo
@@ -211,6 +227,16 @@ app.Use(async (context, next) =>
         context.Request.Path.StartsWithSegments("/blog"))
     {
         context.Response.Headers["Cache-Control"] = "public, max-age=300, stale-while-revalidate=60";
+    }
+    
+    // Headers de preload para recursos críticos
+    if (context.Request.Path == "/")
+    {
+        context.Response.Headers["Link"] = 
+            "</css/site.css>; rel=preload; as=style, " +
+            "</js/newsletter.js>; rel=preload; as=script, " +
+            "<https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap>; rel=preload; as=style, " +
+            "<https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css>; rel=preload; as=style";
     }
     
     await next();

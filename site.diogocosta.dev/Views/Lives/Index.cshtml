@@ -1,0 +1,472 @@
+@model site.diogocosta.dev.Models.CadastroInteressadoLiveRequest
+
+@{
+    ViewData["Title"] = "Cadastro para Lives - YouTube e Twitch";
+    ViewData["Description"] = "Cadastre-se para receber notificações das nossas lives no YouTube e Twitch sobre programação, tecnologia e carreira.";
+}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content animate-fade-in">
+            <h1 class="hero-title">
+                🎥 Lives exclusivas no YouTube e Twitch
+            </h1>
+            <p class="hero-subtitle">
+                Cadastre-se para receber notificações das nossas lives sobre programação, 
+                tecnologia e carreira. Conteúdo exclusivo e dicas práticas para desenvolvedores.
+            </p>
+            
+            <div class="hero-grid">
+                <div class="modern-card">
+                    <h2 class="card-title">📺 O que você vai receber</h2>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🔴</div>
+                            <div class="benefit-content">
+                                <h4 class="benefit-title">Notificações de lives ao vivo</h4>
+                                <p class="benefit-description">Seja avisado imediatamente quando iniciarmos transmissões</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⏰</div>
+                            <div class="benefit-content">
+                                <h4 class="benefit-title">Lembretes antes das transmissões</h4>
+                                <p class="benefit-description">Receba avisos prévios para não perder nenhum conteúdo</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💡</div>
+                            <div class="benefit-content">
+                                <h4 class="benefit-title">Dicas de programação</h4>
+                                <p class="benefit-description">Conteúdo exclusivo sobre desenvolvimento e boas práticas</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🚀</div>
+                            <div class="benefit-content">
+                                <h4 class="benefit-title">Conteúdo sobre carreira tech</h4>
+                                <p class="benefit-description">Orientações para crescer profissionalmente na área</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-card">
+                    <h2 class="card-title">Comece Agora</h2>
+                    <p class="card-text">
+                        Inscreva-se e seja o primeiro a saber sobre nossas lives. 
+                        Não perca nenhum conteúdo valioso!
+                    </p>
+                    
+                    <form asp-action="Cadastrar" method="post" class="modern-form">
+                        <div asp-validation-summary="All" class="validation-summary" style="display: none !important;"></div>
+                        
+                        <div class="form-group">
+                            <input asp-for="Nome" 
+                                   type="text" 
+                                   class="form-control-modern" 
+                                   placeholder="Digite seu nome completo" 
+                                   required>
+                            <span asp-validation-for="Nome" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input asp-for="Email" 
+                                   type="email" 
+                                   class="form-control-modern" 
+                                   placeholder="seuemail@exemplo.com">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="whatsapp-group">
+                                <select asp-for="CodigoPais" class="form-control-modern country-select">
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+54">🇦🇷 +54</option>
+                                    <option value="+56">🇨🇱 +56</option>
+                                    <option value="+57">🇨🇴 +57</option>
+                                    <option value="+58">🇻🇪 +58</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+593">🇪🇨 +593</option>
+                                    <option value="+595">🇵🇾 +595</option>
+                                    <option value="+598">🇺🇾 +598</option>
+                                    <option value="+34">🇪🇸 +34</option>
+                                    <option value="+351">🇵🇹 +351</option>
+                                    <option value="+33">🇫🇷 +33</option>
+                                    <option value="+49">🇩🇪 +49</option>
+                                    <option value="+39">🇮🇹 +39</option>
+                                    <option value="+44">🇬🇧 +44</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                </select>
+                                <input asp-for="WhatsApp" 
+                                       type="tel" 
+                                       class="form-control-modern whatsapp-input"
+                                       placeholder="11999999999"
+                                       pattern="[0-9]{8,15}">
+                            </div>
+                            <span asp-validation-for="WhatsApp" class="text-danger"></span>
+                        </div>
+                        
+                        <input asp-for="Origem" type="hidden" value="site">
+                        
+                        <button type="submit" class="btn-modern btn-primary-modern">
+                            🎉 Cadastrar para Lives
+                        </button>
+                        
+                        <p>
+                            <strong>Importante:</strong> É necessário informar pelo menos um contato 
+                            (email ou WhatsApp) para receber as notificações.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Profile Section -->
+<section class="profile-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="profile-content text-center">
+                    <h2 class="profile-title animate-fade-in">
+                        🚀 Nossos Canais
+                    </h2>
+                    
+                    <div class="hero-grid">
+                        <div class="modern-card">
+                            <div class="channel-icon">▶️</div>
+                            <h3 class="card-title">YouTube</h3>
+                            <p class="card-text">
+                                Conteúdo completo sobre programação, tecnologia e carreira.
+                                Tutoriais, dicas e muito mais.
+                            </p>
+                            <a href="https://youtube.com/@@diogocostadev" 
+                               target="_blank" 
+                               class="btn-modern btn-primary-modern channel-button">
+                                Acessar Canal
+                            </a>
+                        </div>
+                        
+                        <div class="modern-card">
+                            <div class="channel-icon">🎮</div>
+                            <h3 class="card-title">Twitch</h3>
+                            <p class="card-text">
+                                Lives ao vivo com interação em tempo real. 
+                                Programação, Q&A e muito mais.
+                            </p>
+                            <a href="https://twitch.tv/diogocostadev" 
+                               target="_blank" 
+                               class="btn-modern btn-primary-modern channel-button">
+                                Seguir na Twitch
+                            </a>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Estilos específicos para a página de lives */
+
+/* Corrigir fundo e contraste dos cards */
+.modern-card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+.modern-card .card-title {
+    color: white !important;
+}
+
+.modern-card .card-text {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.modern-card .feature-item span {
+    color: white !important;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Estilos específicos para seção Profile (Nossos Canais) */
+.profile-section {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4rem 0;
+}
+
+.profile-section .modern-card {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
+
+.profile-section .card-title {
+    color: white !important;
+}
+
+.profile-section .card-text {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.profile-section .channel-icon {
+    color: white !important;
+}
+
+.profile-description {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.features-grid {
+    display: grid;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 0;
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+/* Layout profissional para benefícios */
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.benefit-item:last-child {
+    border-bottom: none;
+}
+
+.benefit-icon {
+    font-size: 1rem;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.benefit-content {
+    flex: 1;
+}
+
+.benefit-title {
+    color: white !important;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.benefit-description {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.modern-card .feature-item span {
+    color: white !important;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.validation-summary {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: #fca5a5;
+    display: none; /* Esconder por padrão */
+}
+
+.validation-summary:not(:empty) {
+    display: block; /* Mostrar apenas se tiver conteúdo */
+}
+
+.validation-summary ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.text-danger {
+    color: #fca5a5 !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none; /* Esconder por padrão */
+}
+
+.text-danger:not(:empty) {
+    display: block; /* Mostrar apenas se tiver conteúdo */
+}
+
+.field-validation-error {
+    color: #fca5a5 !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none; /* Esconder por padrão */
+}
+
+.field-validation-error:not(:empty) {
+    display: block; /* Mostrar apenas se tiver conteúdo */
+}
+
+span[data-valmsg-for] {
+    display: none; /* Esconder por padrão */
+}
+
+span[data-valmsg-for]:not(:empty) {
+    display: block; /* Mostrar apenas se tiver conteúdo */
+    color: #fca5a5 !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.whatsapp-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.country-select {
+    width: 120px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.country-select option {
+    background: #1a1a1a !important;
+    color: white !important;
+    padding: 8px 12px;
+}
+
+.country-select:focus {
+    outline: none !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.1) !important;
+}
+
+.country-select:hover {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.whatsapp-input {
+    flex: 1;
+}
+
+.channel-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.channel-button {
+    margin-top: 1rem;
+}
+
+/* Responsive para mobile */
+@@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .country-select {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .country-select option {
+        background: #1a1a1a !important;
+        color: white !important;
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    .modern-card {
+        padding: 2rem;
+    }
+    
+    .benefit-item {
+        gap: 1rem;
+        padding: 0.75rem 0;
+    }
+    
+    .benefit-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 0.875rem;
+        border-radius: 6px;
+    }
+    
+    .benefit-title {
+        font-size: 1rem;
+    }
+    
+    .benefit-description {
+        font-size: 0.85rem;
+    }
+}
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 
