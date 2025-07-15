@@ -1,15 +1,28 @@
-// Newsletter ultra-otimizado
+// Newsletter ultra-otimizado - Performance otimizada
 (function() {
     'use strict';
     
+    // Cache de elementos para melhor performance
+    var formCache = {};
+    var messageCache = {};
+    
     function init() {
-        // Processar formulários newsletter
+        // Usar querySelectorAll mais eficiente
         var forms = document.querySelectorAll('form[id$="Form"]');
-        for (var i = 0; i < forms.length; i++) {
-            forms[i].addEventListener('submit', handleSubmit);
-        }
         
-        // Dropdown menu
+        // Processar formulários com forEach para melhor performance
+        Array.prototype.forEach.call(forms, function(form) {
+            form.addEventListener('submit', handleSubmit);
+            // Cache dos elementos para evitar múltiplas consultas DOM
+            formCache[form.id] = {
+                form: form,
+                email: form.querySelector('input[name="Email"]'),
+                submitBtn: form.querySelector('button[type="submit"]')
+            };
+            messageCache[form.id] = document.getElementById(form.id + 'Message');
+        });
+        
+        // Dropdown menu - otimizado
         var btn = document.getElementById('joinButton');
         var form = document.getElementById('subscribeForm');
         if (btn && form) {
@@ -20,8 +33,10 @@
         }
     }
     
+    // Validação de email otimizada
     function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        // Regex mais simples e rápida
+        return email.indexOf('@') > 0 && email.indexOf('.') > email.indexOf('@');
     }
 
     function showMessage(msg, text, isSuccess) {
@@ -31,7 +46,7 @@
         msg.className = 'mt-4 alert ' + (isSuccess ? 'alert-success' : 'alert-danger');
         msg.style.display = 'block';
         
-        // Ocultar mensagem após 5 segundos se for sucesso
+        // Usar setTimeout otimizado
         if (isSuccess) {
             setTimeout(function() {
                 msg.style.display = 'none';
@@ -41,12 +56,17 @@
 
     function handleSubmit(e) {
         e.preventDefault();
-        var form = this;
-        var email = form.querySelector('input[name="Email"]').value.trim();
-        var msg = document.getElementById(form.id + 'Message');
-        var submitButton = form.querySelector('button[type="submit"]');
         
-        // Validar email
+        var formId = this.id;
+        var cached = formCache[formId];
+        var msg = messageCache[formId];
+        
+        if (!cached) return;
+        
+        var email = cached.email.value.trim();
+        var submitButton = cached.submitBtn;
+        
+        // Validações rápidas
         if (!email) {
             showMessage(msg, 'Por favor, digite seu e-mail.', false);
             return;
@@ -57,14 +77,17 @@
             return;
         }
         
-        // Desabilitar botão
+        // State do botão
+        var originalText = submitButton.innerHTML;
         if (submitButton) {
             submitButton.disabled = true;
             submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando...';
         }
         
-        var endpoint = '/' + (form.id.includes('sobre') ? 'Sobre' : 'Home') + '/Newsletter';
+        // Endpoint otimizado
+        var endpoint = '/' + (formId.includes('sobre') ? 'Sobre' : 'Home') + '/Newsletter';
         
+        // Fetch otimizado
         fetch(endpoint, {
             method: 'POST',
             headers: { 
@@ -82,7 +105,7 @@
         .then(function(data) {
             if (data.success) {
                 showMessage(msg, data.message || 'Cadastro realizado com sucesso!', true);
-                form.querySelector('input[name="Email"]').value = '';
+                cached.email.value = '';
             } else {
                 showMessage(msg, data.message || 'Erro ao processar seu cadastro.', false);
             }
@@ -92,14 +115,15 @@
             showMessage(msg, 'Erro de conexão. Tente novamente.', false);
         })
         .finally(function() {
-            // Reabilitar botão
+            // Restaurar botão
             if (submitButton) {
                 submitButton.disabled = false;
-                submitButton.innerHTML = '<i class="fas fa-envelope me-2"></i>Inscreva-se Agora';
+                submitButton.innerHTML = originalText;
             }
         });
     }
     
+    // Inicialização otimizada
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

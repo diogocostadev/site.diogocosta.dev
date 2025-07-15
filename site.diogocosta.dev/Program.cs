@@ -203,6 +203,10 @@ app.Use(async (context, next) =>
     {
         context.Response.Headers["Access-Control-Allow-Origin"] = "*";
         context.Response.Headers["Cross-Origin-Resource-Policy"] = "cross-origin";
+        
+        // Headers de performance para recursos estáticos
+        context.Response.Headers["Cache-Control"] = "public, max-age=31536000, immutable";
+        context.Response.Headers["Expires"] = DateTime.UtcNow.AddYears(1).ToString("R");
     }
     
     // Cache policy para diferentes tipos de conteúdo
@@ -211,6 +215,16 @@ app.Use(async (context, next) =>
         context.Request.Path.StartsWithSegments("/blog"))
     {
         context.Response.Headers["Cache-Control"] = "public, max-age=300, stale-while-revalidate=60";
+    }
+    
+    // Headers de preload para recursos críticos
+    if (context.Request.Path == "/")
+    {
+        context.Response.Headers["Link"] = 
+            "</css/site.css>; rel=preload; as=style, " +
+            "</js/newsletter.js>; rel=preload; as=script, " +
+            "<https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap>; rel=preload; as=style, " +
+            "<https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css>; rel=preload; as=style";
     }
     
     await next();
